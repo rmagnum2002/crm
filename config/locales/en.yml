@@ -1,0 +1,33 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  menu:
+    main: "Main"
+    companies: "Companies"
+    contacts: "Contacts"
+    user: "User"
+
+  company:
+    form:
+      responsible: "Responsible person"
+      branch: "Branch"
+      source: "Source"
+      client_category: "Client Category"
+      client_type: "Client Type"
+      client_status: "Client Status"
+      organizational_form: "Organizational Form"
+    index:
+      created_at: "Created at"
+      id: "ID"
+      name: "Company Name"
+      client_category_id: "Client Category"
+      client_type_id: "Client Type"
+      company_source_id: "Source"
+      client_at: "Client from"
+      phone: "Phone"
+      fax: "Fax"
+      email: "Email"
+      bank_req: "Bank requisits"
+      fisc_id: "Fiscal Code"
+      responsible_id: "Responsible"

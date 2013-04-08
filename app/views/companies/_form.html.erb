@@ -1,0 +1,121 @@
+<%= form_for @company, :html => { :class => 'form-horizontal' } do |f| %>
+<div class="span4">
+  <div class="control-group">
+    <%= f.label :responsible_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :responsible_id, User.find(:all), :id, :full_name, :prompt => t(:"company.form.responsible"), class: 'select_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :organizational_form_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :organizational_form_id, OrganizationalForm.find(:all), :id, :organizational_form, :prompt => t(:"company.form.organizational_form"), class: 'select_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :number_employees, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :number_employees, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :company_branch_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :company_branch_id, CompanyBranch.find(:all), :id, :name, :prompt => t(:"company.form.branch"), class: 'select_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :company_source_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :company_source_id, CompanySource.find(:all), :id, :source, :prompt => t(:"company.form.source"), class: 'select_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :client_category_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :client_category_id, ClientCategory.find(:all), :id, :category, :prompt => t(:"company.form.client_category"), class: 'select_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :client_type_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :client_type_id, ClientType.find(:all), :id, :client_type, :prompt => t(:"company.form.client_type"), class: 'select_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :client_status_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :client_status_id, ClientStatus.find(:all), :id, :client_status, :prompt => t(:"company.form.client_status"), class: 'select_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :client_at, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.date_select :client_at, :class => 'date_select' %>
+    </div>
+  </div>
+</div>
+<div class="span4">
+  <div class="control-group">
+    <%= f.label :phone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :fax, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fax, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :skype, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :skype, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :website, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :website, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :facebook, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :facebook, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :bank_req, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :bank_req, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :fisc_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :fisc_id, :class => 'number_field' %>
+    </div>
+  </div>
+</div>
+<div class="span12">
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+    companies_path, :class => 'btn' %>
+  </div>
+</div>
+<% end %>

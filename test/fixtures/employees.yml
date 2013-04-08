@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  first_name: MyString
+  last_name: MyString
+  patronymic: MyString
+  gender: MyString
+  birthday: 2013-04-08
+  language: MyString
+  company_id: 1
+  job_title_id: 1
+  decision: false
+  phone: MyString
+  mobile: MyString
+  simtravel: MyString
+  email: MyString
+  skype: MyString
+  facebook: MyString
+  client_date: 2013-04-08
+  completion: MyString
+
+two:
+  user_id: 1
+  first_name: MyString
+  last_name: MyString
+  patronymic: MyString
+  gender: MyString
+  birthday: 2013-04-08
+  language: MyString
+  company_id: 1
+  job_title_id: 1
+  decision: false
+  phone: MyString
+  mobile: MyString
+  simtravel: MyString
+  email: MyString
+  skype: MyString
+  facebook: MyString
+  client_date: 2013-04-08
+  completion: MyString

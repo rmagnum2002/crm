@@ -3,34 +3,35 @@
 
 ro:
   menu:
-    main: "Main"
-    companies: "Companies"
-    contacts: "Contacts"
-    user: "User"
+    main: "Principala"
+    companies: "Companii"
+    contacts: "Contacte"
+    user: "Utilizator"
 
   company:
     form:
-      responsible: "Responsible person"
-      branch: "Branch"
-      source: "Source"
-      client_category: "Client Category"
-      client_type: "Client Type"
-      client_status: "Client Status"
-      organizational_form: "Organizational Form"
+      responsible: "Persoana de răspundere"
+      branch: "Ramura de activitate"
+      source: "Cum ați găsit compania"
+      client_category: "Categoria Clientului"
+      client_type: "Tipul Clientului"
+      client_status: "Starea Clientului"
+      organizational_form: "Forma Organizațională"
     index:
-      created_at: "Created at"
+      companies: "Companii"
+      created_at: "Creat la data:"
       id: "ID"
-      name: "Company Name"
-      client_category_id: "Client Category"
-      client_type_id: "Client Type"
-      company_source_id: "Source"
-      client_at: "Client from"
-      phone: "Phone"
+      name: "Numele"
+      client_category_id: "Categoria Clientului"
+      client_type_id: "Tipul Clientului"
+      company_source_id: "Cum ați găsit compania"
+      client_at: "Client de la data:"
+      phone: "Telefon"
       fax: "Fax"
       email: "Email"
-      bank_req: "Bank requisits"
-      fisc_id: "Fiscal Code"
-      responsible_id: "Responsible"
+      bank_req: "Rechizite Bancare"
+      fisc_id: "Cod Fiscal"
+      responsible_id: "Responsabil"
 
   date:
     abbr_day_names:

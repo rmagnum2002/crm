@@ -32,7 +32,6 @@ ru:
       fisc_id: "Fiscal Code"
       responsible_id: "Responsible"
 
-
   date:
     abbr_day_names:
     - Вс

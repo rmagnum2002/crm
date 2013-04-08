@@ -18,6 +18,7 @@ en:
       client_status: "Client Status"
       organizational_form: "Organizational Form"
     index:
+      companies: "Companii"
       created_at: "Created at"
       id: "ID"
       name: "Company Name"

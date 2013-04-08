@@ -1,10 +1,8 @@
 CrmMd::Application.routes.draw do
-  resources :employees
 
-
-  resources :companies
-
-  resources :employees
+  resources :companies do
+    resources :employees
+  end
 
   get "welcome/index"
   match 'set_locale' => 'welcome#set_locale'

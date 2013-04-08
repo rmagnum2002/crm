@@ -1,4 +1,6 @@
 class CompaniesController < ApplicationController
+  before_filter :load_company, except: %w{index new create}
+
   # GET /companies
   # GET /companies.json
   def index
@@ -13,8 +15,6 @@ class CompaniesController < ApplicationController
   # GET /companies/1
   # GET /companies/1.json
   def show
-    @company = Company.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @company }
@@ -34,13 +34,13 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1/edit
   def edit
-    @company = Company.find(params[:id])
   end
 
   # POST /companies
   # POST /companies.json
   def create
     @company = Company.new(params[:company])
+    @company.user_id = current_user.id
 
     respond_to do |format|
       if @company.save
@@ -56,8 +56,6 @@ class CompaniesController < ApplicationController
   # PUT /companies/1
   # PUT /companies/1.json
   def update
-    @company = Company.find(params[:id])
-
     respond_to do |format|
       if @company.update_attributes(params[:company])
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
@@ -72,7 +70,6 @@ class CompaniesController < ApplicationController
   # DELETE /companies/1
   # DELETE /companies/1.json
   def destroy
-    @company = Company.find(params[:id])
     @company.destroy
 
     respond_to do |format|

@@ -19,6 +19,19 @@ class ApplicationController < ActionController::Base
     true
   end
 
+
+  # filter
+  def load_company
+    @company = Company.find(params[:id].presence || params[:company_id].presence)
+    @project ||= Company.find_by_id(params[:company_id] || params[:id])
+
+    if @company.nil?
+      raise ActiveRecord::RecordNotFound
+    end
+
+    true
+  end
+
   helper_method :current_language
 
   def current_language

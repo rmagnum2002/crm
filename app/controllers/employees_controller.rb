@@ -13,6 +13,7 @@ class EmployeesController < ApplicationController
   # GET /employees/1
   # GET /employees/1.json
   def show
+    @company = Company.find(params[:company_id])
     @employee = Employee.find(params[:id])
 
     respond_to do |format|
@@ -24,6 +25,7 @@ class EmployeesController < ApplicationController
   # GET /employees/new
   # GET /employees/new.json
   def new
+    @company = Company.find(params[:company_id])
     @employee = Employee.new
 
     respond_to do |format|
@@ -34,17 +36,21 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1/edit
   def edit
+    @company = Company.find(params[:company_id])
     @employee = Employee.find(params[:id])
   end
 
   # POST /employees
   # POST /employees.json
   def create
+    @company = Company.find(params[:company_id])
     @employee = Employee.new(params[:employee])
+    @employee.company_id = @company.id
+    @employee.user = current_user
 
     respond_to do |format|
       if @employee.save
-        format.html { redirect_to @employee, notice: 'Employee was successfully created.' }
+        format.html { redirect_to company_path(params[:company_id]), notice: 'Employee was successfully created.' }
         format.json { render json: @employee, status: :created, location: @employee }
       else
         format.html { render action: "new" }

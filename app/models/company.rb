@@ -10,5 +10,5 @@ class Company < ActiveRecord::Base
   belongs_to :client_status
   belongs_to :organizational_form
 
-  has_many :employee
+  has_many :employee, :dependent => :destroy
 end

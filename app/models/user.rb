@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
 
   has_many :companies
+  has_many :employee
 
   def full_name
     "#{first_name} #{last_name}".strip

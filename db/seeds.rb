@@ -49,7 +49,7 @@ organizational_form = OrganizationalForm.create([
   ])
 
 employee = Employee.create([
-  { user_id: 1, first_name: "Ivan", last_name: "Pupkin", patronymic: "Vasilievici", gender: "male", language: "Russian",
+  { user_id: 1, first_name: "Ivan", last_name: "Pupkin", patronymic: "Vasilievici", gender: "male", language: "Russian", company_id: 1,
     decision: false, phone: 123456789, mobile: 123456789, simtravel: 123456789, email: "vasea@gmail.com", skype: "vasea" }
   ])
 

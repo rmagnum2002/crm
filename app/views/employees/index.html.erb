@@ -32,7 +32,7 @@
     <% @employees.each do |employee| %>
       <tr>
         <td><%= link_to employee.id, employee_path(employee) %></td>
-        <td><%= employee.user_id %></td>
+        <td><%= employee.user.full_name %></td>
         <td><%= employee.first_name %></td>
         <td><%= employee.last_name %></td>
         <td><%= employee.patronymic %></td>

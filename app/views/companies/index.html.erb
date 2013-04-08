@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h1>Companies</h1>
+  <h1><%= t(:"company.index.companies") %></h1>
 </div>
 <table class="table table-striped">
   <thead>
@@ -22,8 +22,8 @@
     <% @companies.each do |company| %>
       <tr>
         <td><%=l company.created_at, format: :short %></td>
-        <td><%= link_to company.id, company_path(company) %></td>
-        <td><%= company.name %></td>
+        <td><%= company.id %></td>
+        <td><%= link_to  company.name, company_path(company) %></td>
         <td><%= company.client_category.category if company.client_category_id? %></td>
         <td><%= company.client_type.client_type if company.client_type_id? %></td>
         <td><%= company.company_source.source if company.company_source_id? %></td>

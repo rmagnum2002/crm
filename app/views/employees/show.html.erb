@@ -44,11 +44,11 @@
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
-              employees_path, :class => 'btn'  %>
+              company_path(@company), :class => 'btn'  %>
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_employee_path(@employee), :class => 'btn' %>
+              edit_company_employee_path(@company, @employee), :class => 'btn' %>
   <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              employee_path(@employee),
+              company_employee_path(@company, @employee),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>

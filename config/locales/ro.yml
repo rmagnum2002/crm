@@ -17,6 +17,7 @@ ro:
       client_type: "Tipul Clientului"
       client_status: "Starea Clientului"
       organizational_form: "Forma Organizațională"
+      job_title: "Job Title"
     index:
       companies: "Companii"
       created_at: "Creat la data:"

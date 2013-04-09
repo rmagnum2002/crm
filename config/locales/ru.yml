@@ -17,6 +17,7 @@ ru:
       client_type: "Client Type"
       client_status: "Client Status"
       organizational_form: "Organizational Form"
+      job_title: "Job Title"
     index:
       created_at: "Created at"
       id: "ID"

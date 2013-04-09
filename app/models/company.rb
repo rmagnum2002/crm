@@ -9,6 +9,9 @@ class Company < ActiveRecord::Base
   belongs_to :client_type
   belongs_to :client_status
   belongs_to :organizational_form
+  has_many :addresses, :dependent => :destroy
+
+  accepts_nested_attributes_for :addresses, :allow_destroy => true
 
   has_many :employee, :dependent => :destroy
 end

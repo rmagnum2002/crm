@@ -110,6 +110,55 @@
       <%= f.number_field :fisc_id, :class => 'number_field' %>
     </div>
   </div>
+  <div class="control-group">
+    <%= f.fields_for :addresses do |address_fields| %>
+    <div class="controls">
+      Legal address:
+    </div>
+      <div class="control-group">
+        <%= f.label :country, :class => 'control-label' %>
+        <div class="controls">
+          <%= address_fields.text_field :country %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :city, :class => 'control-label' %>
+        <div class="controls">
+          <%= address_fields.text_field :city %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :postal_code, :class => 'control-label' %>
+        <div class="controls">
+          <%= address_fields.text_field :postal_code %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :street, :class => 'control-label' %>
+        <div class="controls">
+          <%= address_fields.text_field :street %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :street_number, :class => 'control-label' %>
+        <div class="controls">
+          <%= address_fields.text_field :street_number %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :bank_details, :class => 'control-label' %>
+        <div class="controls">
+          <%= address_fields.text_field :bank_details %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :fiscal_code, :class => 'control-label' %>
+        <div class="controls">
+          <%= address_fields.text_field :fiscal_code %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 <div class="span12">
   <div class="form-actions">

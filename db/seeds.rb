@@ -68,3 +68,9 @@ employee = Employee.create([
     email: "vasilisa@gmail.com", skype: "vasilisa", facebook: "vasilisa", client_date: Time.now, completion: "no" }
   ])
 
+address = Address.create([
+  { company_id: 1, address_type: "fiscal", country: "Moldova", city: "Chisinau", postal_code: "2020", street: "Dacia", street_number: "20",
+    bank_details: "123456789", fiscal_code: "987654321" },
+  { company_id: 1, address_type: "invoicing", country: "Moldova", city: "Chisinau", postal_code: "2001", street: "Stefan cel Mare", street_number: "200",
+    bank_details: nil, fiscal_code: nil }
+  ])

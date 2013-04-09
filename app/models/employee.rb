@@ -3,6 +3,7 @@ class Employee < ActiveRecord::Base
 
   belongs_to :company
   belongs_to :user
+  belongs_to :job_title
 
   def full_name
     "#{first_name} #{last_name} #{patronymic}".strip

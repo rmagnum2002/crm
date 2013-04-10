@@ -69,8 +69,8 @@ employee = Employee.create([
   ])
 
 address = Address.create([
-  { company_id: 1, address_type: "fiscal", country: "Moldova", city: "Chisinau", postal_code: "2020", street: "Dacia", street_number: "20",
-    bank_details: "123456789", fiscal_code: "987654321" },
-  { company_id: 1, address_type: "invoicing", country: "Moldova", city: "Chisinau", postal_code: "2001", street: "Stefan cel Mare", street_number: "200",
-    bank_details: nil, fiscal_code: nil }
+  { company_id: 1, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2020", street: "Dacia", street_number: "20" },
+  { company_id: 1, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2001", street: "Zelinski", street_number: "200" },
+  { company_id: 2, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 2, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
   ])

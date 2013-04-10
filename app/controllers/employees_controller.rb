@@ -1,4 +1,5 @@
 class EmployeesController < ApplicationController
+  before_filter :load_company
   # GET /employees
   # GET /employees.json
   def index
@@ -13,7 +14,6 @@ class EmployeesController < ApplicationController
   # GET /employees/1
   # GET /employees/1.json
   def show
-    @company = Company.find(params[:company_id])
     @employee = Employee.find(params[:id])
 
     respond_to do |format|
@@ -25,7 +25,6 @@ class EmployeesController < ApplicationController
   # GET /employees/new
   # GET /employees/new.json
   def new
-    @company = Company.find(params[:company_id])
     @employee = Employee.new
 
     respond_to do |format|
@@ -36,14 +35,12 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1/edit
   def edit
-    @company = Company.find(params[:company_id])
     @employee = Employee.find(params[:id])
   end
 
   # POST /employees
   # POST /employees.json
   def create
-    @company = Company.find(params[:company_id])
     @employee = Employee.new(params[:employee])
     @employee.company_id = @company.id
     @employee.user = current_user

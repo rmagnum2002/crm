@@ -112,42 +112,46 @@
   </div>
   <div class="control-group">
     <% @addresses.each.with_index do |address,index| %>
-    <%= f.fields_for :addresses, address do |address_field| %>
-    <div class="controls">
-      Legal address:
-      <%= address_field.hidden_field :address_type, value: index %>
-    </div>
-      <div class="control-group">
-        <%= f.label :country, :class => 'control-label' %>
+      <%= f.fields_for :addresses, address do |address_field| %>
         <div class="controls">
-          <%= address_field.text_field :country %>
+          <% if index == 0  %>
+            <div class="control-group">Legal address:</div>
+            <% else %>
+              <div class="control-group">Invoicing address:</div>
+          <% end %>
+          <%= address_field.hidden_field :address_type, value: index %>
         </div>
-      </div>
-      <div class="control-group">
-        <%= f.label :city, :class => 'control-label' %>
-        <div class="controls">
-          <%= address_field.text_field :city %>
+        <div class="control-group">
+          <%= f.label :country, :class => 'control-label' %>
+          <div class="controls">
+            <%= address_field.text_field :country %>
+          </div>
         </div>
-      </div>
-      <div class="control-group">
-        <%= f.label :postal_code, :class => 'control-label' %>
-        <div class="controls">
-          <%= address_field.text_field :postal_code %>
+        <div class="control-group">
+          <%= f.label :city, :class => 'control-label' %>
+          <div class="controls">
+            <%= address_field.text_field :city %>
+          </div>
         </div>
-      </div>
-      <div class="control-group">
-        <%= f.label :street, :class => 'control-label' %>
-        <div class="controls">
-          <%= address_field.text_field :street %>
+        <div class="control-group">
+          <%= f.label :postal_code, :class => 'control-label' %>
+          <div class="controls">
+            <%= address_field.text_field :postal_code %>
+          </div>
         </div>
-      </div>
-      <div class="control-group">
-        <%= f.label :street_number, :class => 'control-label' %>
-        <div class="controls">
-          <%= address_field.text_field :street_number %>
+        <div class="control-group">
+          <%= f.label :street, :class => 'control-label' %>
+          <div class="controls">
+            <%= address_field.text_field :street %>
+          </div>
         </div>
-      </div>
-    <% end %>
+        <div class="control-group">
+          <%= f.label :street_number, :class => 'control-label' %>
+          <div class="controls">
+            <%= address_field.text_field :street_number %>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>

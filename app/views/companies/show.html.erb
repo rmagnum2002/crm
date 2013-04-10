@@ -9,7 +9,7 @@
     <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
     <dd><%= @company.user.full_name %></dd>
     <dt><strong><%= model_class.human_attribute_name(:responsible_id) %>:</strong></dt>
-    <dd><%= @company.responsible_id %></dd>
+    <dd><%= responsible_name(@company.responsible_id) %></dd>
     <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
     <dd><%= @company.name %></dd>
     <dt><strong><%= model_class.human_attribute_name(:number_employees) %>:</strong></dt>
@@ -23,7 +23,7 @@
     <dt><strong><%= model_class.human_attribute_name(:client_type) %>:</strong></dt>
     <dd><%= @company.client_type.client_type if @company.client_type_id? %></dd>
     <dt><strong><%= model_class.human_attribute_name(:client_at) %>:</strong></dt>
-    <dd><%= @company.client_at %></dd>
+    <dd><%= l @company.client_at, format: :long %></dd>
     <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
     <dd><%= @company.phone %></dd>
     <dt><strong><%= model_class.human_attribute_name(:fax) %>:</strong></dt>

@@ -1,4 +1,4 @@
-<%= form_for :employee, url: company_employee_path(@company), :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @employee, url: company_employee_path(@company, @employee), :html => { :class => 'form-horizontal' } do |f| %>
   <div class="span4">
     <div class="control-group">
       <%= f.label :first_name, :class => 'control-label' %>

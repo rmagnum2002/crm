@@ -111,52 +111,43 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.fields_for :addresses do |address_fields| %>
+    <% @addresses.each.with_index do |address,index| %>
+    <%= f.fields_for :addresses, address do |address_field| %>
     <div class="controls">
       Legal address:
+      <%= address_field.hidden_field :address_type, value: index %>
     </div>
       <div class="control-group">
         <%= f.label :country, :class => 'control-label' %>
         <div class="controls">
-          <%= address_fields.text_field :country %>
+          <%= address_field.text_field :country %>
         </div>
       </div>
       <div class="control-group">
         <%= f.label :city, :class => 'control-label' %>
         <div class="controls">
-          <%= address_fields.text_field :city %>
+          <%= address_field.text_field :city %>
         </div>
       </div>
       <div class="control-group">
         <%= f.label :postal_code, :class => 'control-label' %>
         <div class="controls">
-          <%= address_fields.text_field :postal_code %>
+          <%= address_field.text_field :postal_code %>
         </div>
       </div>
       <div class="control-group">
         <%= f.label :street, :class => 'control-label' %>
         <div class="controls">
-          <%= address_fields.text_field :street %>
+          <%= address_field.text_field :street %>
         </div>
       </div>
       <div class="control-group">
         <%= f.label :street_number, :class => 'control-label' %>
         <div class="controls">
-          <%= address_fields.text_field :street_number %>
+          <%= address_field.text_field :street_number %>
         </div>
       </div>
-      <div class="control-group">
-        <%= f.label :bank_details, :class => 'control-label' %>
-        <div class="controls">
-          <%= address_fields.text_field :bank_details %>
-        </div>
-      </div>
-      <div class="control-group">
-        <%= f.label :fiscal_code, :class => 'control-label' %>
-        <div class="controls">
-          <%= address_fields.text_field :fiscal_code %>
-        </div>
-      </div>
+    <% end %>
     <% end %>
   </div>
 </div>

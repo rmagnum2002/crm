@@ -43,6 +43,44 @@
   </dl>
 </div>
 <div class="span4">
+  <h4>Address</h4>
+  <div class="span2">
+    <h4>Legal Address</h4>
+    <dl class="dl-horizontal">
+      <% @company.addresses.each do |f| %>
+        <% if f.address_type == false %>
+          <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
+          <dd><%= f.country %></dd>
+          <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+          <dd><%= f.city %></dd>
+          <dt><strong><%= model_class.human_attribute_name(:postal_code) %>:</strong></dt>
+          <dd><%= f.postal_code %></dd>
+          <dt><strong><%= model_class.human_attribute_name(:street) %>:</strong></dt>
+          <dd><%= f.street %></dd>
+          <dt><strong><%= model_class.human_attribute_name(:street_number) %>:</strong></dt>
+          <dd><%= f.street_number %></dd>
+    </dl>
+  </div>
+  <div class="span2">
+    <h4>Invoicing Address</h4>
+    <dl class="dl-horizontal">
+          <% else %>
+            <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
+            <dd><%= f.country %></dd>
+            <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
+            <dd><%= f.city %></dd>
+            <dt><strong><%= model_class.human_attribute_name(:postal_code) %>:</strong></dt>
+            <dd><%= f.postal_code %></dd>
+            <dt><strong><%= model_class.human_attribute_name(:street) %>:</strong></dt>
+            <dd><%= f.street %></dd>
+            <dt><strong><%= model_class.human_attribute_name(:street_number) %>:</strong></dt>
+            <dd><%= f.street_number %></dd>
+        <% end %>
+      <% end %>
+    </dl>
+  </div>
+</div>
+  <div class="span4">
   <h4>Employees</h4>
   <table class="table table-striped">
     <thead>

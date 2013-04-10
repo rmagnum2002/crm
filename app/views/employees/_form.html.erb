@@ -1,4 +1,4 @@
-<%= form_for @employee, url: company_employee_path(@company, @employee), :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for ([@company,@employee]), :html => { :class => 'form-horizontal' } do |f| %>
   <div class="span4">
     <div class="control-group">
       <%= f.label :first_name, :class => 'control-label' %>
@@ -103,7 +103,7 @@
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-      company_employees_path(@company), :class => 'btn' %>
+      company_path(@company), :class => 'btn' %>
     </div>
   <% end %>
 </div>

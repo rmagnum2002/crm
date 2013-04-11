@@ -22,8 +22,11 @@ class ApplicationController < ActionController::Base
 
   # filter
   def load_company
-    @company = Company.find(params[:id].presence || params[:company_id].presence)
-    @project ||= Company.find_by_id(params[:company_id] || params[:id])
+    if params[:company_id].presence
+      @company = Company.find(params[:company_id])
+    else
+      @company = Company.find(params[:id])
+    end
 
     if @company.nil?
       raise ActiveRecord::RecordNotFound

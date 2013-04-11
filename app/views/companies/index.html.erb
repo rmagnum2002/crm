@@ -31,7 +31,7 @@
         <td><%= company.phone %></td>
         <td><%= company.fax %></td>
         <td><%= company.email %></td>
-        <td><%= company.responsible_id %></td>
+        <td><%= responsible_name(company.responsible_id) %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_company_path(company), :class => 'btn btn-mini' %>

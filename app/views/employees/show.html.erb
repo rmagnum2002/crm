@@ -15,11 +15,11 @@
   <dt><strong><%= model_class.human_attribute_name(:patronymic) %>:</strong></dt>
   <dd><%= @employee.patronymic %></dd>
   <dt><strong><%= model_class.human_attribute_name(:gender) %>:</strong></dt>
-  <dd><%= @employee.gender %></dd>
+  <dd><%= Employee::GENDER[@employee.gender] %></dd>
   <dt><strong><%= model_class.human_attribute_name(:birthday) %>:</strong></dt>
   <dd><%= l @employee.birthday, format: :long %></dd>
   <dt><strong><%= model_class.human_attribute_name(:language) %>:</strong></dt>
-  <dd><%= @employee.language %></dd>
+  <dd><%= Employee::LANGUAGE[@employee.language] %></dd>
   <dt><strong><%= model_class.human_attribute_name(:company_id) %>:</strong></dt>
   <dd><%= @employee.company.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:job_title_id) %>:</strong></dt>

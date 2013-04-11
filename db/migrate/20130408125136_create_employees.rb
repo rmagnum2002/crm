@@ -5,9 +5,9 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.string :patronymic
-      t.string :gender
+      t.integer :gender
       t.date :birthday
-      t.string :language
+      t.integer :language
       t.integer :company_id
       t.integer :job_title_id
       t.boolean :decision

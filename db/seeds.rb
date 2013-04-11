@@ -60,17 +60,17 @@ job_title = JobTitle.create([
   ])
 
 employee = Employee.create([
-  { user_id: 1, first_name: "Ivan", last_name: "Pupkin", patronymic: "Vasilievici", gender: "male", birthday: Time.now.years_ago(30),
-    language: "Russian", company_id: 1, job_title_id: 1, decision: false, phone: 123456789, mobile: 123456789, simtravel: 123456789,
-    email: "vasea@gmail.com", skype: "vasea", facebook: "vasea", client_date: Time.now, completion: "no" },
-  { user_id: 2, first_name: "Vasilisa", last_name: "Prekrasnaea", patronymic: "Vasilievna", gender: "female", birthday: Time.now.years_ago(20),
-    language: "Russian", company_id: 2,job_title_id: 1, decision: false, phone: 987654321, mobile: 987654321, simtravel: 987654321,
-    email: "vasilisa@gmail.com", skype: "vasilisa", facebook: "vasilisa", client_date: Time.now, completion: "no" }
+  { user_id: 1, first_name: "Ivan", last_name: "Pupkin", patronymic: "Vasilievici", gender: 0, birthday: Time.now.years_ago(30),
+    language: 0, company_id: 1, job_title_id: 1, decision: false, phone: 123456789, mobile: 123456789, simtravel: 123456789,
+    email: "ivan@gmail.com", skype: "ivan", facebook: "ivan", client_date: Time.now, completion: "no" },
+  { user_id: 2, first_name: "Ana", last_name: "Tinkova", patronymic: "Vasilievna", gender: 1, birthday: Time.now.years_ago(20),
+    language: 1, company_id: 2, job_title_id: 1, decision: false, phone: 987654321, mobile: 987654321, simtravel: 987654321,
+    email: "ana@gmail.com", skype: "ana", facebook: "ana", client_date: Time.now, completion: "no" }
   ])
 
 address = Address.create([
   { company_id: 1, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2020", street: "Dacia", street_number: "20" },
   { company_id: 1, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2001", street: "Zelinski", street_number: "200" },
   { company_id: 2, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 2, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 2, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" }
   ])

@@ -13,18 +13,6 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :organizational_form_id, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.collection_select :organizational_form_id, OrganizationalForm.find(:all), :id, :organizational_form, :prompt => t(:"company.form.organizational_form"), class: 'select_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :number_employees, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :number_employees, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
     <%= f.label :company_branch_id, :class => 'control-label' %>
     <div class="controls">
       <%= f.collection_select :company_branch_id, CompanyBranch.find(:all), :id, :name, :prompt => t(:"company.form.branch"), class: 'select_field' %>
@@ -46,6 +34,18 @@
     <%= f.label :client_type_id, :class => 'control-label' %>
     <div class="controls">
       <%= f.collection_select :client_type_id, ClientType.find(:all), :id, :client_type, :prompt => t(:"company.form.client_type"), class: 'select_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :organizational_form_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :organizational_form_id, OrganizationalForm.find(:all), :id, :organizational_form, :prompt => t(:"company.form.organizational_form"), class: 'select_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :number_employees, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :number_employees, :class => 'text_field' %>
     </div>
   </div>
   <div class="control-group">

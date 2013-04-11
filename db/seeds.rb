@@ -60,16 +60,16 @@ job_title = JobTitle.create([
   ])
 
 employee = Employee.create([
-  { user_id: 1, first_name: "Ivan", last_name: "Pupkin", patronymic: "Vasilievici", gender: 0, birthday: Time.now.years_ago(30),
+  { user_id: 1, title: 1, first_name: "Ivan", last_name: "Pupkin", patronymic: "Vasilievici", gender: 0, birthday: Time.now.years_ago(30),
     language: 0, company_id: 1, job_title_id: 1, decision: false, phone: 123456789, mobile: 123456789, simtravel: 123456789,
     email: "ivan@gmail.com", skype: "ivan", facebook: "ivan", client_date: Time.now, completion: "no" },
-  { user_id: 2, first_name: "Ana", last_name: "Tinkova", patronymic: "Vasilievna", gender: 1, birthday: Time.now.years_ago(20),
+  { user_id: 2, title: 0, first_name: "Ana", last_name: "Tinkova", patronymic: "Vasilievna", gender: 1, birthday: Time.now.years_ago(20),
     language: 1, company_id: 1, job_title_id: 1, decision: false, phone: 987654321, mobile: 987654321, simtravel: 987654321,
     email: "ana@gmail.com", skype: "ana", facebook: "ana", client_date: Time.now, completion: "no" },
-  { user_id: 2, first_name: "John", last_name: "Mitch", patronymic: "Michael", gender: 0, birthday: Time.now.years_ago(40),
+  { user_id: 2, title: 1, first_name: "John", last_name: "Mitch", patronymic: "Michael", gender: 0, birthday: Time.now.years_ago(40),
     language: 2, company_id: 1, job_title_id: 2, decision: false, phone: 987654321, mobile: 987654321, simtravel: 987654321,
     email: "john@gmail.com", skype: "john", facebook: "john", client_date: Time.now, completion: "no" },
-  { user_id: 2, first_name: "Jim", last_name: "Carrey", patronymic: "Simon", gender: 0, birthday: Time.now.years_ago(45),
+  { user_id: 2, title: 1, first_name: "Jim", last_name: "Carrey", patronymic: "Simon", gender: 0, birthday: Time.now.years_ago(45),
     language: 2, company_id: 1, job_title_id: 1, decision: false, phone: 987654321, mobile: 987654321, simtravel: 987654321,
     email: "jim@gmail.com", skype: "jim", facebook: "jim", client_date: Time.now, completion: "no" }
   ])

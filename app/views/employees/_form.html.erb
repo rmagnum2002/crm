@@ -21,7 +21,7 @@
     <div class="control-group">
       <%= f.label :gender, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :gender, :class => 'text_field' %>
+        <%= f.select :gender, Employee::GENDER.invert.map{|t| t }, :include_blank => "Select gender" %>
       </div>
     </div>
     <div class="control-group">
@@ -33,13 +33,13 @@
     <div class="control-group">
       <%= f.label :language, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :language, :class => 'text_field' %>
+        <%= f.select :language, Employee::LANGUAGE.invert.map{|t| t }, :include_blank => "Select language" %>
       </div>
     </div>
     <div class="control-group">
       <%= f.label :job_title_id, :class => 'control-label' %>
       <div class="controls">
-        <%= f.collection_select :job_title_id, JobTitle.find(:all), :id, :job_title, :class => 'number_field' %>
+        <%= f.collection_select :job_title_id, JobTitle.find(:all), :id, :job_title, :include_blank => "Select job" %>
       </div>
     </div>
     <div class="control-group">

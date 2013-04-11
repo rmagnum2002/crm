@@ -5,6 +5,10 @@ class Employee < ActiveRecord::Base
   belongs_to :user
   belongs_to :job_title
 
+  LANGUAGE = { 0 => "russian", 1 => "romanian", 2 => "english" }
+
+  GENDER = { 0 => "male", 1 => "female" }
+
   def full_name
     "#{first_name} #{last_name} #{patronymic}".strip
   end

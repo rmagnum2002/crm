@@ -19,7 +19,7 @@ en:
       organizational_form: "Organizational Form"
       job_title: "Job Title"
     index:
-      companies: "Companii"
+      companies: "Companies"
       created_at: "Created at"
       id: "ID"
       name: "Company Name"
@@ -33,3 +33,5 @@ en:
       bank_req: "Bank requisits"
       fisc_id: "Fiscal Code"
       responsible_id: "Responsible"
+    show:
+      added_by: "Added by"

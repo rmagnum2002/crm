@@ -41,14 +41,12 @@
         </div>
       </div>
     </div>
-    <div class="site-container">
+    <div class="container site_container">
       <div class="row-fluid">
         <div class="span3 offset1 pull-right">
           <%= raw(lang_links) %>
         </div>
-      </div>
-      <div class="row">
-        <div class="span12 offset1 content"><%= yield %></div>
+        <%= yield %>
       </div>
     </div>
 

@@ -47,6 +47,7 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       if @company.save
+        track_activity @company
         format.html { redirect_to @company, notice: 'Company was successfully created.' }
         format.json { render json: @company, status: :created, location: @company }
       else
@@ -61,6 +62,7 @@ class CompaniesController < ApplicationController
   def update
     respond_to do |format|
       if @company.update_attributes(params[:company])
+        track_activity @company
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
         format.json { head :no_content }
       else
@@ -68,6 +70,18 @@ class CompaniesController < ApplicationController
         format.json { render json: @company.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def show_contacts
+  end
+
+  def show_address
+  end
+
+  def comments
+  end
+
+  def sales
   end
 
   # DELETE /companies/1

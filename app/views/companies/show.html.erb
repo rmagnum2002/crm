@@ -1,113 +1,62 @@
 <%- model_class = Company -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+<div class="row-fluid">
+  <div class="page-header">
+    <h1><%=t '.title', :default => model_class.model_name.human %> - <%= @company.name %></h1>
+  </div>
+
+  <div class="span6">
+    <h4>Company profile</h4>
+    <dl class="dl-horizontal">
+      <dt><strong><%= t(:"company.show.added_by") %>:</strong></dt>
+      <dd><%= link_to @company.user.full_name, profile_path(@company.user) %></dd>
+      <dt><strong><%= t(:"company.show.responsible") %>:</strong></dt>
+      <dd><%= responsible_name(@company.responsible_id) %></dd>
+      <dt><strong><%= t(:"company.show.number_employees") %>:</strong></dt>
+      <dd><%= @company.number_employees %></dd>
+      <dt><strong><%= t(:"company.show.company_branch") %>:</strong></dt>
+      <dd><%= @company.company_branch.name if @company.company_branch_id? %></dd>
+      <dt><strong><%= t(:"company.show.company_source") %>:</strong></dt>
+      <dd><%= @company.company_source.source if @company.company_source_id? %></dd>
+      <dt><strong><%= t(:"company.show.client_category") %>:</strong></dt>
+      <dd><%= @company.client_category.category if @company.client_category_id? %></dd>
+      <dt><strong><%= t(:"company.show.client_type") %>:</strong></dt>
+      <dd><%= @company.client_type.client_type if @company.client_type_id? %></dd>
+      <dt><strong><%= t(:"company.show.client_at") %>:</strong></dt>
+      <dd><%= l @company.client_at, format: :long %></dd>
+      <dt><strong><%= t(:"company.show.phone") %>:</strong></dt>
+      <dd><%= @company.phone %></dd>
+      <dt><strong><%= t(:"company.show.fax") %>:</strong></dt>
+      <dd><%= @company.fax %></dd>
+      <dt><strong><%= t(:"company.show.email") %>:</strong></dt>
+      <dd><%= @company.email %></dd>
+      <dt><strong><%= t(:"company.show.skype") %>:</strong></dt>
+      <dd><%= @company.skype %></dd>
+      <dt><strong><%= t(:"company.show.website") %>:</strong></dt>
+      <dd><%= @company.website %></dd>
+      <dt><strong><%= t(:"company.show.facebook") %>:</strong></dt>
+      <dd><%= @company.facebook %></dd>
+      <dt><strong><%= t(:"company.show.bank_req") %>:</strong></dt>
+      <dd><%= @company.bank_req %></dd>
+      <dt><strong><%= t(:"company.show.fisc_id") %>:</strong></dt>
+      <dd><%= @company.fisc_id %></dd>
+    </dl>
+  </div>
+
+  <div class="span4">
+    <h4>
+      <%= link_to 'Address', show_address_company_path, remote: true %> |
+      <%= link_to 'Contacts', show_contacts_company_path, remote: true %> |
+      <%= link_to 'Comments', comments_company_path, remote: true %> |
+      <%= link_to 'Sales', sales_company_path, remote: true %>
+    </h4>
+    <div class="right_side">
+      <%= render 'address' %>
+    </div>
+  </div>
 </div>
 
-<div class="span6">
-  <h4>Company profile</h4>
-  <dl class="dl-horizontal">
-    <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-    <dd><%= @company.user.full_name %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:responsible_id) %>:</strong></dt>
-    <dd><%= responsible_name(@company.responsible_id) %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-    <dd><%= @company.name %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:number_employees) %>:</strong></dt>
-    <dd><%= @company.number_employees %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:company_branch_id) %>:</strong></dt>
-    <dd><%= @company.company_branch.name if @company.company_branch_id? %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:company_source_id) %>:</strong></dt>
-    <dd><%= @company.company_source.source if @company.company_source_id? %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:client_cat) %>:</strong></dt>
-    <dd><%= @company.client_category.category if @company.client_category_id? %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:client_type) %>:</strong></dt>
-    <dd><%= @company.client_type.client_type if @company.client_type_id? %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:client_at) %>:</strong></dt>
-    <dd><%= l @company.client_at, format: :long %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
-    <dd><%= @company.phone %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:fax) %>:</strong></dt>
-    <dd><%= @company.fax %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
-    <dd><%= @company.email %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:skype) %>:</strong></dt>
-    <dd><%= @company.skype %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:website) %>:</strong></dt>
-    <dd><%= @company.website %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:facebook) %>:</strong></dt>
-    <dd><%= @company.facebook %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:bank_req) %>:</strong></dt>
-    <dd><%= @company.bank_req %></dd>
-    <dt><strong><%= model_class.human_attribute_name(:fisc_id) %>:</strong></dt>
-    <dd><%= @company.fisc_id %></dd>
-  </dl>
-</div>
-<div class="span4">
-  <h4>Address</h4>
-  <div class="span2">
-    <h4>Legal Address</h4>
-    <dl class="dl-horizontal">
-      <% @company.addresses.each do |f| %>
-      <% if f.address_type == false %>
-      <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
-      <dd><%= f.country %></dd>
-      <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
-      <dd><%= f.city %></dd>
-      <dt><strong><%= model_class.human_attribute_name(:postal_code) %>:</strong></dt>
-      <dd><%= f.postal_code %></dd>
-      <dt><strong><%= model_class.human_attribute_name(:street) %>:</strong></dt>
-      <dd><%= f.street %></dd>
-      <dt><strong><%= model_class.human_attribute_name(:street_number) %>:</strong></dt>
-      <dd><%= f.street_number %></dd>
-    </dl>
-  </div>
-  <div class="span2">
-    <h4>Invoicing Address</h4>
-    <dl class="dl-horizontal">
-      <% else %>
-      <dt><strong><%= model_class.human_attribute_name(:country) %>:</strong></dt>
-      <dd><%= f.country %></dd>
-      <dt><strong><%= model_class.human_attribute_name(:city) %>:</strong></dt>
-      <dd><%= f.city %></dd>
-      <dt><strong><%= model_class.human_attribute_name(:postal_code) %>:</strong></dt>
-      <dd><%= f.postal_code %></dd>
-      <dt><strong><%= model_class.human_attribute_name(:street) %>:</strong></dt>
-      <dd><%= f.street %></dd>
-      <dt><strong><%= model_class.human_attribute_name(:street_number) %>:</strong></dt>
-      <dd><%= f.street_number %></dd>
-      <% end %>
-      <% end %>
-    </dl>
-  </div>
-</div>
 
 <div class="row-fluid">
-  <div class="span12">
-    <h4>Employees</h4>
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Phone</th>
-          <th>Takes Decision</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% for employee in @company.employee %>
-        <tr>
-          <td><%= link_to employee.full_name, company_employee_path(@company, employee) %></td>
-          <td><%= employee.phone %></td>
-          <td><%= employee.decision? ? 'Yes' : 'No' %></td>
-          <td><%= link_to 'Edit', edit_company_employee_path(@company, employee) %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<div class="span12">
   <div class="form-actions">
     <%= link_to t('.back', :default => t("helpers.links.back")),
     companies_path, :class => 'btn'  %>

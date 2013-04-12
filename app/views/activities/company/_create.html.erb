@@ -1,0 +1,6 @@
+<% if company %>
+added a new company <%= link_to company.name, company %>
+at <%= l activity.created_at, format: :short %>
+<% else %>
+added a company wich has since been removed
+<% end %>

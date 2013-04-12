@@ -79,6 +79,9 @@ class CompaniesController < ApplicationController
   end
 
   def comments
+    @commentable = @company
+    @comments = @commentable.comments
+    @comment = Comment.new
   end
 
   def sales

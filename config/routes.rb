@@ -15,6 +15,7 @@ CrmMd::Application.routes.draw do
     end
     resources :employees
     resources :addresses
+    resources :comments
   end
 
   get "welcome/index"

@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :companies
   has_many :employee
   has_many :activities
+  has_many :comments
 
   def full_name
     "#{first_name} #{last_name}".strip

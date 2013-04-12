@@ -1,1 +1,9 @@
 <h4>Comments</h4>
+<%= render partial: 'comments/form' %>
+<% @comments.each_with_index do |comment, index| %>
+  <hr>
+  <div><%= index + 1 %></div>
+  <div><%= comment.content %></div>
+  <div><%= link_to comment.user.full_name, profile_path(comment.user) %></div>
+  <div><%= Comment::RESULT[comment.result_id] %></div>
+<% end %>

@@ -6,9 +6,9 @@ class Employee < ActiveRecord::Base
   belongs_to :user
   belongs_to :job_title
 
-  LANGUAGE = { 0 => "russian", 1 => "romanian", 2 => "english" }
+  LANGUAGE = { 0 => "Romanian", 1 => "Russian", 2 => "English" }
 
-  GENDER = { 0 => "male", 1 => "female" }
+  GENDER = { 0 => "Male", 1 => "Female" }
 
   TITLE = {0 => "Doamna", 1 => "Domnul", 2 => "Domnisoara"}
 

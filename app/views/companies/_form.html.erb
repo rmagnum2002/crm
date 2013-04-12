@@ -9,7 +9,7 @@
   <div class="control-group">
     <%= f.label :name, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
+      <%= f.text_field :name, :class => 'text_field', placeholder: "Company Name" %>
     </div>
   </div>
   <div class="control-group">
@@ -45,7 +45,7 @@
   <div class="control-group">
     <%= f.label :number_employees, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :number_employees, :class => 'text_field' %>
+      <%= f.text_field :number_employees, :class => 'text_field', placeholder: "Number of employees" %>
     </div>
   </div>
   <div class="control-group">
@@ -57,7 +57,7 @@
   <div class="control-group">
     <%= f.label :client_at, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :client_at, :class => 'date_select' %>
+      <%= f.text_field :client_at, :class => 'date_select', placeholder: "Client from (date)" %>
     </div>
   </div>
 </div>
@@ -65,96 +65,104 @@
   <div class="control-group">
     <%= f.label :phone, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :phone, :class => 'text_field' %>
+      <%= f.text_field :phone, :class => 'text_field', placeholder: "Phone" %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :fax, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :fax, :class => 'text_field' %>
+      <%= f.text_field :fax, :class => 'text_field', placeholder: "Fax" %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :email, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :email, :class => 'text_field' %>
+      <%= f.text_field :email, :class => 'text_field', placeholder: "Email" %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :skype, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :skype, :class => 'text_field' %>
+      <%= f.text_field :skype, :class => 'text_field', placeholder: "Skype" %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :website, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :website, :class => 'text_field' %>
+      <%= f.text_field :website, :class => 'text_field', placeholder: "Website" %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :facebook, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :facebook, :class => 'text_field' %>
+      <%= f.text_field :facebook, :class => 'text_field', placeholder: "Facebook" %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :bank_req, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :bank_req, :class => 'text_field' %>
+      <%= f.text_field :bank_req, :class => 'text_field', placeholder: "Bank Requisites" %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :fisc_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :fisc_id, :class => 'number_field' %>
+      <%= f.number_field :fisc_id, :class => 'number_field', placeholder: "Tax Code" %>
     </div>
   </div>
-  <div class="control-group">
-    <% @addresses.each.with_index do |address,index| %>
-      <%= f.fields_for :addresses, address do |address_field| %>
+</div>
+<div class="row">
+  <div class="span12">
+    <hr>
+    <div class="control-group">
+      <% @addresses.each.with_index do |address,index| %>
+      <div class="span4">
+        <%= f.fields_for :addresses, address do |address_field| %>
         <div class="controls">
           <% if index == 0  %>
-            <div class="control-group">Legal address:</div>
-            <% else %>
-              <div class="control-group">Invoicing address:</div>
+          <div class="control-group">Legal address:</div>
+          <% else %>
+          <div class="control-group">Invoicing address:</div>
           <% end %>
           <%= address_field.hidden_field :address_type, value: index %>
         </div>
         <div class="control-group">
           <%= f.label :country, :class => 'control-label' %>
           <div class="controls">
-            <%= address_field.text_field :country %>
+            <%= address_field.text_field :country, placeholder: "Country" %>
           </div>
         </div>
         <div class="control-group">
           <%= f.label :city, :class => 'control-label' %>
           <div class="controls">
-            <%= address_field.text_field :city %>
+            <%= address_field.text_field :city, placeholder: "City" %>
           </div>
         </div>
         <div class="control-group">
           <%= f.label :postal_code, :class => 'control-label' %>
           <div class="controls">
-            <%= address_field.text_field :postal_code %>
+            <%= address_field.text_field :postal_code, placeholder: "Postal Code" %>
           </div>
         </div>
         <div class="control-group">
           <%= f.label :street, :class => 'control-label' %>
           <div class="controls">
-            <%= address_field.text_field :street %>
+            <%= address_field.text_field :street, placeholder: "Street name" %>
           </div>
         </div>
         <div class="control-group">
           <%= f.label :street_number, :class => 'control-label' %>
           <div class="controls">
-            <%= address_field.text_field :street_number %>
+            <%= address_field.text_field :street_number, placeholder: "Street number" %>
           </div>
         </div>
+        <% end %>
+      </div>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>
+
 <div class="span12">
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>

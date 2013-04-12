@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="span12">
+    <div class="span4">
+      <h4>User Profile</h4>
+      <div><%= @user.full_name %></div>
+      <div><%= mail_to @user.email %></div>
+    </div>
+    <div class="span4">
+      <h4>Responsible for <%= @responsible.count %> companies</h4>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Nr of employees</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @responsible.each do |company| %>
+            <tr>
+              <td><%= link_to company.name, company %></td>
+              <td><%= company.number_employees %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

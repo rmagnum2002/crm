@@ -1,5 +1,9 @@
 CrmMd::Application.routes.draw do
 
+  get "profiles", to: 'profile#index', as: :profiles
+
+  match "profile/:id", to: "profile#show", as: 'profile'
+
   resources :companies do
     resources :employees
   end

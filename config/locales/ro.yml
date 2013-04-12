@@ -6,7 +6,7 @@ ro:
     main: "Principala"
     companies: "Companii"
     contacts: "Contacte"
-    user: "Utilizator"
+    user: "Utilizatori"
 
   company:
     form:

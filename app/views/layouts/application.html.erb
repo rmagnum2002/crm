@@ -25,7 +25,7 @@
               <li><%= link_to t(:"menu.main"), root_path %></li>
               <li><%= link_to t(:"menu.companies"), companies_path %></li>
               <li><%= link_to t(:"menu.contacts"), root_path %></li>
-              <li><%= link_to t(:"menu.user"), root_path %></li>
+              <li><%= link_to t(:"menu.user"), profiles_path %></li>
             </ul>
           </div>
           <div class="login pull-right">
@@ -42,7 +42,7 @@
       </div>
     </div>
     <div class="site-container">
-      <div class="row">
+      <div class="row-fluid">
         <div class="span3 offset1 pull-right">
           <%= raw(lang_links) %>
         </div>

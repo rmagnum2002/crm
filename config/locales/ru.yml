@@ -6,7 +6,7 @@ ru:
     main: "Main"
     companies: "Companies"
     contacts: "Contacts"
-    user: "User"
+    user: "Users"
 
   company:
     form:

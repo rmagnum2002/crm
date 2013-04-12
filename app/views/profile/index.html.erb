@@ -1,0 +1,18 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Companies added</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= link_to user.full_name, profile_path(user) %></td>
+      <td><%= user.email %></td>
+      <td><%= user.companies.count %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

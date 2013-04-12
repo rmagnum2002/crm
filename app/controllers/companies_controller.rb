@@ -80,7 +80,7 @@ class CompaniesController < ApplicationController
 
   def comments
     @commentable = @company
-    @comments = @commentable.comments
+    @comments = @commentable.comments.order('created_at desc')
     @comment = Comment.new
   end
 

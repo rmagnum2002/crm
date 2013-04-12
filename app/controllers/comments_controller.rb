@@ -19,6 +19,16 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+
+    respond_to do |format|
+      format.html { redirect_to company_path(@commentable) }
+      format.json { head :no_content }
+    end
+  end
+
 private
 
   def load_commentable

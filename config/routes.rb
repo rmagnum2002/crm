@@ -1,11 +1,20 @@
 CrmMd::Application.routes.draw do
 
+  resources :activities
+
   get "profiles", to: 'profile#index', as: :profiles
 
   match "profile/:id", to: "profile#show", as: 'profile'
 
   resources :companies do
+    member do
+      get 'show_contacts'
+      get 'show_address'
+      get 'comments'
+      get 'sales'
+    end
     resources :employees
+    resources :addresses
   end
 
   get "welcome/index"
@@ -62,7 +71,7 @@ CrmMd::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'welcome#index'
+  root :to => 'activities#index'
 
   # See how all your routes lay out with "rake routes"
 

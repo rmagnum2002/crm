@@ -19,7 +19,6 @@ class ApplicationController < ActionController::Base
     true
   end
 
-
   # filter
   def load_company
     if params[:company_id].presence
@@ -33,6 +32,10 @@ class ApplicationController < ActionController::Base
     end
 
     true
+  end
+
+  def track_activity(trackable, action = params[:action])
+    current_user.activities.create! action: action, trackable: trackable
   end
 
   helper_method :current_language

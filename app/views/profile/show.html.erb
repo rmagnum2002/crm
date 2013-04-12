@@ -4,8 +4,10 @@
       <h4>User Profile</h4>
       <div><%= @user.full_name %></div>
       <div><%= mail_to @user.email %></div>
+      <hr>
+      <div>Added <%= @user.companies.count %> companies</div>
     </div>
-    <div class="span4">
+    <div class="span6">
       <h4>Responsible for <%= @responsible.count %> companies</h4>
       <table class="table table-striped">
         <thead>

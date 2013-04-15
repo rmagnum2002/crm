@@ -1,6 +1,6 @@
 <h4>Address</h4>
 <% @company.addresses.each do |addresss| %>
-<dl class="dl-horizontal">
+<dl class="dl-horizontal pull-right">
   <h4 class="offset1">
     <%= addresss.address_type.present? ? 'Invoicing' : 'Legal' %>
   </h4>

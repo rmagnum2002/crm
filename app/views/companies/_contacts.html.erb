@@ -1,6 +1,6 @@
 <h4>Contacts</h4>
 <% for employee in @company.employee %>
-  <div class="span6">
+  <div class="span4 pull-right">
     <%= link_to employee.full_name, company_employee_path(@company, employee) %>
     <%= link_to "<i class='icon-edit'></i>".html_safe, edit_company_employee_path(@company, employee) %>
     <br>

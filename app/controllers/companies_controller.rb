@@ -73,6 +73,12 @@ class CompaniesController < ApplicationController
   end
 
   def show_contacts
+    @company = Company.find(params[:id])
+
+    respond_to do |format|
+      format.html { redirect_to @company }
+      format.js
+    end
   end
 
   def show_address
@@ -80,7 +86,7 @@ class CompaniesController < ApplicationController
 
   def comments
     @commentable = @company
-    @comments = @commentable.comments
+    @comments = @commentable.comments.order('created_at desc')
     @comment = Comment.new
   end
 

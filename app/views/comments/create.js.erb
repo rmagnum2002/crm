@@ -1,0 +1,10 @@
+<% if @comment.valid? %>
+  /* Replace the count of comments */
+  //  $("#comments_count").html("<%# pluralize(@commentable.comments.count, 'Comment') %>");
+  /* Add the new comment to the bottom of the comments list */
+  $(".comments").prepend("<%= j(render(@comment)) %>");
+  /* Reset the comment form */
+  $(".new_comment")[0].reset();
+<% else %>
+  alert('Something Went Wrong');
+<% end %>

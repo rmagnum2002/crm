@@ -73,6 +73,12 @@ class CompaniesController < ApplicationController
   end
 
   def show_contacts
+    @company = Company.find(params[:id])
+
+    respond_to do |format|
+      format.html { redirect_to @company }
+      format.js
+    end
   end
 
   def show_address

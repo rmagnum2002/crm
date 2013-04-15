@@ -20,9 +20,30 @@
     <%= f.select :result_id, Comment::RESULT.invert.map{|t| t }, :include_blank => "Select result" %>
   </div>
   <div class="control-group">
-    <%= f.datetime_select :result_date %>
+    <%= f.text_field :result_date, placeholder: 'Date', class: 'date_select' %> <%= f.text_field :result_time, placeholder: 'Time' %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+(function() {
+  jQuery(function() {
+    return $('#comment_result_date').datepicker({
+      dateFormat: 'yy-mm-dd',
+      <% if @locale == 'ro' %>
+        monthNames: ['Ianuarie','Februarie','Martie','Aprilie','Mai','Iunie', 'Iulie','August','Septembrie','Octombrie','Noiembrie','Decembrie'],
+        dayNames: ['Dum', 'Luni', 'Mar', 'Mier', 'Joi', 'Vin', 'Sâmb'],
+        firstDay: 1
+      <% elsif @locale == 'ru' %>
+        monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+        dayNames: ['Dum', 'Luni', 'Mar', 'Mier', 'Joi', 'Vin', 'Sâmb'],
+        firstDay: 1
+      <% end %>
+    });
+  });
+
+}).call(this);
+
+</script>

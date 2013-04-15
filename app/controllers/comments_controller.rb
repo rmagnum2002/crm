@@ -13,7 +13,10 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new(params[:comment])
     @comment.user_id = current_user.id
     if @comment.save
-      redirect_to @commentable, notice: "Comment created."
+      respond_to do |format|
+        # format.html { redirect_to :back }
+        format.js
+      end
     else
       render :new
     end

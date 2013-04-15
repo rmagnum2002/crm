@@ -2,9 +2,17 @@
   <hr>
   <div><%= comment.content %></div>
   <div><%= link_to comment.user.full_name, profile_path(comment.user) %></div>
-  <div><%= Comment::RESULT[comment.result_id] %></div>
   <div>
-    <%= link_to 'Destroy', company_comment_path(@company, comment), method: :delete,
+    <%= Comment::RESULT[comment.result_id] %>
+    <% if comment.result_date.present? %>
+      | <%= l comment.result_date, format: :long %>
+    <% end %>
+    <% if comment.result_time.present? %>
+      | <%= comment.result_time %>
+    <% end %>
+  </div>
+  <div>
+    <%#= link_to 'Destroy', company_comment_path(@commentable, comment), method: :delete,
                       data: { confirm: 'Delete comment?' }, remote: true if comment.user == current_user %>
   </div>
 </div>

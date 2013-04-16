@@ -1,7 +1,7 @@
 <div class="comment_<%= comment.id %>">
   <hr>
   <div><%= comment.content %></div>
-  <div><%= link_to comment.user.full_name, profile_path(comment.user) %></div>
+  <div><%= link_to comment.user.full_name, profile_path(comment.user) %> | <%= l comment.created_at, format: :long %></div>
   <div>
     <%= Comment::RESULT[comment.result_id] %>
     <% if comment.result_date.present? %>

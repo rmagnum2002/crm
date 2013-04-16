@@ -15,6 +15,9 @@ class EmployeesController < ApplicationController
   # GET /employees/1.json
   def show
     @employee = Employee.find(params[:id])
+    @commentable = @employee
+    @comments = @commentable.comments.order('created_at desc')
+    @comment = Comment.new
 
     respond_to do |format|
       format.html # show.html.erb

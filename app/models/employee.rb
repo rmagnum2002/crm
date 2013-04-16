@@ -5,6 +5,7 @@ class Employee < ActiveRecord::Base
   belongs_to :company
   belongs_to :user
   belongs_to :job_title
+  has_many :comments, as: :commentable
 
   LANGUAGE = { 0 => "Romanian", 1 => "Russian", 2 => "English" }
 

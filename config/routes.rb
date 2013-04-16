@@ -13,10 +13,16 @@ CrmMd::Application.routes.draw do
       get 'comments'
       get 'sales'
     end
-    resources :employees
+    resources :employees do
+      resources :comments
+    end
     resources :addresses
     resources :comments
   end
+
+    resources :employees do
+      resources :comments
+    end
 
   get "welcome/index"
   match 'set_locale' => 'welcome#set_locale'

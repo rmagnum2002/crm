@@ -2,11 +2,11 @@
   <h1><%= t(:"company.index.companies") %></h1>
   <%= link_to t('.new', :default => t("helpers.links.new")), new_company_path %>
 </div>
-<table class="table table-striped">
+<table id="companies" class="table table-striped">
   <thead>
     <tr>
-      <th><%= t(:"company.index.created_at") %></th>
       <th><%= t(:"company.index.id") %></th>
+      <th><%= t(:"company.index.created_at") %></th>
       <th><%= t(:"company.index.name") %></th>
       <th><%= t(:"company.index.client_category_id") %></th>
       <th><%= t(:"company.index.client_type_id") %></th>
@@ -22,8 +22,8 @@
   <tbody>
     <% @companies.each do |company| %>
       <tr>
-        <td><%=l company.created_at, format: :short %></td>
         <td><%= company.id %></td>
+        <td><%=l company.created_at, format: :short %></td>
         <td><%= link_to  company.name, company_path(company) %></td>
         <td><%= company.client_category.category if company.client_category_id? %></td>
         <td><%= company.client_type.client_type if company.client_type_id? %></td>

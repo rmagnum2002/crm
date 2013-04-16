@@ -15,4 +15,6 @@
 //= require jquery.ui.all
 //= require twitter/bootstrap
 //= require dataTables/jquery.dataTables
+//= require jquery.purr
+//= require best_in_place
 //= require_tree .

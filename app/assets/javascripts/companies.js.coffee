@@ -2,6 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
-        $('#companies').dataTable
-          sPaginationType: "full_numbers"
-          sDom: "Rlfrtip"
+  $('#companies').dataTable
+    sPaginationType: "full_numbers"
+    sDom: "Rlfrtip"
+jQuery ->
+  $('.best_in_place').best_in_place()

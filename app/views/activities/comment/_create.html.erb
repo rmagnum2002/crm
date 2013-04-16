@@ -1,0 +1,6 @@
+<% if comment %>
+added a new comment to <%= link_to comment.commentable.name, company_path(comment.commentable, :tab => 'comments') %>
+at <%= l activity.created_at, format: :short %>
+<% else %>
+added a comment wich has since been removed
+<% end %>

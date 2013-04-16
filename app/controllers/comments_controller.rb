@@ -13,6 +13,7 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.new(params[:comment])
     @comment.user_id = current_user.id
     if @comment.save
+      track_activity @comment
       respond_to do |format|
         # format.html { redirect_to :back }
         format.js
@@ -35,8 +36,7 @@ class CommentsController < ApplicationController
 private
 
   def load_commentable
-    # resource, id = request.path.split('/')[1, 2]
-    # @commentable = resource.singularize.classify.constantize.find(id)
-    @commentable = Company.find(params[:company_id])
+    resource, id = request.path.split('/')[1, 2]
+    @commentable = resource.singularize.classify.constantize.find(id)
   end
 end

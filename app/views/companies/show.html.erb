@@ -1,7 +1,7 @@
 <%- model_class = Company -%>
 <div class="row-fluid">
   <div class="page-header">
-    <h1><%=t '.title', :default => model_class.model_name.human %> - <%= @company.name %></h1>
+    <h1><%=t '.title', :default => model_class.model_name.human %> - <%= best_in_place @company, :name %></h1>
   </div>
 
   <div class="span4">
@@ -12,7 +12,7 @@
       <dt><strong><%= t(:"company.show.responsible") %>:</strong></dt>
       <dd><%= responsible_name(@company.responsible_id) %></dd>
       <dt><strong><%= t(:"company.show.number_employees") %>:</strong></dt>
-      <dd><%= best_in_place@company, :number_employees %></dd>
+      <dd><%= best_in_place @company, :number_employees %></dd>
       <dt><strong><%= t(:"company.show.company_branch") %>:</strong></dt>
       <dd><%= @company.company_branch.name if @company.company_branch_id? %></dd>
       <dt><strong><%= t(:"company.show.company_source") %>:</strong></dt>
@@ -24,21 +24,21 @@
       <dt><strong><%= t(:"company.show.client_at") %>:</strong></dt>
       <dd><%= l @company.client_at, format: :long %></dd>
       <dt><strong><%= t(:"company.show.phone") %>:</strong></dt>
-      <dd><%= best_in_place@company, :phone %></dd>
+      <dd><%= best_in_place @company, :phone %></dd>
       <dt><strong><%= t(:"company.show.fax") %>:</strong></dt>
-      <dd><%= best_in_place@company, :fax %></dd>
+      <dd><%= best_in_place @company, :fax %></dd>
       <dt><strong><%= t(:"company.show.email") %>:</strong></dt>
-      <dd><%= best_in_place@company, :email %></dd>
+      <dd><%= best_in_place @company, :email %></dd>
       <dt><strong><%= t(:"company.show.skype") %>:</strong></dt>
-      <dd><%= best_in_place@company, :skype %></dd>
+      <dd><%= best_in_place @company, :skype %></dd>
       <dt><strong><%= t(:"company.show.website") %>:</strong></dt>
-      <dd><%= best_in_place@company, :website %></dd>
+      <dd><%= best_in_place @company, :website %></dd>
       <dt><strong><%= t(:"company.show.facebook") %>:</strong></dt>
-      <dd><%= best_in_place@company, :facebook %></dd>
+      <dd><%= best_in_place @company, :facebook %></dd>
       <dt><strong><%= t(:"company.show.bank_req") %>:</strong></dt>
-      <dd><%= best_in_place@company, :bank_req %></dd>
+      <dd><%= best_in_place @company, :bank_req %></dd>
       <dt><strong><%= t(:"company.show.fisc_id") %>:</strong></dt>
-      <dd><%= best_in_place@company, :fisc_id %></dd>
+      <dd><%= best_in_place @company, :fisc_id %></dd>
     </dl>
   </div>
   <div class="span6">

@@ -43,12 +43,6 @@
       </div>
     </div>
     <div class="control-group">
-      <%= f.label :company, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.collection_select :company_id, Company.find(:all), :id, :name, :include_blank => "Select company" %>
-      </div>
-    </div>
-    <div class="control-group">
       <%= f.label :job_title_id, :class => 'control-label' %>
       <div class="controls">
         <%= f.collection_select :job_title_id, JobTitle.find(:all), :id, :job_title, :include_blank => "Select job" %>

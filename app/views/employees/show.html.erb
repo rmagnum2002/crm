@@ -21,15 +21,22 @@
       <dt><strong><%= model_class.human_attribute_name(:patronymic) %>:</strong></dt>
       <dd><%= best_in_place @employee, :patronymic %></dd>
       <dt><strong><%= model_class.human_attribute_name(:gender) %>:</strong></dt>
-      <dd><%= Employee::GENDER[@employee.gender] %></dd>
+      <dd>
+        <%= best_in_place @employee, :gender, :type => :select, :collection => Employee::GENDER.to_a %>
+        <%#= Employee::GENDER[@employee.gender] %>
+      </dd>
       <dt><strong><%= model_class.human_attribute_name(:birthday) %>:</strong></dt>
       <dd><%= l @employee.birthday, format: :long %></dd>
       <dt><strong><%= model_class.human_attribute_name(:language) %>:</strong></dt>
       <dd><%= Employee::LANGUAGE[@employee.language] %></dd>
       <dt><strong><%= model_class.human_attribute_name(:company_id) %>:</strong></dt>
-      <dd><%= @employee.company.name %></dd>
+      <dd>
+        <%= best_in_place @employee, :company_id, type: :select, collection: Company.all.map{|x| [x.id, x.name]} %>
+      </dd>
       <dt><strong><%= model_class.human_attribute_name(:job_title_id) %>:</strong></dt>
-      <dd><%= @employee.job_title.job_title %></dd>
+      <dd>
+        <%= best_in_place @employee, :job_title_id, :type => :select, :collection => JobTitle.all.map{|x| [x.id, x.job_title]} %>
+      </dd>
       <dt><strong><%= model_class.human_attribute_name(:decision) %>:</strong></dt>
       <dd>
         <%= best_in_place @employee, :decision, :type => :checkbox,
@@ -44,7 +51,7 @@
       <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
       <dd><%= best_in_place @employee, :email %></dd>
       <dt><strong><%= model_class.human_attribute_name(:skype) %>:</strong></dt>
-      <dd><%= @employee.skype %></dd>
+      <dd><%= best_in_place @employee, :skype %></dd>
       <dt><strong><%= model_class.human_attribute_name(:facebook) %>:</strong></dt>
       <dd><%= best_in_place @employee, :facebook %></dd>
       <dt><strong><%= model_class.human_attribute_name(:client_date) %>:</strong></dt>

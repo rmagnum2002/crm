@@ -2,7 +2,7 @@
   <h1><%= t(:"company.index.companies") %></h1>
   <%= link_to t('.new', :default => t("helpers.links.new")), new_company_path %>
 </div>
-<table id="companies" class="table table-striped" data-source="<%= companies_url(format: "json") %>">
+<table id="companies" class="table table-striped" data-source="<%= companies_url(format: "json") %>" data-language="<%= current_language %>">
   <thead>
     <tr>
       <th><%= t(:"company.index.id") %></th>
@@ -20,7 +20,5 @@
     </tr>
   </thead>
   <tbody>
-
   </tbody>
 </table>
-

@@ -6,8 +6,10 @@ jQuery ->
     sPaginationType: "full_numbers"
     sDom: "Rlfrtip"
     bJQueryUI: true
+    bDestroy: true
     bProcessing: true
     bServerSide: true
     sAjaxSource: $('#companies').data('source')
+
 jQuery ->
   $('.best_in_place').best_in_place()

@@ -10,17 +10,27 @@
       <dt><strong><%= t(:"company.show.added_by") %>:</strong></dt>
       <dd><%= link_to @company.user.full_name, profile_path(@company.user) %></dd>
       <dt><strong><%= t(:"company.show.responsible") %>:</strong></dt>
-      <dd><%= responsible_name(@company.responsible_id) %></dd>
+      <dd>
+        <%= best_in_place @company, :responsible_id, :type => :select, :collection => User.all.map{|x| [x.id, link_to(x.full_name, profile_path(x))]} %>
+      </dd>
       <dt><strong><%= t(:"company.show.number_employees") %>:</strong></dt>
       <dd><%= best_in_place @company, :number_employees %></dd>
       <dt><strong><%= t(:"company.show.company_branch") %>:</strong></dt>
-      <dd><%= @company.company_branch.name if @company.company_branch_id? %></dd>
+      <dd>
+        <%= best_in_place @company, :company_branch_id, :type => :select, :collection => CompanyBranch.all.map{|x| [x.id, x.name]} %>
+      </dd>
       <dt><strong><%= t(:"company.show.company_source") %>:</strong></dt>
-      <dd><%= @company.company_source.source if @company.company_source_id? %></dd>
+      <dd>
+        <%= best_in_place @company, :company_source_id, :type => :select, :collection => CompanySource.all.map{|x| [x.id, x.source]} %>
+      </dd>
       <dt><strong><%= t(:"company.show.client_category") %>:</strong></dt>
-      <dd><%= @company.client_category.category if @company.client_category_id? %></dd>
+      <dd>
+        <%= best_in_place @company, :client_category_id, :type => :select, :collection => ClientCategory.all.map{|x| [x.id, x.category]} %>
+      </dd>
       <dt><strong><%= t(:"company.show.client_type") %>:</strong></dt>
-      <dd><%= @company.client_type.client_type if @company.client_type_id? %></dd>
+      <dd>
+        <%= best_in_place @company, :client_type_id, :type => :select, :collection => ClientType.all.map{|x| [x.id, x.client_type]} %>
+      </dd>
       <dt><strong><%= t(:"company.show.client_at") %>:</strong></dt>
       <dd><%= l @company.client_at, format: :long %></dd>
       <dt><strong><%= t(:"company.show.phone") %>:</strong></dt>

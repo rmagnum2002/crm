@@ -11,7 +11,7 @@
       <dt><strong><%= model_class.human_attribute_name(:created_at) %>:</strong></dt>
       <dd><%= l @employee.created_at, format: :long %></dd>
       <dt><strong><%= model_class.human_attribute_name(:title) %>:</strong></dt>
-      <dd><%= Employee::TITLE[@employee.title] %></dd>
+      <dd><%= best_in_place @employee, :title, :type => :select, :collection => Employee::TITLE.to_a %></dd>
       <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
       <dd><%= @employee.user.full_name %></dd>
       <dt><strong><%= model_class.human_attribute_name(:last_name) %>:</strong></dt>
@@ -23,12 +23,14 @@
       <dt><strong><%= model_class.human_attribute_name(:gender) %>:</strong></dt>
       <dd>
         <%= best_in_place @employee, :gender, :type => :select, :collection => Employee::GENDER.to_a %>
-        <%#= Employee::GENDER[@employee.gender] %>
       </dd>
       <dt><strong><%= model_class.human_attribute_name(:birthday) %>:</strong></dt>
       <dd><%= l @employee.birthday, format: :long %></dd>
       <dt><strong><%= model_class.human_attribute_name(:language) %>:</strong></dt>
-      <dd><%= Employee::LANGUAGE[@employee.language] %></dd>
+      <dd>
+        <%#= Employee::LANGUAGE[@employee.language] %>
+        <%= best_in_place @employee, :language, type: :select, collection: Employee::LANGUAGE.to_a %>
+      </dd>
       <dt><strong><%= model_class.human_attribute_name(:company_id) %>:</strong></dt>
       <dd>
         <%= best_in_place @employee, :company_id, type: :select, collection: Company.all.map{|x| [x.id, x.name]} %>

@@ -1,10 +1,13 @@
+#!/bin/env ruby
+# encoding: utf-8
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#   cities = state_id.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
+#   Mayor.create(name: 'Emanuel', state_id: cities.first)
 
 users = User.create([
   { email: "rubydeve@gmail.com", password: "admin2013", first_name: "Alexandru", last_name: "Leasenco" },
@@ -147,44 +150,57 @@ employee = Employee.create([
 ])
 
 address = Address.create([
-  { company_id: 1, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2020", street: "Dacia", street_number: "20" },
-  { company_id: 1, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2001", street: "Zelinski", street_number: "200" },
-  { company_id: 2, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 2, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 3, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 3, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 4, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 4, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 5, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 5, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 6, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 6, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 7, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 7, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 8, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 8, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 9, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 9, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 10, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 10, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 11, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2020", street: "Dacia", street_number: "20" },
-  { company_id: 11, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2001", street: "Zelinski", street_number: "200" },
-  { company_id: 12, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 12, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 13, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 13, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 14, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 14, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 15, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 15, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 16, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 16, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 17, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 17, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 18, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 18, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 19, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 19, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" },
-  { company_id: 20, address_type: 0, country: "Moldova", city: "Chisinau", postal_code: "2004", street: "Decebal", street_number: "25" },
-  { company_id: 20, address_type: 1, country: "Moldova", city: "Chisinau", postal_code: "2070", street: "Traian", street_number: "30" }
+  { company_id: 1, address_type: 0, country_id: "1", state_id: "1", postal_code: "2020", street: "Dacia", street_number: "20" },
+  { company_id: 1, address_type: 1, country_id: "1", state_id: "1", postal_code: "2001", street: "Zelinski", street_number: "200" },
+  { company_id: 2, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 2, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 3, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 3, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 4, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 4, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 5, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 5, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 6, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 6, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 7, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 7, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 8, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 8, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 9, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 9, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 10, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 10, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 11, address_type: 0, country_id: "1", state_id: "1", postal_code: "2020", street: "Dacia", street_number: "20" },
+  { company_id: 11, address_type: 1, country_id: "1", state_id: "1", postal_code: "2001", street: "Zelinski", street_number: "200" },
+  { company_id: 12, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 12, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 13, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 13, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 14, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 14, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 15, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 15, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 16, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 16, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 17, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 17, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 18, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 18, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 19, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 19, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" },
+  { company_id: 20, address_type: 0, country_id: "1", state_id: "1", postal_code: "2004", street: "Decebal", street_number: "25" },
+  { company_id: 20, address_type: 1, country_id: "1", state_id: "1", postal_code: "2070", street: "Traian", street_number: "30" }
   ])
+
+country = Country.create([
+  { name: "Moldova" },
+  { name: "Romania" },
+  { name: "Russia" },
+  { name: "Ukraine" }
+])
+
+state = State.create([
+  { name: "Bălți", country_id: 1 },
+  { name: "Chișinău", country_id: 1 },
+  { name: "Cahul", country_id: 1 }
+])

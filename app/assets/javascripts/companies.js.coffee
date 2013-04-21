@@ -53,3 +53,35 @@ jQuery ->
 
 jQuery ->
   $('.best_in_place').best_in_place()
+
+jQuery ->
+  $('#company_addresses_attributes_1_state_id').parent().hide()
+  states = $('#company_addresses_attributes_1_state_id').html()
+  console.log(states)
+  $('#company_addresses_attributes_1_country_id').change ->
+    country = $('#company_addresses_attributes_1_country_id :selected').text()
+    escaped_country = country.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
+    options = $(states).filter("optgroup[label=#{escaped_country}]").html()
+    console.log(options)
+    if options
+      $('#company_addresses_attributes_1_state_id').html(options)
+      $('#company_addresses_attributes_1_state_id').parent().show()
+    else
+      $('#company_addresses_attributes_1_state_id').empty()
+      $('#company_addresses_attributes_1_state_id').parent().hide()
+
+jQuery ->
+  $('#company_addresses_attributes_0_state_id').parent().hide()
+  states = $('#company_addresses_attributes_0_state_id').html()
+  console.log(states)
+  $('#company_addresses_attributes_0_country_id').change ->
+    country = $('#company_addresses_attributes_0_country_id :selected').text()
+    escaped_country = country.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
+    options = $(states).filter("optgroup[label=#{escaped_country}]").html()
+    console.log(options)
+    if options
+      $('#company_addresses_attributes_0_state_id').html(options)
+      $('#company_addresses_attributes_0_state_id').parent().show()
+    else
+      $('#company_addresses_attributes_0_state_id').empty()
+      $('#company_addresses_attributes_0_state_id').parent().hide()

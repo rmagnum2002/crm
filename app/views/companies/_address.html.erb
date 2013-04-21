@@ -5,9 +5,9 @@
     <%= addresss.address_type.present? ? 'Invoicing' : 'Legal' %>
   </h4>
   <dt><strong><%= t(:"company.show.addresse.country") %>:</strong></dt>
-  <dd><%= addresss.country %></dd>
-  <dt><strong><%= t(:"company.show.addresse.city") %>:</strong></dt>
-  <dd><%= addresss.city %></dd>
+  <dd><%= addresss.country.name %></dd>
+  <dt><strong><%= t(:"company.show.addresse.state") %>:</strong></dt>
+  <dd><%= addresss.state.name %></dd>
   <dt><strong><%= t(:"company.show.addresse.postal_code") %>:</strong></dt>
   <dd><%= addresss.postal_code %></dd>
   <dt><strong><%= t(:"company.show.addresse.street") %>:</strong></dt>

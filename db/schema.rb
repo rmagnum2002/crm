@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130412160835) do
+ActiveRecord::Schema.define(:version => 20130421062106) do
 
   create_table "activities", :force => true do |t|
     t.integer  "user_id"
@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(:version => 20130412160835) do
   create_table "addresses", :force => true do |t|
     t.integer  "company_id"
     t.boolean  "address_type"
-    t.string   "country"
-    t.string   "city"
+    t.string   "country_id"
+    t.string   "state_id"
     t.string   "postal_code"
     t.string   "street"
     t.string   "street_number"
@@ -107,6 +107,12 @@ ActiveRecord::Schema.define(:version => 20130412160835) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "countries", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "employees", :force => true do |t|
     t.integer  "user_id"
     t.string   "first_name"
@@ -141,6 +147,13 @@ ActiveRecord::Schema.define(:version => 20130412160835) do
     t.string   "organizational_form"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+  end
+
+  create_table "states", :force => true do |t|
+    t.string   "name"
+    t.integer  "country_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

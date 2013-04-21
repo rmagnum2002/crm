@@ -4,12 +4,14 @@
 jQuery ->
   options =
     sPaginationType: "full_numbers"
-    sDom: "Rlfrtip"
+    sDom: "RlfrtipT"
     bJQueryUI: true
     bDestroy: true
     bProcessing: true
     bServerSide: true
     sAjaxSource: $('#companies').data('source')
+    oTableTools:
+      sSwfPath: "http://localhost:3000/swf/copy_csv_xls_pdf.swf"
 
   Lang = $('#companies').data('language')
   if Lang == "ro"

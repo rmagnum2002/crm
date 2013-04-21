@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require twitter/bootstrap
+//= require dataTables/extras/ZeroClipboard.js
 //= require dataTables/jquery.dataTables
 //= require dataTables/extras/TableTools
 //= require jquery.purr

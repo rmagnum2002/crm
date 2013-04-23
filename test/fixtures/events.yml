@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  action_id: 1
+  email: MyString
+  event_date: 2013-04-23 18:28:53
+
+two:
+  action_id: 1
+  email: MyString
+  event_date: 2013-04-23 18:28:53

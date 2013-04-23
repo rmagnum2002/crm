@@ -3,6 +3,9 @@ class Comment < ActiveRecord::Base
   belongs_to :commentable, polymorphic: true
   belongs_to :user
 
+  has_many :events
+  accepts_nested_attributes_for :events, allow_destroy: true
+
   TYPE = { "Call" => 0, "Email" => 1, "Meeting" => 2}
 
   RESULT = {0 => "Problem solved",1 => "Sale",2 => "Send Email",3 => "Make call",

@@ -17,11 +17,30 @@
     <%= f.text_area :content, rows: 4, class: "input-xxlarge", placeholder: "Comment" %>
   </div>
   <div class="control-group">
-    <%= f.select :result_id, Comment::RESULT.invert.map{|t| t }, :include_blank => "Select result" %>
+    <%#= f.select :result_id, Comment::RESULT.invert.map{|t| t }, :include_blank => "Select result" %>
   </div>
   <div class="control-group">
-    <%= f.text_field :result_date, placeholder: 'Date', class: 'date_select' %> <%= f.text_field :result_time, placeholder: 'Time' %>
+    <%#= f.text_field :result_date, placeholder: 'Date', class: 'date_select' %> <%#= f.text_field :result_time, placeholder: 'Time' %>
   </div>
+
+    <h5>Events</h5>
+  <div class="items">
+    <%= f.nested_fields_for :events do |f| %>
+      <fieldset class="item">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+
+        <a href="#" class="remove">remove</a>
+
+        <%= f.hidden_field :id %>
+        <%= f.hidden_field :_destroy %>
+      </fieldset>
+    <% end %>
+  </div>
+  <a href="#" class="add">add event</a>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
@@ -46,4 +65,10 @@
 
 }).call(this);
 
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+  $('FORM').nestedFields();
+});
 </script>

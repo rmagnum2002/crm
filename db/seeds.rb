@@ -104,24 +104,24 @@ company_branch = CompanyBranch.create([
 ])
 
 company_source = CompanySource.create([
-  { source: "VaroInform" },
-  { source: "Internet" },
-  { source: "Makler" }
+  { name: "VaroInform" },
+  { name: "Internet" },
+  { name: "Makler" }
 ])
 
 client_category = ClientCategory.create([
-  { category: "Own client" },
-  { category: "Resolved client" }
+  { name: "Own client" },
+  { name: "Resolved client" }
 ])
 
 client_type = ClientType.create([
-  { client_type: "Potential client" },
-  { client_type: "Dealer" }
+  { name: "Potential client" },
+  { name: "Dealer" }
 ])
 
 client_status = ClientStatus.create([
-  { client_status: "First contact" },
-  { client_status: "Client" }
+  { name: "First contact" },
+  { name: "Client" }
 ])
 
 organizational_form = OrganizationalForm.create([

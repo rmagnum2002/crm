@@ -21,15 +21,15 @@
       </dd>
       <dt><strong><%= t(:"company.show.company_source") %>:</strong></dt>
       <dd>
-        <%= best_in_place @company, :company_source_id, :type => :select, :collection => CompanySource.all.map{|x| [x.id, x.source]} %>
+        <%= best_in_place @company, :company_source_id, :type => :select, :collection => CompanySource.all.map{|x| [x.id, x.name]} %>
       </dd>
       <dt><strong><%= t(:"company.show.client_category") %>:</strong></dt>
       <dd>
-        <%= best_in_place @company, :client_category_id, :type => :select, :collection => ClientCategory.all.map{|x| [x.id, x.category]} %>
+        <%= best_in_place @company, :client_category_id, :type => :select, :collection => ClientCategory.all.map{|x| [x.id, x.name]} %>
       </dd>
       <dt><strong><%= t(:"company.show.client_type") %>:</strong></dt>
       <dd>
-        <%= best_in_place @company, :client_type_id, :type => :select, :collection => ClientType.all.map{|x| [x.id, x.client_type]} %>
+        <%= best_in_place @company, :client_type_id, :type => :select, :collection => ClientType.all.map{|x| [x.id, x.name]} %>
       </dd>
       <dt><strong><%= t(:"company.show.client_at") %>:</strong></dt>
       <dd><%= l @company.client_at, format: :long %></dd>

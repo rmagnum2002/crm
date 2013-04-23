@@ -21,19 +21,19 @@
   <div class="control-group">
     <%#= f.label :company_source_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.collection_select :company_source_id, CompanySource.find(:all), :id, :source, :prompt => t(:"company.form.source"), class: 'select_field' %>
+      <%= f.collection_select :company_source_id, CompanySource.find(:all), :id, :name, :prompt => t(:"company.form.source"), class: 'select_field' %>
     </div>
   </div>
   <div class="control-group">
     <%#= f.label :client_category_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.collection_select :client_category_id, ClientCategory.find(:all), :id, :category, :prompt => t(:"company.form.client_category"), class: 'select_field' %>
+      <%= f.collection_select :client_category_id, ClientCategory.find(:all), :id, :name, :prompt => t(:"company.form.client_category"), class: 'select_field' %>
     </div>
   </div>
   <div class="control-group">
     <%#= f.label :client_type_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.collection_select :client_type_id, ClientType.find(:all), :id, :client_type, :prompt => t(:"company.form.client_type"), class: 'select_field' %>
+      <%= f.collection_select :client_type_id, ClientType.find(:all), :id, :name, :prompt => t(:"company.form.client_type"), class: 'select_field' %>
     </div>
   </div>
   <div class="control-group">
@@ -51,7 +51,7 @@
   <div class="control-group">
     <%#= f.label :client_status_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.collection_select :client_status_id, ClientStatus.find(:all), :id, :client_status, :prompt => t(:"company.form.client_status"), class: 'select_field' %>
+      <%= f.collection_select :client_status_id, ClientStatus.find(:all), :id, :name, :prompt => t(:"company.form.client_status"), class: 'select_field' %>
     </div>
   </div>
   <div class="control-group">

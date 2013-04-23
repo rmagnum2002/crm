@@ -1,5 +1,5 @@
 class ClientCategory < ActiveRecord::Base
-  attr_accessible :category
+  attr_accessible :name
 
   has_many :companies
 end

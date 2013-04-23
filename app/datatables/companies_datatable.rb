@@ -24,8 +24,8 @@ private
         h(company.id),
         h(company.created_at.strftime("%B %e, %Y")),
         link_to(company.name, company),
-        h(company.client_category.category),
-        h(company.client_type.client_type),
+        h(company.client_category.name),
+        h(company.client_type.name),
         h(company.client_at.strftime("%B %e, %Y")),
         h(company.phone),
         h(company.fax),
@@ -44,11 +44,11 @@ end
     companies = companies.page(page).per_page(per_page)
     if params[:sSearch].present?
       companies = companies.joins(:client_category, :client_type).where("companies.id like :search
-                          or name like :search
-                          or client_categories.category like :search
-                          or client_types.client_type like :search
+                          or companies.name like :search
+                          or client_categories.name like :search
+                          or client_types.name like :search
                           or companies.phone like :search
-                          or fax like :search
+                          or companies.fax like :search
                           or companies.email like :search", search: "%#{params[:sSearch]}%")
     end
     companies

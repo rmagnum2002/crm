@@ -1,5 +1,7 @@
 CrmMd::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   resources :activities
 
   get "profiles", to: 'profile#index', as: :profiles
@@ -27,8 +29,10 @@ CrmMd::Application.routes.draw do
   get "welcome/index"
   match 'set_locale' => 'welcome#set_locale'
 
-  devise_for :users
 
+  devise_for :users
+  root :to => 'activities#index'
+  ActiveAdmin.routes(self)
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -78,7 +82,6 @@ CrmMd::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'activities#index'
 
   # See how all your routes lay out with "rake routes"
 

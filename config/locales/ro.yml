@@ -2,6 +2,21 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ro:
+  active_admin:
+    devise:
+      login:
+        title: " - login"
+  states: "States"
+  countries: "Countries"
+  client_categories: "Client Categories"
+  client_statuses: "Client Statuses"
+  client_types: "Client Types"
+  company_branches: "Company Branches"
+  company_sources: "Company Sources"
+  job_titles: "Job Titles"
+  organizational_forms: "Organizational Forms"
+  admin_users: "Admin Users"
+
   menu:
     main: "Principala"
     companies: "Companii"

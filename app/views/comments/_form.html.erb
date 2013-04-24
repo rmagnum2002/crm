@@ -17,33 +17,107 @@
     <%= f.text_area :content, rows: 4, class: "input-xxlarge", placeholder: "Comment" %>
   </div>
   <div class="control-group">
-    <%= f.select :result_id, Comment::RESULT.invert.map{|t| t }, :include_blank => "Select result" %>
+    <%#= f.select :result_id, Comment::RESULT.invert.map{|t| t }, :include_blank => "Select result" %>
   </div>
   <div class="control-group">
-    <%= f.text_field :result_date, placeholder: 'Date', class: 'date_select' %> <%= f.text_field :result_time, placeholder: 'Time' %>
+    <%#= f.text_field :result_date, placeholder: 'Date', class: 'date_select' %> <%#= f.text_field :result_time, placeholder: 'Time' %>
   </div>
+
+    <h5>Events | <a href="#" class="add">add event</a></h5>
+  <div class="items">
+    <%= f.nested_fields_for :events do |f| %>
+      <fieldset class="item">
+        <%= f.select :action_id, Event::RESULT.invert.map{|t| t }, :include_blank => "Select Result" %><br>
+        <%= f.text_field :email, placeholder: "Email" %><br>
+        <%= f.text_field :event_date, placeholder: "Date, Hour", class: "datetimepicker" %>
+        <script type="text/javascript">
+          var options_ro;
+          var options_en;
+          var options_ru;
+
+            options_en = {
+              timeFormat: 'HH:mm:ss',
+              dateFormat: "yy-mm-dd",
+            };
+
+            options_ro = {
+              timeFormat: 'HH:mm:ss',
+              closeText: "Închide",
+              prevText: "<Prec",
+              nextText: "Următ>",
+              currentText: "Azi",
+              monthNames: ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septebrie", "Octombrie", "Noiembrie", "Decembrie"],
+              monthNamesShort: ["Ian", "Feb", "Mar", "Apr", "Mai", "Iun", "Iul", "Aug", "Sept", "Oct", "Noi", "Dec"],
+              dayNames: ["duminică", "luni", "marți", "miercuri", "joi", "vineri", "sâmbătă"],
+              dayNamesShort: ["dum", "luni", "mar", "mier", "joi", "vin", "sâmb"],
+              dayNamesMin: ["Du", "Lu", "Ma", "Mi", "Jo", "Vi", "Sâ"],
+              weekHeader: "Săpt",
+              dateFormat: "yy-mm-dd",
+              firstDay: 1,
+              isRTL: false,
+              showMonthAfterYear: false,
+              yearSuffix: "",
+              timeOnlyTitle: 'Alegeți timpul',
+              timeText: 'Timpul',
+              hourText: 'Ora',
+              minuteText: 'Minute',
+              secondText: 'Secunde',
+              currentText: 'Acum',
+              closeText: 'Închide'
+            };
+
+            options_ru = {
+              timeFormat: 'HH:mm:ss',
+              closeText: "Закрыть",
+              prevText: "<Пред",
+              nextText: "След>",
+              currentText: "Сегодня",
+              monthNames: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+              monthNamesShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
+              dayNames: ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"],
+              dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
+              dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+              weekHeader: "Не",
+              dateFormat: "yy-mm-dd",
+              firstDay: 1,
+              isRTL: false,
+              showMonthAfterYear: false,
+              yearSuffix: "",
+              timeOnlyTitle: 'Выберите время',
+              timeText: 'Время',
+              hourText: 'Часы',
+              minuteText: 'Минуты',
+              secondText: 'Секунды',
+              currentText: 'Теперь',
+              closeText: 'Закрыть'
+            };
+
+
+          $('.datetimepicker').datetimepicker(
+              <% if current_language == "ro" %>
+              options_ro
+              <% elsif current_language == "en" %>
+              options_en
+              <% else %>
+              options_ru
+              <% end %>
+            );
+        </script>
+        <a href="#" class="remove">remove</a>
+        <hr>
+        <%= f.hidden_field :id %>
+        <%= f.hidden_field :_destroy %>
+      </fieldset>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
 
 <script type="text/javascript">
-(function() {
-  jQuery(function() {
-    return $('#comment_result_date').datepicker({
-      dateFormat: 'yy-mm-dd',
-      <% if @locale == 'ro' %>
-        monthNames: ['Ianuarie','Februarie','Martie','Aprilie','Mai','Iunie', 'Iulie','August','Septembrie','Octombrie','Noiembrie','Decembrie'],
-        dayNames: ['Dum', 'Luni', 'Mar', 'Mier', 'Joi', 'Vin', 'Sâmb'],
-        firstDay: 1
-      <% elsif @locale == 'ru' %>
-        monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
-        dayNames: ['Dum', 'Luni', 'Mar', 'Mier', 'Joi', 'Vin', 'Sâmb'],
-        firstDay: 1
-      <% end %>
-    });
-  });
-
-}).call(this);
-
+$(document).ready(function(e) {
+  $('FORM').nestedFields();
+});
 </script>

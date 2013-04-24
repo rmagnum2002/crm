@@ -1,5 +1,7 @@
-<h4>Comments</h4>
-<%= render partial: 'comments/form' %>
+<h4>Add Comment</h4>
+  <div class="img-polaroid"><%= render partial: 'comments/form' %></div>
+
+<div class="page-header"><h4>Comments <span id="comments_count"><%= @comments.count %></span></h4></div>
 <div class="comments">
   <%= render @comments %>
 </div>

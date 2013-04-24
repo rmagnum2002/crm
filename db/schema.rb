@@ -168,6 +168,7 @@ ActiveRecord::Schema.define(:version => 20130423152853) do
   end
 
   create_table "events", :force => true do |t|
+    t.integer  "comment_id"
     t.integer  "action_id"
     t.string   "email"
     t.datetime "event_date"

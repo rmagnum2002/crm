@@ -1,14 +1,21 @@
 <div class="comment_<%= comment.id %>">
-  <hr>
-  <div><%= comment.content %></div>
-  <div><%= link_to comment.user.full_name, profile_path(comment.user) %> | <%= l comment.created_at, format: :long %></div>
-  <div>
-    <%= Comment::RESULT[comment.result_id] %>
-    <% if comment.result_date.present? %>
-      | <%= l comment.result_date, format: :long %>
-    <% end %>
-    <% if comment.result_time.present? %>
-      | <%= comment.result_time %>
+  <div style="border-left: 1px solid rgba(0, 0, 0, 0.2);padding-left:5px;">
+    <%= comment.content %>
+    <div><%= link_to comment.user.full_name, profile_path(comment.user) %> | <%= l comment.created_at, format: :long %></div>
+    <% if comment.events.present? %>
+      <div class="well">
+        <% comment.events.each do |event| %>
+          <% if event.action_id %>
+            <b>Result:</b> <%= Event::RESULT[event.action_id] %>
+          <% end %>
+          <% unless event.email == "" %>
+             - <%= event.email %>
+          <% end %>
+          <% if event.event_date %>
+            <b>Date:</b> <%= l event.event_date, format: :long %>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
   <div>
@@ -16,3 +23,4 @@
                       data: { confirm: 'Delete comment?' }, remote: true if comment.user == current_user %>
   </div>
 </div>
+<hr>

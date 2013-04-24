@@ -20,6 +20,8 @@ CrmMd::Application.routes.draw do
     end
     resources :addresses
     resources :comments
+
+    collection { post :search, to: 'companies#search' }
   end
 
     resources :employees do
@@ -28,7 +30,6 @@ CrmMd::Application.routes.draw do
 
   get "welcome/index"
   match 'set_locale' => 'welcome#set_locale'
-
 
   devise_for :users
   root :to => 'activities#index'

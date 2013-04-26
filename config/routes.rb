@@ -8,6 +8,7 @@ CrmMd::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :activities
+  resources :events
 
   get "profiles", to: 'profile#index', as: :profiles
 

@@ -186,6 +186,7 @@ ro:
       default: ! '%d-%m-%Y'
       long: ! '%d %B %Y'
       short: ! '%d %b'
+      calendar: ! '%B %Y'
     month_names:
     -
     - Ianuarie

@@ -18,6 +18,10 @@ ru:
     companies: "Компании"
     contacts: "Контакты"
     user: "Пользователи"
+    edit_profile: "Редактировать профиль"
+    logout: "Logout"
+    sign_up: "Выход"
+    login: "Войти"
 
   company:
     form:
@@ -137,8 +141,17 @@ ru:
       mobile: "Мобильный"
       client_date: "Клиент с"
       completion: "Завершенная продажа"
-
-
+  events:
+    index:
+      events_calendar: "Календарь событий"
+    result:
+      problem_solved: "Проблема решена"
+      sale: "Продажа"
+      send_email: "Отправить e-mail"
+      make_call: "Позвонить"
+      meeting: "Встреча"
+      birthday: "День рождения"
+      payment_order: "Платежного поручения"
 
   date:
     abbr_day_names:

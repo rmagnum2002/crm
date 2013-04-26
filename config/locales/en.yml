@@ -116,6 +116,39 @@ en:
     index:
       activities: "Activities"
       updated_company: "updated company"
+  employee:
+    language:
+      romanian: "Romanian"
+      russian: "Russian"
+      english: "English"
+    gender:
+      male: "Male"
+      female: "Female"
+    title:
+      mrs: "Mrs."
+      mr: "Mr."
+      miss: "Miss"
+    form:
+      created_at: "Created at"
+      title: "Title"
+      user_id: "User"
+      first_name: "First name"
+      last_name: "Last name"
+      patronymic: "Patronymic"
+      gender: "Gender"
+      birthday: "Birthday"
+      language: "Language"
+      company_id: "Company"
+      job_title_id: "Job title"
+      decision: "Decision"
+      phone: "Phone"
+      mobile: "Mobile"
+      simtravel: "Simtravel"
+      email: "Email"
+      skype: "Skype"
+      facebook: "Facebook"
+      client_date: "Client date"
+      completion: "Completion of the sale"
   events:
     index:
       events_calendar: "Events Calendar"
@@ -127,4 +160,3 @@ en:
       meeting: "Meeting"
       birthday: "Birthday"
       payment_order: "Payment Order"
-

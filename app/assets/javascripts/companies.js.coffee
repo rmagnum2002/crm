@@ -2,6 +2,13 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
+  s_options =
+    sPaginationType: "full_numbers"
+    sDom: "RlfrtipT"
+    bJQueryUI: true
+    oTableTools:
+      sSwfPath: "http://localhost:3000/swf/copy_csv_xls_pdf.swf"
+
   options =
     sPaginationType: "full_numbers"
     sDom: "RlfrtipT"
@@ -52,6 +59,7 @@ jQuery ->
           sSortDescending: ": активировать для сортировки столбцов по убыванию"
 
   $('#companies').dataTable(options)
+  $('#search_companies').dataTable(s_options)
 
 jQuery ->
   $('.best_in_place').best_in_place()
@@ -87,3 +95,14 @@ jQuery ->
     else
       $('#company_addresses_attributes_0_state_id').empty()
       $('#company_addresses_attributes_0_state_id').parent().hide()
+
+jQuery ->
+  $('form').on 'click', '.remove_fields', (event) ->
+    $(this).closest('.field').remove()
+    event.preventDefault()
+
+  $('form').on 'click', '.add_fields', (event) ->
+    time = new Date().getTime()
+    regexp = new RegExp($(this).data('id'), 'g')
+    $(this).before($(this).data('fields').replace(regexp, time))
+    event.preventDefault()

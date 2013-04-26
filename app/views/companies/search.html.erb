@@ -1,0 +1,35 @@
+<%= render "advanced_search" %>
+
+<div class="page-header">
+  <h1><%= t(:"company.index.companies") %></h1>
+  <%= link_to t('.new', :default => t("helpers.links.new")), new_company_path %>
+</div>
+<table id="search_companies" class="table table-striped" data-language="<%= current_language %>">
+  <thead>
+    <tr>
+      <th><%= t(:"company.index.id") %></th>
+      <!-- <th><%#= t(:"company.index.created_at") %></th> -->
+      <th><%= t(:"company.index.name") %></th>
+      <!-- <th><%#= t(:"company.index.client_category_id") %></th> -->
+      <!-- <th><%#= t(:"company.index.client_type_id") %></th> -->
+      <!-- <th><%#= t(:"company.index.company_source_id") %></th> -->
+      <!-- <th><%#= t(:"company.index.client_at") %></th> -->
+      <th><%= t(:"company.index.phone") %></th>
+      <th><%= t(:"company.index.fax") %></th>
+      <th><%= t(:"company.index.email") %></th>
+      <!-- <th><%#= t(:"company.index.responsible_id") %></th> -->
+      <!-- <th><%#=t '.actions', :default => t("helpers.actions") %></th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @companies.each do |company| %>
+    <tr>
+      <td><%= company.id %></td>
+      <td><%= link_to(company.name, company) %></td>
+      <td><%= company.phone %></td>
+      <td><%= company.fax %></td>
+      <td><%= company.email %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

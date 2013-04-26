@@ -9,7 +9,7 @@
   <div class="control-group">
     <%#= f.label :name, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :name, :class => 'text_field', placeholder: "Company Name" %>
+      <%= f.text_field :name, :class => 'text_field', placeholder: t(:"company.form.name") %>
     </div>
   </div>
   <div class="control-group">
@@ -45,7 +45,7 @@
   <div class="control-group">
     <%#= f.label :number_employees, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :number_employees, :class => 'text_field', placeholder: "Number of employees" %>
+      <%= f.text_field :number_employees, :class => 'text_field', placeholder: t(:"company.form.number_employees") %>
     </div>
   </div>
   <div class="control-group">
@@ -57,7 +57,7 @@
   <div class="control-group">
     <%#= f.label :client_at, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :client_at, :class => 'date_select', placeholder: "Client from (date)" %>
+      <%= f.text_field :client_at, :class => 'date_select', placeholder: t(:"company.form.client_at") %>
     </div>
   </div>
 </div>
@@ -65,49 +65,49 @@
   <div class="control-group">
     <%#= f.label :phone, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :phone, :class => 'text_field', placeholder: "Phone" %>
+      <%= f.text_field :phone, :class => 'text_field', placeholder: t(:"company.form.phone") %>
     </div>
   </div>
   <div class="control-group">
     <%#= f.label :fax, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :fax, :class => 'text_field', placeholder: "Fax" %>
+      <%= f.text_field :fax, :class => 'text_field', placeholder: t(:"company.form.fax") %>
     </div>
   </div>
   <div class="control-group">
     <%#= f.label :email, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :email, :class => 'text_field', placeholder: "Email" %>
+      <%= f.text_field :email, :class => 'text_field', placeholder: t(:"company.form.email") %>
     </div>
   </div>
   <div class="control-group">
     <%#= f.label :skype, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :skype, :class => 'text_field', placeholder: "Skype" %>
+      <%= f.text_field :skype, :class => 'text_field', placeholder: t(:"company.form.skype") %>
     </div>
   </div>
   <div class="control-group">
     <%#= f.label :website, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :website, :class => 'text_field', placeholder: "Website" %>
+      <%= f.text_field :website, :class => 'text_field', placeholder: t(:"company.form.website") %>
     </div>
   </div>
   <div class="control-group">
     <%#= f.label :facebook, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :facebook, :class => 'text_field', placeholder: "Facebook" %>
+      <%= f.text_field :facebook, :class => 'text_field', placeholder: t(:"company.form.facebook") %>
     </div>
   </div>
   <div class="control-group">
     <%#= f.label :bank_req, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :bank_req, :class => 'text_field', placeholder: "Bank Requisites" %>
+      <%= f.text_field :bank_req, :class => 'text_field', placeholder: t(:"company.form.bank_req") %>
     </div>
   </div>
   <div class="control-group">
     <%#= f.label :fisc_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.number_field :fisc_id, :class => 'number_field', placeholder: "Tax Code" %>
+      <%= f.number_field :fisc_id, :class => 'number_field', placeholder: t(:"company.form.fisc_id") %>
     </div>
   </div>
 </div>
@@ -119,35 +119,35 @@
         <%= f.fields_for :addresses, address do |af| %>
         <div class="controls">
           <% if index == 0  %>
-          <div class="control-group">Legal address:</div>
+          <div class="control-group"><%= t(:"address.form.legal_address") %></div>
           <% else %>
-          <div class="control-group">Invoicing address:</div>
+          <div class="control-group"><%= t(:"address.form.invoicing_address") %></div>
           <% end %>
           <%= af.hidden_field :address_type, value: index %>
         </div>
         <div class="control-group">
           <div class="controls">
-            <%= af.collection_select :country_id, Country.order(:name), :id, :name, include_blank: "Select country" %>
+            <%= af.collection_select :country_id, Country.order(:name), :id, :name, include_blank: t(:"address.form.country_id") %>
           </div>
         </div>
         <div class="control-group">
           <div class="controls">
-            <%= af.grouped_collection_select :state_id, Country.order(:name), :states, :name, :id, :name, include_blank: "Select State" %>
+            <%= af.grouped_collection_select :state_id, Country.order(:name), :states, :name, :id, :name, include_blank: t(:"address.form.state_id") %>
           </div>
         </div>
         <div class="control-group">
           <div class="controls">
-            <%= af.text_field :postal_code, placeholder: "Postal Code" %>
+            <%= af.text_field :postal_code, placeholder: t(:"address.form.postal_code") %>
           </div>
         </div>
         <div class="control-group">
           <div class="controls">
-            <%= af.text_field :street, placeholder: "Street name" %>
+            <%= af.text_field :street, placeholder: t(:"address.form.street") %>
           </div>
         </div>
         <div class="control-group">
           <div class="controls">
-            <%= af.text_field :street_number, placeholder: "Street number" %>
+            <%= af.text_field :street_number, placeholder: t(:"address.form.street_number") %>
           </div>
         </div>
         <% end %>

@@ -1,15 +1,25 @@
 class CompaniesController < ApplicationController
-  before_filter :load_company, except: %w{index new create}
+  before_filter :load_company, except: %w{index new create search}
 
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    # @companies = Company.all
+
+    @search = Company.search(params[:q])
+    @companies = @search.result
+    @search.build_condition
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: CompaniesDatatable.new(view_context) }
     end
+  end
+
+  def search
+    @search = Company.search(params[:q])
+    @companies = @search.result
+    @search.build_condition
   end
 
   # GET /companies/1

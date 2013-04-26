@@ -27,9 +27,11 @@
   <div class="items">
     <%= f.nested_fields_for :events do |f| %>
       <fieldset class="item">
-        <%= f.select :action_id, Event::RESULT.invert.map{|t| t }, :include_blank => "Select Result" %><br>
+        <%= f.select :action_id, Event::RESULT.invert.map{|a, b| [t(a), b] }, :include_blank => "Select Result" %><br>
         <%= f.text_field :email, placeholder: "Email" %><br>
+        <%= f.collection_select :employee_id, @company.employee.find(:all), :id, :full_name, :prompt => t(:"employee.form.full_name"), class: 'select_field' %><br>
         <%= f.text_field :event_date, placeholder: "Date, Hour", class: "datetimepicker" %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
         <script type="text/javascript">
           var options_ro;
           var options_en;

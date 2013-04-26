@@ -6,8 +6,9 @@
       <div class="well">
         <% comment.events.each do |event| %>
           <% if event.action_id %>
-            <b>Result:</b> <%= Event::RESULT[event.action_id] %>
+            <b>Result:</b> <%= t(Event::RESULT[event.action_id]) %>
           <% end %>
+          <%= event.employee.full_name if event.employee_id %>
           <% unless event.email == "" %>
              - <%= event.email %>
           <% end %>

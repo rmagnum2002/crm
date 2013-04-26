@@ -116,6 +116,39 @@ ro:
     index:
       activities: "Activităţi"
       updated_company: "a actualizat compania"
+  employee:
+    language:
+      romanian: "Româna"
+      russian: "Rusa"
+      english: "Engleza"
+    gender:
+      male: "Masculin"
+      female: "Feminin"
+    title:
+      mrs: "Doamna"
+      mr: "Domnul"
+      miss: "Domnişoara"
+    form:
+      created_at: "Creat pe data"
+      title: "Titlu"
+      user_id: "Utilizator"
+      first_name: "Prenume"
+      last_name: "Nume"
+      patronymic: "Patronimic"
+      gender: "Genul"
+      birthday: "Data de naştere"
+      language: "Limba"
+      company_id: "Compania"
+      job_title_id: "Funcţia"
+      decision: "Decizie"
+      phone: "Telefon"
+      mobile: "Mobil"
+      simtravel: "Simtravel"
+      email: "Email"
+      skype: "Skype"
+      facebook: "Facebook"
+      client_date: "Client din data"
+      completion: "Vînzare finalizată"
 
 
   date:

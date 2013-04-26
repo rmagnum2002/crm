@@ -112,6 +112,31 @@ ru:
     index:
       activities: "Активности"
       updated_company: "обновил компанию"
+  employee:
+    language:
+      romanian: "Румынский"
+      russian: "Русский"
+      english: "Английский"
+    gender:
+      male: "Мужской"
+      female: "Женский"
+    form:
+      created_at: "Создан"
+      title: "Название"
+      user_id: "Пользователь"
+      first_name: "Имя"
+      last_name: "Фамилия"
+      patronymic: "Отчество"
+      gender: "Пол"
+      birthday: "Год рождения"
+      language: "Язык"
+      company_id: "Компания"
+      job_title_id: "Должность"
+      decision: "Решение"
+      phone: "Телефон"
+      mobile: "Мобильный"
+      client_date: "Клиент с"
+      completion: "Завершенная продажа"
 
 
 

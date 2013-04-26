@@ -7,11 +7,18 @@ class Employee < ActiveRecord::Base
   belongs_to :job_title
   has_many :comments, as: :commentable
 
-  LANGUAGE = { 0 => "Romanian", 1 => "Russian", 2 => "English" }
+  LANGUAGE = { 0 => :"employee.language.romanian",
+               1 => :"employee.language.russian",
+               2 => :"employee.language.english"
+              }
 
-  GENDER = { 0 => "Male", 1 => "Female" }
+  GENDER = { 0 => :"employee.gender.male",
+             1 => :"employee.gender.female"
+            }
 
-  TITLE = {0 => "Doamna", 1 => "Domnul", 2 => "Domnisoara"}
+  TITLE = { 0 => :"employee.title.mrs",
+            1 => :"employee.title.mr",
+            2 => :"employee.title.miss" }
 
   def full_name
     "#{first_name} #{last_name} #{patronymic}".strip

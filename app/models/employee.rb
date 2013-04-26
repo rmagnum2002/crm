@@ -6,6 +6,7 @@ class Employee < ActiveRecord::Base
   belongs_to :user
   belongs_to :job_title
   has_many :comments, as: :commentable
+  belongs_to :event
 
   LANGUAGE = { 0 => :"employee.language.romanian",
                1 => :"employee.language.russian",

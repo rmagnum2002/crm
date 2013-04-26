@@ -22,6 +22,10 @@ ro:
     companies: "Companii"
     contacts: "Contacte"
     user: "Utilizatori"
+    edit_profile: "Editează Profilul"
+    logout: "Ieșire"
+    sign_up: "Înregistrează-te"
+    login: "Login"
 
   company:
     form:
@@ -116,6 +120,18 @@ ro:
     index:
       activities: "Activităţi"
       updated_company: "a actualizat compania"
+  events:
+    index:
+      events_calendar: "Calendarul Evenimentelor"
+    result:
+      problem_solved: "Problemă rezolvată"
+      sale: "Vânzare"
+      send_email: "Trimite email"
+      make_call: "Sună client"
+      meeting: "Întâlnire"
+      birthday: "Zi de naștere"
+      payment_order: "Notă de plată"
+
 
 
   date:

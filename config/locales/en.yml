@@ -18,6 +18,10 @@ en:
     companies: "Companies"
     contacts: "Contacts"
     user: "Users"
+    edit_profile: "Edit Profile"
+    logout: "Logout"
+    sign_up: "Sign Up"
+    login: "Login"
 
   company:
     form:
@@ -112,3 +116,15 @@ en:
     index:
       activities: "Activities"
       updated_company: "updated company"
+  events:
+    index:
+      events_calendar: "Events Calendar"
+    result:
+      problem_solved: "Problem Solved"
+      sale: "Sale"
+      send_email: "Send Email"
+      make_call: "Make Call"
+      meeting: "Meeting"
+      birthday: "Birthday"
+      payment_order: "Payment Order"
+

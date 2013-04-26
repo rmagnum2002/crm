@@ -99,3 +99,16 @@ en:
       postal_code: "Postal code"
       street: "Street"
       number: "Number"
+  user:
+    index:
+      name: "Name"
+      email: "Email"
+      companies_added: "Companies added"
+    show:
+      user_profile: "User profile"
+      responsible_for: "Responsible for"
+      companies: "Companies"
+  activity:
+    index:
+      activities: "Activities"
+      updated_company: "updated company"

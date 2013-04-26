@@ -103,6 +103,20 @@ ro:
       postal_code: "Codul poştal"
       street: "Strada"
       number: "Numărul"
+  user:
+    index:
+      name: "Nume"
+      email: "Email"
+      companies_added: "Companii adăugate"
+    show:
+      user_profile: "Profilul utilizatorului"
+      responsible_for: "Răspunzător de"
+      companies: "Companii"
+  activity:
+    index:
+      activities: "Activităţi"
+      updated_company: "a actualizat compania"
+
 
   date:
     abbr_day_names:

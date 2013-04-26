@@ -99,6 +99,19 @@ ru:
       postal_code: "Почтовый индекс"
       street: "Улица"
       number: "Номер"
+  user:
+    index:
+      name: "Имя"
+      email: "Email"
+      companies_added: "Добавил компаний"
+    show:
+      user_profile: "Профиль пользователя"
+      responsible_for: "Ответственный за"
+      companies: "Компаний"
+  activity:
+    index:
+      activities: "Активности"
+      updated_company: "обновил компанию"
 
 
 

@@ -10,6 +10,7 @@ CrmMd::Application.routes.draw do
   resources :activities
   resources :events
 
+  get "events_for_day", to: "events#events_for_day"
   get "profiles", to: 'profile#index', as: :profiles
 
   match "profile/:id", to: "profile#show", as: 'profile'

@@ -95,8 +95,6 @@ ActiveRecord::Schema.define(:version => 20130426144635) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.integer  "user_id"
-    t.integer  "type_id"
-    t.integer  "employee_id"
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"

@@ -17,6 +17,7 @@ en:
     main: "Main"
     companies: "Companies"
     contacts: "Contacts"
+    calendar: "Calendar"
     user: "Users"
     edit_profile: "Edit Profile"
     logout: "Logout"
@@ -150,6 +151,8 @@ en:
       client_date: "Client date"
       completion: "Completion of the sale"
   events:
+    events: "events"
+    events_for: "Events for"
     index:
       events_calendar: "Events Calendar"
     result:

@@ -21,6 +21,7 @@ ro:
     main: "Principala"
     companies: "Companii"
     contacts: "Contacte"
+    calendar: "Calendar"
     user: "Utilizatori"
     edit_profile: "Editează Profilul"
     logout: "Ieșire"
@@ -154,6 +155,8 @@ ro:
       client_date: "Client din data"
       completion: "Vînzare finalizată"
   events:
+    events: "evenimente"
+    events_for: "Evenimente pentru"
     index:
       events_calendar: "Calendarul Evenimentelor"
     result:
@@ -201,7 +204,6 @@ ro:
       default: ! '%d-%m-%Y'
       long: ! '%d %B %Y'
       short: ! '%d %b'
-      calendar: ! '%B %Y'
     month_names:
     -
     - Ianuarie

@@ -1,43 +1,9 @@
 <div class="page-header">
   <h1><%= t(:"events.index.events_calendar") %></h1>
 </div>
-<div class="span8">
-  <div id="events">
-    <h2 id="month">
-      <%= link_to "<", date: @date.prev_month %>
-      <%= l @date, format: :calendar %>
-      <%= link_to ">", date: @date.next_month %>
-    </h2>
-    <%= calendar @date do |date| %>
-    <%= date.day %>
-    <% if @events_by_date[date] %>
-    <ul>
-      <% @events_by_date[date].each do |event| %>
-      <%= link_to do %>
-      <li>
-        <%= event.event_date.strftime('%H:%M') %><br> <%= t(Event::RESULT[event.action_id]) %>
-      </li>
-      <% end %>
-      <% end %>
-    </ul>
-    <% end %>
-    <% end %>
-  </div>
+<div class="span8 calendar">
+  <%= render 'calendar' %>
 </div>
-<div class="span3">
-  <div class="page-header">
-    <h4>Events for today</h4>
-  </div>
-  <ul class="nav nav-tabs nav-stacked">
-  <% @events_for_today.each do |event| %>
-    <li>
-      <%= link_to do %>
-        <b><%= event.event_date.strftime('%H:%M') %></b> - <%= t(Event::RESULT[event.action_id]) %><br>
-        <%= event.employee_id? ? "#{event.employee.full_name} <br>".html_safe : ""  %>
-        <%= event.email? ? event.email : "" %>
-      <% end %>
-    </li>
-    <hr>
-  <% end %>
-  </ul>
+<div class="span3 day_events">
+  <%= render 'events' %>
 </div>

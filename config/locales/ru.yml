@@ -17,6 +17,7 @@ ru:
     main: "Главная"
     companies: "Компании"
     contacts: "Контакты"
+    calendar: "Календарь"
     user: "Пользователи"
     edit_profile: "Редактировать профиль"
     logout: "Logout"
@@ -142,6 +143,8 @@ ru:
       client_date: "Клиент с"
       completion: "Завершенная продажа"
   events:
+    events: "событий"
+    events_for: "События для"
     index:
       events_calendar: "Календарь событий"
     result:
@@ -151,7 +154,7 @@ ru:
       make_call: "Позвонить"
       meeting: "Встреча"
       birthday: "День рождения"
-      payment_order: "Платежного поручения"
+      payment_order: "Платежное поручение"
 
   date:
     abbr_day_names:
@@ -188,7 +191,6 @@ ru:
       default: ! '%d.%m.%Y'
       long: ! '%d %B %Y'
       short: ! '%d %b'
-      calendar: ! '%b %Y'
     month_names:
     -
     - января

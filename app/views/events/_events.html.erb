@@ -1,0 +1,21 @@
+<div class="page-header">
+  <h4>
+    <% if params[:set_date] %>
+      <%= t(:"events.events_for") %> <%= l (params[:set_date]).to_date, format: :long %>
+    <% else %>
+      <%= t(:"events.events_for") %> <%= l Date.today, format: :long %>
+    <% end %>
+  </h4>
+</div>
+<ul class="nav nav-tabs nav-stacked">
+<% @events_for_the_day.each do |event| %>
+  <li>
+    <%= link_to do %>
+      <b><%= event.event_date.strftime('%H:%M') %></b> - <%= t(Event::RESULT[event.action_id]) %><br>
+      <%= event.employee_id? ? "#{event.employee.full_name} <br>".html_safe : ""  %>(<%= event.employee.company.name %>)
+      <%= event.email? ? event.email : "" %>
+    <% end %>
+  </li>
+  <hr>
+<% end %>
+</ul>

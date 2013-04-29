@@ -11,7 +11,7 @@
   <% end %>
 
   <div class="control-group">
-    <%= f.text_area :content, rows: 4, class: "input-xxlarge", placeholder: "Comment" %>
+    <%= f.text_area :content, rows: 4, class: "input-xxlarge", placeholder: t(:"comments.form.comment") %>
   </div>
   <div class="control-group">
     <%#= f.select :result_id, Comment::RESULT.invert.map{|t| t }, :include_blank => "Select result" %>

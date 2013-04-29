@@ -155,6 +155,17 @@ ru:
       meeting: "Встреча"
       birthday: "День рождения"
       payment_order: "Платежное поручение"
+  contacts:
+    show:
+      contacts: "Контакты"
+  comments:
+    form:
+      add_comments: "Добавить коментарии"
+      comment: "Коментарий"
+      comments: "Коментарии"
+  sales:
+    show:
+      sales: "Продажы"
 
   date:
     abbr_day_names:

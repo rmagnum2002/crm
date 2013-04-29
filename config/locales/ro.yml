@@ -167,6 +167,18 @@ ro:
       meeting: "Întâlnire"
       birthday: "Zi de naștere"
       payment_order: "Notă de plată"
+  contacts:
+    show:
+      contacts: "Contacte"
+  comments:
+    form:
+      add_comments: "Adaugă Commentarii"
+      comment: "Comentariu"
+      comments: "Comentarii"
+  sales:
+    show:
+      sales: "Vînzări"
+
 
 
   date:

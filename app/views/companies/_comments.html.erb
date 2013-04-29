@@ -1,7 +1,7 @@
-<h4>Add Comment</h4>
+<h4><%= t(:"comments.form.add_comments") %></h4>
   <div class="img-polaroid"><%= render partial: 'comments/form' %></div>
 
-<div class="page-header"><h4>Comments <span id="comments_count"><%= @comments.count %></span></h4></div>
+<div class="page-header"><h4><%= t(:"comments.form.comments") %> <span id="comments_count"><%= @comments.count %></span></h4></div>
 <div class="comments">
   <%= render @comments %>
 </div>

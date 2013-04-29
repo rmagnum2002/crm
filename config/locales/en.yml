@@ -163,3 +163,14 @@ en:
       meeting: "Meeting"
       birthday: "Birthday"
       payment_order: "Payment Order"
+  contacts:
+    show:
+      contacts: "Contacts"
+  comments:
+    form:
+      add_comments: "Add Comments"
+      comment: "Comment"
+      comments: "Comments"
+  sales:
+    show:
+      sales: "Sales"

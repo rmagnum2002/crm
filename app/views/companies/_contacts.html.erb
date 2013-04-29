@@ -1,4 +1,4 @@
-<h4>Contacts</h4>
+<h4><%= t(:"contacts.show.contacts")  %></h4>
 <% for employee in @company.employee %>
   <div class="span4 pull-right">
     <%= link_to employee.full_name, company_employee_path(@company, employee) %>

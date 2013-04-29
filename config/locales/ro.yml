@@ -121,7 +121,10 @@ ro:
     index:
       activities: "Activităţi"
       updated_company: "a actualizat compania"
+      added_comment: "a adăugat comentariu la"
+      added_note: "a adăugat notiță la"
   employee:
+    model_title: "Angajatul"
     language:
       romanian: "Româna"
       russian: "Rusa"
@@ -154,12 +157,14 @@ ro:
       facebook: "Facebook"
       client_date: "Client din data"
       completion: "Vînzare finalizată"
+      full_name: "Numele angajatului"
   events:
     events: "evenimente"
     events_for: "Evenimente pentru"
     index:
       events_calendar: "Calendarul Evenimentelor"
     result:
+      result: "Rezultat"
       problem_solved: "Problemă rezolvată"
       sale: "Vânzare"
       send_email: "Trimite email"

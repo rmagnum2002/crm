@@ -63,7 +63,7 @@ ru:
     show:
       company: "Компания"
       company_profile: "Профиль компании"
-      added_by: "Добавлен"
+      added_by: "Добавил"
       responsible: "Ответственный"
       number_employees: "Количество сотрудников"
       company_branch: "Сфера деятельности"
@@ -117,7 +117,10 @@ ru:
     index:
       activities: "Активности"
       updated_company: "обновил компанию"
+      added_comment: "добавил коментарий к"
+      added_note: "добавил коментарий к"
   employee:
+    model_title: "Сотрудник"
     language:
       romanian: "Румынский"
       russian: "Русский"
@@ -142,12 +145,14 @@ ru:
       mobile: "Мобильный"
       client_date: "Клиент с"
       completion: "Завершенная продажа"
+      full_name: "Сотрудник"
   events:
     events: "событий"
     events_for: "События для"
     index:
       events_calendar: "Календарь событий"
     result:
+      result: "Результат"
       problem_solved: "Проблема решена"
       sale: "Продажа"
       send_email: "Отправить e-mail"

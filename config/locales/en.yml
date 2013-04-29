@@ -117,7 +117,10 @@ en:
     index:
       activities: "Activities"
       updated_company: "updated company"
+      added_comment: "added a new comment to"
+      added_note: "added a note to"
   employee:
+    model_title: "Employee"
     language:
       romanian: "Romanian"
       russian: "Russian"
@@ -150,7 +153,9 @@ en:
       facebook: "Facebook"
       client_date: "Client date"
       completion: "Completion of the sale"
+      full_name: "Employee name"
   events:
+    result: "Event result"
     events: "events"
     events_for: "Events for"
     index:

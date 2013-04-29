@@ -7,7 +7,7 @@
   <%= calendar @date do |date| %>
   <%= date.day %>
   <% if @events_by_date[date] %>
-    <p><%= link_to "#{t(:"events.events")}: #{@events_by_date[date].count}", events_for_day_path(set_date: date), remote: true %></p>
+    <h5><%= link_to "#{t(:"events.events")}: #{@events_by_date[date].count}", events_for_day_path(set_date: date), remote: true %></h5>
   <% end %>
   <% end %>
 </div>

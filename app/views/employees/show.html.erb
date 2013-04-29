@@ -1,7 +1,7 @@
 <%- model_class = Employee -%>
 <div class="row-fluid">
   <div class="page-header">
-    <h1><%=t '.title', :default => model_class.model_name.human %> -
+    <h1><%= t(:"employee.model_title") %> -
       <%= best_in_place @employee, :first_name %> <%= best_in_place @employee, :last_name %> <%= best_in_place @employee, :patronymic %>
     </h1>
   </div>

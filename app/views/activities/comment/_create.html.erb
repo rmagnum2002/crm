@@ -1,8 +1,8 @@
 <% if comment %>
   <% if comment.commentable_type == 'Company' %>
-    added a new comment to <%= link_to comment.commentable.name, company_path(comment.commentable, :tab => 'comments') %> | <%= l activity.created_at, format: :long %>
+    <%= t(:"activity.index.added_comment") %> <%= link_to comment.commentable.name, company_path(comment.commentable) %> | <%= l activity.created_at, format: :long %>
   <% elsif comment.commentable_type == 'Employee' %>
-    added a new note to <%= link_to comment.commentable.full_name, company_employee_path(comment.commentable.company, comment.commentable) %> | <%= l activity.created_at, format: :long %>
+    <%= t(:"activity.index.added_note") %> <%= link_to comment.commentable.full_name, company_employee_path(comment.commentable.company, comment.commentable) %> | <%= l activity.created_at, format: :long %>
   <% end %>
 <% else %>
   added a comment wich has since been removed

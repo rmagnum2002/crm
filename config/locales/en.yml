@@ -154,6 +154,9 @@ en:
       client_date: "Client date"
       completion: "Completion of the sale"
       full_name: "Employee name"
+      select_gender: "Select gender"
+      select_language: "Select language"
+      select_job: "Select job"
   events:
     result: "Event result"
     events: "events"

@@ -46,7 +46,7 @@ ro:
       facebook: "Facebook"
       bank_req: "Rechizitele bancare"
       fisc_id: "Codul fiscal"
-      client_status_id: "Client Status"
+      client_status_id: "Statusul clientului"
       number_employees: "Numarul de angajaţi"
       organizational_form: "Organizational Form"
     index:
@@ -158,6 +158,9 @@ ro:
       client_date: "Client din data"
       completion: "Vînzare finalizată"
       full_name: "Numele angajatului"
+      select_gender: "Selectaţi genul"
+      select_language: "Selectaţi limba"
+      select_job: "Selectaţi funcţia"
   events:
     events: "evenimente"
     events_for: "Evenimente pentru"

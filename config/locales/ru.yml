@@ -146,6 +146,9 @@ ru:
       client_date: "Клиент с"
       completion: "Завершенная продажа"
       full_name: "Сотрудник"
+      select_gender: "Выберите пол"
+      select_language: "Выберите язык"
+      select_job: "Выберите должность"
   events:
     events: "событий"
     events_for: "События для"

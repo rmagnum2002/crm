@@ -27,7 +27,7 @@
     <div class="control-group">
       <%#= f.label :gender, :class => 'control-label' %>
       <div class="controls">
-        <%= f.select :gender, Employee::GENDER.invert.map{|value, key| [t(value), key] }, :include_blank => "Select gender" %>
+        <%= f.select :gender, Employee::GENDER.invert.map{|value, key| [t(value), key] }, :include_blank => t(:"employee.form.select_gender") %>
       </div>
     </div>
     <div class="control-group">
@@ -39,13 +39,13 @@
     <div class="control-group">
       <%#= f.label :language, :class => 'control-label' %>
       <div class="controls">
-        <%= f.select :language, Employee::LANGUAGE.invert.map{|value, key| [t(value), key] }, :include_blank => "Select language" %>
+        <%= f.select :language, Employee::LANGUAGE.invert.map{|value, key| [t(value), key] }, :include_blank => t(:"employee.form.select_language") %>
       </div>
     </div>
     <div class="control-group">
       <%#= f.label :job_title_id, :class => 'control-label' %>
       <div class="controls">
-        <%= f.collection_select :job_title_id, JobTitle.find(:all), :id, :job_title, :include_blank => "Select job" %>
+        <%= f.collection_select :job_title_id, JobTitle.find(:all), :id, :job_title, :include_blank => t(:"employee.form.select_job") %>
       </div>
     </div>
     <div class="control-group">

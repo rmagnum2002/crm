@@ -1,6 +1,7 @@
 <div class="field">
   <%= f.attribute_fields do |a| %>
-    <%= a.attribute_select associations: [:category] %>
+    <%= a.attribute_select associations: [:client_category, :client_status, :client_type, :company_branch,
+                                          :company_source, :employee, :organizational_form] %>
   <% end %>
   <%= f.predicate_select only: [:cont, :not_cont, :eq, :not_eq, :blank, :null, :not_null] %>
   <%= f.value_fields do |v| %>

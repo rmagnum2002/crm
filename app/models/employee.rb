@@ -24,4 +24,10 @@ class Employee < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name} #{patronymic}".strip
   end
+
+  UNRANSACKABLE_ATTRIBUTES = ["id", "user_id", "language", "gender", "company_id", "job_title_id", "decision", "title"]
+
+  def self.ransackable_attributes auth_object = nil
+    (column_names - UNRANSACKABLE_ATTRIBUTES) + _ransackers.keys
+  end
 end

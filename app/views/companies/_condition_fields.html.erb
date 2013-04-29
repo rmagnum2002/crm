@@ -2,7 +2,7 @@
   <%= f.attribute_fields do |a| %>
     <%= a.attribute_select associations: [:category] %>
   <% end %>
-  <%= f.predicate_select %>
+  <%= f.predicate_select only: [:cont, :not_cont, :eq, :not_eq, :blank, :null, :not_null] %>
   <%= f.value_fields do |v| %>
     <%= v.text_field :value %>
   <% end %>

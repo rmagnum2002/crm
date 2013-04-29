@@ -18,7 +18,7 @@ class Company < ActiveRecord::Base
   has_many :employee, :dependent => :destroy
 
   UNRANSACKABLE_ATTRIBUTES = ["id", "user_id", "responsible_id", "company_branch_id", "company_source_id", "client_category_id",
-                              "client_type_id", "client_at", "client_status_id", "organizational_form_id"]
+                              "client_type_id", "client_at", "client_status_id", "organizational_form_id", "created_at"]
 
   def self.ransackable_attributes auth_object = nil
     (column_names - UNRANSACKABLE_ATTRIBUTES) + _ransackers.keys

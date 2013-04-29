@@ -1,0 +1,25 @@
+ru:
+  activerecord:
+    models:
+      activity: "Лента событий"
+      client_category: "Категория клиента"
+      client_status: "Статус клиента"
+      client_type: "Тип клиента"
+      company: "Компания"
+      company_branch: "Сфера деятельности"
+      company_source: "Источник"
+      employee: "Сотрудник"
+      organizational_form: "Организационная форма"
+
+ro:
+  activerecord:
+    models:
+      activity: "Activităţi"
+      client_category: "Categoria clientului"
+      client_status: "Statusul Clientului"
+      client_type: "Tipul Clientului"
+      company: "Compania"
+      company_branch: "Ramura de activitate"
+      company_source: "Cum a fost găsita compania"
+      employee: "Angajatul"
+      organizational_form: "Forma de organizare"

@@ -47,6 +47,7 @@ ru:
       organizational_form: "Организационная форма"
 
     index:
+      companies: "Компании"
       created_at: "Создан с"
       id: "ID"
       name: "Название компании"
@@ -501,7 +502,7 @@ ru:
       'null': "является нулевой"
       not_null: "не является нулевой"
     attributes:
-      'company':
+      company:
         user_id: "Сотрудник"
         responsible_id: "Ответственный"
         name: "Имя компаний"
@@ -523,3 +524,15 @@ ru:
         client_status_id: "Статус клиента"
         number_employees: "Число сотрудников"
         organizational_form_id: "Форма организации"
+      client_category:
+        name: "Имя"
+      client_status:
+        name: "Имя"
+      client_type:
+        name: "Имя"
+      company_branch:
+        name: "Имя"
+      company_source:
+        name: "Имя"
+      organizational_form:
+        organizational_form: "Организационная форма"

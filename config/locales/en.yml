@@ -2,6 +2,19 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+
+  activerecord:
+    models:
+      activity: "Activity"
+      client_category: "Client Category"
+      client_status: "Client Status"
+      client_type: "Client Type"
+      company: "Company"
+      company_branch: "Company Branch"
+      company_source: "Company Source"
+      employee: "Employee"
+      organizational_form: "Organizational Form"
+
   states: "States"
   countries: "Countries"
   client_categories: "Client Categories"
@@ -182,3 +195,6 @@ en:
   sales:
     show:
       sales: "Sales"
+  client_category:
+    form:
+      name: "Name"

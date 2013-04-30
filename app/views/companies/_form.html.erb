@@ -114,6 +114,10 @@
   <div class="span10">
     <hr>
     <div class="control-group">
+      <div class="span">
+        <%= check_box "fill", "invoicing", {onclick: "FillInvoicing(this.form)"}, false %>
+        <p>Check this box if Legal Address and Invoicing Address are the same</p>
+      </div>
       <% @addresses.each.with_index do |address,index| %>
       <div class="span4">
         <%= f.fields_for :addresses, address do |af| %>
@@ -131,7 +135,7 @@
           </div>
         </div>
         <div class="control-group">
-          <div class="controls">
+          <div class="controls state_<%= index %>">
             <%= af.grouped_collection_select :state_id, Country.order(:name), :states, :name, :id, :name, include_blank: t(:"address.form.state_id") %>
           </div>
         </div>

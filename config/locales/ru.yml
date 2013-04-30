@@ -169,6 +169,9 @@ ru:
   events:
     events: "событий"
     events_for: "События для"
+    add_event: "добавить событие"
+    date_hour: "Дата, Время"
+    remove: "Удалить"
     index:
       events_calendar: "Календарь событий"
     result:

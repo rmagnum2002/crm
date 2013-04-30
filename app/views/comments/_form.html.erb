@@ -20,14 +20,14 @@
     <%#= f.text_field :result_date, placeholder: 'Date', class: 'date_select' %> <%#= f.text_field :result_time, placeholder: 'Time' %>
   </div>
 
-    <h5>Events | <a href="#" class="add">add event</a></h5>
+    <h5><%= t(:"events.events") %> | <a href="#" class="add"><%= t(:"events.add_event") %></a></h5>
   <div class="items">
     <%= f.nested_fields_for :events do |f| %>
       <fieldset class="item">
         <%= f.select :action_id, Event::RESULT.invert.map{|a, b| [t(a), b] }, :include_blank => t(:"events.result.result") %><br>
         <%= f.text_field :email, placeholder: "Email" %><br>
         <%= f.collection_select :employee_id, @company.employee.find(:all), :id, :full_name, :prompt => t(:"employee.form.full_name"), class: 'select_field' if @company.employee.exists? %><br>
-        <%= f.text_field :event_date, placeholder: "Date, Hour", class: "datetimepicker" %>
+        <%= f.text_field :event_date, placeholder: t(:"events.date_hour"), class: "datetimepicker" %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <script type="text/javascript">
           var options_ro;
@@ -102,7 +102,7 @@
               <% end %>
             );
         </script>
-        <a href="#" class="remove">remove</a>
+        <a href="#" class="remove"><%= t(:"events.remove") %></a>
         <hr>
         <%= f.hidden_field :id %>
         <%= f.hidden_field :_destroy %>
@@ -111,7 +111,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t(:"comments.form.add_comments") %>
   </div>
 <% end %>
 

@@ -181,6 +181,9 @@ en:
     result: "Event result"
     events: "events"
     events_for: "Events for"
+    add_event: "add event"
+    date_hour: "Date, Hour"
+    remove: "Remove"
     index:
       events_calendar: "Events Calendar"
     result:

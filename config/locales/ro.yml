@@ -180,6 +180,9 @@ ro:
   events:
     events: "evenimente"
     events_for: "Evenimente pentru"
+    add_event: "adaugă eveniment"
+    date_hour: "Data, Ora"
+    remove: "Şterge"
     index:
       events_calendar: "Calendarul Evenimentelor"
     result:

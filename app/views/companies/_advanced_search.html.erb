@@ -3,7 +3,7 @@
     <%= f.condition_fields do |c| %>
       <%= render "condition_fields", f: c%>
     <% end %>
-    <p><%= link_to_add_fields "Add Conditions", f, :condition %>
-    <div class="actions"><%= f.submit "Search" %></div>
+    <p><%= link_to_add_fields t(:"advanced_search.add_conditions"), f, :condition %>
+    <div class="actions"><%= f.submit t(:"advanced_search.search") %></div>
   <% end %>
 </div>

@@ -161,6 +161,7 @@ ro:
       select_gender: "Selectaţi genul"
       select_language: "Selectaţi limba"
       select_job: "Selectaţi funcţia"
+      cancel: "Anulează"
   events:
     events: "evenimente"
     events_for: "Evenimente pentru"
@@ -186,6 +187,10 @@ ro:
   sales:
     show:
       sales: "Vînzări"
+  advanced_search:
+    add_conditions: "Adaugă Condiţii"
+    search: "Caută"
+    remove: "Şterge"
 
 
 
@@ -486,5 +491,30 @@ ro:
         client_status_id: "Statut client"
         number_employees: "Nr. angajaţi"
         organizational_form_id: "Forma de organizare"
+      client_category:
+        name: "Nume"
+      client_status:
+        name: "Nume"
+      client_type:
+        name: "Nume"
+      company_branch:
+        name: "Nume"
+      company_source:
+        name: "Nume"
+      organizational_form:
+        organizational_form: "Forma de organizare"
+      employee:
+        first_name: "Nume"
+        last_name: "Prenume"
+        patronymic: "Patronimic"
+        birthday: "Data de naștere"
+        phone: "Telefon"
+        mobile: "Mobil"
+        simtravel: "Simtravel"
+        email: "Email"
+        skype: "Skype"
+        facebook: "Facebook"
+        client_date: "Client din"
+        completion: "Vânzare finalizată"
 
 

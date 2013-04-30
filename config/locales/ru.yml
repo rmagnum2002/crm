@@ -150,6 +150,7 @@ ru:
       select_gender: "Выберите пол"
       select_language: "Выберите язык"
       select_job: "Выберите должность"
+      cancel: "Отменить"
   events:
     events: "событий"
     events_for: "События для"
@@ -175,6 +176,10 @@ ru:
   sales:
     show:
       sales: "Продажы"
+  advanced_search:
+    add_conditions: "Добавить условие"
+    search: "Искать"
+    remove: "Удалить"
 
   date:
     abbr_day_names:
@@ -536,3 +541,16 @@ ru:
         name: "Имя"
       organizational_form:
         organizational_form: "Организационная форма"
+      employee:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        patronymic: "Отчество"
+        birthday: "День Рождения"
+        phone: "Телефон"
+        mobile: "Мобильный"
+        simtravel: "Simtravel"
+        email: "Email"
+        skype: "Skype"
+        facebook: "Facebook"
+        client_date: "Клиент с"
+        completion: "Завершенная продажа"

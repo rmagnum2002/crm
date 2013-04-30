@@ -24,6 +24,25 @@ en:
     sign_up: "Sign Up"
     login: "Login"
 
+  registrations:
+    sign_up: "Sign up"
+    sign_in: "Sign in"
+    edit_user: "Edit User"
+    email: "Email"
+    first_name: "First name"
+    last_name: "Last name"
+    password: "Password"
+    leave_blank: "leave blank if you don't want to change it"
+    we_need: "we need your current password to confirm your changes"
+    password_confirmation: "Password confirmation"
+    current_password: "Current password"
+    update: "Update"
+    back: "Back"
+    forgot_password: "Forgot your password?"
+    receive_confirmation: "Didn't receive confirmation instructions?"
+    receive_unlock: "Didn't receive unlock instructions?"
+    signin_with: "Sign in with"
+
   company:
     form:
       new_company: "New company"

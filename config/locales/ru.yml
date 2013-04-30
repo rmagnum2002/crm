@@ -20,9 +20,24 @@ ru:
     calendar: "Календарь"
     user: "Пользователи"
     edit_profile: "Редактировать профиль"
-    logout: "Logout"
-    sign_up: "Выход"
+    logout: "Выход"
+    sign_up: "Зарегистрироваться"
     login: "Войти"
+
+  registrations:
+    sign_up: "Зарегистрироваться"
+    sign_in: "Авторизоваться"
+    edit_user: "Редактировать Пользователя"
+    email: "Электронная почта"
+    first_name: "Имя"
+    last_name: "Фамилия"
+    password: "Пароль"
+    leave_blank: "оставьте пустым, если вы не хотите изменить"
+    we_need: "нам нужен ваш текущий пароль, чтобы подтвердить изменения"
+    password_confirmation: "Подтвердить пароль"
+    current_password: "Текуший пароль"
+    update: "Обновить"
+    back: "Назад"
 
   company:
     form:

@@ -1,4 +1,4 @@
-  function FillInvoicing(f) {
+  function FillInvoicing() {
 
     if(fill_invoicing.checked == true) {
 
@@ -10,7 +10,12 @@
 
         $(".controls.state_1").css("display", "");
 
-        // $(".controls.state_1").replaceWith($("#company_addresses_attributes_1_state_id"))
+        $(".controls.state_1 option[value='']").each(function() {
+          $(this).remove();
+        });
+
+        $(".controls.state_1 optgroup").toggle();
+
       }
 
       $("#company_addresses_attributes_1_postal_code").val( $("#company_addresses_attributes_0_postal_code").val() );

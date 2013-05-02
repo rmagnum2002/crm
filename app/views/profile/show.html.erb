@@ -5,6 +5,21 @@
     <div><%= mail_to @user.email %></div>
     <hr>
     <div><%= t(:"user.index.companies_added") %>: <%= @user.companies.count %></div>
+    <div class="page-header">
+      <h5><%= t(:"activity.index.activities") %></h5>
+    </div>
+
+    <table class="table table-striped">
+      <tbody>
+        <% @activities.each do |activity| %>
+        <tr>
+          <td>
+            <%= ActivityPresenter.new(activity, self).render_activity %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
   <div class="span6">
     <h4><%= t(:"user.show.responsible_for") %> <%= @responsible.count %> <%= t(:"user.show.companies") %></h4>

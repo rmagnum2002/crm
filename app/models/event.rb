@@ -3,6 +3,7 @@
 
 class Event < ActiveRecord::Base
   belongs_to :employee
+  belongs_to :comment
 
   attr_accessible :action_id, :email, :event_date, :employee_id, :user_id, :comment_id
 

@@ -8,7 +8,11 @@ CrmMd::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :activities
-  resources :events
+  resources :events do
+    member do
+      get "open_details"
+    end
+  end
 
   get "events_for_day", to: "events#events_for_day"
   get "profiles", to: 'profile#index', as: :profiles

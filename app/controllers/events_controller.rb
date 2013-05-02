@@ -17,4 +17,8 @@ class EventsController < ApplicationController
       format.js # { render json: @employees }
     end
   end
+
+  def open_details
+    @event = Event.find(params[:id])
+  end
 end

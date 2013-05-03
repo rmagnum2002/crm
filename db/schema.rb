@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130426144635) do
+ActiveRecord::Schema.define(:version => 20130503122213) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -74,18 +74,24 @@ ActiveRecord::Schema.define(:version => 20130426144635) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name_ro"
+    t.string   "name_ru"
   end
 
   create_table "client_statuses", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name_ro"
+    t.string   "name_ru"
   end
 
   create_table "client_types", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name_ro"
+    t.string   "name_ru"
   end
 
   create_table "comments", :force => true do |t|
@@ -127,12 +133,16 @@ ActiveRecord::Schema.define(:version => 20130426144635) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name_ro"
+    t.string   "name_ru"
   end
 
   create_table "company_sources", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name_ro"
+    t.string   "name_ru"
   end
 
   create_table "countries", :force => true do |t|
@@ -178,14 +188,18 @@ ActiveRecord::Schema.define(:version => 20130426144635) do
 
   create_table "job_titles", :force => true do |t|
     t.string   "job_title"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "job_title_ro"
+    t.string   "job_title_ru"
   end
 
   create_table "organizational_forms", :force => true do |t|
     t.string   "organizational_form"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
+    t.string   "organizational_form_ro"
+    t.string   "organizational_form_ru"
   end
 
   create_table "states", :force => true do |t|

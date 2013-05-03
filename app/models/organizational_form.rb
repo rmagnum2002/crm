@@ -1,5 +1,5 @@
 class OrganizationalForm < ActiveRecord::Base
-  attr_accessible :organizational_form
+  attr_accessible :organizational_form, :organizational_form_ro, :organizational_form_ru
 
   has_many :companies
 

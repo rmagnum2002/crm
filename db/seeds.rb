@@ -98,40 +98,40 @@ companies = Company.create([
 ])
 
 company_branch = CompanyBranch.create([
-  { name: "Accounting" },
-  { name: "Telecommunications" },
-  { name: "Banks" }
+  { name: "Accounting", name_ro: "Contabilitate", name_ru: "Бухгалтерский учет" },
+  { name: "Telecommunications", name_ro: "Telecomunicaţii", name_ru: "Телекомуникаций" },
+  { name: "Banks", name_ro: "Bănci", name_ru: "Банки" }
 ])
 
 company_source = CompanySource.create([
-  { name: "VaroInform" },
-  { name: "Internet" },
-  { name: "Makler" }
+  { name: "VaroInform", name_ro: "VaroInform", name_ru: "Вароинформ" },
+  { name: "Internet", name_ro: "Internet", name_ru: "Интернет" },
+  { name: "Makler", name_ro: "Makler", name_ru: "Маклер" }
 ])
 
 client_category = ClientCategory.create([
-  { name: "Own client" },
-  { name: "Resolved client" }
+  { name: "Own client", name_ro: "Client propriu", name_ru: "Собственный клиент" },
+  { name: "Resolved client", name_ro: "Client remis", name_ru: "Клиент решен" }
 ])
 
 client_type = ClientType.create([
-  { name: "Potential client" },
-  { name: "Dealer" }
+  { name: "Potential client", name_ro: "Client Potenţial", name_ru: "Потенциальный клиент" },
+  { name: "Dealer", name_ro: "Comerciant", name_ru: "Дилер" }
 ])
 
 client_status = ClientStatus.create([
-  { name: "First contact" },
-  { name: "Client" }
+  { name: "First contact", name_ro: "Primul contact", name_ru: "Первый контакт" },
+  { name: "Client", name_ro: "Client", name_ru: "Клиент" }
 ])
 
 organizational_form = OrganizationalForm.create([
-  { organizational_form: "LTD" },
-  { organizational_form: "ONG" }
+  { organizational_form: "LTD", organizational_form_ro: "SRL", organizational_form_ru: "ООО" },
+  { organizational_form: "ONG", organizational_form_ro: "ONG", organizational_form_ru: "ОНГ" }
 ])
 
 job_title = JobTitle.create([
-  { job_title: "Consultant" },
-  { job_title: "Sales Manager" }
+  { job_title: "Consultant", job_title_ro: "Consultant", job_title_ru: "Консультант" },
+  { job_title: "Sales Manager", job_title_ro: "Manager pe vînzări", job_title_ru: "Менеджер по продажам" }
 ])
 
 employee = Employee.create([

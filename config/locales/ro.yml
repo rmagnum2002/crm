@@ -61,9 +61,9 @@ ro:
       facebook: "Facebook"
       bank_req: "Rechizitele bancare"
       fisc_id: "Codul fiscal"
-      client_status_id: "Statusul clientului"
+      client_status: "Statusul clientului"
       number_employees: "Numarul de angajaţi"
-      organizational_form: "Organizational Form"
+      organizational_form: "Forma de organizare"
     index:
       companies: "Companii"
       created_at: "Creat la data:"

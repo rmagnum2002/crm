@@ -57,7 +57,7 @@ ru:
       facebook: "Facebook"
       bank_req: "Банковские реквизиты"
       fisc_id: "Фискальный код"
-      client_status_id: "Статус клиента"
+      client_status: "Статус клиента"
       number_employees: "Число сотрудников"
       organizational_form: "Организационная форма"
 

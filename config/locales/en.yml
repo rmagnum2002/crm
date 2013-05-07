@@ -61,7 +61,7 @@ en:
       facebook: "Facebook"
       bank_req: "Bank Req"
       fisc_id: "Fisc Id"
-      client_status_id: "Client Status"
+      client_status: "Client Status"
       number_employees: "Number of Employees"
       organizational_form: "Organizational Form"
     index:

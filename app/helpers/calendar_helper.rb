@@ -17,7 +17,7 @@ module CalendarHelper
 
     def header
       content_tag :tr do
-        HEADER.map { |day| content_tag :th, day }.join.html_safe
+        HEADER.map { |day| content_tag :th, I18n.t(day) }.join.html_safe
       end
     end
 

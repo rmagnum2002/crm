@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_filter :load_company, except: %w{index new create search}
+  before_filter :load_company, except: %w{index new create search country_select}
 
   # GET /companies
   # GET /companies.json
@@ -116,6 +116,6 @@ class CompaniesController < ApplicationController
 
   def country_select
     country = Country.find(params[:country_id])
-    @state = country.states.map{|s| [s.name, s.id]}
+    @states = country.states.map{|s| [s.name, s.id]}
   end
 end

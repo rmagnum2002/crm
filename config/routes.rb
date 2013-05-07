@@ -25,6 +25,7 @@ CrmMd::Application.routes.draw do
       get 'show_address'
       get 'comments'
       get 'sales'
+      get 'country_select'
     end
     resources :employees do
       resources :comments

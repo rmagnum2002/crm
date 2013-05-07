@@ -113,4 +113,9 @@ class CompaniesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def country_select
+    country = Country.find(params[:country_id])
+    @state = country.states.map{|s| [s.name, s.id]}
+  end
 end

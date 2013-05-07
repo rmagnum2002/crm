@@ -131,12 +131,13 @@
         </div>
         <div class="control-group">
           <div class="controls">
-            <%= af.collection_select :country_id, Country.order(:name), :id, :name, include_blank: t(:"address.form.country_id") %>
+            <%#= af.collection_select :country_id, Country.order(:name), :id, :name, include_blank: t(:"address.form.country_id") %>
+            <%= select_tag "country_select", options_for_select(Country.all.map{ |c| [c.name, c.id] }), onchange: {action: "country_select" } %>
           </div>
         </div>
         <div class="control-group">
           <div class="controls state_<%= index %>">
-            <%= af.grouped_collection_select :state_id, Country.order(:name), :states, :name, :id, :name, include_blank: t(:"address.form.state_id") %>
+            <%#= af.grouped_collection_select :state_id, Country.order(:name), :states, :name, :id, :name, include_blank: t(:"address.form.state_id") %>
           </div>
         </div>
         <div class="control-group">
@@ -168,3 +169,25 @@
   </div>
 </div>
 <% end %>
+
+<script type="text/javascript">
+
+  // function country_select() {
+
+    $(document).ready(function() {
+      $('#country_select').change(function() {
+        $.ajax({
+          // url: "companies/new/country_select" + $('#country_select').val(),
+          // url: "country_select",
+          data: {
+            country_id : $('#country_select').val()
+          },
+          dataType: "script"
+        });
+      });
+
+    });
+
+  // }
+
+</script>

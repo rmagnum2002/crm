@@ -18,6 +18,7 @@ CrmMd::Application.routes.draw do
   get "profiles", to: 'profile#index', as: :profiles
 
   match "profile/:id", to: "profile#show", as: 'profile'
+  match "companies/:id/country_select", to: "companies#country_select", as: "country_select"
 
   resources :companies do
     member do
@@ -25,7 +26,7 @@ CrmMd::Application.routes.draw do
       get 'show_address'
       get 'comments'
       get 'sales'
-      get 'country_select'
+      get 'country_select', as: 'country_select'
     end
     resources :employees do
       resources :comments

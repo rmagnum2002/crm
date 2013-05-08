@@ -36,6 +36,8 @@ class CompaniesController < ApplicationController
   def new
     @company = Company.new
     @addresses = @company.addresses
+    @countries = Country.all.map{ |c| [c.name, c.id] }
+    @states = State.all.map{ |s| [s.name, s.id] }
     2.times { @company.addresses.build }
 
     respond_to do |format|
@@ -47,6 +49,16 @@ class CompaniesController < ApplicationController
   # GET /companies/1/edit
   def edit
     @addresses = @company.addresses.limit(2)
+
+    @addresses.each do |add|
+      if add.address_type?
+        @states_1 = State.where(country_id: add.country_id).map{ |c| [c.name, c.id] }
+      else
+        @states_0 = State.where(country_id: add.country_id).map{ |c| [c.name, c.id] }
+      end
+    end
+    # @states = State.all.map{ |s| [s.name, s.id] }
+     @countries = Country.all.map{ |c| [c.name, c.id] }
   end
 
   # POST /companies
@@ -115,7 +127,13 @@ class CompaniesController < ApplicationController
   end
 
   def country_select
-    country = Country.find(params[:country_id])
-    @states = country.states.map{|s| [s.name, s.id]}
+    if params[:country_id].present?
+      @states_0 = @states_1 = Country.find(params[:country_id]).states
+    else
+      @states_0 = @states_1 = []
+    end
+    respond_to do |format|
+      format.js
+    end
   end
 end

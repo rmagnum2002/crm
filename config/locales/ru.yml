@@ -108,6 +108,7 @@ ru:
       legal_address: "Юридический адрес:"
       invoicing_address: "Адрес для фактурации:"
       country_id: "Выберите страну"
+      state_id: "Выберите район"
       postal_code: "Почтовый индекс"
       street: "Улица"
       street_number: "Номер улицы"

@@ -1,1 +1,5 @@
-$('.control-group .controls.state_0').html("sdgfh");
+$('.control-group .controls.state_0').html('<%= j select_tag :state_id, options_for_select(@states_0.map{|s| [s.name, s.id]}),
+  :prompt => t(:"address.form.state_id"), name: "company[addresses_attributes][0][state_id]" if @states_0.count > 0 %>');
+
+$('.control-group .controls.state_1').html('<%= j select_tag :state_id, options_for_select(@states_1.map{|s| [s.name, s.id]}),
+  :prompt => t(:"address.form.state_id"), name: "company[addresses_attributes][1][state_id]" if @states_1.count > 0 %>');

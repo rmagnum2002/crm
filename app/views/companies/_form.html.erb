@@ -131,13 +131,12 @@
         </div>
         <div class="control-group">
           <div class="controls">
-            <%#= af.collection_select :country_id, Country.order(:name), :id, :name, include_blank: t(:"address.form.country_id") %>
-            <%= af.select :country_id, options_for_select(Country.all.map{ |c| [c.name, c.id] }), onchange: {action: "country_select" } %>
+            <%= af.select :country_id, options_for_select(@countries, selected: address.country_id), onchange: {action: "country_select" }, include_blank: t(:"address.form.country_id") %>
           </div>
         </div>
         <div class="control-group">
           <div class="controls state_<%= index %>">
-            <%= af.select :state_id, options_for_select(State.all.map{ |c| [c.name, c.id] }), include_blank: t(:"address.form.state_id") %>
+            <%= af.select :state_id, options_for_select(@states_0, selected: address.state_id), onchange: {action: "country_select" }, include_blank: t(:"address.form.state_id") unless address.state_id.nil? %>
           </div>
         </div>
         <div class="control-group">
@@ -172,22 +171,28 @@
 
 <script type="text/javascript">
 
-  // function country_select() {
-
-    $(document).ready(function() {
-      $('#company_addresses_attributes_0_country_id').change(function() {
-        $.ajax({
-          // url: "companies/new/country_select" + $('#country_select').val(),
-          url: "companies/country_select",
-          data: {
-            country_id : $('#company_addresses_attributes_0_country_id').val()
-          },
-          dataType: "script"
-        });
+  $(document).ready(function() {
+    $('#company_addresses_attributes_0_country_id').change(function() {
+      $.ajax({
+        type: "POST",
+        url: "country_select",
+        data: {
+          country_id : $('#company_addresses_attributes_0_country_id').val()
+        }
       });
-
     });
+  });
 
-  // }
+  $(document).ready(function() {
+    $('#company_addresses_attributes_1_country_id').change(function() {
+      $.ajax({
+        type: "POST",
+        url: "country_select",
+        data: {
+          country_id : $('#company_addresses_attributes_1_country_id').val()
+        }
+      });
+    });
+  });
 
 </script>

@@ -111,6 +111,7 @@ ro:
       legal_address: "Adresa juridică:"
       invoicing_address: "Adresa de facturare:"
       country_id: "Alegeţi ţara"
+      state_id: "Alegeţi raionul"
       postal_code: "Codul poştal"
       street: "Stada"
       street_number: "Numărul străzii"

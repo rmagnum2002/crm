@@ -202,7 +202,10 @@ country = Country.create([
 state = State.create([
   { name: "Bălți", country_id: 1 },
   { name: "Chișinău", country_id: 1 },
-  { name: "Cahul", country_id: 1 }
+  { name: "Cahul", country_id: 1 },
+  { name: "Bucuresti", country_id: 2},
+  { name: "Moscova", country_id: 3},
+  { name: "Kiev", country_id: 4}
 ])
 
 state = Comment.create([

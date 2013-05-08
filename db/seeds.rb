@@ -10,8 +10,8 @@
 #   Mayor.create(name: 'Emanuel', state_id: cities.first)
 
 users = User.create([
-  { email: "rubydeve@gmail.com", password: "admin2013", first_name: "Alexandru", last_name: "Leasenco" },
-  { email: "rmagnum2002@gmail.com", password: "admin2013", first_name: "Sergiu", last_name: "Rosca" },
+  { email: "rubydeve@gmail.com", password: "admin2013", first_name: "Alexandru", last_name: "Leasenco", role: "admin" },
+  { email: "rmagnum2002@gmail.com", password: "admin2013", first_name: "Sergiu", last_name: "Rosca", role: "admin" },
   ])
 
 companies = Company.create([

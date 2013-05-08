@@ -1,6 +1,8 @@
 class CompaniesController < ApplicationController
   before_filter :load_company, except: %w{index new create search}
 
+  load_and_authorize_resource
+
   # GET /companies
   # GET /companies.json
   def index

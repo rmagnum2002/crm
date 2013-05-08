@@ -6,7 +6,7 @@ class Ability
     #
     user ||= User.new # guest user (not logged in)
 
-    if user.role? :superadmin
+    if user.role? :user
       cannot :manage, :all
     end
     if user.role? :moderator

@@ -21,6 +21,7 @@
           </a>
           <%= link_to "CRM.md", root_path, class: 'brand' %>
           <div class="nav-collapse">
+            <% if user_signed_in? %>
             <ul class="nav">
               <li><%= link_to t(:"menu.main"), root_path %></li>
               <li><%= link_to t(:"menu.companies"), companies_path %></li>
@@ -28,6 +29,7 @@
               <li><%= link_to t(:"menu.calendar"), events_path %></li>
               <li><%= link_to t(:"menu.user"), profiles_path %></li>
             </ul>
+            <% end %>
           </div>
           <div class="login pull-right">
             <% if user_signed_in? %>

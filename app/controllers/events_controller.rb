@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+
+  load_and_authorize_resource
+
   def index
     @events_by_date = Event.order("event_date").group_by{|e| e.event_date.to_date}
     @date = params[:date] ? Date.parse(params[:date]) : Date.today

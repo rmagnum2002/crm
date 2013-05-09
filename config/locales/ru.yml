@@ -117,7 +117,7 @@ ru:
       legal_address: "Юридический"
       invoicing_address: "Фактураций"
       country: "Страна"
-      state: "Район"
+      state: "Город"
       postal_code: "Почтовый индекс"
       street: "Улица"
       number: "Номер"

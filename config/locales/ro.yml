@@ -120,7 +120,7 @@ ro:
       legal_address: "Juridică"
       invoicing_address: "Facturare"
       country: "Ţara"
-      state: "Raionul"
+      state: "Oraşul"
       postal_code: "Codul poştal"
       street: "Strada"
       number: "Numărul"

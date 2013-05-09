@@ -120,7 +120,7 @@ en:
       legal_address: "Legal"
       invoicing_address: "Invoicing"
       country: "Country"
-      state: "State"
+      state: "City"
       postal_code: "Postal code"
       street: "Street"
       number: "Number"

@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_filter :load_company, except: %w{index new create search country_select}
+  before_filter :load_company, except: %w{index new create search country_select_legal country_select_invoicing}
 
   # GET /companies
   # GET /companies.json
@@ -126,11 +126,22 @@ class CompaniesController < ApplicationController
     end
   end
 
-  def country_select
+  def country_select_legal
     if params[:country_id].present?
-      @states_0 = @states_1 = Country.find(params[:country_id]).states
+      @states_0 = Country.find(params[:country_id]).states
     else
-      @states_0 = @states_1 = []
+      @states_0 = []
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def country_select_invoicing
+    if params[:country_id].present?
+      @states_1 = Country.find(params[:country_id]).states
+    else
+      @states_1 = []
     end
     respond_to do |format|
       format.js

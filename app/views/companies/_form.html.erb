@@ -115,8 +115,9 @@
     <hr>
     <div class="control-group">
       <div class="span">
-        <%= check_box "fill", "invoicing", {onclick: "FillInvoicing(this.form)"}, false %>
+        <%#= check_box "fill", "invoicing", {onclick: "FillInvoicing(this.form)"}, false %>
         <p>Check this box if Legal Address and Invoicing Address are the same</p>
+        <div class="copy-form">Click</div>
       </div>
       <% @addresses.each.with_index do |address,index| %>
       <div class="span4">
@@ -137,9 +138,9 @@
         <div class="control-group">
           <div class="controls state_<%= index %>">
             <% if index == 0 %>
-              <%= af.select :state_id, options_for_select(@states_0, selected: address.state_id) unless address.state_id.nil? %>
+              <%= af.select :state_id, options_for_select(@states_0, selected: address.state_id), {}, id: "state_id_0" unless address.state_id.nil? %>
               <% else %>
-              <%= af.select :state_id, options_for_select(@states_1, selected: address.state_id) unless address.state_id.nil? %>
+              <%= af.select :state_id, options_for_select(@states_1, selected: address.state_id), {}, id: "state_id_1" unless address.state_id.nil? %>
               <% end %>
           </div>
         </div>
@@ -176,18 +177,19 @@
 <script type="text/javascript">
 
   $(document).ready(function() {
-    $('#company_addresses_attributes_0_country_id').change(function() {
-      $.ajax({
-        type: "POST",
-        url: "country_select_legal",
-        data: {
-          country_id : $('#company_addresses_attributes_0_country_id').val()
-        }
-      });
-    });
-  });
 
-  $(document).ready(function() {
+    $(".copy-form").click(fill_form);
+
+    $('#company_addresses_attributes_0_country_id').change(function() {
+        $.ajax({
+          type: "POST",
+          url: "country_select_legal",
+          data: {
+            country_id : $('#company_addresses_attributes_0_country_id').val()
+          }
+        });
+      });
+
     $('#company_addresses_attributes_1_country_id').change(function() {
       $.ajax({
         type: "POST",

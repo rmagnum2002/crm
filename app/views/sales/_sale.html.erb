@@ -1,0 +1,6 @@
+<div class="comment_<%= sale.id %>">
+  <div style="border-left: 1px solid rgba(0, 0, 0, 0.2);padding-left:5px;">
+     <%= link_to sale.user.full_name, profile_path(sale.user) %> added a sale with ammount of <%= sale.ammount %> lei
+  </div>
+</div>
+<hr>

@@ -54,9 +54,9 @@
   <div class="span6">
     <div class="page-header">
       <%= link_to t(:"company.show.address"), show_address_company_path, remote: true %> |
-      <%= link_to t(:"company.show.contacts"), show_contacts_company_path, remote: true %> |
-      <%= link_to t(:"company.show.comments"), comments_company_path, remote: true %> |
-      <%= link_to t(:"company.show.sales"), sales_company_path, remote: true %>
+      <%= link_to t(:"company.show.contacts"), show_contacts_company_path, remote: true %> (<%= @company.employee.count %>) |
+      <%= link_to t(:"company.show.comments"), comments_company_path, remote: true %> (<%= @company.comments.count %>) |
+      <%= link_to t(:"company.show.sales"), sales_company_path, remote: true %> (<%= @company.sales.count %>)
     </div>
     <div class="right_side">
       <%= render 'address' %>

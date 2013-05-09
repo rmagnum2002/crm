@@ -103,6 +103,10 @@ class CompaniesController < ApplicationController
   end
 
   def sales
+    @saleable = @company
+    @sale = Sale.new
+    @sales = @saleable.sales.order('created_at desc')
+    @total = @sales.sum(&:ammount)
   end
 
   # DELETE /companies/1

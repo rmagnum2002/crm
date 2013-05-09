@@ -31,6 +31,7 @@ CrmMd::Application.routes.draw do
     end
     resources :addresses
     resources :comments
+    resources :sales
 
     collection { post :search, to: 'companies#search' }
   end

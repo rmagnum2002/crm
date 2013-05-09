@@ -12,6 +12,7 @@ class Company < ActiveRecord::Base
   belongs_to :organizational_form
   has_many :addresses, :dependent => :destroy
   has_many :comments, as: :commentable
+  has_many :sales, as: :saleable
 
   accepts_nested_attributes_for :addresses, :allow_destroy => true
 

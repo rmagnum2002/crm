@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_filter :load_company, except: %w{index new create search}
+  before_filter :load_company, except: %w{index new create search country_select_legal country_select_invoicing}
 
   load_and_authorize_resource
 
@@ -38,6 +38,8 @@ class CompaniesController < ApplicationController
   def new
     @company = Company.new
     @addresses = @company.addresses
+    @countries = Country.all.map{ |c| [c.name, c.id] }
+    @states = State.all.map{ |s| [s.name, s.id] }
     2.times { @company.addresses.build }
 
     respond_to do |format|
@@ -49,6 +51,16 @@ class CompaniesController < ApplicationController
   # GET /companies/1/edit
   def edit
     @addresses = @company.addresses.limit(2)
+
+    @addresses.each do |add|
+      if add.address_type?
+        @states_1 = State.where(country_id: add.country_id).map{ |c| [c.name, c.id] }
+      else
+        @states_0 = State.where(country_id: add.country_id).map{ |c| [c.name, c.id] }
+      end
+    end
+    # @states = State.all.map{ |s| [s.name, s.id] }
+     @countries = Country.all.map{ |c| [c.name, c.id] }
   end
 
   # POST /companies
@@ -117,6 +129,28 @@ class CompaniesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to companies_url }
       format.json { head :no_content }
+    end
+  end
+
+  def country_select_legal
+    if params[:country_id].present?
+      @states_0 = Country.find(params[:country_id]).states
+    else
+      @states_0 = []
+    end
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def country_select_invoicing
+    if params[:country_id].present?
+      @states_1 = Country.find(params[:country_id]).states
+    else
+      @states_1 = []
+    end
+    respond_to do |format|
+      format.js
     end
   end
 end

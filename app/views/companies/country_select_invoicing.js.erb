@@ -1,0 +1,2 @@
+$('.control-group .controls.state_1').html('<%= j select_tag :state_id, options_for_select(@states_1.map{|s| [s.name, s.id]}),
+  name: "company[addresses_attributes][1][state_id]", id: "state_id_1" if @states_1.count > 0 %>');

@@ -31,6 +31,7 @@ gem 'will_paginate'
 gem 'activeadmin'
 gem 'awesome_nested_fields'
 gem "ransack"
+gem 'client_side_validations'
 
 gem 'thin'
 gem "cancan"

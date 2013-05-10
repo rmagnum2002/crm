@@ -115,9 +115,7 @@
     <hr>
     <div class="control-group">
       <div class="span">
-        <%#= check_box "fill", "invoicing", {onclick: "FillInvoicing(this.form)"}, false %>
-        <p>Check this box if Legal Address and Invoicing Address are the same</p>
-        <div class="copy-form">Click</div>
+        <div class="copy-form">Click if Legal Address and Invoicing Address are the same</div>
       </div>
       <% @addresses.each.with_index do |address,index| %>
       <div class="span4">

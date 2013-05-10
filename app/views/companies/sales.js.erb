@@ -1,1 +1,2 @@
 $('.right_side').html("<%= j render('sales') %>");
+$('.total_sales').html("(<%= @company.sales.count %>)");

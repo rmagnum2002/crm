@@ -1,1 +1,2 @@
 $('.right_side').html("<%= j render(partial: 'comments') %>");
+$('.total_comment').html("(<%= @company.comments.count %>)");

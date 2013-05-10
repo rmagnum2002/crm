@@ -20,6 +20,7 @@ CrmMd::Application.routes.draw do
   match "profile/:id", to: "profile#show", as: 'profile'
   match "companies/:id/country_select_legal", to: "companies#country_select_legal", as: "country_select_legal"
   match "companies/:id/country_select_invoicing", to: "companies#country_select_invoicing", as: "country_select_invoicing"
+  match "companies/search", to: "companies#search"
 
   resources :companies do
     member do

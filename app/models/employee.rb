@@ -8,6 +8,8 @@ class Employee < ActiveRecord::Base
   has_many :comments, as: :commentable
   belongs_to :event
 
+  validates :client_date, :first_name, :gender, :job_title_id, :language, :last_name, :patronymic, :title, presence: true
+
   LANGUAGE = { 0 => :"employee.language.romanian",
                1 => :"employee.language.russian",
                2 => :"employee.language.english"

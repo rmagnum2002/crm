@@ -17,6 +17,15 @@ en:
         postal_code: "Postal code"
         street: "Street"
         street_number: "Street number"
+      employee:
+        client_date: "Client date"
+        first_name: "First name"
+        last_name: "Last name"
+        patronymic: "Patronymic"
+        gender: "Gender"
+        language: "Language"
+        title: "Title"
+        job_title_id: "Job title"
 
     errors:
       models:
@@ -52,6 +61,25 @@ en:
               blank: "%{attribute} is required"
             street_number:
               blank: "%{attribute} is required"
+        employee:
+          attributes:
+            client_date:
+              blank: "%{attribute} is required"
+            first_name:
+              blank: "%{attribute} is required"
+            last_name:
+              blank: "%{attribute} is required"
+            patronymic:
+              blank: "%{attribute} is required"
+            gender:
+              blank: "%{attribute} is required"
+            language:
+              blank: "%{attribute} is required"
+            title:
+              blank: "%{attribute} is required"
+            job_title_id:
+              blank: "%{attribute} is required"
+
 
 ro:
   activerecord:
@@ -72,6 +100,15 @@ ro:
         postal_code: "Codul poştal"
         street: "Adresa"
         street_number: "Numărul străzii"
+      employee:
+        client_date: "Client din data"
+        first_name: "Numele"
+        last_name: "Prenumele"
+        patronymic: "Patronimicul"
+        gender: "Genul"
+        language: "Limba"
+        title: "Titlul"
+        job_title_id: "Funcţia"
 
     errors:
       models:
@@ -106,6 +143,24 @@ ro:
             street:
               blank: "%{attribute} obligatoriu"
             street_number:
+              blank: "%{attribute} obligatoriu"
+        employee:
+          attributes:
+            client_date:
+              blank: "%{attribute} obligatoriu"
+            first_name:
+              blank: "%{attribute} obligatoriu"
+            last_name:
+              blank: "%{attribute} obligatoriu"
+            patronymic:
+              blank: "%{attribute} obligatoriu"
+            gender:
+              blank: "%{attribute} obligatoriu"
+            language:
+              blank: "%{attribute} obligatoriu"
+            title:
+              blank: "%{attribute} obligatoriu"
+            job_title_id:
               blank: "%{attribute} obligatoriu"
 
 ru:
@@ -127,6 +182,15 @@ ru:
         postal_code: "Индекс"
         street: "Адрес"
         street_number: "Номер улицы"
+      employee:
+        client_date: "Клиент с"
+        first_name: "Имя"
+        last_name: "Фамилия"
+        patronymic: "Отчество"
+        gender: "Пол"
+        language: "Язык"
+        title: "Звание"
+        job_title_id: "Должность"
 
     errors:
       models:
@@ -161,4 +225,22 @@ ru:
             street:
               blank: "%{attribute} обязательно"
             street_number:
+              blank: "%{attribute} обязательно"
+        employee:
+          attributes:
+            client_date:
+              blank: "%{attribute} обязательно"
+            first_name:
+              blank: "%{attribute} обязательно"
+            last_name:
+              blank: "%{attribute} обязательно"
+            patronymic:
+              blank: "%{attribute} обязательно"
+            gender:
+              blank: "%{attribute} обязательно"
+            language:
+              blank: "%{attribute} обязательно"
+            title:
+              blank: "%{attribute} обязательно"
+            job_title_id:
               blank: "%{attribute} обязательно"

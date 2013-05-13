@@ -23,35 +23,35 @@ en:
         company:
           attributes:
             name:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} is required"
             company_branch_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} is required"
             client_category_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} is required"
             organizational_form_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} is required"
             client_type_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} is required"
             company_source_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} is required"
             client_status_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} is required"
             client_at:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} is required"
             phone:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} is required"
         address:
           attributes:
             country_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} is required"
             state_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} is required"
             postal_code:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} is required"
             street:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} is required"
             street_number:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} is required"
 
 ro:
   activerecord:
@@ -78,35 +78,35 @@ ro:
         company:
           attributes:
             name:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} obligatoriu"
             company_branch_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} obligatoriu"
             client_category_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} obligatoriu"
             organizational_form_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} obligatoriu"
             client_type_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} obligatoriu"
             company_source_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} obligatoriu"
             client_status_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} obligatoriu"
             client_at:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} obligatoriu"
             phone:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} obligatoriu"
         address:
           attributes:
             country_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} obligatoriu"
             state_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} obligatoriu"
             postal_code:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} obligatoriu"
             street:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} obligatoriu"
             street_number:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} obligatoriu"
 
 ru:
   activerecord:
@@ -133,32 +133,32 @@ ru:
         company:
           attributes:
             name:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} обязательно"
             company_branch_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} обязательно"
             client_category_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} обязательно"
             organizational_form_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} обязательно"
             client_type_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} обязательно"
             company_source_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} обязательно"
             client_status_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} обязательно"
             client_at:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} обязательно"
             phone:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} обязательно"
         address:
           attributes:
             country_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} обязательно"
             state_id:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} обязательно"
             postal_code:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} обязательно"
             street:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} обязательно"
             street_number:
-              blank: "%{attribute} обезательно"
+              blank: "%{attribute} обязательно"

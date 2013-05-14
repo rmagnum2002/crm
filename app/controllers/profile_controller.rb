@@ -7,6 +7,7 @@ class ProfileController < ApplicationController
     @user = User.find(params[:id])
     @responsible = Company.where(responsible_id: @user.id)
     @activities = @user.activities.order("created_at desc")
+    @total = @user.sales.sum(&:ammount)
 
     respond_to do |format|
       format.html # show.html.erb

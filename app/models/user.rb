@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_many :employee
   has_many :activities
   has_many :comments
+  has_many :sales
 
   # Role user is the default role when creating new user
   ROLES = %w[user moderator admin superadmin]

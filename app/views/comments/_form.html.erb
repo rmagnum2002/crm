@@ -12,15 +12,9 @@
 
   <div class="control-group">
     <%= f.text_area :content, rows: 4, class: "input-xxlarge", placeholder: t(:"comments.form.comment") %>
+    <div class="errors"></div>
   </div>
-  <div class="control-group">
-    <%#= f.select :result_id, Comment::RESULT.invert.map{|t| t }, :include_blank => "Select result" %>
-  </div>
-  <div class="control-group">
-    <%#= f.text_field :result_date, placeholder: 'Date', class: 'date_select' %> <%#= f.text_field :result_time, placeholder: 'Time' %>
-  </div>
-
-    <h5><%= t(:"events.events") %> | <a href="#" class="add"><%= t(:"events.add_event") %></a></h5>
+  <h5><%= t(:"events.events") %> | <a href="#" class="add"><%= t(:"events.add_event") %></a></h5>
   <div class="items">
     <%= f.nested_fields_for :events do |f| %>
       <fieldset class="item">

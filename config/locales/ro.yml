@@ -537,4 +537,20 @@ ro:
         client_date: "Client din"
         completion: "Vânzare finalizată"
 
+  will_paginate:
+    previous_label: "&#8592; Precedenta"
+    next_label: "Următoarea &#8594;"
+    page_gap: "&hellip;"
 
+    page_entries_info:
+      single_page:
+        zero:  "Nu am găsit nici un %{model}"
+        one:   "Afișarea unui %{model}"
+        other: "Afișarea tuturor %{count} %{model}"
+      single_page_html:
+        zero:  "Nu am găsit nici un %{model}"
+        one:   "Afișarea <b>unui</b> %{model}"
+        other: "Afișarea <b>tuturor&nbsp;%{count}</b> %{model}"
+
+      multi_page: "Afișarea %{model} %{from} - %{to} din totalul de %{count}"
+      multi_page_html: "Afișarea %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> din totalul <b>%{count}</b>"

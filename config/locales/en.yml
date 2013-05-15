@@ -115,6 +115,7 @@ en:
       postal_code: "Postal Code"
       street: "Street Name"
       street_number: "Street number"
+      fill: "Click if Legal Address and Invoicing Address are the same"
     show:
       address: "Address"
       legal_address: "Legal"

@@ -115,6 +115,7 @@ ro:
       postal_code: "Codul poştal"
       street: "Stada"
       street_number: "Numărul străzii"
+      fill: "Apăsaţi dacă adresa juridică și adresa de facturare sunt aceleași"
     show:
       address: "Adrese"
       legal_address: "Juridică"

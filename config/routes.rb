@@ -21,6 +21,7 @@ CrmMd::Application.routes.draw do
   match "companies/:id/country_select_legal", to: "companies#country_select_legal", as: "country_select_legal"
   match "companies/:id/country_select_invoicing", to: "companies#country_select_invoicing", as: "country_select_invoicing"
   match "companies/search", to: "companies#search"
+  match "contacts", to: "employees#index"
 
   resources :companies do
     member do
@@ -39,9 +40,12 @@ CrmMd::Application.routes.draw do
     collection { post :search, to: 'companies#search' }
   end
 
-    resources :employees do
-      resources :comments
+  resources :employees do
+    member do
+      get 'profile'
     end
+    resources :comments
+  end
 
   get "welcome/index"
   match 'set_locale' => 'welcome#set_locale'

@@ -20,7 +20,7 @@ jQuery ->
     oTableTools:
       sSwfPath: "http://localhost:3000/swf/copy_csv_xls_pdf.swf"
 
-  Lang = $('#companies').data('language')
+  Lang = $('#companies, #employees').data('language')
   if Lang == "ro"
     options.oLanguage =
       sProcessing:   "Procesare...",
@@ -58,8 +58,8 @@ jQuery ->
           sSortAscending:  ": активировать для сортировки столбца по возрастанию",
           sSortDescending: ": активировать для сортировки столбцов по убыванию"
 
-  $('#companies').dataTable(options)
-  $('#search_companies').dataTable(s_options)
+  $('#companies, #employees').dataTable(options)
+  $('#search_companies, #search_employees').dataTable(s_options)
 
 jQuery ->
   $('.best_in_place').best_in_place()

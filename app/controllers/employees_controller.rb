@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_filter :load_company
+  before_filter :load_company, except: 'index'
   # GET /employees
   # GET /employees.json
   def index
@@ -7,7 +7,7 @@ class EmployeesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @employees }
+      format.json { render json: EmployeesDatatable.new(view_context) }
     end
   end
 
@@ -22,6 +22,13 @@ class EmployeesController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @employee }
+    end
+  end
+
+  def profile
+    @employee = Employee.find(params[:id])
+    respond_to do |format|
+      format.js
     end
   end
 

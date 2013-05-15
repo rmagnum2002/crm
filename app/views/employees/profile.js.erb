@@ -1,0 +1,2 @@
+$('.modal-body').html('<%= escape_javascript(render :partial => "employee_profile", :object => @employee) %>');
+$('#modal-myModalLabel').html('<h4><%= @employee.full_name %></h4>');

@@ -10,17 +10,7 @@
       <h5><%= t(:"activity.index.activities") %></h5>
     </div>
 
-    <table class="table table-striped">
-      <tbody>
-        <% @activities.each do |activity| %>
-        <tr>
-          <td>
-            <%= ActivityPresenter.new(activity, self).render_activity %>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <div class="activities"><%= render 'activities' %></div>
   </div>
   <div class="span6">
     <h4><%= t(:"user.show.responsible_for") %> <%= @responsible.count %> <%= t(:"user.show.companies") %></h4>

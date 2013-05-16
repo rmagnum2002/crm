@@ -205,6 +205,8 @@ en:
   contacts:
     show:
       contacts: "Contacts"
+      take: "Take decision"
+      cant_take: "Can't take decision"
   comments:
     form:
       add_comments: "Add Comments"

@@ -5,7 +5,7 @@
     <%= link_to "<i class='icon-edit'></i>".html_safe, edit_company_employee_path(@company, employee) %>
     <br>
     <%= employee.phone %><br>
-    <%= employee.decision? ? 'Take decision' : "Can't take decision" %><br>
+    <%= employee.decision? ? t(:"contacts.show.take") : t(:"contacts.show.cant_take") %><br>
     <hr>
   </div>
 <% end %>

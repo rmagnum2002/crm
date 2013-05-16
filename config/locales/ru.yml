@@ -194,6 +194,8 @@ ru:
   contacts:
     show:
       contacts: "Контакты"
+      take: "Принимает решение"
+      cant_take: "Не принимает решение"
   comments:
     form:
       add_comments: "Добавить коментарии"

@@ -205,6 +205,8 @@ ro:
   contacts:
     show:
       contacts: "Contacte"
+      take: "Ia decizie"
+      cant_take: "Nu ia decizie"
   comments:
     form:
       add_comments: "Adaugă Commentarii"

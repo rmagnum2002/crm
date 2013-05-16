@@ -23,6 +23,7 @@ ru:
     logout: "Выход"
     sign_up: "Зарегистрироваться"
     login: "Войти"
+    sales: "Продажы"
 
   registrations:
     sign_up: "Зарегистрироваться"

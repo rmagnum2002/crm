@@ -27,6 +27,7 @@ ro:
     logout: "Ieșire"
     sign_up: "Înregistrează-te"
     login: "Login"
+    sales: "Vînzări"
 
   registrations:
     sign_up: "Înregistrare"

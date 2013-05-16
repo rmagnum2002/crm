@@ -36,6 +36,9 @@ gem 'client_side_validations'
 gem 'thin'
 gem "cancan"
 
+gem 'morrisjs-rails'
+gem 'raphael-rails'
+
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 

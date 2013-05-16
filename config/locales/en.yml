@@ -23,6 +23,7 @@ en:
     logout: "Logout"
     sign_up: "Sign Up"
     login: "Login"
+    sales: "Sales"
 
   registrations:
     sign_up: "Sign up"

@@ -1,8 +1,12 @@
 class SalesController < ApplicationController
-  before_filter :load_saleable
+  before_filter :load_saleable, except: %w[index]
 
   def index
-    @sales = @saleable.sales
+    @sales = Sale.order('created_at desc')
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @sales }
+    end
   end
 
   def new

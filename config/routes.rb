@@ -47,6 +47,8 @@ CrmMd::Application.routes.draw do
     resources :comments
   end
 
+  resources :sales
+
   get "welcome/index"
   match 'set_locale' => 'welcome#set_locale'
 

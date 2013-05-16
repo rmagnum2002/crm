@@ -20,5 +20,7 @@
 //= require jquery.purr
 //= require best_in_place
 //= require jquery.nested-fields
-//= require_tree .
 //= require rails.validations
+//= require raphael
+//= require morris
+//= require_tree .

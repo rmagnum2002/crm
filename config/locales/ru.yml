@@ -168,6 +168,8 @@ ru:
       select_language: "Выберите язык"
       select_job: "Выберите должность"
       cancel: "Отменить"
+      cant_take_decision: "Не может принять решение"
+      take_decision: "Принимает решение"
   events:
     events: "событий"
     events_for: "События для"

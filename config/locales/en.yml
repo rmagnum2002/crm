@@ -179,6 +179,8 @@ en:
       select_language: "Select language"
       select_job: "Select job"
       cancel: "Cancel"
+      cant_take_decision: "Can't take decision"
+      take_decision: "Take decision"
   events:
     result: "Event result"
     events: "events"

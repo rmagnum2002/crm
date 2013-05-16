@@ -179,6 +179,8 @@ ro:
       select_language: "Selectaţi limba"
       select_job: "Selectaţi funcţia"
       cancel: "Anulează"
+      cant_take_decision: "Nu poate lua o decizie"
+      take_decision: "Poate lua o decizie"
   events:
     events: "evenimente"
     events_for: "Evenimente pentru"

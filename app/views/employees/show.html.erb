@@ -42,7 +42,7 @@
       <dt><strong><%= I18n.t(:"employee.form.decision") %>:</strong></dt>
       <dd>
         <%= best_in_place @employee, :decision, :type => :checkbox,
-                            :collection => ["Can't take decision", "Take decision"] %>
+                            :collection => [I18n.t(:"employee.form.cant_take_decision"), I18n.t(:"employee.form.take_decision")] %>
       </dd>
       <dt><strong><%= I18n.t(:"employee.form.phone") %>:</strong></dt>
       <dd><%= best_in_place @employee, :phone %></dd>

@@ -2,10 +2,14 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
+  $.extend $.fn.dataTable.defaults,
+    iDisplayLength: 50
+
   s_options =
     sPaginationType: "full_numbers"
     sDom: "RlfrtipT"
     bJQueryUI: true
+    iDisplayStart: 50
     oTableTools:
       sSwfPath: "http://localhost:3000/swf/copy_csv_xls_pdf.swf"
 
@@ -19,6 +23,18 @@ jQuery ->
     sAjaxSource: $('#companies').data('source')
     oTableTools:
       sSwfPath: "http://localhost:3000/swf/copy_csv_xls_pdf.swf"
+
+  options_empl =
+    sPaginationType: "full_numbers"
+    sDom: "RlfrtipT"
+    bJQueryUI: true
+    bDestroy: true
+    bProcessing: true
+    bServerSide: true
+    sAjaxSource: $('#employees').data('source')
+    oTableTools:
+      sSwfPath: "http://localhost:3000/swf/copy_csv_xls_pdf.swf"
+
 
   Lang = $('#companies, #employees').data('language')
   if Lang == "ro"
@@ -58,7 +74,8 @@ jQuery ->
           sSortAscending:  ": активировать для сортировки столбца по возрастанию",
           sSortDescending: ": активировать для сортировки столбцов по убыванию"
 
-  $('#companies, #employees').dataTable(options)
+  $('#companies').dataTable(options)
+  $('#employees').dataTable(options_empl)
   $('#search_companies, #search_employees').dataTable(s_options)
 
 jQuery ->

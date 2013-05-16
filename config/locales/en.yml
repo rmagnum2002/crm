@@ -156,7 +156,7 @@ en:
     form:
       created_at: "Created at"
       title: "Title"
-      user_id: "User"
+      user_id: "Addded by"
       first_name: "First name"
       last_name: "Last name"
       patronymic: "Patronymic"

@@ -1,7 +1,7 @@
 class EmployeesDatatable
   include EmployeesHelper
 
-  delegate :params, :h, :link_to, :mail_to, to: :@view
+  delegate :params, :h, :t, :link_to, :mail_to, to: :@view
   delegate :url_helpers, to: 'Rails.application.routes'
 
   def initialize(view)
@@ -9,13 +9,13 @@ class EmployeesDatatable
   end
 
   def as_json(options = {})
-  {
-    sEcho: params[:sEcho].to_i,
-    iTotalRecords: Employee.count,
-    iTotalDisplayRecords: employees.total_entries,
-    aaData: data
-  }
-end
+    {
+      sEcho: params[:sEcho].to_i,
+      iTotalRecords: Employee.count,
+      iTotalDisplayRecords: employees.total_entries,
+      aaData: data
+    }
+  end
 
 private
   def data
@@ -23,10 +23,10 @@ private
       [
         h(employee.id),
         link_to((employee.full_name), url_helpers.profile_employee_path(employee), {:remote => true, 'data-toggle' => 'modal', 'data-target' => "#modal-window", 'data-backdrop' => true, 'data-keyboard' => true}),
-        h(employee.gender),
-        h(employee.language),
+        t(Employee::GENDER[employee.gender]),
+        t(Employee::LANGUAGE[employee.language]),
         h(employee.company.name),
-        h(employee.job_title_id),
+        h(employee.job_title.job_title),
         h(employee.decision),
         h(employee.phone),
         h(employee.mobile),
@@ -65,7 +65,7 @@ private
   end
 
   def sort_column
-    columns = %w[id]
+    columns = %w[id first_name gender]
     columns[params[:iSortCol_0].to_i]
   end
 

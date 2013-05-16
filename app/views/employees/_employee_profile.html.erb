@@ -5,17 +5,7 @@
       <dt><strong><%= I18n.t(:"employee.form.title") %>:</strong></dt>
       <dd><%= best_in_place @employee, :title, :type => :select, :collection => Employee::TITLE.map{|key, value| [key, t(value)]} %></dd>
       <dt><strong><%= I18n.t(:"employee.form.user_id") %>:</strong></dt>
-      <dd><%= @employee.user.full_name %></dd>
-      <dt><strong><%= I18n.t(:"employee.form.last_name") %>:</strong></dt>
-      <dd><%= best_in_place @employee, :last_name %></dd>
-      <dt><strong><%= I18n.t(:"employee.form.first_name") %>:</strong></dt>
-      <dd><%= best_in_place @employee, :first_name %></dd>
-      <dt><strong><%= I18n.t(:"employee.form.patronymic") %>:</strong></dt>
-      <dd><%= best_in_place @employee, :patronymic %></dd>
-      <dt><strong><%= I18n.t(:"employee.form.gender") %>:</strong></dt>
-      <dd>
-        <%= best_in_place @employee, :gender, :type => :select, :collection => Employee::GENDER.map{|key, value| [key, t(value)]} %>
-      </dd>
+      <dd><%= link_to @employee.user.full_name, profile_path(@employee.user) %></dd>
       <dt><strong><%= I18n.t(:"employee.form.birthday") %>:</strong></dt>
       <dd><%= l @employee.birthday, format: :long %></dd>
       <dt><strong><%= I18n.t(:"employee.form.language") %>:</strong></dt>

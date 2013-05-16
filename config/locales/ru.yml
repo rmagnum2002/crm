@@ -149,7 +149,7 @@ ru:
     form:
       created_at: "Создан"
       title: "Название"
-      user_id: "Пользователь"
+      user_id: "Добавил"
       first_name: "Имя"
       last_name: "Фамилия"
       patronymic: "Отчество"

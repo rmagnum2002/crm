@@ -137,6 +137,10 @@ ru:
       updated_company: "обновил компанию"
       added_comment: "добавил коментарий к"
       added_note: "добавил коментарий к"
+      added_sale: "добавил новую продажу"
+      amount: "на сумму"
+      sale_removed: "добавленная продажа была удалена"
+      company: "для компаний"
   employee:
     model_title: "Сотрудник"
     language:

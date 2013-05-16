@@ -140,6 +140,10 @@ en:
       updated_company: "updated company"
       added_comment: "added a new comment to"
       added_note: "added a note to"
+      added_sale: "added a new sale to"
+      amount: "with amount of"
+      sale_removed: "added a sale wich has since been removed"
+      company: "company"
   employee:
     model_title: "Employee"
     language:

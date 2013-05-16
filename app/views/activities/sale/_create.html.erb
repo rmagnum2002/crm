@@ -1,6 +1,6 @@
 <% if sale %>
-added a new sale to <%= sale.saleable_type.downcase %> <%= link_to sale.saleable.name, sale.saleable %>
-with ammount of <%= sale.ammount %> lei | <%= l activity.created_at, format: :short %>
+<%= I18n.t(:"activity.index.added_sale") %> <%= I18n.t(:"activity.index.company") %> <%= link_to sale.saleable.name, sale.saleable %>
+<%= I18n.t(:"activity.index.amount") %> <%= sale.ammount %> lei | <%= l activity.created_at, format: :short %>
 <% else %>
-added a sale wich has since been removed
+<%= I18n.t(:"activity.index.sale_removed") %>
 <% end %>

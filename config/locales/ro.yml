@@ -140,6 +140,10 @@ ro:
       updated_company: "a actualizat compania"
       added_comment: "a adăugat comentariu la"
       added_note: "a adăugat notiță la"
+      added_sale: "a adăugat o vînzare nouă"
+      amount: "în sumă de"
+      sale_removed: "vînzarea adăugată a fost ştearsă"
+      company: "pentru compania"
   employee:
     model_title: "Angajatul"
     language:

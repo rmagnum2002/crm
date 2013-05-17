@@ -12,3 +12,12 @@ function fill_form() {
   $("#company_addresses_attributes_1_street").val( $("#company_addresses_attributes_0_street").val() );
   $("#company_addresses_attributes_1_street_number").val( $("#company_addresses_attributes_0_street_number").val() );
 }
+
+var fnShowHide;
+
+fnShowHide = function(iCol) {
+  var bVis, oTable;
+  oTable = $("#companies").dataTable();
+  bVis = oTable.fnSettings().aoColumns[iCol].bVisible;
+  return oTable.fnSetColumnVis(iCol, (bVis ? false : true));
+};

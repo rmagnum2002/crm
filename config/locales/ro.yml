@@ -16,6 +16,9 @@ ro:
   job_titles: "Job Titles"
   organizational_forms: "Organizational Forms"
   admin_users: "Admin Users"
+  save: "Confirmă"
+  cancel: "Anulare"
+  nothng: "Nu sunt date"
 
   menu:
     main: "Principala"

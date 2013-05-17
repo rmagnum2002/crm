@@ -12,6 +12,9 @@ en:
   job_titles: "Job Titles"
   organizational_forms: "Organizational Forms"
   admin_users: "Admin Users"
+  save: "Save"
+  cancel: "Cancel"
+  nothng: "Nothing to show"
 
   menu:
     main: "Main"

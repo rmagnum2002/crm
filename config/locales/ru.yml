@@ -12,6 +12,9 @@ ru:
   job_titles: "Job Titles"
   organizational_forms: "Organizational Forms"
   admin_users: "Admin Users"
+  save: "Сохранить"
+  cancel: "Отменить"
+  nothng: "Нет данных"
 
   menu:
     main: "Главная"

@@ -1,8 +1,10 @@
 <%- model_class = Employee -%>
+<%- opts = { :type => :textarea, :ok_button => t(:'save'), :cancel_button => t(:'cancel'), :use_confirm => false } %>
+<%- opts.delete(:ok_button) if params[:suppress_ok_button] %>
 <div class="row-fluid">
   <div class="page-header">
     <h1><%= t(:"employee.model_title") %> -
-      <%= best_in_place @employee, :first_name %> <%= best_in_place @employee, :last_name %> <%= best_in_place @employee, :patronymic %>
+      <%= best_in_place @employee, :first_name, opts %> <%= best_in_place @employee, :last_name, opts %> <%= best_in_place @employee, :patronymic, opts %>
     </h1>
   </div>
 
@@ -15,11 +17,11 @@
       <dt><strong><%= I18n.t(:"employee.form.user_id") %>:</strong></dt>
       <dd><%= @employee.user.full_name %></dd>
       <dt><strong><%= I18n.t(:"employee.form.last_name") %>:</strong></dt>
-      <dd><%= best_in_place @employee, :last_name %></dd>
+      <dd><%= best_in_place @employee, :last_name, opts %></dd>
       <dt><strong><%= I18n.t(:"employee.form.first_name") %>:</strong></dt>
-      <dd><%= best_in_place @employee, :first_name %></dd>
+      <dd><%= best_in_place @employee, :first_name, opts %></dd>
       <dt><strong><%= I18n.t(:"employee.form.patronymic") %>:</strong></dt>
-      <dd><%= best_in_place @employee, :patronymic %></dd>
+      <dd><%= best_in_place @employee, :patronymic, opts %></dd>
       <dt><strong><%= I18n.t(:"employee.form.gender") %>:</strong></dt>
       <dd>
         <%= best_in_place @employee, :gender, :type => :select, :collection => Employee::GENDER.map{|key, value| [key, t(value)]} %>
@@ -45,21 +47,21 @@
                             :collection => [I18n.t(:"employee.form.cant_take_decision"), I18n.t(:"employee.form.take_decision")] %>
       </dd>
       <dt><strong><%= I18n.t(:"employee.form.phone") %>:</strong></dt>
-      <dd><%= best_in_place @employee, :phone %></dd>
+      <dd><%= best_in_place @employee, :phone, opts %></dd>
       <dt><strong><%= I18n.t(:"employee.form.mobile") %>:</strong></dt>
-      <dd><%= best_in_place @employee, :mobile %></dd>
+      <dd><%= best_in_place @employee, :mobile, opts %></dd>
       <dt><strong><%= I18n.t(:"employee.form.simtravel") %>:</strong></dt>
-      <dd><%= best_in_place @employee, :simtravel %></dd>
+      <dd><%= best_in_place @employee, :simtravel, opts %></dd>
       <dt><strong><%= I18n.t(:"employee.form.email") %>:</strong></dt>
-      <dd><%= best_in_place @employee, :email %></dd>
+      <dd><%= best_in_place @employee, :email, opts %></dd>
       <dt><strong><%= I18n.t(:"employee.form.skype") %>:</strong></dt>
-      <dd><%= best_in_place @employee, :skype %></dd>
+      <dd><%= best_in_place @employee, :skype, opts %></dd>
       <dt><strong><%= I18n.t(:"employee.form.facebook") %>:</strong></dt>
-      <dd><%= best_in_place @employee, :facebook %></dd>
+      <dd><%= best_in_place @employee, :facebook, opts %></dd>
       <dt><strong><%= I18n.t(:"employee.form.client_date") %>:</strong></dt>
       <dd><%= l @employee.client_date, format: :long %></dd>
-      <dt><strong><%= I18n.t(:"employee.form.completion") %>:</strong></dt>
-      <dd><%= best_in_place @employee, :completion %></dd>
+<!--       <dt><strong><%#= I18n.t(:"employee.form.completion") %>:</strong></dt>
+      <dd><%#= best_in_place @employee, :completion %></dd> -->
     </dl>
   </div>
   <div class="span6">

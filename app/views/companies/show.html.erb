@@ -10,11 +10,13 @@
       <dt><strong><%= t(:"company.show.added_by") %>:</strong></dt>
       <dd><%= link_to @company.user.full_name, profile_path(@company.user) %></dd>
       <dt><strong><%= t(:"company.show.responsible") %>:</strong></dt>
+      <%- opts = { :type => :textarea, :ok_button => t(:'save'), :cancel_button => t(:'cancel'), :use_confirm => false, :nil => t(:"nothng") } %>
+      <%- opts.delete(:ok_button) if params[:suppress_ok_button] %>
       <dd>
         <%= best_in_place @company, :responsible_id, :type => :select, :collection => User.all.map{|x| [x.id, link_to(x.full_name, profile_path(x))]} %>
       </dd>
       <dt><strong><%= t(:"company.show.number_employees") %>:</strong></dt>
-      <dd><%= best_in_place @company, :number_employees %></dd>
+      <dd><%= best_in_place @company, :number_employees, opts %></dd>
       <dt><strong><%= t(:"company.show.company_branch") %>:</strong></dt>
       <dd>
         <% if current_language == "ro" %>
@@ -58,21 +60,21 @@
       <dt><strong><%= t(:"company.show.client_at") %>:</strong></dt>
       <dd><%= l @company.client_at, format: :long %></dd>
       <dt><strong><%= t(:"company.show.phone") %>:</strong></dt>
-      <dd><%= best_in_place @company, :phone %></dd>
+      <dd><%= best_in_place @company, :phone, opts %></dd>
       <dt><strong><%= t(:"company.show.fax") %>:</strong></dt>
-      <dd><%= best_in_place @company, :fax %></dd>
+      <dd><%= best_in_place @company, :fax, opts %></dd>
       <dt><strong><%= t(:"company.show.email") %>:</strong></dt>
-      <dd><%= best_in_place @company, :email %></dd>
+      <dd><%= best_in_place @company, :email, opts %></dd>
       <dt><strong><%= t(:"company.show.skype") %>:</strong></dt>
-      <dd><%= best_in_place @company, :skype %></dd>
+      <dd><%= best_in_place @company, :skype, opts %></dd>
       <dt><strong><%= t(:"company.show.website") %>:</strong></dt>
-      <dd><%= best_in_place @company, :website %></dd>
+      <dd><%= best_in_place @company, :website, opts %></dd>
       <dt><strong><%= t(:"company.show.facebook") %>:</strong></dt>
-      <dd><%= best_in_place @company, :facebook %></dd>
+      <dd><%= best_in_place @company, :facebook, opts %></dd>
       <dt><strong><%= t(:"company.show.bank_req") %>:</strong></dt>
-      <dd><%= best_in_place @company, :bank_req %></dd>
+      <dd><%= best_in_place @company, :bank_req, opts %></dd>
       <dt><strong><%= t(:"company.show.fisc_id") %>:</strong></dt>
-      <dd><%= best_in_place @company, :fisc_id %></dd>
+      <dd><%= best_in_place @company, :fisc_id, opts %></dd>
     </dl>
   </div>
   <div class="span6">

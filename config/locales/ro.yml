@@ -142,12 +142,16 @@ ro:
     index:
       activities: "Activităţi"
       updated_company: "a actualizat compania"
-      added_comment: "a adăugat comentariu la"
-      added_note: "a adăugat notiță la"
+      added_comment: "a adăugat comentariu la compania"
+      added_note: "a adăugat notiță la utilizatorul"
       added_sale: "a adăugat o vînzare nouă"
       amount: "în sumă de"
       sale_removed: "vînzarea adăugată a fost ştearsă"
       company: "pentru compania"
+      added_company: "a adăugat o companie nouă"
+      added_contact: "a adăugat un contact nou"
+      added_event: "a adăugat un eveniment nou"
+      to_company: "la compania"
   employee:
     model_title: "Angajatul"
     language:
@@ -205,6 +209,7 @@ ro:
       email: "Email"
       skype: "Skype"
       facebook: "Facebook"
+      birthday: "Data de naştere"
   events:
     events: "evenimente"
     events_for: "Evenimente pentru"

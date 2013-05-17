@@ -1,5 +1,5 @@
 <% if event %>
-added a new event <%= link_to t(Event::RESULT[event.action_id]) %> | <%= l activity.created_at, format: :short %>
+<%= t(:'activity.index.added_event') %> <%= link_to t(Event::RESULT[event.action_id]) %>
 <% else %>
 added event wich has since been removed
 <% end %>

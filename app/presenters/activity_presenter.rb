@@ -8,7 +8,15 @@ class ActivityPresenter < SimpleDelegator
 
   def render_activity
     div_for activity do
-     link_to(activity.user.full_name, profile_path(activity.user)) + " " + render_partial
+      content_tag(:div, class: activity.trackable_type.downcase) do
+        content_tag(:span, class: "span3") do
+          link_to(activity.user.full_name, profile_path(activity.user)) + "<br>".html_safe +
+          (l activity.created_at, format: :long)
+        end +
+        content_tag(:span, class: "span6") do
+           render_partial
+        end
+      end
     end
   end
 

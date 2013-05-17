@@ -139,12 +139,16 @@ ru:
     index:
       activities: "Активности"
       updated_company: "обновил компанию"
-      added_comment: "добавил коментарий к"
-      added_note: "добавил коментарий к"
+      added_comment: "добавил коментарий к компании"
+      added_note: "добавил коментарий к сотруднику"
       added_sale: "добавил новую продажу"
       amount: "на сумму"
       sale_removed: "добавленная продажа была удалена"
       company: "для компаний"
+      added_company: "добавил компанию"
+      added_contact: "добавил контакт"
+      added_event: "добавил событие"
+      to_company: "к компаний"
   employee:
     model_title: "Сотрудник"
     language:
@@ -194,6 +198,7 @@ ru:
       email: "Email"
       skype: "Skype"
       facebook: "Facebook"
+      birthday: "Год рождения"
   events:
     events: "событий"
     events_for: "События для"

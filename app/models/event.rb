@@ -7,6 +7,8 @@ class Event < ActiveRecord::Base
 
   attr_accessible :action_id, :email, :event_date, :employee_id, :user_id, :comment_id
 
+  before_create :update_date_event
+
   RESULT = {
     0 => :"events.result.problem_solved",
     1 => :"events.result.sale",
@@ -15,4 +17,11 @@ class Event < ActiveRecord::Base
     4 => :"events.result.meeting",
     5 => :"events.result.birthday",
     6 => :"events.result.payment_order"}
+
+  def update_date_event
+    if self.event_date == nil
+      self.event_date = Time.now
+    end
+  end
+
 end

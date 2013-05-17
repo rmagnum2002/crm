@@ -12,7 +12,7 @@
   <li>
     <%= link_to open_details_event_path(event), remote: true do %>
       <b><%= event.event_date.strftime('%H:%M') %></b> - <%= t(Event::RESULT[event.action_id]) %><br>
-      <%= event.employee_id? ? "#{event.employee.full_name} <br>".html_safe : ""  %>(<%= event.employee.company.name %>)
+      <%= event.employee_id? ? "#{event.employee.full_name} <br>".html_safe : ""  %><%= event.employee_id? ? "#{(event.employee.company.name)}" : "" %>
       <%= event.email? ? event.email : "" %>
     <% end %>
   </li>

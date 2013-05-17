@@ -20,7 +20,11 @@
       <fieldset class="item">
         <%= f.select :action_id, Event::RESULT.invert.map{|a, b| [t(a), b] }, :include_blank => t(:"events.result.result") %><br>
         <%= f.text_field :email, placeholder: "Email" %><br>
-        <%= f.collection_select :employee_id, @company.employee.find(:all), :id, :full_name, :prompt => t(:"employee.form.full_name"), class: 'select_field' if @company.employee.exists? %><br>
+        <% unless @hide_employees %>
+          <%= f.collection_select :employee_id, @company.employee.find(:all), :id, :full_name, :prompt => t(:"employee.form.full_name"), class: 'select_field' if @company.employee.exists? %><br>
+          <% else %>
+          <%= f.hidden_field :employee_id, value: @employee.id %>
+        <% end %>
         <%= f.text_field :event_date, placeholder: t(:"events.date_hour"), class: "datetimepicker" %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <script type="text/javascript">

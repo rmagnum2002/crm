@@ -14,6 +14,7 @@ class EmployeesController < ApplicationController
   # GET /employees/1
   # GET /employees/1.json
   def show
+    @hide_employees = true
     @employee = Employee.find(params[:id])
     @commentable = @employee
     @comments = @commentable.comments.order('created_at desc')

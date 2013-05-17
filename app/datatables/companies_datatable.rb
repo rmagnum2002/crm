@@ -24,8 +24,8 @@ private
         h(company.id),
         h(company.created_at.strftime("%B %e, %Y")),
         link_to(company.name, company),
-        h(company.client_category.name),
-        h(company.client_type.name),
+        h(dt_client_category(company)),
+        h(dt_client_type(company)),
         h(company.client_at.strftime("%B %e, %Y")),
         h(company.phone),
         h(company.fax),
@@ -46,7 +46,11 @@ end
       companies = companies.joins(:client_category, :client_type).where("companies.id like :search
                           or companies.name like :search
                           or client_categories.name like :search
+                          or client_categories.name_ro like :search
+                          or client_categories.name_ru like :search
                           or client_types.name like :search
+                          or client_types.name_ro like :search
+                          or client_types.name_ru like :search
                           or companies.phone like :search
                           or companies.fax like :search
                           or companies.email like :search", search: "%#{params[:sSearch]}%")

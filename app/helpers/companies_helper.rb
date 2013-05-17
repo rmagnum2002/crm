@@ -75,4 +75,24 @@ module CompaniesHelper
     end
     f.collection_select :company_branch_id, CompanyBranch.find(:all), :id, lang, :prompt => t(:"company.form.branch"), class: 'select_field'
   end
+
+  def dt_client_type(company)
+    if current_language == 'ro'
+      company.client_type.name_ro
+    elsif current_language == 'ru'
+      company.client_type.name_ru
+    else
+      company.client_type.name
+    end
+  end
+
+  def dt_client_category(company)
+    if current_language == 'ro'
+      company.client_category.name_ro
+    elsif current_language == 'ru'
+      company.client_category.name_ru
+    else
+      company.client_category.name
+    end
+  end
 end

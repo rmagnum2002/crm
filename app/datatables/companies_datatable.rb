@@ -1,7 +1,7 @@
 class CompaniesDatatable
   include CompaniesHelper
 
-  delegate :params, :h, :link_to, :mail_to, to: :@view
+  delegate :params, :h, :t, :current_language, :link_to, :mail_to, to: :@view
   delegate :url_helpers, to: 'Rails.application.routes'
 
   def initialize(view)

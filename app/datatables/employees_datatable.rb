@@ -1,7 +1,7 @@
 class EmployeesDatatable
   include EmployeesHelper
 
-  delegate :params, :h, :t, :link_to, :mail_to, to: :@view
+  delegate :params, :h, :t, :current_language, :link_to, :mail_to, to: :@view
   delegate :url_helpers, to: 'Rails.application.routes'
 
   def initialize(view)
@@ -26,7 +26,7 @@ private
         t(Employee::GENDER[employee.gender]),
         t(Employee::LANGUAGE[employee.language]),
         h(employee.company.name),
-        h(employee.job_title.job_title),
+        h(dt_job_title(employee)),
         h(employee.decision),
         h(employee.phone),
         h(employee.mobile),

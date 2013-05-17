@@ -8,6 +8,7 @@ class Event < ActiveRecord::Base
   attr_accessible :action_id, :email, :event_date, :employee_id, :user_id, :comment_id
 
   before_create :update_date_event
+  validates_presence_of :action_id
 
   RESULT = {
     0 => :"events.result.problem_solved",

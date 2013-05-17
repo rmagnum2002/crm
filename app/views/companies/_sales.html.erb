@@ -1,3 +1,19 @@
+<script type="text/javascript">
+(function() {
+  jQuery(function() {
+    return Morris.Line({
+      element: 'sales_chart',
+      data: $('#sales_chart').data('sales'),
+      xkey: 'created_at',
+      ykeys: ['ammount'],
+      labels: ['Ammount']
+    });
+  });
+
+}).call(this);
+</script>
+<%= content_tag :div, "", id: "sales_chart", data: {sales: company_sales_chart_data} %>
+
 <h4><%= t(:"sales.show.sales") %></h4>
 <div class="img-polaroid"><%= render partial: 'sales/form' %></div>
 <div class="page-header">

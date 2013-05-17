@@ -1,3 +1,18 @@
+<script type="text/javascript">
+(function() {
+  jQuery(function() {
+    return Morris.Line({
+      element: 'sales_chart',
+      data: $('#sales_chart').data('sales'),
+      xkey: 'created_at',
+      ykeys: ['ammount'],
+      labels: ['Ammount']
+    });
+  });
+
+}).call(this);
+</script>
+
 <div class="page-header">
   <h1><%= t(:"sales.show.sales") %></h1>
 </div>

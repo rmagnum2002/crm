@@ -175,6 +175,7 @@ ru:
       cancel: "Отменить"
       cant_take_decision: "Не может принять решение"
       take_decision: "Принимает решение"
+      full_profile: "Открыть профиль"
     index:
       contacts: "Контакты"
       id: "ID"

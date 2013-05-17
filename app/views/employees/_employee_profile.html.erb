@@ -1,11 +1,7 @@
   <div class="span8">
     <dl class="dl-horizontal">
-      <dt><strong><%= I18n.t(:"employee.form.created_at") %>:</strong></dt>
-      <dd><%= l @employee.created_at, format: :long %></dd>
-      <dt><strong><%= I18n.t(:"employee.form.title") %>:</strong></dt>
-      <dd><%= best_in_place @employee, :title, :type => :select, :collection => Employee::TITLE.map{|key, value| [key, t(value)]} %></dd>
-      <dt><strong><%= I18n.t(:"employee.form.user_id") %>:</strong></dt>
-      <dd><%= link_to @employee.user.full_name, profile_path(@employee.user) %></dd>
+<!--       <dt><strong><%#= I18n.t(:"employee.form.title") %>:</strong></dt>
+      <dd><%#= best_in_place @employee, :title, :type => :select, :collection => Employee::TITLE.map{|key, value| [key, t(value)]} %></dd> -->
       <dt><strong><%= I18n.t(:"employee.form.birthday") %>:</strong></dt>
       <dd><%= l @employee.birthday, format: :long %></dd>
       <dt><strong><%= I18n.t(:"employee.form.language") %>:</strong></dt>
@@ -19,12 +15,18 @@
       </dd>
       <dt><strong><%= I18n.t(:"employee.form.job_title_id") %>:</strong></dt>
       <dd>
-        <%= best_in_place @employee, :job_title_id, :type => :select, :collection => JobTitle.all.map{|x| [x.id, x.job_title]} %>
+        <% if current_language == "ro" %>
+          <%= best_in_place @employee, :job_title_id, :type => :select, :collection => JobTitle.all.map{|x| [x.id, x.job_title_ro]} %>
+        <% elsif current_language == "en" %>
+          <%= best_in_place @employee, :job_title_id, :type => :select, :collection => JobTitle.all.map{|x| [x.id, x.job_title_en]} %>
+        <% else %>
+          <%= best_in_place @employee, :job_title_id, :type => :select, :collection => JobTitle.all.map{|x| [x.id, x.job_title_ru]} %>
+        <% end %>
       </dd>
       <dt><strong><%= I18n.t(:"employee.form.decision") %>:</strong></dt>
       <dd>
         <%= best_in_place @employee, :decision, :type => :checkbox,
-                            :collection => ["Can't take decision", "Take decision"] %>
+                            :collection => [t(:"employee.form.take_decision"), t(:"employee.form.cant_take_decision")] %>
       </dd>
       <dt><strong><%= I18n.t(:"employee.form.phone") %>:</strong></dt>
       <dd><%= best_in_place @employee, :phone %></dd>
@@ -40,7 +42,12 @@
       <dd><%= best_in_place @employee, :facebook %></dd>
       <dt><strong><%= I18n.t(:"employee.form.client_date") %>:</strong></dt>
       <dd><%= l @employee.client_date, format: :long %></dd>
+      <hr>
+      <dt><strong><%= I18n.t(:"employee.form.user_id") %>:</strong></dt>
+      <dd><%= link_to @employee.user.full_name, profile_path(@employee.user) %></dd>
+      <dt><strong><%= I18n.t(:"employee.form.created_at") %>:</strong></dt>
+      <dd><%= l @employee.created_at, format: :long %></dd>
     </dl>
   </div>
 
-<%= link_to 'Open full profile', company_employee_path(@employee.company, @employee) %>
+<%= link_to t(:'employee.form.full_profile'), company_employee_path(@employee.company, @employee) %>

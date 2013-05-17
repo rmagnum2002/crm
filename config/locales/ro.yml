@@ -186,6 +186,7 @@ ro:
       cancel: "Anulează"
       cant_take_decision: "Nu poate lua o decizie"
       take_decision: "Poate lua o decizie"
+      full_profile: "Deschide profilul complet"
     index:
       contacts: "Contacte"
       id: "ID"

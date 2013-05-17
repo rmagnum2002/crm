@@ -27,7 +27,6 @@ private
         t(Employee::LANGUAGE[employee.language]),
         h(employee.company.name),
         h(dt_job_title(employee)),
-        h(employee.decision),
         h(employee.phone),
         h(employee.mobile),
         h(employee.simtravel),

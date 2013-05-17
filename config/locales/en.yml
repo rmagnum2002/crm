@@ -186,6 +186,7 @@ en:
       cancel: "Cancel"
       cant_take_decision: "Can't take decision"
       take_decision: "Take decision"
+      full_profile: "Open full profile"
     index:
       contacts: "Contacts"
       id: "ID"

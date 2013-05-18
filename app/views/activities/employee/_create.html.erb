@@ -3,17 +3,42 @@
   <%= t(:'activity.index.added_contact') %> <%= link_to employee.full_name, company_employee_path(employee.company, employee) %> <%= t(:"activity.index.to_company") %> <%= link_to employee.company.name, employee.company %>
 </p>
 
-<p>
-  <% if employee.job_title %>
-    <div><%= t(:'employee.index.job_title_id') %>: <%= dt_job_title(employee) %></div>
-  <% end %>
-  <div><%= t(:'employee.index.language') %>: <%= t(Employee::LANGUAGE[employee.language]) %></div>
-  <div><%= employee.decision? ? I18n.t(:"employee.form.take_decision") : I18n.t(:"employee.form.cant_take_decision") %></div>
-  <div><%= t(:'employee.index.phone') %>: <%= employee.phone %></div>
-  <div><%= t(:'employee.index.mobile') %>: <%= employee.mobile %></div>
-  <div><%= t(:'employee.index.simtravel') %>: <%= employee.simtravel %></div>
-  <div><%= t(:'employee.index.birthday') %>: <%= l employee.birthday, format: :long %></div>
-</p>
+<table class='table table-bordered'>
+  <tbody>
+    <% if employee.job_title %>
+    <tr>
+      <td><%= t(:'employee.index.job_title_id') %></td>
+      <td><%= dt_job_title(employee) %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <td><%= t(:'employee.index.language') %></td>
+      <td><%= t(Employee::LANGUAGE[employee.language]) %></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><%= employee.decision? ? I18n.t(:"employee.form.take_decision") : I18n.t(:"employee.form.cant_take_decision") %></td>
+    </tr>
+    <% if employee.phone %>
+    <tr>
+      <td><%= t(:'employee.index.phone') %></td>
+      <td><%= employee.phone %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <td><%= t(:'employee.index.mobile') %></td>
+      <td><%= employee.mobile %></td>
+    </tr>
+    <tr>
+      <td><%= t(:'employee.index.simtravel') %></td>
+      <td><%= employee.simtravel %></td>
+    </tr>
+    <tr>
+      <td><%= t(:'employee.index.birthday') %></td>
+      <td><%= l employee.birthday, format: :long %></td>
+    </tr>
+  </tbody>
+</table>
 <% else %>
 added contact wich has since been removed
 <% end %>

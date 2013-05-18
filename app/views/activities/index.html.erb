@@ -6,9 +6,9 @@
   <tbody>
     <% @activities.each do |activity| %>
     <tr>
-      <td>
+      <!-- <td> -->
         <%= ActivityPresenter.new(activity, self).render_activity %>
-      </td>
+      <!-- </td> -->
     </tr>
     <% end %>
   </tbody>

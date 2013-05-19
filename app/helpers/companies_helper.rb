@@ -95,4 +95,24 @@ module CompaniesHelper
       company.client_category.name
     end
   end
+
+  def dt_company_source(company)
+    if current_language == 'ro'
+      company.company_source.name_ro
+    elsif current_language == 'ru'
+      company.company_source.name_ru
+    else
+      company.company_source.name
+    end
+  end
+
+  def dt_company_branch(company)
+    if current_language == 'ro'
+      company.company_branch.name_ro
+    elsif current_language == 'ru'
+      company.company_branch.name_ru
+    else
+      company.company_branch.name
+    end
+  end
 end

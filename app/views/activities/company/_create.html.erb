@@ -1,5 +1,21 @@
 <% if company %>
-<%= t(:'activity.index.added_company') %> <%= link_to company.name, company %>
+<p><%= t(:'activity.index.added_company') %> <%= link_to company.name, company %></p>
+<table class='table table-bordered'>
+  <tbody>
+    <tr>
+      <td><%= t(:'company.index.client_type_id') %></td>
+      <td><%= dt_client_type(company) %></td>
+    </tr>
+    <tr>
+      <td><%= t(:'company.index.company_source_id') %></td>
+      <td><%= dt_company_source(company) %></td>
+    </tr>
+    <tr>
+      <td><%= t(:'company.index.company_branch') %></td>
+      <td><%= dt_company_branch(company) %></td>
+    </tr>
+  </tbody>
+</table>
 <% else %>
 added a company wich has since been removed
 <% end %>

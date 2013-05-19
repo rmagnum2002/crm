@@ -76,6 +76,7 @@ ro:
       client_category_id: "Categoria Clientului"
       client_type_id: "Tipul Clientului"
       company_source_id: "Cum ați găsit compania"
+      company_branch: "Ramura de activitate"
       client_at: "Client de la data:"
       phone: "Telefon"
       fax: "Fax"

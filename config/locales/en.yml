@@ -76,6 +76,7 @@ en:
       client_category_id: "Client Category"
       client_type_id: "Client Type"
       company_source_id: "Source"
+      company_branch: "Company Branch"
       client_at: "Client from"
       phone: "Phone"
       fax: "Fax"

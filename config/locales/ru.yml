@@ -73,6 +73,7 @@ ru:
       client_category_id: "Категория клиента"
       client_type_id: "Тип клиента"
       company_source_id: "Источник"
+      company_branch: "Сфера деятельности"
       client_at: "Клиент с"
       phone: "Телефон"
       fax: "Факс"

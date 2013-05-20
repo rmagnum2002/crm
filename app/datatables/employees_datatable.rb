@@ -45,11 +45,12 @@ private
     employees = Employee.order("#{sort_column} #{sort_direction}")
     employees = employees.page(page).per_page(per_page)
     if params[:sSearch].present?
-      employees = employees.where("id like :search
-                                    or first_name like :search
-                                    or last_name like :search
-                                    or phone like :search
-                                    or email like :search",
+      employees = employees.joins(:company).where("employees.id like :search
+                                    or employees.first_name like :search
+                                    or employees.last_name like :search
+                                    or employees.phone like :search
+                                    or employees.email like :search
+                                    or companies.name like :search",
                                   search: "%#{params[:sSearch]}%")
     end
     employees

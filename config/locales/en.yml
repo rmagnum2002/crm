@@ -153,6 +153,9 @@ en:
       added_contact: "added a new contact"
       added_event: "added a new event"
       to_company: "to company"
+      talked_with: "Talked with"
+      comment: "Comment"
+      employee: "Employee"
   employee:
     model_title: "Employee"
     language:

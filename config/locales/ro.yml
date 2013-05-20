@@ -153,6 +153,9 @@ ro:
       added_contact: "a adăugat un contact nou"
       added_event: "a adăugat un eveniment nou"
       to_company: "la compania"
+      talked_with: "A vorbit cu"
+      comment: "Comentariu"
+      employee: "Angajatul"
   employee:
     model_title: "Angajatul"
     language:

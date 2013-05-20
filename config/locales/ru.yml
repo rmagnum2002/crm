@@ -150,6 +150,9 @@ ru:
       added_contact: "добавил контакт"
       added_event: "добавил событие"
       to_company: "к компаний"
+      talked_with: "Разговаривал с"
+      comment: "Коментарий"
+      employee: "Сотрудник"
   employee:
     model_title: "Сотрудник"
     language:

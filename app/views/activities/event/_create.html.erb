@@ -5,20 +5,20 @@
     <% if event.employee.present? %>
     <% if event.comment.commentable_type == "Company" %>
       <tr>
-        <td>company</td>
+        <td><%= t(:'activity.index.company') %></td>
         <td><%= link_to event.comment.commentable.name, event.comment.commentable %></td>
       </tr>
       <tr>
-        <td>Talked with</td>
+        <td><%= t(:'activity.index.talked_with') %></td>
         <td><%= link_to event.employee.full_name, company_employee_path(event.employee.company, event.employee) %></td>
       </tr>
     <% elsif event.comment.commentable_type == "Employee" %>
       <tr>
-        <td>employee</td>
+        <td><%= t(:'activity.index.employee') %></td>
         <td><%= link_to event.employee.full_name, company_employee_path(event.employee.company, event.employee) %></td>
       </tr>
       <tr>
-        <td>Talked with</td>
+        <td><%= t(:'activity.index.talked_with') %></td>
         <td><%= link_to event.employee.full_name, company_employee_path(event.employee.company, event.employee) %></td>
       </tr>
     <% else %>
@@ -27,7 +27,7 @@
     <% end %>
     <% end %>
     <tr>
-      <td>Comment</td>
+      <td><%= t(:'activity.index.comment') %></td>
       <td><%= sanitize truncate(event.comment.content, omision: "...", length: 100) %></td>
     </tr>
   </tbody>

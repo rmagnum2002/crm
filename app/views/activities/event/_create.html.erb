@@ -5,7 +5,7 @@
     <% if event.employee.present? %>
     <% if event.comment.commentable_type == "Company" %>
       <tr>
-        <td>Call to company</td>
+        <td>company</td>
         <td><%= link_to event.comment.commentable.name, event.comment.commentable %></td>
       </tr>
       <tr>
@@ -14,7 +14,7 @@
       </tr>
     <% elsif event.comment.commentable_type == "Employee" %>
       <tr>
-        <td>Call to employee</td>
+        <td>employee</td>
         <td><%= link_to event.employee.full_name, company_employee_path(event.employee.company, event.employee) %></td>
       </tr>
       <tr>

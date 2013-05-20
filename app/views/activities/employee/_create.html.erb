@@ -16,7 +16,7 @@
       <td><%= language_name(employee.language_id) %></td>
     </tr>
     <tr>
-      <td></td>
+      <td><%= t(:'employee.index.decision') %></td>
       <td><%= employee.decision? ? I18n.t(:"employee.form.take_decision") : I18n.t(:"employee.form.cant_take_decision") %></td>
     </tr>
     <% if employee.phone.present? %>

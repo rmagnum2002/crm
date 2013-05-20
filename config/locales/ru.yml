@@ -136,6 +136,9 @@ ru:
       user_profile: "Профиль пользователя"
       responsible_for: "Ответственный за"
       companies: "Компаний"
+      sales: "Продажы"
+      lei: "лей"
+      in_total: "на сумму"
   activity:
     index:
       activities: "Активности"

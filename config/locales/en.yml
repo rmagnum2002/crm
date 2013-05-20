@@ -139,6 +139,9 @@ en:
       user_profile: "User profile"
       responsible_for: "Responsible for"
       companies: "Companies"
+      sales: "Sales"
+      lei: "lei"
+      in_total: "in total of"
   activity:
     index:
       activities: "Activities"

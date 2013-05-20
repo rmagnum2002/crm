@@ -3,7 +3,7 @@
     <h4><%= t(:"user.show.user_profile") %></h4>
     <div><%= @user.full_name %></div>
     <div><%= mail_to @user.email %></div>
-    <div>Sales: <%= @user.sales.count %> in total of <%= @total %> lei.</div>
+    <div><%= t(:"user.show.sales") %>: <%= @user.sales.count %> <%= t(:"user.show.in_total") %> <%= @total %> <%= t(:"user.show.lei") %>.</div>
     <hr>
     <div><%= t(:"user.index.companies_added") %>: <%= @user.companies.count %></div>
     <div class="page-header">

@@ -139,6 +139,9 @@ ro:
       user_profile: "Profilul utilizatorului"
       responsible_for: "Răspunzător de"
       companies: "Companii"
+      sales: "Vînzări"
+      lei: "lei"
+      in_total: "în total de"
   activity:
     index:
       activities: "Activităţi"

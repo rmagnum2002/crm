@@ -27,7 +27,7 @@
     <div class="control-group">
       <%#= f.label :gender, :class => 'control-label' %>
       <div class="controls">
-        <%= f.select :gender, Employee::GENDER.invert.map{|value, key| [t(value), key] }, :include_blank => t(:"employee.form.select_gender") %>
+        <%= gender(f) %>
       </div>
     </div>
     <div class="control-group">
@@ -39,7 +39,7 @@
     <div class="control-group">
       <%#= f.label :language, :class => 'control-label' %>
       <div class="controls">
-        <%= f.select :language, Employee::LANGUAGE.invert.map{|value, key| [t(value), key] }, :include_blank => t(:"employee.form.select_language") %>
+        <%= language(f) %>
       </div>
     </div>
     <div class="control-group">

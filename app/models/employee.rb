@@ -12,15 +12,6 @@ class Employee < ActiveRecord::Base
 
   validates :client_date, :first_name, :gender, :job_title_id, :language, :last_name, :patronymic, :title, presence: true
 
-  LANGUAGE = { 0 => :"employee.language.romanian",
-               1 => :"employee.language.russian",
-               2 => :"employee.language.english"
-              }
-
-  GENDER = { 0 => :"employee.gender.male",
-             1 => :"employee.gender.female"
-            }
-
   TITLE = { 0 => :"employee.title.mrs",
             1 => :"employee.title.mr",
             2 => :"employee.title.miss" }

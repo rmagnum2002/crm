@@ -48,6 +48,7 @@ private
       employees = employees.joins(:company).where("employees.id like :search
                                     or employees.first_name like :search
                                     or employees.last_name like :search
+                                    or employees.patronymic like :search
                                     or employees.phone like :search
                                     or employees.email like :search
                                     or companies.name like :search",

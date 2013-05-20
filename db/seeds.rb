@@ -247,3 +247,9 @@ state = Event.create([
   {comment_id: 1, action_id: 3, email: "022489462", event_date: Time.now + 240000, user_id: 2, employee_id: 1},
   {comment_id: 2, action_id: 6, email: "", event_date: Time.now - 240000, user_id: 1, employee_id: 2}
 ])
+
+item = Item.create([
+  {name: "Сard", name_ro: "Cartelă", name_ru: "Карточка"},
+  {name: "Mobile Phone", name_ro: "Telefon GSM", name_ru: "Мобильный телефон"},
+  {name: "Flash card", name_ro: "Cartelă Flash", name_ru: "Флэш карта"}
+])

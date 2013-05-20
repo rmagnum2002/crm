@@ -1,6 +1,23 @@
 <div class="comment_<%= sale.id %>">
   <div style="border-left: 1px solid rgba(0, 0, 0, 0.2);padding-left:5px;">
-     <%= link_to sale.user.full_name, profile_path(sale.user) %> added a sale with ammount of <%= sale.ammount %> lei
+     <%= link_to sale.user.full_name, profile_path(sale.user) %> added a sale with ammount of <%= sale.ammount %> lei. <br>
+      details:
+      <table class="table table-bordered">
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+        <% sale.sale_items.each do |sale_item| %>
+          <tr>
+            <td><%= sale_item.item.name %></td>
+            <td><%= sale_item.price %></td>
+            <td><%= sale_item.quantity %></td>
+            <td><%= sale_item.total_price %></td>
+          </tr>
+        <% end %>
+      </table>
   </div>
 </div>
 <hr>

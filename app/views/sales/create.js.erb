@@ -5,7 +5,9 @@
   /* Add the new comment to the bottom of the sales list */
   $(".comments").prepend("<%= j(render(@sale)) %>");
   /* Reset the comment form */
-  $(".new_sale")[0].reset();
+  // $(".new_sale")[0].reset();
+  $(".items").empty();
+  $('.add').trigger('click');
 <% else %>
   alert('Something Went Wrong');
 <% end %>

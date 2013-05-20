@@ -16,6 +16,7 @@
   <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(10);" checked><%= t(:"employee.index.skype") %></li>
   <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(11);" checked><%= t(:"employee.index.facebook") %></li>
 </ul>
+<hr>
 <table id="employees" class="table table-striped" data-source="<%= employees_url(format: "json") %>" data-language="<%= current_language %>">
   <thead>
     <tr>

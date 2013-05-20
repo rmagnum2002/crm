@@ -23,8 +23,8 @@ private
       [
         h(employee.id),
         link_to((employee.full_name), url_helpers.profile_employee_path(employee), {:remote => true, 'data-toggle' => 'modal', 'data-target' => "#modal-window", 'data-backdrop' => true, 'data-keyboard' => true}),
-        t(Employee::GENDER[employee.gender]),
-        t(Employee::LANGUAGE[employee.language]),
+        h(dt_gender(employee)),
+        h(dt_language(employee)),
         h(employee.company.name),
         h(dt_job_title(employee)),
         h(employee.phone),
@@ -45,12 +45,21 @@ private
     employees = Employee.order("#{sort_column} #{sort_direction}")
     employees = employees.page(page).per_page(per_page)
     if params[:sSearch].present?
-      employees = employees.joins(:company).where("employees.id like :search
+      employees = employees.joins(:company, :language, :gender, :job_title).where("employees.id like :search
                                     or employees.first_name like :search
                                     or employees.last_name like :search
                                     or employees.patronymic like :search
                                     or employees.phone like :search
                                     or employees.email like :search
+                                    or languages.name like :search
+                                    or languages.name_ro like :search
+                                    or languages.name_ru like :search
+                                    or genders.name like :search
+                                    or genders.name_ro like :search
+                                    or genders.name_ru like :search
+                                    or job_titles.job_title like :search
+                                    or job_titles.job_title_ro like :search
+                                    or job_titles.job_title_ru like :search
                                     or companies.name like :search",
                                   search: "%#{params[:sSearch]}%")
     end

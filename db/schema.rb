@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130509103259) do
+ActiveRecord::Schema.define(:version => 20130520082650) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -156,9 +156,9 @@ ActiveRecord::Schema.define(:version => 20130509103259) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "patronymic"
-    t.integer  "gender"
+    t.integer  "gender_id"
     t.date     "birthday"
-    t.integer  "language"
+    t.integer  "language_id"
     t.integer  "company_id"
     t.integer  "job_title_id"
     t.boolean  "decision"
@@ -186,12 +186,28 @@ ActiveRecord::Schema.define(:version => 20130509103259) do
     t.integer  "employee_id"
   end
 
+  create_table "genders", :force => true do |t|
+    t.string   "name"
+    t.string   "name_ru"
+    t.string   "name_ro"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "job_titles", :force => true do |t|
     t.string   "job_title"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
     t.string   "job_title_ro"
     t.string   "job_title_ru"
+  end
+
+  create_table "languages", :force => true do |t|
+    t.string   "name"
+    t.string   "name_ru"
+    t.string   "name_ro"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "organizational_forms", :force => true do |t|

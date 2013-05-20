@@ -7,7 +7,13 @@
       <dt><strong><%= I18n.t(:"employee.form.language") %>:</strong></dt>
       <dd>
         <%#= Employee::LANGUAGE[@employee.language] %>
-        <%= best_in_place @employee, :language, type: :select, collection: Employee::LANGUAGE.map{|key, value| [key, t(value)]} %>
+        <% if current_language == "ro" %>
+          <%= best_in_place @employee, :language_id, :type => :select, :collection => Language.all.map{|x| [x.id, x.name_ro]} %>
+        <% elsif current_language == "en" %>
+          <%= best_in_place @employee, :language_id, :type => :select, :collection => Language.all.map{|x| [x.id, x.name]} %>
+        <% else %>
+          <%= best_in_place @employee, :language_id, :type => :select, :collection => Language.all.map{|x| [x.id, x.name_ru]} %>
+        <% end %>
       </dd>
       <dt><strong><%= I18n.t(:"employee.form.company_id") %>:</strong></dt>
       <dd>

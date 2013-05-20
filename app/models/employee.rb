@@ -1,12 +1,14 @@
 class Employee < ActiveRecord::Base
-  attr_accessible :birthday, :client_date, :company_id, :completion, :decision, :email, :facebook, :first_name, :gender, :job_title_id,
-                  :language, :last_name, :mobile, :patronymic, :phone, :simtravel, :skype, :user_id, :title
+  attr_accessible :birthday, :client_date, :company_id, :completion, :decision, :email, :facebook, :first_name, :gender_id, :job_title_id,
+                  :language_id, :last_name, :mobile, :patronymic, :phone, :simtravel, :skype, :user_id, :title
 
   belongs_to :company
   belongs_to :user
   belongs_to :job_title
   has_many :comments, as: :commentable
   belongs_to :event
+  belongs_to :gender
+  belongs_to :language
 
   validates :client_date, :first_name, :gender, :job_title_id, :language, :last_name, :patronymic, :title, presence: true
 

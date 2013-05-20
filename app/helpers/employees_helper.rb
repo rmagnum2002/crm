@@ -21,4 +21,24 @@ module EmployeesHelper
     end
   end
 
+  def dt_language(employee)
+    if current_language == 'ro'
+      employee.language.name_ro
+    elsif current_language == 'ru'
+      employee.language.name_ru
+    else
+      employee.language.name
+    end
+  end
+
+  def dt_gender(employee)
+    if current_language == 'ro'
+      employee.gender.name_ro
+    elsif current_language == 'ru'
+      employee.gender.name_ru
+    else
+      employee.gender.name
+    end
+  end
+
 end

@@ -13,7 +13,7 @@
     <% end %>
     <tr>
       <td><%= t(:'employee.index.language') %></td>
-      <td><%= t(Employee::LANGUAGE[employee.language]) %></td>
+      <td><%= language_name(employee.language_id) %></td>
     </tr>
     <tr>
       <td></td>

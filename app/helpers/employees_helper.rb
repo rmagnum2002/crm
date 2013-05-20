@@ -63,4 +63,15 @@ module EmployeesHelper
     end
   end
 
+  def language_name(id)
+    language = Language.find(id)
+    if current_language == 'ro'
+      language = language.name_ro
+    elsif current_language == 'ru'
+      language = language.name_ru
+    else
+      language = language.name
+    end
+  end
+
 end

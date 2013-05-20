@@ -17,7 +17,7 @@ var fnShowHide;
 
 fnShowHide = function(iCol) {
   var bVis, oTable;
-  oTable = $("#companies").dataTable();
+  oTable = $("#companies, #employees").dataTable();
   bVis = oTable.fnSettings().aoColumns[iCol].bVisible;
   return oTable.fnSetColumnVis(iCol, (bVis ? false : true));
 };

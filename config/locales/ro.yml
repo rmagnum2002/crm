@@ -174,7 +174,7 @@ ro:
       last_name: "Nume"
       patronymic: "Patronimic"
       gender: "Genul"
-      birthday: "Data de naştere"
+      birthday: "Data naşterii"
       language: "Limba"
       company_id: "Compania"
       job_title_id: "Funcţia"
@@ -210,7 +210,7 @@ ro:
       email: "Email"
       skype: "Skype"
       facebook: "Facebook"
-      birthday: "Data de naştere"
+      birthday: "Data naşterii"
   events:
     events: "evenimente"
     events_for: "Evenimente pentru"

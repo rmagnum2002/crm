@@ -236,6 +236,22 @@ ru:
   sales:
     show:
       sales: "Продажы"
+      total_amount: "общая сумма:"
+    index:
+      added_sale: "Добавил продажу на сумму"
+      product: "Артикол"
+      price: "Цена"
+      quantity: "Количество"
+      total: "Сумма"
+      lei: "лей"
+      total amount: "total amount:"
+    form:
+      select_item: "Выберите артикул"
+      price_unit: "Цена за единицу"
+      quantity: "Количество"
+      remove: "удалить"
+      add_more_sales: "добавить больше продаж"
+      add_sale: "добавить продажу"
   advanced_search:
     add_conditions: "Добавить условие"
     search: "Искать"

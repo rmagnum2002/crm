@@ -1,12 +1,13 @@
 <div class="comment_<%= sale.id %>">
   <div style="border-left: 1px solid rgba(0, 0, 0, 0.2);padding-left:5px;">
-    <%= link_to sale.user.full_name, profile_path(sale.user) %> added a sale with ammount of <%= sale.ammount %> lei. <br>
+    <%= link_to sale.user.full_name, profile_path(sale.user) %> <%= t(:"sales.index.added_sale") %>
+    <%= sale.ammount %> <%= t(:"sales.index.lei") %>. <br>
     <table class="table table-bordered">
       <tr>
-        <th>Product</th>
-        <th>Price</th>
-        <th>Quantity</th>
-        <th>Total</th>
+        <th><%= t(:"sales.index.product") %></th>
+        <th><%= t(:"sales.index.price") %></th>
+        <th><%= t(:"sales.index.quantity") %></th>
+        <th><%= t(:"sales.index.total") %></th>
       </tr>
       <% sale.sale_items.each do |sale_item| %>
         <tr>

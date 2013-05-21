@@ -247,6 +247,22 @@ en:
   sales:
     show:
       sales: "Sales"
+      total_amount: "total amount:"
+    index:
+      added_sale: "added a sale with ammount of"
+      product: "Product"
+      price: "Price"
+      quantity: "Quantity"
+      total: "Total"
+      lei: "lei"
+    form:
+      select_item: "Select item"
+      price_unit: "Price per unit"
+      quantity: "Quantity"
+      remove: "remove"
+      add_more_sales: "add more sales"
+      add_sale: "add sale"
+
   client_category:
     form:
       name: "Name"

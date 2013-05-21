@@ -247,6 +247,21 @@ ro:
   sales:
     show:
       sales: "Vînzări"
+      total_amount: "suma totală:"
+    index:
+      added_sale: "A adăugat o vânzare în suma de"
+      product: "Articol"
+      price: "Preţul"
+      quantity: "Cantitatea"
+      total: "Suma"
+      lei: "lei"
+    form:
+      select_item: "Selectaţi articolul"
+      price_unit: "Preţul pentru o unitate"
+      quantity: "Cantitatea"
+      remove: "şterge"
+      add_more_sales: "adaugă mai multe vânzari"
+      add_sale: "adaugă vânzare"
   advanced_search:
     add_conditions: "Adaugă Condiţii"
     search: "Caută"

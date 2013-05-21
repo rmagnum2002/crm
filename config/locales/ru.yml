@@ -81,6 +81,7 @@ ru:
       bank_req: "Банковские реквизиты"
       fisc_id: "Фискальный код"
       responsible_id: "Ответственный"
+      filter: "Показывать в таблице"
     show:
       company: "Компания"
       company_profile: "Профиль компании"
@@ -206,6 +207,7 @@ ru:
       skype: "Skype"
       facebook: "Facebook"
       birthday: "Год рождения"
+      filter: "Показывать в таблице"
   events:
     events: "событий"
     events_for: "События для"

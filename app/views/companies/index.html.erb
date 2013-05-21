@@ -3,7 +3,7 @@
   <h1><%= t(:"company.index.companies") %></h1>
   <%= link_to t('company.form.new_company', :default => t("helpers.links.new")), new_company_path %>
 </div>
-<div>Filter columns:</div>
+<div><%= t(:"company.index.filter") %>:</div>
 <ul class="filter">
   <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(0);" checked><%= t(:"company.index.id") %></li>
   <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(1);" checked><%= t(:"company.index.created_at") %></li>

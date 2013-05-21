@@ -84,6 +84,7 @@ en:
       bank_req: "Bank requisits"
       fisc_id: "Fiscal Code"
       responsible_id: "Responsible"
+      filter: "Filter columns"
     show:
       company: "Company"
       company_profile: "Company profile"
@@ -217,6 +218,7 @@ en:
       skype: "Skype"
       facebook: "Facebook"
       birthday: "Birthday"
+      filter: "Filter columns"
   events:
     result: "Event result"
     events: "events"

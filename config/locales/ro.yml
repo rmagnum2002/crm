@@ -84,6 +84,7 @@ ro:
       bank_req: "Rechizite Bancare"
       fisc_id: "Cod Fiscal"
       responsible_id: "Responsabil"
+      filter: "Filtrarea coloanelor"
     show:
       company: "Compania"
       company_profile: "Profilul companiei"
@@ -217,6 +218,7 @@ ro:
       skype: "Skype"
       facebook: "Facebook"
       birthday: "Data naşterii"
+      filter: "Filtrarea coloanelor"
   events:
     events: "evenimente"
     events_for: "Evenimente pentru"

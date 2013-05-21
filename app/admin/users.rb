@@ -1,4 +1,6 @@
 ActiveAdmin.register User do
+  menu :priority => 3, :label => "Users"
+
   index do
     column :id
     column I18n.t("active_admin.user.full_name") do |user|
@@ -55,6 +57,19 @@ ActiveAdmin.register User do
         end
         column '' do |sale|
           link_to "Details", admin_sale_path(sale)
+        end
+      end
+    end
+    panel "Companies added" do
+      table_for user.companies do
+        column "Name" do |company|
+          link_to company.name, admin_company_path(company)
+        end
+        column "Added at" do |company|
+          l company.created_at, format: :long
+        end
+        column "Responsible" do |company|
+          responsible_admin(company.responsible_id)
         end
       end
     end

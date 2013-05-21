@@ -10,6 +10,11 @@ module CompaniesHelper
     link_to user.full_name, url_helpers.profile_path(user)
   end
 
+  def responsible_admin(user_id)
+    user = User.find(user_id)
+    link_to user.full_name, admin_user_path(user)
+  end
+
   def company_source(f)
     if current_language == 'ro'
       lang = :name_ro

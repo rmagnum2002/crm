@@ -1,16 +1,3 @@
-ru:
-  activerecord:
-    models:
-      activity: "Лента событий"
-      client_category: "Категория клиента"
-      client_status: "Статус клиента"
-      client_type: "Тип клиента"
-      company: "Компания"
-      company_branch: "Сфера деятельности"
-      company_source: "Источник"
-      employee: "Сотрудник"
-      organizational_form: "Организационная форма"
-
 ro:
   activerecord:
     models:
@@ -36,3 +23,16 @@ en:
       company_source: "Company Source"
       employee: "Employee"
       organizational_form: "Organizational Form"
+
+ru:
+  activerecord:
+    models:
+      activity: "Лента событий"
+      client_category: "Категория клиента"
+      client_status: "Статус клиента"
+      client_type: "Тип клиента"
+      company: "Компания"
+      company_branch: "Сфера деятельности"
+      company_source: "Источник"
+      employee: "Сотрудник"
+      organizational_form: "Организационная форма"

@@ -12,6 +12,7 @@ en:
   save: "Save"
   cancel: "Cancel"
   nothng: "Nothing to show"
+  items: "Items"
 
   dashboard:
     recent_signed_in_users: "recent signed in users"

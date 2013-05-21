@@ -47,6 +47,21 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
+    div :class => "panel" do
+      panel "10 recent sales" do
+        table_for Sale.order("created_at desc").limit(10) do
+          column "added by" do |sale|
+            link_to(sale.user.full_name, admin_user_path(sale))
+          end
+          column :ammount
+          column "buyer" do |sale|
+           link_to sale.saleable.name, admin_company_path(sale.saleable)
+          end
+        end
+        strong { link_to "View all sales", admin_sales_path }
+      end
+    end
+
     # Here is an example of a simple dashboard with columns and panels.
     #
     # columns do

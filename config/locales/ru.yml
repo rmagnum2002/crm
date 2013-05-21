@@ -244,7 +244,10 @@ ru:
       quantity: "Количество"
       total: "Сумма"
       lei: "лей"
-      total amount: "total amount:"
+      date: "Дата"
+      amount: "Сумма"
+      seller: "Продавец"
+      company: "Компания"
     form:
       select_item: "Выберите артикул"
       price_unit: "Цена за единицу"

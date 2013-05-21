@@ -255,6 +255,10 @@ en:
       quantity: "Quantity"
       total: "Total"
       lei: "lei"
+      date: "Date"
+      amount: "Amount"
+      seller: "Seller"
+      company: "Company"
     form:
       select_item: "Select item"
       price_unit: "Price per unit"

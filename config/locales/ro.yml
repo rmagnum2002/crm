@@ -255,6 +255,10 @@ ro:
       quantity: "Cantitatea"
       total: "Suma"
       lei: "lei"
+      date: "Data"
+      amount: "Suma"
+      seller: "Vînzătorul"
+      company: "Compania"
     form:
       select_item: "Selectaţi articolul"
       price_unit: "Preţul pentru o unitate"

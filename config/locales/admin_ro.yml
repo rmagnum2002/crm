@@ -1,0 +1,32 @@
+ro:
+  active_admin:
+    devise:
+      login:
+        title: " - login"
+    home:
+      recent_signed_up_users: "utilizatori înregistrați recent"
+      recent_companies: "companii adăugate recent"
+      view_all_users: "Deschide toți utilizatorii"
+      view_all_companies: "Deschide toate companiile"
+
+    user:
+      full_name: "Nume, prenume"
+      created_at: "creat la data"
+      sign_in_at: "ultima logare la data"
+      role: "Rol"
+      current_sign_in_ip: "ip-ul pentru logarea curentă"
+      last_sign_in_ip: "ip-ul pentru ultima logare"
+
+  states: "States"
+  countries: "Countries"
+  client_categories: "Client Categories"
+  client_statuses: "Client Statuses"
+  client_types: "Client Types"
+  company_branches: "Company Branches"
+  company_sources: "Company Sources"
+  job_titles: "Job Titles"
+  organizational_forms: "Organizational Forms"
+  admin_users: "Admin Users"
+  save: "Confirmă"
+  cancel: "Anulare"
+  nothng: "Nu sunt date"

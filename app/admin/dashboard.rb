@@ -11,21 +11,25 @@ ActiveAdmin.register_page "Dashboard" do
     # end
 
     div :class => "panel" do
-      panel "20 Recent Signed In Users" do
+      panel "20 #{I18n.t("active_admin.home.recent_signed_up_users")}" do
         table_for User.order("created_at desc").limit(20) do
-          column :email do |user|
-            link_to(user.email, admin_user_path(user))
+          column I18n.t("active_admin.user.full_name") do |user|
+            link_to(user.full_name, admin_user_path(user))
           end
-          column :last_name
-          column :first_name
-          column :created_at
+          column :email
+          column I18n.t("active_admin.user.created_at") do |user|
+            l user.created_at, format: :long
+          end
+          column I18n.t("active_admin.user.sign_in_at") do |user|
+            l user.last_sign_in_at, format: :long if user.last_sign_in_at.present?
+          end
         end
-        strong { link_to "View All Users", admin_users_path }
+        strong { link_to I18n.t("active_admin.home.view_all_users"), admin_users_path }
       end
     end
 
     div :class => "panel" do
-      panel "10 Recent Added Companies" do
+      panel "10 #{I18n.t("active_admin.home.recent_companies")}" do
         table_for Company.order("created_at desc").limit(10) do
           column :name do |comp|
             link_to(comp.name, admin_company_path(comp))
@@ -39,7 +43,7 @@ ActiveAdmin.register_page "Dashboard" do
           # column :first_name
           # column :created_at
         end
-        strong { link_to "View All Companies", admin_companies_path }
+        strong { link_to I18n.t("active_admin.home.view_all_companies"), admin_companies_path }
       end
     end
 

@@ -1,0 +1,17 @@
+ru:
+  states: "States"
+  countries: "Countries"
+  client_categories: "Client Categories"
+  client_statuses: "Client Statuses"
+  client_types: "Client Types"
+  company_branches: "Company Branches"
+  company_sources: "Company Sources"
+  job_titles: "Job Titles"
+  organizational_forms: "Organizational Forms"
+  admin_users: "Admin Users"
+  save: "Сохранить"
+  cancel: "Отменить"
+  nothng: "Нет данных"
+
+  dashboard:
+    recent_signed_in_users: "recent signed in users"

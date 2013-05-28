@@ -142,7 +142,7 @@ ru:
       in_total: "на сумму"
   activity:
     index:
-      activities: "Активности"
+      activities: "Активность"
       updated_company: "обновил компанию"
       added_comment: "добавил коментарий к компании"
       added_note: "добавил коментарий к сотруднику"
@@ -166,6 +166,10 @@ ru:
     gender:
       male: "Мужской"
       female: "Женский"
+    title:
+      mrs: "Миссис"
+      mr: "Мистер"
+      miss: "Госпожа"
     form:
       created_at: "Создан"
       title: "Название"

@@ -10,12 +10,12 @@
 
   <div class="span4">
     <dl class="dl-horizontal">
+      <dt><strong><%= I18n.t(:"employee.form.user_id") %>:</strong></dt>
+      <dd><%= link_to @employee.user.full_name, profile_path(@employee.user) %></dd>
       <dt><strong><%= I18n.t(:"employee.form.created_at") %>:</strong></dt>
       <dd><%= l @employee.created_at, format: :long %></dd>
       <dt><strong><%= I18n.t(:"employee.form.title") %>:</strong></dt>
       <dd><%= best_in_place @employee, :title, :type => :select, :collection => Employee::TITLE.map{|key, value| [key, t(value)]} %></dd>
-      <dt><strong><%= I18n.t(:"employee.form.user_id") %>:</strong></dt>
-      <dd><%= @employee.user.full_name %></dd>
       <dt><strong><%= I18n.t(:"employee.form.last_name") %>:</strong></dt>
       <dd><%= best_in_place @employee, :last_name, opts %></dd>
       <dt><strong><%= I18n.t(:"employee.form.first_name") %>:</strong></dt>
@@ -82,7 +82,7 @@
     </dl>
   </div>
   <div class="span6">
-    <h4>Comments</h4>
+    <h4><%= t(:'company.show.comments') %></h4>
     <%= render partial: 'comments/form' %>
     <div class="comments">
       <%= render @comments %>

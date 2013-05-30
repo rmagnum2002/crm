@@ -219,11 +219,11 @@ ActiveRecord::Schema.define(:version => 20130520132841) do
   end
 
   create_table "organizational_forms", :force => true do |t|
-    t.string   "organizational_form"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
-    t.string   "organizational_form_ro"
-    t.string   "organizational_form_ru"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "name_ro"
+    t.string   "name_ru"
   end
 
   create_table "sale_items", :force => true do |t|

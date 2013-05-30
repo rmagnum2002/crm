@@ -39,11 +39,11 @@ module CompaniesHelper
 
   def organizational_form(f)
     if current_language == 'ro'
-      lang = :organizational_form_ro
+      lang = :name_ro
     elsif current_language == 'ru'
-      lang = :organizational_form_ru
+      lang = :name_ru
     else
-      lang = :organizational_form
+      lang = :name
     end
     f.collection_select :organizational_form_id, OrganizationalForm.find(:all), :id, lang, :prompt => t(:"company.form.organizational_form"), class: 'select_field'
   end

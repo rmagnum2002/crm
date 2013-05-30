@@ -81,4 +81,14 @@ ActiveAdmin.register User do
     end
     f.actions
   end
+
+  controller do
+    # This code is evaluated within the controller class
+
+    def update
+      @user = User.find(params[:id])
+      @user.update_attributes((params[:user]), as: :admin)
+      redirect_to admin_user_path(@user)
+    end
+  end
 end

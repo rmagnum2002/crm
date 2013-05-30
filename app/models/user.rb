@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :role
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name
+  attr_accessible :role, :as => :admin
 
   has_many :companies
   has_many :employee
@@ -15,7 +16,7 @@ class User < ActiveRecord::Base
   has_many :sales
 
   # Role user is the default role when creating new user
-  ROLES = %w[user moderator admin superadmin]
+  ROLES = %w[user moderator admin]
 
   def full_name
     "#{first_name} #{last_name}".strip

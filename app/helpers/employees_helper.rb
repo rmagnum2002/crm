@@ -2,11 +2,11 @@ module EmployeesHelper
 
   def job_title(f)
     if current_language == 'ro'
-      lang = :job_title_ro
+      lang = :name_ro
     elsif current_language == 'ru'
-      lang = :job_title_ru
+      lang = :name_ru
     else
-      lang = :job_title
+      lang = :name
     end
     f.collection_select :job_title_id, JobTitle.find(:all), :id, lang, :include_blank => t(:"employee.form.select_job")
   end
@@ -35,11 +35,11 @@ module EmployeesHelper
 
   def dt_job_title(employee)
     if current_language == 'ro'
-      employee.job_title.job_title_ro
+      employee.job_title.name_ro
     elsif current_language == 'ru'
-      employee.job_title.job_title_ru
+      employee.job_title.name_ru
     else
-      employee.job_title.job_title
+      employee.job_title.name
     end
   end
 

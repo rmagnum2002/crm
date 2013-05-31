@@ -57,9 +57,9 @@ private
                                     or genders.name like :search
                                     or genders.name_ro like :search
                                     or genders.name_ru like :search
-                                    or job_titles.job_title like :search
-                                    or job_titles.job_title_ro like :search
-                                    or job_titles.job_title_ru like :search
+                                    or job_titles.name like :search
+                                    or job_titles.name_ro like :search
+                                    or job_titles.name_ru like :search
                                     or companies.name like :search",
                                   search: "%#{params[:sSearch]}%")
     end

@@ -6,7 +6,7 @@ class Employee < ActiveRecord::Base
   belongs_to :user
   belongs_to :job_title
   has_many :comments, as: :commentable
-  belongs_to :event
+  has_many :events
   belongs_to :gender
   belongs_to :language
 

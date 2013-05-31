@@ -72,26 +72,26 @@ ActiveRecord::Schema.define(:version => 20130520132841) do
 
   create_table "client_categories", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
     t.string   "name_ro"
     t.string   "name_ru"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "client_statuses", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
     t.string   "name_ro"
     t.string   "name_ru"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "client_types", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
     t.string   "name_ro"
     t.string   "name_ru"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "comments", :force => true do |t|
@@ -131,18 +131,18 @@ ActiveRecord::Schema.define(:version => 20130520132841) do
 
   create_table "company_branches", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
     t.string   "name_ro"
     t.string   "name_ru"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "company_sources", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
     t.string   "name_ro"
     t.string   "name_ru"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "countries", :force => true do |t|
@@ -203,11 +203,11 @@ ActiveRecord::Schema.define(:version => 20130520132841) do
   end
 
   create_table "job_titles", :force => true do |t|
-    t.string   "job_title"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.string   "job_title_ro"
-    t.string   "job_title_ru"
+    t.string   "name"
+    t.string   "name_ro"
+    t.string   "name_ru"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "languages", :force => true do |t|
@@ -220,10 +220,10 @@ ActiveRecord::Schema.define(:version => 20130520132841) do
 
   create_table "organizational_forms", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
     t.string   "name_ro"
     t.string   "name_ru"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "sale_items", :force => true do |t|

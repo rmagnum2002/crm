@@ -10,8 +10,8 @@
 #   Mayor.create(name: 'Emanuel', state_id: cities.first)
 
 users = User.create([
-  { email: "rubydeve@gmail.com", password: "admin2013", first_name: "Alexandru", last_name: "Leasenco", role: "admin" },
-  { email: "rmagnum2002@gmail.com", password: "admin2013", first_name: "Sergiu", last_name: "Rosca", role: "admin" },
+  { email: "rubydeve@gmail.com", password: "admin2013", first_name: "Alexandru", last_name: "Leasenco" },
+  { email: "rmagnum2002@gmail.com", password: "admin2013", first_name: "Sergiu", last_name: "Rosca" },
   ])
 
 companies = Company.create([
@@ -130,8 +130,8 @@ organizational_form = OrganizationalForm.create([
 ])
 
 job_title = JobTitle.create([
-  { job_title: "Consultant", job_title_ro: "Consultant", job_title_ru: "Консультант" },
-  { job_title: "Sales Manager", job_title_ro: "Manager pe vînzări", job_title_ru: "Менеджер по продажам" }
+  { name: "Consultant", name_ro: "Consultant", name_ru: "Консультант" },
+  { name: "Sales Manager", name_ro: "Manager pe vînzări", name_ru: "Менеджер по продажам" }
 ])
 
 employee = Employee.create([

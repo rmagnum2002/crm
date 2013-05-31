@@ -1,7 +1,7 @@
 <div class="span12">
   <div class="span6">
     <h4><%= t(:"user.show.user_profile") %></h4>
-    <div><%= @user.full_name %></div>
+    <div><%= @user.full_name %> <b><%= "| porfile not activated" unless @user.activated? %></b></div>
     <div><%= mail_to @user.email %></div>
     <div><%= t(:"user.show.sales") %>: <%= @user.sales.count %> <%= t(:"user.show.in_total") %> <%= @total %> <%= t(:"user.show.lei") %>.</div>
     <hr>

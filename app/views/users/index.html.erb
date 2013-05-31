@@ -2,6 +2,7 @@
   <thead>
     <tr>
       <th><%= t(:"user.index.name") %></th>
+      <th><%= t(:"user.index.status") %></th>
       <th><%= t(:"user.index.email") %></th>
       <th><%= t(:"user.index.companies_added") %></th>
     </tr>
@@ -10,6 +11,7 @@
   <% @users.each do |user| %>
     <tr>
       <td><%= link_to user.full_name, profile_path(user) %></td>
+      <td><%= user.activated? ? "activated" : "not activated" %></td>
       <td><%= user.email %></td>
       <td><%= user.companies.count %></td>
     </tr>

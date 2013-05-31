@@ -1,7 +1,2 @@
-$(document).ajaxSend(function() {
-  $('.right_side').html("<%= j render(partial: 'loading') %>");
-});
-$(document).ajaxComplete(function() {
-  $('.right_side').html("<%= j render('contacts') %>");
-  $('.total_employee').html("(<%= @company.employee.count %>)");
-});
+$('.right_side').html("<%= j render('contacts') %>");
+$('.total_employee').html("(<%= @company.employee.count %>)");

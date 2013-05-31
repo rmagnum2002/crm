@@ -1,7 +1,2 @@
-$(document).ajaxSend(function() {
-  $('.right_side').html("<%= j render(partial: 'loading') %>");
-});
-$(document).ajaxComplete(function() {
-  $('.right_side').html("<%= j render(partial: 'comments') %>");
-  $('.total_comments').html("(<%= @company.comments.count %>)");
-});
+$('.right_side').html("<%= j render(partial: 'comments') %>");
+$('.total_comments').html("(<%= @company.comments.count %>)");

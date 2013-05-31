@@ -1,6 +1,1 @@
-$(document).ajaxSend(function() {
-  $('.right_side').html("<%= j render(partial: 'loading') %>");
-});
-$(document).ajaxComplete(function() {
-  $('.right_side').html("<%= j render('address') %>");
-});
+$('.right_side').html("<%= j render('address') %>");

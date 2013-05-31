@@ -1,5 +1,5 @@
 class JobTitle < ActiveRecord::Base
-  attr_accessible :job_title, :job_title_ro, :job_title_ru
+  attr_accessible :name, :name_ro, :name_ru
 
   has_many :employees
 end

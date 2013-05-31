@@ -1,5 +1,8 @@
 class EmployeesController < ApplicationController
   before_filter :load_company, except: 'index'
+
+  load_and_authorize_resource
+
   # GET /employees
   # GET /employees.json
   def index

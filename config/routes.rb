@@ -15,9 +15,10 @@ CrmMd::Application.routes.draw do
   end
 
   get "events_for_day", to: "events#events_for_day"
-  get "profiles", to: 'profile#index', as: :profiles
+  get "profiles", to: 'users#index', as: :profiles
+  get "error", to: 'welcome#index', as: :error
 
-  match "profile/:id", to: "profile#show", as: 'profile'
+  match "profile/:id", to: "users#show", as: 'profile'
   match "companies/:id/country_select_legal", to: "companies#country_select_legal", as: "country_select_legal"
   match "companies/:id/country_select_invoicing", to: "companies#country_select_invoicing", as: "country_select_invoicing"
   match "companies/search", to: "companies#search"
@@ -53,7 +54,6 @@ CrmMd::Application.routes.draw do
   match 'set_locale' => 'welcome#set_locale'
 
   devise_for :users
-  root :to => 'activities#index'
   ActiveAdmin.routes(self)
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,6 +1,8 @@
 class SalesController < ApplicationController
   before_filter :load_saleable, except: %w[index]
 
+  load_and_authorize_resource
+
   def index
     @sales = Sale.order('created_at desc')
     respond_to do |format|

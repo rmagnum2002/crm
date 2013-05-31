@@ -18,6 +18,14 @@ class User < ActiveRecord::Base
   # Role user is the default role when creating new user
   ROLES = %w[user moderator admin]
 
+  def activated?
+    if self.role == "user"
+     return false
+    else
+      return true
+    end
+  end
+
   def full_name
     "#{first_name} #{last_name}".strip
   end

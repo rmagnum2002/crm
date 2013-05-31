@@ -13,13 +13,23 @@ class Ability
     if user.role? :admin
       can :manage, :all
     elsif user.role? :moderator
-      can :read, Company
-      can :update, Company, :user_id => user.id
-      can :destroy, Company, :user_id => user.id
-      can :company_actions, Company
       can :create, Company
+      can :create, Employee
+      can :create, Comment
+      can :create, Event
+      can :read, Company
+      can :read, Employee
+      can :read, Comment
       can :read, Event
+      can :read, User
+      can :update, Company, :user_id => user.id
+      can :update, Employee, :user_id => user.id
+      can :destroy, Company, :user_id => user.id
+      can :destroy, Employee, :user_id => user.id
+      can :company_actions, Company
       can :events_actions, Event
+    elsif user.role? :user
+      can :read, User, :id => user.id
     end
     #
     # The first argument to `can` is the action you are giving the user

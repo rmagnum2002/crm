@@ -13,7 +13,7 @@ class Event < ActiveRecord::Base
 
   RESULT = {
     0 => :"events.result.problem_solved",
-    1 => :"events.result.sale",
+    # 1 => :"events.result.sale",
     2 => :"events.result.send_email",
     3 => :"events.result.make_call",
     4 => :"events.result.meeting",

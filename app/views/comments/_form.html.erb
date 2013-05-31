@@ -17,15 +17,15 @@
   <h5><%= t(:"events.events") %> | <a href="#" class="add"><%= t(:"events.add_event") %></a></h5>
   <div class="items">
     <%= f.nested_fields_for :events do |f| %>
-      <fieldset class="item">
-        <%= f.select :action_id, Event::RESULT.invert.map{|a, b| [t(a), b] }, :include_blank => t(:"events.result.result") %><br>
-        <%= f.text_field :email, placeholder: "Email" %><br>
+      <fieldset class="span6 item">
+        <%= f.select :action_id, Event::RESULT.invert.map{|a, b| [t(a), b] }, {:include_blank => t(:"events.result.result")}, {class: "first_select"} %>
+        <%= f.hidden_field :email, placeholder: "Email", class: "email_field" %>
         <% unless @hide_employees %>
-          <%= f.collection_select :employee_id, @company.employee.find(:all), :id, :full_name, :prompt => t(:"employee.form.full_name"), class: 'select_field' if @company.employee.exists? %><br>
+          <%= f.collection_select :employee_id, @company.employee.find(:all), :id, :full_name, {:prompt => t(:"employee.form.full_name")}, { class: 'contact_field', style: "display: none;" } if @company.employee.exists? %>
           <% else %>
           <%= f.hidden_field :employee_id, value: @employee.id %>
         <% end %>
-        <%= f.text_field :event_date, placeholder: t(:"events.date_hour"), class: "datetimepicker" %>
+        <%= f.hidden_field :event_date, placeholder: t(:"events.date_hour"), class: "datetimepicker date_field" %>
         <%= f.hidden_field :user_id, value: current_user.id %>
         <script type="text/javascript">
           var options_ro;
@@ -89,6 +89,9 @@
               closeText: 'Закрыть'
             };
 
+            $('.first_select').change(function(){
+              selectBoxValue($(this))
+            });
 
           $('.datetimepicker').datetimepicker(
               <% if current_language == "ro" %>
@@ -100,11 +103,13 @@
               <% end %>
             );
         </script>
+        <br>
         <a href="#" class="remove"><%= t(:"events.remove") %></a>
         <hr>
         <%= f.hidden_field :id %>
         <%= f.hidden_field :_destroy %>
       </fieldset>
+      <div style="clear:both;"></div>
     <% end %>
   </div>
 

@@ -6,6 +6,9 @@
   <div class="row-fluid">
     <div class="span12">
       <b>Comment related to event:</b><br>
+      <% if @event.comment.commentable_type == "Company" %>
+      <p>for <%= link_to @event.comment.commentable.name, company_path(@event.comment.commentable) %></p>
+      <% end %>
       <p><%= @event.comment.content %></p>
     </div>
     <div class="span12">

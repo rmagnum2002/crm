@@ -17,11 +17,14 @@ class Ability
       can :create, Employee
       can :create, Comment
       can :create, Event
+      can :create, Sale
       can :read, Company
       can :read, Employee
       can :read, Comment
       can :read, Event
       can :read, User
+      can :read, Sale
+      can :read, Activity
       can :update, Company, :user_id => user.id
       can :update, Employee, :user_id => user.id
       can :destroy, Company, :user_id => user.id

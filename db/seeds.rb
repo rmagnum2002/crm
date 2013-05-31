@@ -12,7 +12,8 @@
 users = User.create([
   { email: "rubydeve@gmail.com", password: "admin2013", first_name: "Alexandru", last_name: "Leasenco" },
   { email: "rmagnum2002@gmail.com", password: "admin2013", first_name: "Sergiu", last_name: "Rosca" },
-  { email: "mist@bk.ru", password: "admin2013", first_name: "Vcina", last_name: "Dimitrii" },
+  { email: "mist@bk.ru", password: "admin2013", first_name: "Dicusar", last_name: "Irina" },
+  { email: "vcina@bk.ru", password: "admin2013", first_name: "Vcina", last_name: "Dmitrii" }
   ])
 
 companies = Company.create([

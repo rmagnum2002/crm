@@ -9,5 +9,5 @@
   $(".items").empty();
   $('.add').trigger('click');
 <% else %>
-  alert('Something Went Wrong');
+  alert('<%= t(:"error_on_create") %>');
 <% end %>

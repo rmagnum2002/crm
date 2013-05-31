@@ -4,6 +4,7 @@
     <%= sale.ammount %> <%= t(:"sales.index.lei") %>. <br>
     <table class="table table-bordered">
       <tr>
+        <th><%= t(:"sales.form.order_number") %></th>
         <th><%= t(:"sales.index.product") %></th>
         <th><%= t(:"sales.index.price") %></th>
         <th><%= t(:"sales.index.quantity") %></th>
@@ -11,6 +12,7 @@
       </tr>
       <% sale.sale_items.each do |sale_item| %>
         <tr>
+          <td><%= sale.order_number %></td>
           <td><%= sale_item.item.name %></td>
           <td><%= sale_item.price %></td>
           <td><%= sale_item.quantity %></td>

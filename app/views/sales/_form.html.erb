@@ -12,15 +12,15 @@
 
   <div class="control-group">
     <div class="items">
-      <%= f.nested_fields_for :sale_items do |f| %>
+      <%= f.nested_fields_for :sale_items do |s| %>
         <fieldset class="item">
-          <%= f.collection_select :item_id, Item.all, :id, :name, :include_blank => t(:"sales.form.select_item") %>
-          <%= f.text_field :price, placeholder: t(:"sales.form.price_unit") %>
-          <%= f.text_field :quantity, placeholder: t(:"sales.form.quantity") %>
+          <%= f.text_field :order_number, placeholder: t(:'sales.form.order_number'), required: true %>
+          <%= s.collection_select :item_id, Item.all, :id, :name, :include_blank => t(:"sales.form.select_item"), required: true %>
+          <%= s.text_field :price, placeholder: t(:"sales.form.price_unit"), required: true %>
+          <%= s.text_field :quantity, placeholder: t(:"sales.form.quantity"), required: true %>
           <a href="#" class="remove"><%= t(:"sales.form.remove") %></a>
-
-          <%= f.hidden_field :id %>
-          <%= f.hidden_field :_destroy %>
+          <%= s.hidden_field :id %>
+          <%= s.hidden_field :_destroy %>
         </fieldset>
       <% end %>
     </div>

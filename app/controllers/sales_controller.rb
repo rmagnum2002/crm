@@ -21,12 +21,10 @@ class SalesController < ApplicationController
     if @sale.save
       track_activity @sale
       @sale.update_ammount
-      respond_to do |format|
-        # format.html { redirect_to :back }
-        format.js
-      end
-    else
-      render :new
+    end
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js
     end
   end
 

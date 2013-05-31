@@ -15,6 +15,7 @@ ru:
   save: "Сохранить"
   cancel: "Отменить"
   nothng: "Нет данных"
+  error_on_create: "Ошибка при сохранении данных. Проверьте если все требуемые поля заполнены."
 
   menu:
     main: "Главная"
@@ -245,7 +246,7 @@ ru:
       total_amount: "общая сумма:"
     index:
       added_sale: "Добавил продажу на сумму"
-      product: "Артикол"
+      product: "Продукт"
       price: "Цена"
       quantity: "Количество"
       total: "Сумма"
@@ -261,6 +262,7 @@ ru:
       remove: "удалить"
       add_more_sales: "добавить больше продаж"
       add_sale: "добавить продажу"
+      order_number: "Номер заказа/ Фактура"
   advanced_search:
     add_conditions: "Добавить условие"
     search: "Искать"

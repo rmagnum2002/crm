@@ -5,6 +5,8 @@ class SaleItem < ActiveRecord::Base
 
   before_save :update_total_price
 
+  validates :price, :quantity, :item_id, presence: true
+
   def update_total_price
     self.total_price = self.quantity * self.price
   end

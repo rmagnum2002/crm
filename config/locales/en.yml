@@ -15,6 +15,7 @@ en:
   save: "Save"
   cancel: "Cancel"
   nothng: "Nothing to show"
+  error_on_create: "Error on save record. Please check if all required fields are saved"
 
   menu:
     main: "Main"
@@ -268,6 +269,7 @@ en:
       remove: "remove"
       add_more_sales: "add more sales"
       add_sale: "add sale"
+      order_number: "Order Number"
 
   client_category:
     form:

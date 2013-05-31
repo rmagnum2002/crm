@@ -19,6 +19,7 @@ ro:
   save: "Confirmă"
   cancel: "Anulare"
   nothng: "Nu sunt date"
+  error_on_create: "Eroare la creare înregistrării. Vă rugăm să verificați dacă toate câmpurile cerute sunt completate."
 
   menu:
     main: "Principala"
@@ -268,6 +269,7 @@ ro:
       remove: "şterge"
       add_more_sales: "adaugă mai multe vânzari"
       add_sale: "adaugă vânzare"
+      order_number: "Numărul comenzii/factură"
   advanced_search:
     add_conditions: "Adaugă Condiţii"
     search: "Caută"

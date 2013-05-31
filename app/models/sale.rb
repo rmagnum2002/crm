@@ -1,8 +1,11 @@
 class Sale < ActiveRecord::Base
-  attr_accessible :saleable_id, :saleable_type, :user_id, :ammount, :sale_items_attributes
+  attr_accessible :saleable_id, :saleable_type, :user_id, :ammount, :sale_items_attributes, :order_number
   belongs_to :saleable, polymorphic: true
   belongs_to :user
   has_many :sale_items, dependent: :destroy
+
+
+  validates :ammount, :order_number, presence: true
 
   accepts_nested_attributes_for :sale_items, allow_destroy: true
 

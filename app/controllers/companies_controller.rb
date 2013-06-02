@@ -127,6 +127,9 @@ class CompaniesController < ApplicationController
     @total = @sales.sum(&:ammount)
   end
 
+  def revisions
+    @versions = @company.versions
+  end
   # DELETE /companies/1
   # DELETE /companies/1.json
   def destroy

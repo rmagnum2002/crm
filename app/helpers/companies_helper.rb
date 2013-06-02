@@ -120,4 +120,9 @@ module CompaniesHelper
       company.company_branch.name
     end
   end
+
+  def company_changes(version)
+    version = version.object_changes.gsub("--- !ruby/hash:ActiveSupport::HashWithIndifferentAccess\n", "")
+  end
+
 end

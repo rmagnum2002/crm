@@ -1,0 +1,10 @@
+<div>
+  <% @company.versions.each do |version| %>
+    <div><%= l version.created_at, format: :long %> <%= link_to 'Restore this version', revert_version_path(version), :method => :post %></div>
+    <div>
+      <%#= responsible_name(version.whodunnit) %> <%#= version.event %>
+      <%= company_changes(version) %>
+    </div>
+    <hr>
+  <% end %>
+</div>

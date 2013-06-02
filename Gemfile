@@ -39,6 +39,7 @@ gem "cancan"
 gem 'morrisjs-rails'
 gem 'raphael-rails'
 
+gem 'paper_trail'
 # To use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.0.0'
 

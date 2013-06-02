@@ -27,6 +27,9 @@ class CompaniesController < ApplicationController
   # GET /companies/1
   # GET /companies/1.json
   def show
+    @commentable = @company
+    @comments = @commentable.comments.order('created_at desc')
+    @comment = Comment.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @company }
@@ -108,6 +111,7 @@ class CompaniesController < ApplicationController
   end
 
   def show_address
+    @addresses = @company.addresses
   end
 
   def comments

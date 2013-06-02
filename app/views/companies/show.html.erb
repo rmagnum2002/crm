@@ -85,7 +85,7 @@
       <%= link_to t(:"company.show.sales"), sales_company_path, remote: true %> <span class="total_sales">(<%= @company.sales.count %>)</span>
     </div>
     <div class="right_side">
-      <%= render 'address' %>
+      <%= render 'comments' %>
     </div>
   </div>
 </div>
@@ -102,6 +102,3 @@
     <%= link_to t(:"company.show.add_contact"), new_company_employee_path(@company), :class => 'btn'  %>
   </div>
 </div>
-<script type="text/javascript">
-  $('.tab_comments').trigger('click');
-</script>

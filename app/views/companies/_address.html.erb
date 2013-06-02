@@ -1,5 +1,5 @@
 <h4><%= t(:"address.show.address") %></h4>
-<% @company.addresses.each do |addresss| %>
+<% @addresses.each do |addresss| %>
 <dl class="dl-horizontal pull-right">
   <h4 class="offset1">
     <%= addresss.address_type.present? ? t(:"address.show.invoicing_address") : t(:"address.show.legal_address") %>

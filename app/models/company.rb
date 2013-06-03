@@ -1,4 +1,6 @@
 class Company < ActiveRecord::Base
+  has_paper_trail
+
   attr_accessible :bank_req, :company_branch_id, :client_at, :client_category_id, :client_type_id, :client_status_id,
                   :email, :facebook, :fax, :fisc_id, :name, :phone, :responsible_id, :skype, :company_source_id,
                   :user_id, :website, :number_employees, :organizational_form_id, :addresses_attributes

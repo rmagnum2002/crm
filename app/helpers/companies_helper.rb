@@ -120,4 +120,31 @@ module CompaniesHelper
       company.company_branch.name
     end
   end
+
+  def company_changes(version)
+    version = version.changeset
+  end
+
+  def name_it(f, key)
+    if f == 'company_branch_id'
+      result = CompanyBranch.find key
+      return result.name
+    elsif f == 'company_source_id'
+      result = CompanySource.find key
+      return result.name
+    elsif f == 'client_type_id'
+      result = ClientType.find key
+      return result.name
+    elsif f == 'responsible_id'
+      result = User.find key
+      return result.full_name
+    elsif f == 'name'
+      result = key
+      return key
+    elsif f == 'client_type_id'
+      result = ClientType.find key
+      return result.name
+    end
+  end
+
 end

@@ -91,8 +91,13 @@ class CompaniesController < ApplicationController
   def update
     respond_to do |format|
       if @company.update_attributes(params[:company])
-        track_activity @company
-        format.html { redirect_to @company, notice: 'Company was successfully updated.' }
+        if @company.changed?
+          track_activity @company
+          @message = "Company was successfully updated."
+        else
+          @message = "Nothing to update"
+        end
+        format.html { redirect_to @company, notice: @message }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -127,6 +132,9 @@ class CompaniesController < ApplicationController
     @total = @sales.sum(&:ammount)
   end
 
+  def revisions
+    @versions = @company.versions.order("created_at desc")
+  end
   # DELETE /companies/1
   # DELETE /companies/1.json
   def destroy

@@ -5,7 +5,7 @@ class Sale < ActiveRecord::Base
   has_many :sale_items, dependent: :destroy
 
 
-  validates :ammount, :order_number, presence: true
+  validates :order_number, presence: true
 
   accepts_nested_attributes_for :sale_items, allow_destroy: true
 

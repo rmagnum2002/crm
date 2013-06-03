@@ -1,7 +1,7 @@
 class Company < ActiveRecord::Base
   has_paper_trail
 
-  attr_accessible :bank_req, :company_branch_id, :client_at, :client_category_id, :client_type_id, :client_status_id,
+  attr_accessible :bank_req, :company_branch_id, :client_at, :client_category_id, :client_type_id, :client_status_id, :marked_to_remove,
                   :email, :facebook, :fax, :fisc_id, :name, :phone, :responsible_id, :skype, :company_source_id,
                   :user_id, :website, :number_employees, :organizational_form_id, :addresses_attributes
 
@@ -28,5 +28,11 @@ class Company < ActiveRecord::Base
 
   def self.ransackable_attributes auth_object = nil
     (column_names - UNRANSACKABLE_ATTRIBUTES) + _ransackers.keys
+  end
+
+  def to_delete?
+    if self.marked_to_remove == true
+      return true
+    end
   end
 end

@@ -136,6 +136,11 @@ class CompaniesController < ApplicationController
   def revisions
     @versions = @company.versions.order("created_at desc")
   end
+
+  def delete_company
+    @company.update_attributes(marked_to_remove: true)
+    redirect_to :back
+  end
   # DELETE /companies/1
   # DELETE /companies/1.json
   def destroy

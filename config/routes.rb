@@ -32,6 +32,7 @@ CrmMd::Application.routes.draw do
       get 'comments'
       get 'sales'
       get 'revisions'
+      get 'delete_company'
     end
     resources :employees do
       resources :comments

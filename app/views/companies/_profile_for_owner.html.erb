@@ -1,0 +1,78 @@
+<dt><strong><%= t(:"company.show.added_by") %>:</strong></dt>
+<dd><%= link_to @company.user.full_name, profile_path(@company.user) %></dd>
+<dt><strong><%= t(:"company.show.responsible") %>:</strong></dt>
+<%- opts = { :type => :textarea, :ok_button => t(:'save'), :cancel_button => t(:'cancel'), :use_confirm => false, :nil => t(:"nothng") } %>
+<%- opts.delete(:ok_button) if params[:suppress_ok_button] %>
+<dd>
+  <%= best_in_place @company, :responsible_id, :type => :select, :collection => User.all.map{|x| [x.id, link_to(x.full_name, profile_path(x))]} %>
+</dd>
+<dt><strong><%= t(:"company.show.number_employees") %>:</strong></dt>
+<dd><%= best_in_place @company, :number_employees, opts %></dd>
+<dt><strong><%= t(:"company.show.organizational_form") %>:</strong></dt>
+<dd>
+  <% if current_language == "ro" %>
+    <%= best_in_place @company, :organizational_form_id, :type => :select, :collection => OrganizationalForm.all.map{|x| [x.id, x.name_ro]} %>
+  <% elsif current_language == "en" %>
+    <%= best_in_place @company, :organizational_form_id, :type => :select, :collection => OrganizationalForm.all.map{|x| [x.id, x.name]} %>
+  <% else %>
+    <%= best_in_place @company, :organizational_form_id, :type => :select, :collection => OrganizationalForm.all.map{|x| [x.id, x.name_ru]} %>
+  <% end %>
+</dd>
+<dt><strong><%= t(:"company.show.company_branch") %>:</strong></dt>
+<dd>
+  <% if current_language == "ro" %>
+    <%= best_in_place @company, :company_branch_id, :type => :select, :collection => CompanyBranch.all.map{|x| [x.id, x.name_ro]} %>
+  <% elsif current_language == "en" %>
+    <%= best_in_place @company, :company_branch_id, :type => :select, :collection => CompanyBranch.all.map{|x| [x.id, x.name]} %>
+  <% else %>
+    <%= best_in_place @company, :company_branch_id, :type => :select, :collection => CompanyBranch.all.map{|x| [x.id, x.name_ru]} %>
+  <% end %>
+</dd>
+<dt><strong><%= t(:"company.show.company_source") %>:</strong></dt>
+<dd>
+  <% if current_language == "ro" %>
+    <%= best_in_place @company, :company_source_id, :type => :select, :collection => CompanySource.all.map{|x| [x.id, x.name_ro]} %>
+  <% elsif current_language == "en" %>
+    <%= best_in_place @company, :company_source_id, :type => :select, :collection => CompanySource.all.map{|x| [x.id, x.name]} %>
+  <% else %>
+    <%= best_in_place @company, :company_source_id, :type => :select, :collection => CompanySource.all.map{|x| [x.id, x.name_ru]} %>
+  <% end %>
+</dd>
+<dt><strong><%= t(:"company.show.client_category") %>:</strong></dt>
+<dd>
+  <% if current_language == "ro" %>
+    <%= best_in_place @company, :client_category_id, :type => :select, :collection => ClientCategory.all.map{|x| [x.id, x.name_ro]} %>
+  <% elsif current_language == "en" %>
+    <%= best_in_place @company, :client_category_id, :type => :select, :collection => ClientCategory.all.map{|x| [x.id, x.name]} %>
+  <% else %>
+    <%= best_in_place @company, :client_category_id, :type => :select, :collection => ClientCategory.all.map{|x| [x.id, x.name_ru]} %>
+  <% end %>
+</dd>
+<dt><strong><%= t(:"company.show.client_type") %>:</strong></dt>
+<dd>
+  <% if current_language == "ro" %>
+    <%= best_in_place @company, :client_type_id, :type => :select, :collection => ClientType.all.map{|x| [x.id, x.name_ro]} %>
+  <% elsif current_language == "en" %>
+    <%= best_in_place @company, :client_type_id, :type => :select, :collection => ClientType.all.map{|x| [x.id, x.name]} %>
+  <% else %>
+    <%= best_in_place @company, :client_type_id, :type => :select, :collection => ClientType.all.map{|x| [x.id, x.name_ru]} %>
+  <% end %>
+</dd>
+<dt><strong><%= t(:"company.show.client_at") %>:</strong></dt>
+<dd><%= l @company.client_at, format: :long %></dd>
+<dt><strong><%= t(:"company.show.phone") %>:</strong></dt>
+<dd><%= best_in_place @company, :phone, opts %></dd>
+<dt><strong><%= t(:"company.show.fax") %>:</strong></dt>
+<dd><%= best_in_place @company, :fax, opts %></dd>
+<dt><strong><%= t(:"company.show.email") %>:</strong></dt>
+<dd><%= best_in_place @company, :email, opts %></dd>
+<dt><strong><%= t(:"company.show.skype") %>:</strong></dt>
+<dd><%= best_in_place @company, :skype, opts %></dd>
+<dt><strong><%= t(:"company.show.website") %>:</strong></dt>
+<dd><%= best_in_place @company, :website, opts %></dd>
+<dt><strong><%= t(:"company.show.facebook") %>:</strong></dt>
+<dd><%= best_in_place @company, :facebook, opts %></dd>
+<dt><strong><%= t(:"company.show.bank_req") %>:</strong></dt>
+<dd><%= best_in_place @company, :bank_req, opts %></dd>
+<dt><strong><%= t(:"company.show.fisc_id") %>:</strong></dt>
+<dd><%= best_in_place @company, :fisc_id, opts %></dd>

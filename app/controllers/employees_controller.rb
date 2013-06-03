@@ -62,7 +62,7 @@ class EmployeesController < ApplicationController
     respond_to do |format|
       if @employee.save
         track_activity @employee
-        format.html { redirect_to @company, notice: 'Employee was successfully created.' }
+        format.html { redirect_to @company, notice: "#{t(:"messages.created")}" }
         format.json { render json: @employee, status: :created, location: @employee }
       else
         format.html { render action: "new" }
@@ -78,7 +78,7 @@ class EmployeesController < ApplicationController
 
     respond_to do |format|
       if @employee.update_attributes(params[:employee])
-        format.html { redirect_to company_employee_path(@company, @employee), notice: 'Employee was successfully updated.' }
+        format.html { redirect_to company_employee_path(@company, @employee), notice: "#{t(:"messages.updated")}" }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -77,7 +77,7 @@ class CompaniesController < ApplicationController
     respond_to do |format|
       if @company.save
         track_activity @company
-        format.html { redirect_to @company, notice: 'Company was successfully created.' }
+        format.html { redirect_to @company, notice: "#{t(:"messages.created")}" }
         format.json { render json: @company, status: :created, location: @company }
       else
         format.html { render action: "new" }
@@ -91,12 +91,13 @@ class CompaniesController < ApplicationController
   def update
     respond_to do |format|
       if @company.update_attributes(params[:company])
-        if @company.changed?
+        # todo
+        # if @company.changed?
           track_activity @company
-          @message = "Company was successfully updated."
-        else
-          @message = "Nothing to update"
-        end
+          @message = "#{t(:"messages.updated")}"
+        # else
+          # @message = "Nothing to update"
+        # end
         format.html { redirect_to @company, notice: @message }
         format.json { head :no_content }
       else

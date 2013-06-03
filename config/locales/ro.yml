@@ -77,15 +77,19 @@ ro:
       client_category_id: "Categoria Clientului"
       client_type_id: "Tipul Clientului"
       company_source_id: "Cum ați găsit compania"
-      company_branch: "Ramura de activitate"
+      company_branch_id: "Ramura de activitate"
       client_at: "Client de la data:"
       phone: "Telefon"
       fax: "Fax"
       email: "Email"
+      skype: "Skype"
+      website: "Website"
+      facebook: "Facebook"
       bank_req: "Rechizite Bancare"
       fisc_id: "Cod Fiscal"
       responsible_id: "Responsabil"
       filter: "Filtrarea coloanelor"
+      organizational_form_id: "Forma de organizare"
     show:
       company: "Compania"
       company_profile: "Profilul companiei"
@@ -113,6 +117,7 @@ ro:
       edit: "Editează"
       destroy: "Şterge"
       add_contact: "Adaugă contact"
+      organizational_form: "Forma de organizare"
   address:
     form:
       legal_address: "Adresa juridică:"

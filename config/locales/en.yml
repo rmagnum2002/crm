@@ -77,15 +77,19 @@ en:
       client_category_id: "Client Category"
       client_type_id: "Client Type"
       company_source_id: "Source"
-      company_branch: "Company Branch"
+      company_branch_id: "Company Branch"
       client_at: "Client from"
       phone: "Phone"
       fax: "Fax"
       email: "Email"
+      skype: "Skype"
+      website: "Website"
+      facebook: "Facebook"
       bank_req: "Bank requisits"
       fisc_id: "Fiscal Code"
       responsible_id: "Responsible"
       filter: "Filter columns"
+      organizational_form_id: "Organizational Form"
     show:
       company: "Company"
       company_profile: "Company profile"
@@ -113,6 +117,7 @@ en:
       edit: "Edit"
       destroy: "Destroy"
       add_contact: "Add contact"
+      organizational_form: "Organizational Form"
   address:
     form:
       legal_address: "Legal address:"

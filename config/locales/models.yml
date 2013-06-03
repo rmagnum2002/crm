@@ -11,6 +11,10 @@ ro:
       employee: "Angajatul"
       organizational_form: "Forma de organizare"
 
+  messages:
+    updated: "Înregistrarea a fost modificată cu succes"
+    created: "Înregistrarea a fost creată cu succes"
+
 en:
   activerecord:
     models:
@@ -24,6 +28,10 @@ en:
       employee: "Employee"
       organizational_form: "Organizational Form"
 
+  messages:
+    updated: "Record was successfully updated"
+    created: "Record was successfully created"
+
 ru:
   activerecord:
     models:
@@ -36,3 +44,7 @@ ru:
       company_source: "Источник"
       employee: "Сотрудник"
       organizational_form: "Организационная форма"
+
+  messages:
+    updated: "Запись была успешно обновлена"
+    created: "Запись была успешно добавлена"

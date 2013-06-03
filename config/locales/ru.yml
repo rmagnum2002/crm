@@ -74,15 +74,19 @@ ru:
       client_category_id: "Категория клиента"
       client_type_id: "Тип клиента"
       company_source_id: "Источник"
-      company_branch: "Сфера деятельности"
+      company_branch_id: "Сфера деятельности"
       client_at: "Клиент с"
       phone: "Телефон"
       fax: "Факс"
       email: "Email"
+      skype: "Skype"
+      website: "Website"
+      facebook: "Facebook"
       bank_req: "Банковские реквизиты"
       fisc_id: "Фискальный код"
       responsible_id: "Ответственный"
       filter: "Показывать в таблице"
+      organizational_form_id: "Организационная форма"
     show:
       company: "Компания"
       company_profile: "Профиль компании"
@@ -110,6 +114,7 @@ ru:
       edit: "Редактировать"
       destroy: "Удалить"
       add_contact: "Добавить контакт"
+      organizational_form: "Организационная форма"
   address:
     form:
       legal_address: "Юридический адрес:"

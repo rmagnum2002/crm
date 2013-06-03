@@ -17,6 +17,16 @@
       </dd>
       <dt><strong><%= t(:"company.show.number_employees") %>:</strong></dt>
       <dd><%= best_in_place @company, :number_employees, opts %></dd>
+      <dt><strong><%= t(:"company.show.organizational_form") %>:</strong></dt>
+      <dd>
+        <% if current_language == "ro" %>
+          <%= best_in_place @company, :organizational_form_id, :type => :select, :collection => OrganizationalForm.all.map{|x| [x.id, x.name_ro]} %>
+        <% elsif current_language == "en" %>
+          <%= best_in_place @company, :organizational_form_id, :type => :select, :collection => OrganizationalForm.all.map{|x| [x.id, x.name]} %>
+        <% else %>
+          <%= best_in_place @company, :organizational_form_id, :type => :select, :collection => OrganizationalForm.all.map{|x| [x.id, x.name_ru]} %>
+        <% end %>
+      </dd>
       <dt><strong><%= t(:"company.show.company_branch") %>:</strong></dt>
       <dd>
         <% if current_language == "ro" %>

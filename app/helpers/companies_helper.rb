@@ -121,6 +121,16 @@ module CompaniesHelper
     end
   end
 
+  def dt_organizational_form(company)
+    if current_language == 'ro'
+      company.organizational_form.name_ro
+    elsif current_language == 'ru'
+      company.organizational_form.name_ru
+    else
+      company.organizational_form.name
+    end
+  end
+
   def company_changes(version)
     version = version.changeset
   end
@@ -128,30 +138,40 @@ module CompaniesHelper
   def name_it(f, key)
     if f == 'company_branch_id'
       result = CompanyBranch.find key
-      return result.name
+      result_name(result)
     elsif f == 'company_source_id'
       result = CompanySource.find key
-      return result.name
+      result_name(result)
     elsif f == 'client_category_id'
       result = ClientCategory.find key
-      return result.name
+      result_name(result)
     elsif f == 'client_type_id'
       result = ClientType.find key
-      return result.name
+      result_name(result)
     elsif f == 'client_status_id'
       result = ClientStatus.find key
-      return result.name
+      result_name(result)
     elsif f == 'responsible_id'
       result = User.find key
       return result.full_name
     elsif f == 'organizational_form_id'
       result = OrganizationalForm.find key
-      return result.name
+      result_name(result)
     elsif f == 'client_type_id'
       result = ClientType.find key
-      return result.name
+      result_name(result)
     else f == "client_at"
       return key
+    end
+  end
+
+  def result_name(result)
+    if current_language == 'en'
+      return result.name
+    elsif current_language == 'ro'
+      return result.name_ro
+    else
+      return result.name_ru
     end
   end
 

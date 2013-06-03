@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 ru:
+  changed_at: "сделал изменения"
+  changes_history: "История изменений"
   states: "States"
   countries: "Countries"
   client_categories: "Client Categories"
@@ -16,6 +18,7 @@ ru:
   cancel: "Отменить"
   nothng: "Нет данных"
   error_on_create: "Ошибка при сохранении данных. Проверьте если все требуемые поля заполнены."
+  marked_to_delete: "Отмечен для удаления"
 
   menu:
     main: "Главная"
@@ -45,6 +48,9 @@ ru:
     back: "Назад"
 
   company:
+    history:
+      from: 'из'
+      to: 'в'
     form:
       new_company: "Создайте новую компанию"
       responsible: "Ответственное лицо"

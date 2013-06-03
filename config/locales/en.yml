@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  changed_at: "did changes at"
+  changes_history: "Changes history"
   states: "States"
   countries: "Countries"
   client_categories: "Client Categories"
@@ -16,6 +18,7 @@ en:
   cancel: "Cancel"
   nothng: "Nothing to show"
   error_on_create: "Error on save record. Please check if all required fields are saved"
+  marked_to_delete: "Marked to delete"
 
   menu:
     main: "Main"
@@ -49,6 +52,9 @@ en:
     signin_with: "Sign in with"
 
   company:
+    history:
+      from: 'From'
+      to: 'To'
     form:
       new_company: "New company"
       responsible: "Responsible person"

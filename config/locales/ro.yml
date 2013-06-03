@@ -6,6 +6,8 @@ ro:
     devise:
       login:
         title: " - login"
+  changed_at: "a făcut modificări"
+  changes_history: "Istoricul modificărilor"
   states: "States"
   countries: "Countries"
   client_categories: "Client Categories"
@@ -20,6 +22,7 @@ ro:
   cancel: "Anulare"
   nothng: "Nu sunt date"
   error_on_create: "Eroare la creare înregistrării. Vă rugăm să verificați dacă toate câmpurile cerute sunt completate."
+  marked_to_delete: "Marcat pentru ștergere"
 
   menu:
     main: "Principala"
@@ -49,6 +52,9 @@ ro:
     back: "Înapoi"
 
   company:
+    history:
+      from: 'din'
+      to: 'în'
     form:
       new_company: "Creare companie noua"
       responsible: "Persoana de răspundere"

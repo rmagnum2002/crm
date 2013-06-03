@@ -1,3 +1,4 @@
+<h4><%= t(:'changes_history') %></h4>
 <div class="accordion" id="accordion2">
   <% @versions.each_with_index do |version, index| %>
   <div class="accordion-group">
@@ -5,19 +6,19 @@
       <div class="index pull-left"><%= index + 1 %></div>
       <div class="version_date">
       <%= link_to "#collapse#{index+1}", class: "accordion-toggle", data: {toggle: "collapse", parent: "#accordion2"} do %>
-        <%= l version.created_at, format: :long %>
+        <%= User.find(version.whodunnit).full_name %> <%= t(:'changed_at') %> <%= l version.created_at, format: :long %>
       <% end %>
       </div>
     </div>
     <div id="collapse<%= index+1 %>" class="accordion-body collapse">
       <div class="accordion-inner">
         <div>
-          <table class="table table-striped">
+          <table class="table table-striped table-bordered">
             <thead>
               <tr>
-                <th><%= t(:"company.show.field") %></th>
-                <th><%= t(:"company.show.from") %></th>
-                <th><%= t(:"company.show.to") %></th>
+                <th></th>
+                <th><%= t(:"company.history.from") %></th>
+                <th><%= t(:"company.history.to") %></th>
               </tr>
             </thead>
             <tbody>

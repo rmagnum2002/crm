@@ -17,6 +17,7 @@ CrmMd::Application.routes.draw do
   get "events_for_day", to: "events#events_for_day"
   get "profiles", to: 'users#index', as: :profiles
   get "error", to: 'welcome#index', as: :error
+  post "versions/:id/revert" => "versions#revert", :as => "revert_version"
 
   match "profile/:id", to: "users#show", as: 'profile'
   match "companies/:id/country_select_legal", to: "companies#country_select_legal", as: "country_select_legal"
@@ -30,6 +31,7 @@ CrmMd::Application.routes.draw do
       get 'show_address'
       get 'comments'
       get 'sales'
+      get 'revisions'
     end
     resources :employees do
       resources :comments

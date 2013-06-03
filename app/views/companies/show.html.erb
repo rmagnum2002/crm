@@ -82,7 +82,8 @@
       <%= link_to t(:"company.show.address"), show_address_company_path, remote: true %> |
       <%= link_to t(:"company.show.contacts"), show_contacts_company_path, remote: true %> <span class="total_employee">(<%= @company.employee.count %>)</span> |
       <%= link_to t(:"company.show.comments"), comments_company_path, remote: true, class: 'tab_comments' %> <span class="total_comments">(<%= @company.comments.count %>)</span> |
-      <%= link_to t(:"company.show.sales"), sales_company_path, remote: true %> <span class="total_sales">(<%= @company.sales.count %>)</span>
+      <%= link_to t(:"company.show.sales"), sales_company_path, remote: true %> <span class="total_sales">(<%= @company.sales.count %>)</span> |
+      <%= link_to t(:"company.show.history"), revisions_company_path, remote: true %> <span class="total_versions">(<%= @company.versions.count %>)</span>
     </div>
     <div class="right_side">
       <%= render 'comments' %>

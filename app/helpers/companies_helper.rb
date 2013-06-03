@@ -132,18 +132,26 @@ module CompaniesHelper
     elsif f == 'company_source_id'
       result = CompanySource.find key
       return result.name
+    elsif f == 'client_category_id'
+      result = ClientCategory.find key
+      return result.name
     elsif f == 'client_type_id'
       result = ClientType.find key
+      return result.name
+    elsif f == 'client_status_id'
+      result = ClientStatus.find key
       return result.name
     elsif f == 'responsible_id'
       result = User.find key
       return result.full_name
-    elsif f == 'name'
-      result = key
-      return key
+    elsif f == 'organizational_form_id'
+      result = OrganizationalForm.find key
+      return result.name
     elsif f == 'client_type_id'
       result = ClientType.find key
       return result.name
+    else f == "client_at"
+      return key
     end
   end
 

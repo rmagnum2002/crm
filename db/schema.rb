@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130603190756) do
+ActiveRecord::Schema.define(:version => 20130604111817) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -171,9 +171,10 @@ ActiveRecord::Schema.define(:version => 20130603190756) do
     t.string   "facebook"
     t.date     "client_date"
     t.string   "completion"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.integer  "title"
+    t.boolean  "marked_to_remove", :default => false
   end
 
   create_table "events", :force => true do |t|

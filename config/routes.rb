@@ -35,6 +35,9 @@ CrmMd::Application.routes.draw do
       get 'delete_company'
     end
     resources :employees do
+      member do
+        get 'delete_employee'
+      end
       resources :comments
     end
     resources :addresses
@@ -47,6 +50,7 @@ CrmMd::Application.routes.draw do
   resources :employees do
     member do
       get 'profile'
+      get 'delete_employee'
     end
     resources :comments
   end

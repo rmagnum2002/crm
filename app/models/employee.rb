@@ -1,6 +1,6 @@
 class Employee < ActiveRecord::Base
   attr_accessible :birthday, :client_date, :company_id, :completion, :decision, :email, :facebook, :first_name, :gender_id, :job_title_id,
-                  :language_id, :last_name, :mobile, :patronymic, :phone, :simtravel, :skype, :user_id, :title
+                  :language_id, :last_name, :mobile, :patronymic, :phone, :simtravel, :skype, :user_id, :title, :marked_to_remove
 
   belongs_to :company
   belongs_to :user
@@ -25,5 +25,11 @@ class Employee < ActiveRecord::Base
 
   def self.ransackable_attributes auth_object = nil
     (column_names - UNRANSACKABLE_ATTRIBUTES) + _ransackers.keys
+  end
+
+  def to_delete?
+    if self.marked_to_remove == true
+      return true
+    end
   end
 end

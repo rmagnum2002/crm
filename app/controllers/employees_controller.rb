@@ -98,4 +98,10 @@ class EmployeesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def delete_employee
+    @employee = Employee.find(params[:id])
+    @employee.update_attributes(marked_to_remove: true)
+    redirect_to company_employee_path(@company, @employee)
+  end
 end

@@ -104,4 +104,9 @@ class EmployeesController < ApplicationController
     @employee.update_attributes(marked_to_remove: true)
     redirect_to company_employee_path(@company, @employee)
   end
+
+  def revisions
+    @employee = Employee.find(params[:id])
+    @versions = @employee.versions.order("created_at desc")
+  end
 end

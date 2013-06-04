@@ -219,7 +219,17 @@ en:
       cant_take_decision: "Can't take decision"
       take_decision: "Take decision"
       full_profile: "Open full profile"
+    show:
+      comments: "Comments"
     index:
+      title: "Title"
+      first_name: "First name"
+      last_name: "Last name"
+      patronymic: "Patronymic"
+      gender_id: "Gender"
+      language_id: "Language"
+      client_date: "Client date"
+      Completion: "Completion"
       contacts: "Contacts"
       id: "ID"
       full_name: "Full name"

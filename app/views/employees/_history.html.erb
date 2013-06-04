@@ -1,0 +1,40 @@
+<h4><%= t(:'changes_history') %></h4>
+<div class="accordion" id="accordion2">
+  <% @versions.each_with_index do |version, index| %>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <div class="index pull-left"><%= index + 1 %></div>
+      <div class="version_date">
+      <%= link_to "#collapse#{index+1}", class: "accordion-toggle", data: {toggle: "collapse", parent: "#accordion2"} do %>
+        <%= User.find(version.whodunnit).full_name %> <%= t(:'changed_at') %> <%= l version.created_at, format: :long %>
+      <% end %>
+      </div>
+    </div>
+    <div id="collapse<%= index+1 %>" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <div>
+          <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th></th>
+                <th><%= t(:"company.history.from") %></th>
+                <th><%= t(:"company.history.to") %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% version.changeset.each do |set| %>
+                <tr>
+                  <td><%= t(:"employee.index.#{set[0]}") %></td>
+                  <td><%= name_it(set[0], set[1][0]) %></td>
+                  <td><%= name_it(set[0], set[1][1]) %></td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        <%= link_to 'Restore this version', revert_version_path(version), :method => :post %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>

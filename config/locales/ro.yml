@@ -219,7 +219,17 @@ ro:
       cant_take_decision: "Nu poate lua o decizie"
       take_decision: "Poate lua o decizie"
       full_profile: "Deschide profilul complet"
+    show:
+      comments: "Comentarii"
     index:
+      title: "Titlu"
+      first_name: "Nume"
+      last_name: "Prenume"
+      patronymic: "Patronimic"
+      gender_id: "Genul"
+      language_id: "Limba"
+      client_date: "Client din"
+      completion: "Finalizată"
       contacts: "Contacte"
       id: "ID"
       full_name: "Angajatul"

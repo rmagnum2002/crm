@@ -62,4 +62,31 @@ module EmployeesHelper
       employee.gender.name
     end
   end
+
+  def name_it(f, key)
+    if f == 'title'
+      result = I18n.t Employee::TITLE[@employee.title]
+    elsif f == 'gender_id'
+      result = Gender.find key
+      result_name(result)
+    elsif f == 'language_id'
+      result = Language.find key
+      result_name(result)
+    elsif f == 'job_title_id'
+      result = JobTitle.find key
+      result_name(result)
+    else f == "client_at"
+      return key
+    end
+  end
+
+  def result_name(result)
+    if current_language == 'en'
+      return result.name
+    elsif current_language == 'ro'
+      return result.name_ro
+    else
+      return result.name_ru
+    end
+  end
 end

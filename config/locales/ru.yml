@@ -212,7 +212,17 @@ ru:
       cant_take_decision: "Не может принять решение"
       take_decision: "Принимает решение"
       full_profile: "Открыть профиль"
+    show:
+      comments: "Коментарии"
     index:
+      title: "Title"
+      first_name: "Фамилия"
+      last_name: "Имя"
+      patronymic: "Отчество"
+      gender_id: "Пол"
+      language_id: "Язык"
+      client_date: "Клиент с"
+      completion: "Завершенная"
       contacts: "Контакты"
       id: "ID"
       full_name: "Сотрудник"

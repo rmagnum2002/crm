@@ -10,6 +10,7 @@ ro:
       confirm: "Sunteți siguri?"
       destroy: "Șterge"
       new: "Adaugă"
+      edit: "Editează"
     titles:
       edit: "Editează"
       save: "Salvează"

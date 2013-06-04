@@ -4,24 +4,9 @@
   <%= link_to t('company.form.new_company', :default => t("helpers.links.new")), new_company_path %>
 </div>
 <div><%= t(:"company.index.filter") %>:</div>
-<ul class="filter">
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(0);" checked><%= t(:"company.index.id") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(1);" checked><%= t(:"company.index.created_at") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(2);" checked><%= t(:"company.index.name") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(3);" checked><%= t(:"company.index.client_category_id") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(4);" checked><%= t(:"company.index.client_type_id") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(5);" checked><%= t(:"company.index.company_source_id") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(6);" checked><%= t(:"company.index.company_branch") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(7);" checked><%= t(:"company.index.client_at") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(8);" checked><%= t(:"company.index.phone") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(9);" checked><%= t(:"company.index.fax") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(10);" checked><%= t(:"company.index.skype") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(11);" checked><%= t(:"company.index.email") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(12);" checked><%= t(:"company.index.fisc_id") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(13);" checked><%= t(:"company.index.responsible_id") %></li>
-</ul>
+<%= render 'field_filter' %>
 <hr>
-<table id="companies" class="table table-striped" data-source="<%= companies_url(format: "json") %>" data-language="<%= current_language %>">
+<table id="companies" class="display" data-source="<%= companies_url(format: "json") %>" data-language="<%= current_language %>">
   <thead>
     <tr>
       <th><%= t(:"company.index.id") %></th>

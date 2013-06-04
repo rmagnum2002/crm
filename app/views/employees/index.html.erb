@@ -2,22 +2,9 @@
   <h1><%= t(:"employee.index.contacts") %></h1>
 </div>
 <div><%= t(:"employee.index.filter") %>:</div>
-<ul class="filter">
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(0);" checked><%= t(:"employee.index.id") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(1);" checked><%= t(:"employee.index.full_name") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(2);" checked><%= t(:"employee.index.gender") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(3);" checked><%= t(:"employee.index.language") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(4);" checked><%= t(:"employee.index.company_id") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(5);" checked><%= t(:"employee.index.job_title_id") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(6);" checked><%= t(:"employee.index.phone") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(7);" checked><%= t(:"employee.index.mobile") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(8);" checked><%= t(:"employee.index.simtravel") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(9);" checked><%= t(:"employee.index.email") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(10);" checked><%= t(:"employee.index.skype") %></li>
-  <li><input type="checkbox" name="vehicle" value="" onclick="fnShowHide(11);" checked><%= t(:"employee.index.facebook") %></li>
-</ul>
+<%= render 'field_filter' %>
 <hr>
-<table id="employees" class="table table-striped" data-source="<%= employees_url(format: "json") %>" data-language="<%= current_language %>">
+<table id="employees" class="display" data-source="<%= employees_url(format: "json") %>" data-language="<%= current_language %>">
   <thead>
     <tr>
       <th><%= t(:"employee.index.id") %></th>

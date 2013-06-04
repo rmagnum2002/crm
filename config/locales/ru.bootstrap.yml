@@ -3,15 +3,15 @@
 
 ru:
   helpers:
-    actions: "Actions"
+    actions: "Действия"
     links:
-      back: "Back"
-      cancel: "Cancel"
-      confirm: "Are you sure?"
-      destroy: "Delete"
-      new: "New"
+      back: "Назад"
+      cancel: "Отмена"
+      confirm: "Вы уверены?"
+      destroy: "Удалить"
+      new: "Создать"
     titles:
-      edit: "Edit"
-      save: "Save"
-      new: "New"
-      delete: "Delete"
+      edit: "Редактировать"
+      save: "Сохранить"
+      new: "Создать"
+      delete: "Удалить"

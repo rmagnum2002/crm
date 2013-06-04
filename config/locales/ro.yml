@@ -23,6 +23,8 @@ ro:
   nothng: "Nu sunt date"
   error_on_create: "Eroare la creare înregistrării. Vă rugăm să verificați dacă toate câmpurile cerute sunt completate."
   marked_to_delete: "Marcat pentru ștergere"
+  to_delete: "Da"
+  to_not_delete: "Nu"
 
   menu:
     main: "Principala"
@@ -96,6 +98,9 @@ ro:
       responsible_id: "Responsabil"
       filter: "Filtrarea coloanelor"
       organizational_form_id: "Forma de organizare"
+      number_employees: "Număr de angajaţi"
+      marked_to_remove: "Marcat pentru ștergere?"
+      updated_at: "Modificat"
     show:
       company: "Compania"
       company_profile: "Profilul companiei"

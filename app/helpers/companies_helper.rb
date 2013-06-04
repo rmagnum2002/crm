@@ -157,6 +157,10 @@ module CompaniesHelper
     elsif f == 'organizational_form_id'
       result = OrganizationalForm.find key
       result_name(result)
+    elsif f == 'marked_to_remove'
+      marked_to_remove(key)
+    elsif f == 'updated_at'
+      return l key, format: :long
     elsif f == 'client_type_id'
       result = ClientType.find key
       result_name(result)
@@ -172,6 +176,14 @@ module CompaniesHelper
       return result.name_ro
     else
       return result.name_ru
+    end
+  end
+
+  def marked_to_remove(key)
+    if key == false
+      return t(:'to_not_delete')
+    elsif key == true
+      return t(:'to_delete')
     end
   end
 

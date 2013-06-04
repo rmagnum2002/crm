@@ -19,6 +19,8 @@ en:
   nothng: "Nothing to show"
   error_on_create: "Error on save record. Please check if all required fields are saved"
   marked_to_delete: "Marked to delete"
+  to_delete: "Yes"
+  to_not_delete: "No"
 
   menu:
     main: "Main"
@@ -96,6 +98,9 @@ en:
       responsible_id: "Responsible"
       filter: "Filter columns"
       organizational_form_id: "Organizational Form"
+      number_employees: "Number Employees"
+      marked_to_remove: "Marked to remove?"
+      updated_at: "Updated At"
     show:
       company: "Company"
       company_profile: "Company profile"

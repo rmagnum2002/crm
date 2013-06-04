@@ -75,7 +75,7 @@ private
   end
 
   def sort_column
-    columns = %w[id first_name gender]
+    columns = %w[id first_name gender_id company_id]
     columns[params[:iSortCol_0].to_i]
   end
 

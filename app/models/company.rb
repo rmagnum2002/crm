@@ -1,5 +1,5 @@
 class Company < ActiveRecord::Base
-  has_paper_trail
+  has_paper_trail :on => [:update]
 
   attr_accessible :bank_req, :company_branch_id, :client_at, :client_category_id, :client_type_id, :client_status_id, :marked_to_remove,
                   :email, :facebook, :fax, :fisc_id, :name, :phone, :responsible_id, :skype, :company_source_id,
@@ -16,7 +16,7 @@ class Company < ActiveRecord::Base
   belongs_to :client_status
   belongs_to :organizational_form
   has_many :addresses, :dependent => :destroy, :inverse_of => :company
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, :dependent => :destroy
   has_many :sales, as: :saleable
 
   accepts_nested_attributes_for :addresses, :allow_destroy => true

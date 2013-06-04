@@ -122,12 +122,12 @@ ActiveRecord::Schema.define(:version => 20130603190756) do
     t.string   "facebook"
     t.string   "bank_req"
     t.integer  "fisc_id"
-    t.datetime "created_at",             :null => false
-    t.datetime "updated_at",             :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
     t.integer  "client_status_id"
     t.integer  "number_employees"
     t.integer  "organizational_form_id"
-    t.boolean  "marked_to_remove"
+    t.boolean  "marked_to_remove",       :default => false
   end
 
   create_table "company_branches", :force => true do |t|

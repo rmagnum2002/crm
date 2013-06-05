@@ -237,18 +237,18 @@ state = Comment.create([
    consequat.", commentable_id: 1, commentable_type: "Company", user_id: 2 }
 ])
 
-# state = Event.create([
-#   {comment_id: 1, action_id: 3, email: "022489462", event_date: Time.now + 240000, user_id: 2, employee_id: 1},
-#   {comment_id: 2, action_id: 2, email: "office@webng.md", event_date: Time.now + 24000 , user_id: 2, employee_id: 2},
-#   {comment_id: 3, action_id: 5, email: "064448646", event_date: Time.now + 24000, user_id: 2, employee_id: 3},
-#   {comment_id: 4, action_id: 4, email: "022489462", event_date: Time.now + 25000, user_id: 2, employee_id: 4},
-#   {comment_id: 5, action_id: 1, email: "022489462", event_date: Time.now + 240000, user_id: 1, employee_id: 1},
-#   {comment_id: 6, action_id: 3, email: "022489462", event_date: Time.now + 24000, user_id: 2, employee_id: 2},
-#   {comment_id: 7, action_id: 3, email: "022489462", event_date: Time.now + 240000, user_id: 2, employee_id: 3},
-#   {comment_id: 8, action_id: 3, email: "022489462", event_date: Time.now + 24000, user_id: 1, employee_id: 4},
-#   {comment_id: 1, action_id: 3, email: "022489462", event_date: Time.now + 240000, user_id: 2, employee_id: 1},
-#   {comment_id: 2, action_id: 6, email: "", event_date: Time.now - 240000, user_id: 1, employee_id: 2}
-# ])
+state = Event.create([
+  {comment_id: 1, action_id: 3, email: "022489462", event_date: Time.now + 240000, user_id: 2, employee_id: 1},
+  {comment_id: 2, action_id: 2, email: "office@webng.md", event_date: Time.now + 24000 , user_id: 2, employee_id: 2},
+  {comment_id: 3, action_id: 5, email: "064448646", event_date: Time.now + 24000, user_id: 2, employee_id: 3},
+  {comment_id: 4, action_id: 4, email: "022489462", event_date: Time.now + 25000, user_id: 2, employee_id: 4},
+  {comment_id: 5, action_id: 1, email: "022489462", event_date: Time.now + 240000, user_id: 1, employee_id: 1},
+  {comment_id: 6, action_id: 3, email: "022489462", event_date: Time.now + 24000, user_id: 2, employee_id: 2},
+  {comment_id: 7, action_id: 3, email: "022489462", event_date: Time.now + 240000, user_id: 2, employee_id: 3},
+  {comment_id: 8, action_id: 3, email: "022489462", event_date: Time.now + 24000, user_id: 1, employee_id: 4},
+  {comment_id: 1, action_id: 3, email: "022489462", event_date: Time.now + 240000, user_id: 2, employee_id: 1},
+  {comment_id: 2, action_id: 6, email: "", event_date: Time.now - 240000, user_id: 1, employee_id: 2}
+])
 
 item = Item.create([
   {name: "Сard", name_ro: "Cartelă", name_ru: "Карточка"},

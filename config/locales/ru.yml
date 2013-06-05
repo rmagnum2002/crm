@@ -92,7 +92,7 @@ ru:
       bank_req: "Банковские реквизиты"
       fisc_id: "Фискальный код"
       responsible_id: "Ответственный"
-      filter: "Показывать в таблице"
+      filter: "Фильтр столбцов таблицы"
       organizational_form_id: "Организационная форма"
       number_employees: "Количество сотрудников"
       marked_to_remove: "Отмечен для удаления?"

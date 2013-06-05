@@ -2,9 +2,9 @@ function selectBoxValue(object) {
   var select = object
   var value = object.val();
   // alert(value);
-  var email_field = $(select).next('.email_field');
-  var contact_field = $(select).next().next('.contact_field');
-  var date_field = $(select).next().next().next('.date_field');
+  var email_field = $('.items').find('.email_field');
+  var contact_field = $('.items').find('.contact_field');
+  var date_field = $('.items').find('.date_field');
   if (value == 0)
   {
     email_field.attr("type", "hidden");

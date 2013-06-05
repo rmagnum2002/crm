@@ -129,8 +129,8 @@
           <%= af.hidden_field :address_type, value: index %>
         </div>
         <div class="control-group">
-          <div class="controls">
-            <%= af.select :country_id, options_for_select(@countries, selected: address.country_id), include_blank: t(:"address.form.country_id") %>
+          <div class="controls country_<%= index %>">
+            <%= af.select :country_id, options_for_select(@countries, selected: address.country_id), include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil %>
           </div>
         </div>
         <div class="control-group">

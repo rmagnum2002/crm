@@ -25,8 +25,8 @@
               <% version.changeset.each do |set| %>
                 <tr>
                   <td><%= t(:"employee.index.#{set[0]}") %></td>
-                  <td><%= name_it(set[0], set[1][0]) %></td>
-                  <td><%= name_it(set[0], set[1][1]) %></td>
+                  <td><%= name_it_e(set[0], set[1][0]) %></td>
+                  <td><%= name_it_e(set[0], set[1][1]) %></td>
                 </tr>
               <% end %>
             </tbody>

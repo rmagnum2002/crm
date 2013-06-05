@@ -3,20 +3,45 @@
     <%= comment.content %>
     <div><%= link_to comment.user.full_name, profile_path(comment.user) %> | <%= l comment.created_at, format: :long %></div>
     <% if comment.events.present? %>
-      <div class="well">
-        <% comment.events.each do |event| %>
-          <% if event.action_id %>
-            <b>Result:</b> <%= t(Event::RESULT[event.action_id]) %>
+      <table class="table table-condensed">
+        <caption><h6>Events</h6></caption>
+        <thead>
+          <tr>
+            <th>Nr.</th>
+            <th>Event</th>
+            <th>Contact person</th>
+            <th>Email/Phone</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% comment.events.each_with_index do |event, index| %>
+          <tr>
+            <td>
+              <span class="badge badge-info"><%= index + 1 %></span>
+            </td>
+            <td>
+              <% if event.action_id %>
+                <%= t(Event::RESULT[event.action_id]) %>
+              <% end %>
+            </td>
+            <td>
+              <%= link_to event.employee.full_name, company_employee_path(@company, event.employee) if event.employee.present? %>
+            </td>
+            <td>
+              <% unless event.email == "" %>
+                <%= event.email %>
+              <% end %>
+            </td>
+            <td>
+              <% if event.event_date %>
+                <%= l event.event_date, format: :long %>
+              <% end %>
+            </td>
+          </tr>
           <% end %>
-          <%= event.employee.full_name if event.employee.present? %>
-          <% unless event.email == "" %>
-             - <%= event.email %>
-          <% end %>
-          <% if event.event_date %>
-            <b>Date:</b> <%= l event.event_date, format: :long %>
-          <% end %>
-        <% end %>
-      </div>
+        </tbody>
+      </table>
     <% end %>
   </div>
   <div>

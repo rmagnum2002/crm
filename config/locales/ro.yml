@@ -78,7 +78,7 @@ ro:
       number_employees: "Numarul de angajaţi"
       organizational_form: "Forma de organizare"
     index:
-      companies: "Companii"
+      companies: "Lista companiilor"
       created_at: "Creat la data:"
       id: "ID"
       name: "Numele"
@@ -96,7 +96,7 @@ ro:
       bank_req: "Rechizite Bancare"
       fisc_id: "Cod Fiscal"
       responsible_id: "Responsabil"
-      filter: "Filtrarea coloanelor"
+      filter: "Filtrarea coloanelor în tabel"
       organizational_form_id: "Forma de organizare"
       number_employees: "Număr de angajaţi"
       marked_to_remove: "Marcat pentru ștergere?"
@@ -230,7 +230,7 @@ ro:
       language_id: "Limba"
       client_date: "Client din"
       completion: "Finalizată"
-      contacts: "Contacte"
+      contacts: "Lista contactelor"
       id: "ID"
       full_name: "Angajatul"
       gender: "Genul"
@@ -245,7 +245,7 @@ ro:
       skype: "Skype"
       facebook: "Facebook"
       birthday: "Data naşterii"
-      filter: "Filtrarea coloanelor"
+      filter: "Filtrarea coloanelor în tabel"
   events:
     events: "evenimente"
     events_for: "Evenimente pentru"
@@ -275,7 +275,7 @@ ro:
       comments: "Comentarii"
   sales:
     show:
-      sales: "Vînzări"
+      sales: "Vânzări"
       total_amount: "suma totală:"
     index:
       added_sale: "A adăugat o vânzare în suma de"

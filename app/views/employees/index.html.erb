@@ -1,8 +1,7 @@
 <div class="page-header">
-  <h1><%= t(:"employee.index.contacts") %></h1>
+  <h2><%= t(:"employee.index.contacts") %></h2>
 </div>
-<div><%= t(:"employee.index.filter") %>:</div>
-<div class="well"><%= render 'field_filter' %></div>
+<%= render 'field_filter' %>
 <hr>
 <table id="employees" class="display" data-source="<%= employees_url(format: "json") %>" data-language="<%= current_language %>">
   <thead>

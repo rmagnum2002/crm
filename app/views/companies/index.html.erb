@@ -1,10 +1,9 @@
 <%#= render "advanced_search" %>
 <div class="page-header">
-  <h1><%= t(:"company.index.companies") %></h1>
+  <h2><%= t(:"company.index.companies") %></h2>
   <%= link_to t('company.form.new_company', :default => t("helpers.links.new")), new_company_path %>
 </div>
-<div><%= t(:"company.index.filter") %>:</div>
-<div class="well"><%= render 'field_filter' %></div>
+<%= render 'field_filter' %>
 <hr>
 <table id="companies" class="display" data-source="<%= companies_url(format: "json") %>" data-language="<%= current_language %>">
   <thead>

@@ -65,7 +65,7 @@ module EmployeesHelper
 
   def name_it(f, key)
     if f == 'title'
-      result = I18n.t Employee::TITLE[@employee.title]
+      result = I18n.t Employee::TITLE[key]
     elsif f == 'gender_id'
       result = Gender.find key
       result_name(result)

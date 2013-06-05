@@ -2,7 +2,7 @@
   <h1><%= t(:"employee.index.contacts") %></h1>
 </div>
 <div><%= t(:"employee.index.filter") %>:</div>
-<%= render 'field_filter' %>
+<div class="well"><%= render 'field_filter' %></div>
 <hr>
 <table id="employees" class="display" data-source="<%= employees_url(format: "json") %>" data-language="<%= current_language %>">
   <thead>

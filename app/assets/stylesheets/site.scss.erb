@@ -47,7 +47,16 @@ table{
   font-size: 14px;
 }
 ul.filter{
-  li{list-style: none;display: inline;margin: 0 10px;}
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  li{
+    list-style: none;width:33.333%;
+    line-height: 1.5em;
+    border-bottom: 1px solid #eeeeee;
+    float: left;
+    display: inline;
+  }
 }
 #loading{
   width: 35px;
@@ -69,4 +78,9 @@ ul.filter{
   line-height: 18px;
   padding-left: 30px;
   font-size: 16px;
+}
+#companies_length, #employees_length{
+  label{
+    display: inline;
+  }
 }

@@ -4,7 +4,7 @@
   <%= link_to t('company.form.new_company', :default => t("helpers.links.new")), new_company_path %>
 </div>
 <div><%= t(:"company.index.filter") %>:</div>
-<%= render 'field_filter' %>
+<div class="well"><%= render 'field_filter' %></div>
 <hr>
 <table id="companies" class="display" data-source="<%= companies_url(format: "json") %>" data-language="<%= current_language %>">
   <thead>

@@ -7,25 +7,25 @@ function selectBoxValue(object) {
   var date_field = $('.items').find('.date_field');
   if (value == 0)
   {
-    email_field.attr("type", "hidden");
-    contact_field.attr("style", "display:none;");
-    date_field.attr("type", "hidden");
+    email_field.attr("type", "hidden").removeAttr("required");
+    contact_field.attr("style", "display:none;").removeAttr("required");
+    date_field.attr("type", "hidden").removeAttr("required");
   }
   if (value == 2)
   {
     email_field.attr("type", "text").attr("required", "required");
-    contact_field.attr("style", "display:none;");
-    date_field.attr("type", "hidden");
+    contact_field.attr("style", "display:none;").removeAttr("required");
+    date_field.attr("type", "hidden").removeAttr("required");
   }
   if (value == 3)
   {
-    email_field.attr("type", "hidden");
+    email_field.attr("type", "hidden").removeAttr("required");
     contact_field.attr("style", "display:inline;").attr("required", "required");
     date_field.attr("type", "text").attr("required", "required");
   }
   if (value == 4 || value == 5 || value == 6)
   {
-    email_field.attr("type", "hidden");
+    email_field.attr("type", "hidden").removeAttr("required");
     contact_field.attr("style", "display:inline;").attr("required", "required");
     date_field.attr("type", "text").attr("required", "required");
   }

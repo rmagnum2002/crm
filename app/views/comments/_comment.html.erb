@@ -26,7 +26,7 @@
               <% end %>
             </td>
             <td>
-              <%= link_to event.employee.full_name, company_employee_path(@company, event.employee) if event.employee.present? %>
+              <%= link_to event.employee.full_name, company_employee_path(event.employee.company, event.employee) if event.employee.present? %>
             </td>
             <td>
               <% unless event.email == "" %>

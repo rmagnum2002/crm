@@ -68,25 +68,45 @@ module EmployeesHelper
       result = I18n.t Employee::TITLE[key]
     elsif f == 'gender_id'
       result = Gender.find key
-      result_name(result)
+      result_name_e(result)
     elsif f == 'language_id'
       result = Language.find key
-      result_name(result)
+      result_name_e(result)
     elsif f == 'job_title_id'
       result = JobTitle.find key
-      result_name(result)
+      result_name_e(result)
+    elsif f == 'decision'
+      decision(key)
+    elsif f == 'marked_to_remove'
+      marked_to_remove_e(key)
     else f == "client_at"
       return key
     end
   end
 
-  def result_name(result)
+  def result_name_e(result)
     if current_language == 'en'
       return result.name
     elsif current_language == 'ro'
       return result.name_ro
     else
       return result.name_ru
+    end
+  end
+
+  def decision(key)
+    if key == false
+      return t(:'to_not_delete')
+    elsif key == true
+      return t(:'to_delete')
+    end
+  end
+
+  def marked_to_remove_e(key)
+    if key == false
+      return t(:'to_not_delete')
+    elsif key == true
+      return t(:'to_delete')
     end
   end
 end

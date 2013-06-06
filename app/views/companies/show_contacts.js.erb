@@ -1,2 +1,4 @@
+$('li.active').removeClass('active');
+$('li.contacts_tab').addClass('active');
 $('.right_side').html("<%= j render('contacts') %>");
 $('.total_employee').html("<%= @company.employee.count %>");

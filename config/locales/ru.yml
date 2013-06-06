@@ -213,7 +213,7 @@ ru:
       take_decision: "Принимает решение"
       full_profile: "Открыть профиль"
       no_contacts: "Нет контактов"
-      add_employee_to_company: "Добавляется новый контакт к компаний"
+      add_employee_to_company: "Вы добавляете контакт к компании"
     show:
       comments: "Коментарии"
     index:

@@ -30,15 +30,31 @@
     </dl>
   </div>
   <div class="span6">
-    <div class="page-header">
-      <%= link_to t(:"company.show.address"), show_address_company_path, remote: true %> |
-      <%= link_to t(:"company.show.contacts"), show_contacts_company_path, remote: true %> <span class="badge total_employee"><%= @company.employee.count %></span> |
-      <%= link_to t(:"company.show.comments"), comments_company_path, remote: true, class: 'tab_comments' %> <span class="badge total_comments"><%= @company.comments.count %></span> |
-      <%= link_to t(:"company.show.sales"), sales_company_path, remote: true %> <span class="badge total_sales"><%= @company.sales.count %></span>
+    <ul class="nav nav-tabs">
+      <li class="address_tab"><%= link_to t(:"company.show.address"), show_address_company_path, remote: true %></li>
+      <li class="contacts_tab">
+        <%= link_to show_contacts_company_path, remote: true do %>
+        <%= t(:"company.show.contacts") %> <span class="badge badge-inverse total_employee"><%= @company.employee.count %></span>
+        <% end %>
+      </li>
+      <li class="comments_tab active">
+        <%= link_to comments_company_path, remote: true, class: 'tab_comments' do %>
+        <%= t(:"company.show.comments") %> <span class="badge badge-inverse total_comments"><%= @company.comments.count %></span>
+        <% end %>
+      </li>
+      <li class="sales_tab">
+        <%= link_to sales_company_path, remote: true do %>
+        <%= t(:"company.show.sales") %> <span class="badge badge-inverse total_sales"><%= @company.sales.count %></span>
+        <% end %>
+      </li>
       <% if can? :manage, Version %>
-       | <%= link_to t(:'changes_history'), revisions_company_path, remote: true %> <span class="badge total_versions"><%= @company.versions.count %></span>
+      <li class="history_tab">
+        <%= link_to revisions_company_path, remote: true do %>
+        <%= t(:'changes_history') %> <span class="badge badge-inverse total_versions"><%= @company.versions.count %></span>
+        <% end %>
+      </li>
       <% end %>
-    </div>
+    </ul>
     <div class="right_side">
       <%= render 'comments' %>
     </div>

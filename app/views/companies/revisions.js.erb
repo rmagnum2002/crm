@@ -1,2 +1,4 @@
+$('li.active').removeClass('active');
+$('li.history_tab').addClass('active');
 $('.right_side').html("<%= j render('history') %>");
 $('.total_versions').html("<%= @company.versions.count %>");

@@ -1,2 +1,4 @@
+$('li.active').removeClass('active');
+$('li.sales_tab').addClass('active');
 $('.right_side').html("<%= j render('sales') %>");
 $('.total_sales').html("<%= @company.sales.count %>");

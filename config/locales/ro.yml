@@ -220,6 +220,7 @@ ro:
       take_decision: "Poate lua o decizie"
       full_profile: "Deschide profilul complet"
       no_contacts: "Nu sînt contacte"
+      add_employee_to_company: "Adaugă contact nou la compania"
     show:
       comments: "Comentarii"
     index:

@@ -220,6 +220,7 @@ en:
       take_decision: "Take decision"
       full_profile: "Open full profile"
       no_contacts: "No contacts"
+      add_employee_to_company: "Add new employee to company"
     show:
       comments: "Comments"
     index:

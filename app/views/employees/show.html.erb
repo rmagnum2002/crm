@@ -62,10 +62,6 @@
     </ul>
 
   <div class="right_side">
-    <h4><%= t(:'employee.show.comments') %></h4>
-    <%= render partial: 'comments/form' %>
-    <div class="comments">
-      <%= render @comments %>
-    </div>
+    <%= render partial: 'comments' %>
   </div>
 </div>

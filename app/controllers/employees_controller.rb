@@ -107,6 +107,7 @@ class EmployeesController < ApplicationController
   end
 
   def comments
+    @hide_employees = true
     @commentable = @employee
     @comments = @commentable.comments.order('created_at desc')
     @comment = Comment.new

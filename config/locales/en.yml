@@ -219,6 +219,7 @@ en:
       cant_take_decision: "Can't take decision"
       take_decision: "Take decision"
       full_profile: "Open full profile"
+      no_contacts: "No contacts"
     show:
       comments: "Comments"
     index:

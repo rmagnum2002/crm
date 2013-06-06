@@ -21,8 +21,12 @@
         <%= f.select :action_id, Event::RESULT.invert.map{|a, b| [t(a), b] }, {:include_blank => t(:"events.result.result")}, {class: "first_select"} %>
         <%= f.hidden_field :email, placeholder: "Email", class: "email_field" %>
         <% unless @hide_employees %>
-          <%= f.collection_select :employee_id, @company.employee.find(:all), :id, :full_name, {:prompt => t(:"employee.form.full_name")}, { class: 'contact_field', style: "display: none;" } if @company.employee.exists? %>
+          <% if @company.employee.exists? %>
+            <%= f.collection_select :employee_id, @company.employee.find(:all), :id, :full_name, {:prompt => t(:"employee.form.full_name")}, { class: 'contact_field', style: "display: none;" } %>
           <% else %>
+            <%= f.collection_select :employee_id, [], [], [], {:prompt => t(:"employee.form.no_contacts")}, { class: 'contact_field', style: "display: none;" } %>
+          <% end %>
+        <% else %>
           <%= f.hidden_field :employee_id, value: @employee.id %>
         <% end %>
         <%= f.hidden_field :event_date, placeholder: t(:"events.date_hour"), class: "datetimepicker date_field" %>

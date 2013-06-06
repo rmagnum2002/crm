@@ -212,6 +212,7 @@ ru:
       cant_take_decision: "Не может принять решение"
       take_decision: "Принимает решение"
       full_profile: "Открыть профиль"
+      no_contacts: "Нет контактов"
     show:
       comments: "Коментарии"
     index:

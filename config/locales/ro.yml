@@ -219,6 +219,7 @@ ro:
       cant_take_decision: "Nu poate lua o decizie"
       take_decision: "Poate lua o decizie"
       full_profile: "Deschide profilul complet"
+      no_contacts: "Nu sînt contacte"
     show:
       comments: "Comentarii"
     index:

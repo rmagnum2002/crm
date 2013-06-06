@@ -54,6 +54,7 @@ class CompaniesController < ApplicationController
   # GET /companies/1/edit
   def edit
     @addresses = @company.addresses.limit(2)
+    @show_label = true
 
     @addresses.each do |add|
       if add.address_type?

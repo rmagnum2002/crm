@@ -1,55 +1,58 @@
 <%= form_for ([@company,@employee]), :html => { :class => 'form-horizontal' } do |f| %>
   <div class="span4">
     <div class="control-group">
-      <%#= f.label :title, :class => 'control-label' %>
+      <%= f.label :title, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= f.select :title, Employee::TITLE.invert.map{|value, key| [t(value), key] }, :include_blank => "Select title" %>
       </div>
     </div>
     <div class="control-group">
-      <%#= f.label :last_name, :class => 'control-label' %>
+      <%= f.label :last_name, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= f.text_field :last_name, :class => 'text_field', placeholder: t(:"employee.form.last_name") %>
+        <div class="span1 pull-right required">*</div>
       </div>
     </div>
     <div class="control-group">
-      <%#= f.label :first_name, :class => 'control-label' %>
+      <%= f.label :first_name, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= f.text_field :first_name, :class => 'text_field', placeholder: t(:"employee.form.first_name") %>
+        <div class="span1 pull-right required">*</div>
       </div>
     </div>
     <div class="control-group">
-      <%#= f.label :patronymic, :class => 'control-label' %>
+      <%= f.label :patronymic, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= f.text_field :patronymic, :class => 'text_field', placeholder: t(:"employee.form.patronymic") %>
+        <div class="span1 pull-right required">*</div>
       </div>
     </div>
     <div class="control-group">
-      <%#= f.label :gender, :class => 'control-label' %>
+      <%= f.label :gender, :class => 'control-label' if @show_label %>
       <div class="controls">
-        <%= gender(f) %>
+        <%= gender(f) %><div class="span1 pull-right required">*</div>
       </div>
     </div>
     <div class="control-group">
-      <%#= f.label :birthday, :class => 'control-label' %>
+      <%= f.label :birthday, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= f.text_field :birthday, placeholder: t(:"employee.form.birthday") %>
       </div>
     </div>
     <div class="control-group">
-      <%#= f.label :language, :class => 'control-label' %>
+      <%= f.label :language, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= language(f) %>
       </div>
     </div>
     <div class="control-group">
-      <%#= f.label :job_title_id, :class => 'control-label' %>
+      <%= f.label :job_title_id, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= job_title(f) %>
       </div>
     </div>
     <div class="control-group">
-      <%= f.label t(:"employee.form.decision"), :class => 'control-label' %>
+      <%= f.label t(:"employee.form.decision"), :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= f.check_box :decision, :class => 'check_box' %>
       </div>
@@ -57,49 +60,49 @@
   </div>
   <div class="span4">
     <div class="control-group">
-      <%#= f.label :phone, :class => 'control-label' %>
+      <%= f.label :phone, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= f.text_field :phone, :class => 'text_field', placeholder: t(:"employee.form.phone") %>
       </div>
     </div>
     <div class="control-group">
-      <%#= f.label :mobile, :class => 'control-label' %>
+      <%= f.label :mobile, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= f.text_field :mobile, :class => 'text_field', placeholder: t(:"employee.form.mobile") %>
       </div>
     </div>
     <div class="control-group">
-      <%#= f.label :simtravel, :class => 'control-label' %>
+      <%= f.label :simtravel, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= f.text_field :simtravel, :class => 'text_field', placeholder: "simtravel" %>
       </div>
     </div>
     <div class="control-group">
-      <%#= f.label :email, :class => 'control-label' %>
+      <%= f.label :email, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= f.text_field :email, :class => 'text_field', placeholder: "email" %>
       </div>
     </div>
     <div class="control-group">
-      <%#= f.label :skype, :class => 'control-label' %>
+      <%= f.label :skype, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= f.text_field :skype, :class => 'text_field', placeholder: "skype" %>
       </div>
     </div>
     <div class="control-group">
-      <%#= f.label :facebook, :class => 'control-label' %>
+      <%= f.label :facebook, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= f.text_field :facebook, :class => 'text_field', placeholder: "facebook" %>
       </div>
     </div>
     <div class="control-group">
-      <%#= f.label :client_date, :class => 'control-label' %>
+      <%= f.label :client_date, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= f.text_field :client_date, placeholder: t(:"employee.form.client_date") %>
       </div>
     </div>
     <div class="control-group">
-      <%#= f.label :completion, :class => 'control-label' %>
+      <%= f.label :completion, :class => 'control-label' if @show_label %>
       <div class="controls">
         <%= f.text_field :completion, :class => 'text_field', placeholder: t(:"employee.form.completion") %>
       </div>

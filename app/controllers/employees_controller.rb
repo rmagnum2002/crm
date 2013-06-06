@@ -49,6 +49,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees/1/edit
   def edit
+    @show_label = true
     @employee = Employee.find(params[:id])
   end
 

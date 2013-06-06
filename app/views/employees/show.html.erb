@@ -46,12 +46,20 @@
   </div>
 
   <div class="span6">
-    <div class="page-header">
-      <%= link_to t(:"employee.show.comments"), comments_company_path, remote: true, class: 'tab_comments' %> <span class="total_comments">(<%= @employee.comments.count %>)</span> |
+    <ul class="nav nav-tabs">
+      <li class="comments_tab active">
+        <%= link_to comments_employee_path(@employee), remote: true, class: 'tab_comments' do %>
+          <%= t(:"employee.show.comments") %> <span class="badge badge-inverse total_comments"><%= @employee.comments.count %></span></li>
+        <% end %>
+      </li>
       <% if can? :manage, Version %>
-       | <%= link_to t(:'changes_history'), revisions_employee_path, remote: true %> <span class="total_versions">(<%= @employee.versions.count %>)</span>
+      <li class="history_tab">
+        <%= link_to revisions_employee_path, remote: true do %>
+        <%= t(:'changes_history') %> <span class="badge badge-inverse total_versions"><%= @employee.versions.count %></span>
+        <% end %>
+      </li>
       <% end %>
-    </div>
+    </ul>
 
   <div class="right_side">
     <h4><%= t(:'employee.show.comments') %></h4>

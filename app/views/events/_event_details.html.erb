@@ -13,8 +13,8 @@
     </div>
     <div class="span12">
       <p><b><%= @event.event_date.strftime('%H:%M') %> - <%= t(Event::RESULT[@event.action_id]) %></b></p>
+      <% if @event.employee.present? %>
       <%= @event.employee_id? ? "#{link_to @event.employee.full_name, company_employee_path(@event.employee.company, @event.employee)} <br>".html_safe : ""  %>
-      <% if @event.employee %>
       works for: <%= link_to @event.employee.company.name, @event.employee.company %> <%= @event.email? ? @event.email : "" %>
       <% end %>
     </div>

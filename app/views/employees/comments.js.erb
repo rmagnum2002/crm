@@ -1,0 +1,4 @@
+$('li.active').removeClass('active');
+$('li.comments_tab').addClass('active');
+$('.right_side').html("<%= j render(partial: 'comments') %>");
+$('.total_comments').html("<%= @employee.comments.count %>");

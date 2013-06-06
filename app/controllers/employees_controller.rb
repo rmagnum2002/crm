@@ -106,6 +106,12 @@ class EmployeesController < ApplicationController
     redirect_to company_employee_path(@company, @employee)
   end
 
+  def comments
+    @commentable = @employee
+    @comments = @commentable.comments.order('created_at desc')
+    @comment = Comment.new
+  end
+
   def revisions
     @employee = Employee.find(params[:id])
     @versions = @employee.versions.order("created_at desc")

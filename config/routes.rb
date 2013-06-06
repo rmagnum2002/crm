@@ -52,6 +52,7 @@ CrmMd::Application.routes.draw do
       get 'profile'
       get 'delete_employee'
       get 'revisions'
+      get 'comments'
     end
     resources :comments
   end

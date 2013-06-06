@@ -23,7 +23,7 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :company_source_id, CompanySource.find(:all), :id, lang, :prompt => t(:"company.form.source")
+    f.collection_select :company_source_id, CompanySource.find(:all), :id, lang, {}, :prompt => t(:"company.form.source"), class: "select required"
   end
 
   def client_category(f)
@@ -34,7 +34,7 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :client_category_id, ClientCategory.find(:all), :id, lang, :prompt => t(:"company.form.client_category")
+    f.collection_select :client_category_id, ClientCategory.find(:all), :id, lang, {}, :prompt => t(:"company.form.client_category"), class: "select required"
   end
 
   def organizational_form(f)
@@ -45,7 +45,7 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :organizational_form_id, OrganizationalForm.find(:all), :id, lang, :prompt => t(:"company.form.organizational_form")
+    f.collection_select :organizational_form_id, OrganizationalForm.find(:all), :id, lang, {}, :prompt => t(:"company.form.organizational_form")
   end
 
   def client_status(f)
@@ -56,7 +56,7 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :client_status_id, ClientStatus.find(:all), :id, lang, :prompt => t(:"company.form.client_status")
+    f.collection_select :client_status_id, ClientStatus.find(:all), :id, lang, {}, :prompt => t(:"company.form.client_status"), class: "select required"
   end
 
   def client_type(f)
@@ -67,7 +67,7 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :client_type_id, ClientType.all, :id, lang, :prompt => t(:"company.form.client_type")
+    f.collection_select :client_type_id, ClientType.all, :id, lang, {}, :prompt => t(:"company.form.client_type"), class: "select required"
   end
 
   def company_branch(f)
@@ -78,7 +78,7 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :company_branch_id, CompanyBranch.find(:all), :id, lang, :prompt => t(:"company.form.branch")
+    f.collection_select :company_branch_id, CompanyBranch.find(:all), :id, lang, {}, :prompt => t(:"company.form.branch"), class: "select required"
   end
 
   def dt_client_type(company)

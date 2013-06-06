@@ -1,6 +1,6 @@
 <% if @sale.valid? %>
   /* Replace the count of sales */
-   $(".total_sales").html("(<%= @saleable.sales.count %>)");
+   $(".total_sales").html("<%= @saleable.sales.count %>");
    $(".total_ammount").html("<%= @saleable.sales.sum(&:ammount) %>")
   /* Add the new comment to the bottom of the sales list */
   $(".comments").prepend("<%= j(render(@sale)) %>");

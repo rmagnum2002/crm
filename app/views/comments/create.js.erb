@@ -1,7 +1,6 @@
 <% if @comment.valid? %>
   /* Replace the count of comments */
-  $("#comments_count").html('<%= @commentable.comments.count %>');
-  $('.total_comments').html('(<%= @commentable.comments.count %>)');
+  $('#comments_count, .total_comments').html('<%= @commentable.comments.count %>');
   $(".comments").prepend('<%= j(render(@comment)) %>');
   /* Reset the comment form */
   $(".new_comment")[0].reset();

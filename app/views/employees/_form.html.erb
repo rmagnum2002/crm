@@ -9,28 +9,25 @@
     <div class="control-group">
       <%= f.label :last_name, :class => 'control-label' if @show_label %>
       <div class="controls">
-        <%= f.text_field :last_name, :class => 'text_field', placeholder: t(:"employee.form.last_name") %>
-        <div class="span1 pull-right required">*</div>
+        <%= f.text_field :last_name, :class => 'text_field required', placeholder: t(:"employee.form.last_name") %>
       </div>
     </div>
     <div class="control-group">
       <%= f.label :first_name, :class => 'control-label' if @show_label %>
       <div class="controls">
-        <%= f.text_field :first_name, :class => 'text_field', placeholder: t(:"employee.form.first_name") %>
-        <div class="span1 pull-right required">*</div>
+        <%= f.text_field :first_name, :class => 'text_field required', placeholder: t(:"employee.form.first_name") %>
       </div>
     </div>
     <div class="control-group">
       <%= f.label :patronymic, :class => 'control-label' if @show_label %>
       <div class="controls">
-        <%= f.text_field :patronymic, :class => 'text_field', placeholder: t(:"employee.form.patronymic") %>
-        <div class="span1 pull-right required">*</div>
+        <%= f.text_field :patronymic, :class => 'text_field required', placeholder: t(:"employee.form.patronymic") %>
       </div>
     </div>
     <div class="control-group">
       <%= f.label :gender, :class => 'control-label' if @show_label %>
       <div class="controls">
-        <%= gender(f) %><div class="span1 pull-right required">*</div>
+        <%= gender(f) %>
       </div>
     </div>
     <div class="control-group">

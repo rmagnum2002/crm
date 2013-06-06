@@ -19,7 +19,7 @@ module EmployeesHelper
     else
       gender = :name
     end
-    f.collection_select :gender_id, Gender.all, :id, gender, :include_blank => t(:"employee.form.select_gender")
+    f.collection_select :gender_id, Gender.all, :id, gender, {}, :include_blank => t(:"employee.form.select_gender"), class: "select required"
   end
 
   def language(f)

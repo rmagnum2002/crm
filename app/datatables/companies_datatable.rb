@@ -28,7 +28,6 @@ private
         h(dt_client_type(company)),
         h(dt_company_source(company)),
         h(dt_company_branch(company)),
-        h(company.client_at.strftime("%B %e, %Y")),
         h(company.phone),
         h(company.fax),
         h(company.skype),
@@ -79,7 +78,7 @@ end
   end
 
   def sort_column
-    columns = %w[id created_at name client_category_id client_type_id company_source_id company_branch_id client_at phone fax skype email fisc_id responsible_id]
+    columns = %w[id created_at name client_category_id client_type_id company_source_id company_branch_id phone fax skype email fisc_id responsible_id]
     columns[params[:iSortCol_0].to_i]
   end
 

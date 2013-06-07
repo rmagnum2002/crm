@@ -131,7 +131,7 @@ ru:
       legal_address: "Юридический адрес:"
       invoicing_address: "Адрес для фактурации:"
       country_id: "Выберите страну"
-      state_id: "Выберите район"
+      state_id: "Выберите город"
       postal_code: "Почтовый индекс"
       street: "Улица"
       street_number: "Номер улицы"
@@ -217,7 +217,7 @@ ru:
     show:
       comments: "Коментарии"
     index:
-      title: "Title"
+      title: "Название"
       first_name: "Фамилия"
       last_name: "Имя"
       patronymic: "Отчество"
@@ -687,3 +687,6 @@ ru:
 
       multi_page: "Displaying %{model} %{from} - %{to} of %{count} in total"
       multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
+
+  history:
+    restore: "Восстановить эту версию"

@@ -22,6 +22,8 @@ CrmMd::Application.routes.draw do
   match "profile/:id", to: "users#show", as: 'profile'
   match "country_select_legal", to: "companies#country_select_legal", as: "country_select_legal"
   match "country_select_invoicing", to: "companies#country_select_invoicing", as: "country_select_invoicing"
+  match "companies/:id/country_select_legal", to: "companies#country_select_legal", as: "country_select_legal"
+  match "companies/:id/country_select_invoicing", to: "companies#country_select_invoicing", as: "country_select_invoicing"
   match "companies/search", to: "companies#search"
   match "contacts", to: "employees#index"
 

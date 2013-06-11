@@ -19,7 +19,7 @@
   </div>
 </div>
 
-  <div class="span4">
+  <div class="span4" style=<%= @company.to_delete? ? "background:#f2dede;" : "" %>>
     <h4><%= t(:"company.show.company_profile") %></h4>
     <dl class="dl-horizontal">
       <% if @company.user == current_user %>

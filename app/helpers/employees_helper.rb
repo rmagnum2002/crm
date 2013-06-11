@@ -34,22 +34,26 @@ module EmployeesHelper
   end
 
   def dt_job_title(employee)
-    if current_language == 'ro'
-      employee.job_title.name_ro
-    elsif current_language == 'ru'
-      employee.job_title.name_ru
-    else
-      employee.job_title.name
+    if employee.language.present?
+      if current_language == 'ro'
+        employee.job_title.name_ro
+      elsif current_language == 'ru'
+        employee.job_title.name_ru
+      else
+        employee.job_title.name
+      end
     end
   end
 
   def dt_language(employee)
-    if current_language == 'ro'
-      employee.language.name_ro
-    elsif current_language == 'ru'
-      employee.language.name_ru
-    else
-      employee.language.name
+    if employee.language.present?
+      if current_language == 'ro'
+        employee.language.name_ro
+      elsif current_language == 'ru'
+        employee.language.name_ru
+      else
+        employee.language.name
+      end
     end
   end
 

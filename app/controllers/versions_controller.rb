@@ -6,8 +6,8 @@ class VersionsController < ApplicationController
     else
       @version.item.destroy
     end
-    link_name = params[:redo] == "true" ? "undo" : "redo"
+    link_name = params[:redo] == "true" ? t(:"undo") : t(:"redo")
     link = view_context.link_to(link_name, revert_version_path(@version.next, :redo => !params[:redo]), :method => :post)
-    redirect_to :back, :notice => "Restored #{@version.event}. #{link}"
+    redirect_to :back, :notice => t(:"restored_#{@version.event}") + "  #{link}"
   end
 end

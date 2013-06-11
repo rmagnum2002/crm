@@ -139,7 +139,11 @@ class CompaniesController < ApplicationController
   end
 
   def delete_company
-    @company.update_attributes(marked_to_remove: true)
+    if @company.marked_to_remove == false
+      @company.update_attributes(marked_to_remove: true)
+    else
+      @company.update_attributes(marked_to_remove: false)
+    end
     redirect_to :back
   end
   # DELETE /companies/1

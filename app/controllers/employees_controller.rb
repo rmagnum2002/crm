@@ -102,7 +102,11 @@ class EmployeesController < ApplicationController
 
   def delete_employee
     @employee = Employee.find(params[:id])
-    @employee.update_attributes(marked_to_remove: true)
+    if @employee.marked_to_remove == false
+      @employee.update_attributes(marked_to_remove: true)
+    else
+      @employee.update_attributes(marked_to_remove: false)
+    end
     redirect_to company_employee_path(@company, @employee)
   end
 

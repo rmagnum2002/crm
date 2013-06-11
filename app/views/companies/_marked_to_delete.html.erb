@@ -1,3 +1,6 @@
 <div class="alert alert-error">
   <%= t(:"marked_to_delete") %>
 </div>
+<% if can? :manage, @all %>
+<%= link_to t(:"helpers.links.cancel"), delete_company_company_path(@company), :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) } %>
+<% end %>

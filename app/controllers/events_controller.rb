@@ -13,7 +13,8 @@ class EventsController < ApplicationController
   end
 
   def events_for_day
-    @events_for_the_day = Event.where("DATE(event_date) = DATE(?)", params[:set_date]).order("event_date")
+    t1 = Time.parse(params[:set_date]).beginning_of_day
+    @events_for_the_day = Event.where("event_date between ? and ?", t1, t1.end_of_day).order("event_date")
 
     respond_to do |format|
       format.html { redirect_to events_path }

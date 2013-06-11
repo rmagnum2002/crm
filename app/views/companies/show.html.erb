@@ -38,7 +38,7 @@
         <% end %>
       </li>
       <li class="comments_tab active">
-        <%= link_to comments_company_path, remote: true, class: 'tab_comments' do %>
+        <%= link_to show_comments_company_path, remote: true, class: 'tab_comments' do %>
         <%= t(:"company.show.comments") %> <span class="badge badge-inverse total_comments"><%= @company.comments.count %></span>
         <% end %>
       </li>

@@ -5,8 +5,6 @@ class Comment < ActiveRecord::Base
 
   validates_presence_of :content
 
-  has_many :events
+  has_many :events, :dependent => :destroy
   accepts_nested_attributes_for :events, allow_destroy: true
-
-  TYPE = { "Call" => 0, "Email" => 1, "Meeting" => 2}
 end

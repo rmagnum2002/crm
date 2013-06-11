@@ -31,7 +31,7 @@ CrmMd::Application.routes.draw do
     member do
       get 'show_contacts'
       get 'show_address'
-      get 'comments'
+      get 'show_comments'
       get 'sales'
       get 'revisions'
       get 'delete_company'
@@ -60,6 +60,7 @@ CrmMd::Application.routes.draw do
   end
 
   resources :sales
+  resources :comments
 
   get "welcome/index"
   match 'set_locale' => 'welcome#set_locale'

@@ -121,7 +121,7 @@ class CompaniesController < ApplicationController
     @addresses = @company.addresses
   end
 
-  def comments
+  def show_comments
     @commentable = @company
     @comments = @commentable.comments.order('created_at desc')
     @comment = Comment.new

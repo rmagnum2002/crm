@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :load_commentable
+  before_filter :load_commentable, %w{destroy}
 
   load_and_authorize_resource
 
@@ -17,7 +17,6 @@ class CommentsController < ApplicationController
     if @comment.save
       track_activity @comment
       respond_to do |format|
-        # format.html { redirect_to :back }
         format.js
       end
     else
@@ -27,11 +26,11 @@ class CommentsController < ApplicationController
 
   def destroy
     @comment = Comment.find(params[:id])
+    @commentable = @comment.commentable
+    authorize! :read, @comment
     @comment.destroy
-
     respond_to do |format|
-      format.html { redirect_to company_path(@commentable) }
-      format.json { head :no_content }
+      format.js
     end
   end
 

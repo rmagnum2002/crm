@@ -1,1 +1,2 @@
-$(".comment_<%= @comment.id %>").fadeout();
+$(".comments .comment_<%= @comment.id %>").fadeOut();
+$('#comments_count, .total_comments').html('<%= @commentable.comments.count %>');

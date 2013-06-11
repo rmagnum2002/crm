@@ -7,7 +7,7 @@ class Ability
     user ||= User.new # guest user (not logged in)
 
     # alias_action :create, :read, :update, :destroy, :to => :crud
-    alias_action :show_contacts, :show_address, :sales, :comments, :country_select_legal, :country_select_invoicing, :to => :company_actions
+    alias_action :show_contacts, :show_address, :sales, :show_comments, :country_select_legal, :country_select_invoicing, :to => :company_actions
     alias_action :events_for_day, :open_details, :to => :events_actions
 
     if user.role? :admin
@@ -29,6 +29,7 @@ class Ability
       can :update, Employee, :user_id => user.id
       can :destroy, Company, :user_id => user.id
       can :destroy, Employee, :user_id => user.id
+      can :destroy, Comment, :user_id => user.id
       can :company_actions, Company
       can :events_actions, Event
     elsif user.role? :user

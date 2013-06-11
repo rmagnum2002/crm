@@ -8,7 +8,7 @@ module EmployeesHelper
     else
       lang = :name
     end
-    f.collection_select :job_title_id, JobTitle.find(:all), :id, lang, :include_blank => t(:"employee.form.select_job")
+    f.collection_select :job_title_id, JobTitle.find(:all), :id, lang, { :include_blank => t(:"employee.form.select_job") }
   end
 
   def gender(f)
@@ -19,7 +19,7 @@ module EmployeesHelper
     else
       gender = :name
     end
-    f.collection_select :gender_id, Gender.all, :id, gender, {}, :include_blank => t(:"employee.form.select_gender"), class: "select required"
+    f.collection_select :gender_id, Gender.all, :id, gender, { :include_blank => t(:"employee.form.select_gender") }, class: "select required"
   end
 
   def language(f)
@@ -30,7 +30,7 @@ module EmployeesHelper
     else
       language = :name
     end
-    f.collection_select :language_id, Language.all, :id, language, :include_blank => t(:"employee.form.select_language")
+    f.collection_select :language_id, Language.all, :id, language, { :include_blank => t(:"employee.form.select_language") }
   end
 
   def dt_job_title(employee)

@@ -134,7 +134,7 @@ ro:
       legal_address: "Adresa juridică:"
       invoicing_address: "Adresa de facturare:"
       country_id: "Alegeţi ţara"
-      state_id: "Alegeţi raionul"
+      state_id: "Alegeţi oraşul"
       postal_code: "Codul poştal"
       street: "Stada"
       street_number: "Numărul străzii"
@@ -645,3 +645,6 @@ ro:
 
       multi_page: "Afișarea %{model} %{from} - %{to} din totalul de %{count}"
       multi_page_html: "Afișarea %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> din totalul <b>%{count}</b>"
+
+  history:
+    restore: "Restabileşte această versiune"

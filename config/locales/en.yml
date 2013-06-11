@@ -134,7 +134,7 @@ en:
       legal_address: "Legal address:"
       invoicing_address: "Invoicing address:"
       country_id: "Select country"
-      state_id: "Select state"
+      state_id: "Select city"
       postal_code: "Postal Code"
       street: "Street Name"
       street_number: "Street number"
@@ -324,3 +324,6 @@ en:
 
       multi_page: "Displaying %{model} %{from} - %{to} of %{count} in total"
       multi_page_html: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{count}</b> in total"
+
+  history:
+    restore: "Restore this version"

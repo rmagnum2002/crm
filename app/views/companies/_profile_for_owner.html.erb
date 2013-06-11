@@ -59,7 +59,7 @@
   <% end %>
 </dd>
 <dt><strong><%= t(:"company.show.client_at") %>:</strong></dt>
-<dd><%= l @company.client_at, format: :long %></dd>
+<dd><%= l @company.client_at, format: :long if @company.client_at.present? %></dd>
 <dt><strong><%= t(:"company.show.phone") %>:</strong></dt>
 <dd><%= best_in_place @company, :phone, opts %></dd>
 <dt><strong><%= t(:"company.show.fax") %>:</strong></dt>

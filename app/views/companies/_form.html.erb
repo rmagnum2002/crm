@@ -1,61 +1,61 @@
-<%= form_for @company, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @company, :validate => true, :html => { :class => 'form-horizontal' } do |f| %>
 <div class="span4">
   <div class="control-group">
-    <%= f.label :responsible_id, :class => 'control-label' if @show_label %>
+    <%= f.label t(:"company.form.responsible"), :class => 'control-label' if @show_label %>
     <div class="controls">
       <%= f.collection_select :responsible_id, User.find(:all), :id, :full_name, { :selected => @company.responsible_id }, :prompt => t(:"company.form.responsible"), class: 'select_field' %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :name, :class => 'control-label' if @show_label %>
+    <%= f.label t(:"company.form.name"), :class => 'control-label' if @show_label %>
     <div class="controls">
       <%= f.text_field :name, :class => 'text_field required', placeholder: t(:"company.form.name") %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :company_branch_id, :class => 'control-label' if @show_label %>
+    <%= f.label t(:"company.form.branch"), :class => 'control-label' if @show_label %>
     <div class="controls">
       <%= company_branch(f) %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :company_source_id, :class => 'control-label' if @show_label %>
+    <%= f.label t(:"company.form.source"), :class => 'control-label' if @show_label %>
     <div class="controls">
       <%= company_source(f) %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :client_category_id, :class => 'control-label' if @show_label %>
+    <%= f.label t(:"company.form.client_category"), :class => 'control-label' if @show_label %>
     <div class="controls">
       <%= client_category(f) %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :client_type_id, :class => 'control-label' if @show_label %>
+    <%= f.label t(:"company.form.client_type"), :class => 'control-label' if @show_label %>
     <div class="controls">
       <%= client_type(f) %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :organizational_form_id, :class => 'control-label' if @show_label %>
+    <%= f.label t(:"company.form.organizational_form"), :class => 'control-label' if @show_label %>
     <div class="controls">
       <%= organizational_form(f) %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :number_employees, :class => 'control-label' if @show_label %>
+    <%= f.label t(:"company.form.number_employees"), :class => 'control-label' if @show_label %>
     <div class="controls">
       <%= f.text_field :number_employees, :class => 'text_field', placeholder: t(:"company.form.number_employees") %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :client_status_id, :class => 'control-label' if @show_label %>
+    <%= f.label t(:"company.form.client_status"), :class => 'control-label' if @show_label %>
     <div class="controls">
       <%= client_status(f) %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :client_at, :class => 'control-label' if @show_label %>
+    <%= f.label t(:"company.form.client_at"), :class => 'control-label' if @show_label %>
     <div class="controls">
       <%= f.text_field :client_at, :class => 'date_select', placeholder: t(:"company.form.client_at") %>
     </div>
@@ -99,13 +99,13 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :bank_req, :class => 'control-label' if @show_label %>
+    <%= f.label t(:"company.form.bank_req"), :class => 'control-label' if @show_label %>
     <div class="controls">
       <%= f.text_field :bank_req, :class => 'text_field', placeholder: t(:"company.form.bank_req") %>
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :fisc_id, :class => 'control-label' if @show_label %>
+    <%= f.label t(:"company.form.fisc_id"), :class => 'control-label' if @show_label %>
     <div class="controls">
       <%= f.number_field :fisc_id, :class => 'number_field', placeholder: t(:"company.form.fisc_id") %>
     </div>
@@ -129,30 +129,35 @@
           <%= af.hidden_field :address_type, value: index %>
         </div>
         <div class="control-group">
+          <%= f.label t(:"address.form.country_id"), :class => 'control-label' if @show_label %>
           <div class="controls country_<%= index %>">
             <%= af.select :country_id, options_for_select(@countries, selected: address.country_id), { include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil }, class: "select required" %>
           </div>
         </div>
         <div class="control-group">
+          <%= f.label t(:"address.form.state_id"), :class => 'control-label' if @show_label %>
           <div class="controls state_<%= index %>">
             <% if index == 0 %>
-              <%= af.select :state_id, options_for_select(@states_0, selected: address.state_id, country_id: params[:country_id]), {}, id: "state_id_0" unless address.state_id.nil? %>
+              <%= af.select :state_id, options_for_select(@states_0, selected: address.state_id, country_id: params[:country_id]), {}, id: "state_id_0", class: "select required" unless address.state_id.nil? %>
               <% else %>
-              <%= af.select :state_id, options_for_select(@states_1, selected: address.state_id, country_id: params[:country_id]), {}, id: "state_id_1" unless address.state_id.nil? %>
+              <%= af.select :state_id, options_for_select(@states_1, selected: address.state_id, country_id: params[:country_id]), {}, id: "state_id_1", class: "select required" unless address.state_id.nil? %>
               <% end %>
           </div>
         </div>
         <div class="control-group">
+          <%= f.label t(:"address.form.postal_code"), :class => 'control-label' if @show_label %>
           <div class="controls">
             <%= af.text_field :postal_code, class: "text_field required", placeholder: t(:"address.form.postal_code") %>
           </div>
         </div>
         <div class="control-group">
+          <%= f.label t(:"address.form.street"), :class => 'control-label' if @show_label %>
           <div class="controls">
             <%= af.text_field :street, class: "text_field required", placeholder: t(:"address.form.street") %>
           </div>
         </div>
         <div class="control-group">
+          <%= f.label t(:"address.form.street_number"), :class => 'control-label' if @show_label %>
           <div class="controls">
             <%= af.text_field :street_number, class: "text_field required", placeholder: t(:"address.form.street_number") %>
           </div>

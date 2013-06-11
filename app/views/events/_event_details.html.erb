@@ -1,13 +1,13 @@
 <div class="events_modal">
   <i class="icon-remove pull-right close_details"></i>
   <div class="page-header">
-    <h3>Details for event on <%= l @event.event_date.to_date, format: :long %></h3>
+    <h3><%= l @event.event_date.to_date, format: :long %></h3>
   </div>
   <div class="row-fluid">
     <div class="span12">
-      <b>Comment related to event:</b><br>
+      <b><%= t(:"activity.index.comment") %></b><br>
       <% if @event.comment.commentable_type == "Company" %>
-      <p>for <%= link_to @event.comment.commentable.name, company_path(@event.comment.commentable) %></p>
+      <p><%= t(:"activity.index.company") %> <%= link_to @event.comment.commentable.name, company_path(@event.comment.commentable) %></p>
       <% end %>
       <p><%= @event.comment.content %></p>
     </div>
@@ -15,7 +15,7 @@
       <p><b><%= @event.event_date.strftime('%H:%M') %> - <%= t(Event::RESULT[@event.action_id]) %></b></p>
       <% if @event.employee.present? %>
       <%= @event.employee_id? ? "#{link_to @event.employee.full_name, company_employee_path(@event.employee.company, @event.employee)} <br>".html_safe : ""  %>
-      works for: <%= link_to @event.employee.company.name, @event.employee.company %> <%= @event.email? ? @event.email : "" %>
+      <%= link_to @event.employee.company.name, @event.employee.company %> <%= @event.email? ? @event.email : "" %>
       <% end %>
     </div>
   </div>

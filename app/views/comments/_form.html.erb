@@ -11,15 +11,15 @@
   <% end %>
 
   <div class="control-group">
-    <%= f.text_area :content, rows: 4, class: "input-xxlarge", placeholder: t(:"comments.form.comment") %>
+    <%= f.text_area :content, rows: 4, class: "input-xxlarge", placeholder: t(:"comments.form.comment"), required: true %>
     <div class="errors"></div>
   </div>
   <h5><%= t(:"events.events") %> | <a href="#" class="add"><%= t(:"events.add_event") %></a></h5>
   <div class="items">
     <%= f.nested_fields_for :events do |f| %>
       <fieldset class="span6 item">
-        <%= f.select :action_id, Event::RESULT.invert.map{|a, b| [t(a), b] }, {:include_blank => t(:"events.result.result")}, {class: "first_select"} %>
-        <%= f.hidden_field :email, placeholder: "Email", class: "email_field" %>
+        <%= f.select :action_id, Event::RESULT.invert.map{|a, b| [t(a), b] }, {:include_blank => t(:"events.result.result")}, {class: "first_select", required: true} %>
+        <%= f.hidden_field :email, placeholder: "Emails", class: "email_field" %>
         <% if @hide_employees %>
           <%= f.hidden_field :employee_id, value: @employee.id %>
         <% else %>

@@ -21,6 +21,9 @@ en:
   marked_to_delete: "Marked to delete"
   to_delete: "Yes"
   to_not_delete: "No"
+  restored_update: "Update restored"
+  redo: "redo"
+  undo: "undo"
 
   menu:
     main: "Main"

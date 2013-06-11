@@ -21,6 +21,9 @@ ru:
   marked_to_delete: "Отмечен для удаления"
   to_delete: "Да"
   to_not_delete: "Нет"
+  restored_update: "Обновления восстановлено"
+  redo: "переделывать"
+  undo: "отменить"
 
   menu:
     main: "Главная"

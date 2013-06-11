@@ -25,6 +25,9 @@ ro:
   marked_to_delete: "Marcat pentru ștergere"
   to_delete: "Da"
   to_not_delete: "Nu"
+  restored_update: "Actualizare restaurată"
+  redo: "refă"
+  undo: "anulează"
 
   menu:
     main: "Principala"

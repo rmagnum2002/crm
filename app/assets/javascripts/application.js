@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
-//= require twitter/bootstrap
+//= require twitter/bootstrap/bootstrap-collapse
+//= require twitter/bootstrap/bootstrap-modal
 //= require dataTables/extras/ZeroClipboard.js
 //= require dataTables/jquery.dataTables
 //= require dataTables/extras/TableTools

@@ -1,0 +1,6 @@
+$('tbody.activities_table').append('<%= j render(@activities) %>');
+<% if @activities.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@activities) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

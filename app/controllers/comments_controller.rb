@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @commentable = @comment.commentable
-    authorize! :read, @comment
+    authorize! :destroy, @comment
     @comment.destroy
     respond_to do |format|
       format.js

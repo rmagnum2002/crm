@@ -7,3 +7,9 @@ $ ->
   $(".user_activities .pagination a").on "click", ->
     $.getScript @href
     false
+
+jQuery ->
+  $('#date').datepicker
+    dateFormat: 'yy-mm-dd'
+    changeMonth: true,
+    changeYear: true

@@ -24,6 +24,8 @@ en:
   restored_update: "Update restored"
   redo: "redo"
   undo: "undo"
+  search: "Search"
+  select_date: "Select Date"
 
   menu:
     main: "Main"

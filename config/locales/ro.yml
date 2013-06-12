@@ -28,6 +28,8 @@ ro:
   restored_update: "Actualizare restaurată"
   redo: "refă"
   undo: "anulează"
+  search: "Caută"
+  select_date: "Selectaţi Data"
 
   menu:
     main: "Principala"

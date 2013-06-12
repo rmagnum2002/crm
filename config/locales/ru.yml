@@ -24,6 +24,8 @@ ru:
   restored_update: "Обновления восстановлено"
   redo: "переделывать"
   undo: "отменить"
+  search: "Пойск"
+  select_date: "Выберите Дату"
 
   menu:
     main: "Главная"

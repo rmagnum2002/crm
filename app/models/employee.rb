@@ -12,7 +12,7 @@ class Employee < ActiveRecord::Base
   belongs_to :gender
   belongs_to :language
 
-  validates :first_name, :last_name, :patronymic, :gender_id, presence: true
+  validates :first_name, :last_name, :gender_id, presence: true
 
   TITLE = { 0 => :"employee.title.mrs",
             1 => :"employee.title.mr",

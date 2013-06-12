@@ -69,13 +69,21 @@ module EmployeesHelper
 
   def name_it_e(f, key)
     if f == 'title'
-      result = I18n.t Employee::TITLE[key]
+      if key.present?
+        result = I18n.t Employee::TITLE[key]
+      else
+        result = "__"
+      end
     elsif f == 'gender_id'
       result = Gender.find key
       result_name_e(result)
     elsif f == 'language_id'
-      result = Language.find key
-      result_name_e(result)
+      if key.present?
+        result = Language.find key
+        result_name_e(result)
+      else
+        return "__"
+      end
     elsif f == 'job_title_id'
       result = JobTitle.find key
       result_name_e(result)

@@ -1,5 +1,5 @@
 <%- model_class = Employee -%>
-<%- opts = { :type => :textarea, :ok_button => t(:'save'), :cancel_button => t(:'cancel'), :use_confirm => false } %>
+<%- opts = { :type => :textarea, :ok_button => t(:'save'), :cancel_button => t(:'cancel'), :use_confirm => false, :nil => "" } %>
 <%- opts.delete(:ok_button) if params[:suppress_ok_button] %>
 <div class="row-fluid">
     <h1><%#= t(:"employee.model_title") %>

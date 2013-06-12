@@ -4,6 +4,6 @@ jQuery ->
     # monthNames: ['Ianuarie','Februarie','Martie','Aprilie','Mai','Iunie', 'Iulie','August','Septembrie','Octombrie','Noiembrie','Decembrie'],
 
 $ ->
-  $(".pagination a").on "click", ->
+  $(".user_activities .pagination a").on "click", ->
     $.getScript @href
     false

@@ -95,10 +95,10 @@ jQuery ->
     event.preventDefault()
 
 jQuery ->
-  if $('.pagination').length
+  if $('.activities .pagination').length
     $(window).scroll ->
-      url = $('.pagination .next_page').attr('href')
+      url = $('.activities .pagination .next_page').attr('href')
       if url && $(window).scrollTop() > $(document).height() - $(window).height() - 50
-        $('.pagination').text("Fetching more activities...")
+        $('.activities .pagination').text("Fetching more activities...")
         $.getScript(url)
     $(window).scroll()

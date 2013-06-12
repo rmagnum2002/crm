@@ -1,6 +1,6 @@
 $('.activities').html("<%= escape_javascript(render("activities"))%>")
 $(function() {
-  return $(".pagination a").on("click", function() {
+  return $(".user_activities .pagination a").on("click", function() {
     $.getScript(this.href);
     return false;
   });

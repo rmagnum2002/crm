@@ -1,13 +1,7 @@
-<%= will_paginate @activities %>
+<div class="user_activities"><%= will_paginate @activities %></div>
 <table class="table table-striped">
-  <tbody>
-    <% @activities.each do |activity| %>
-    <tr>
-      <td>
-        <%= ActivityPresenter.new(activity, self).render_activity %>
-      </td>
-    </tr>
-    <% end %>
+  <tbody class="activities_table">
+    <%= render @activities %>
   </tbody>
 </table>
-<%= will_paginate @activities %>
+<div class="user_activities"><%= will_paginate @activities %></div>

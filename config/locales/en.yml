@@ -158,6 +158,9 @@ en:
       name: "Name"
       email: "Email"
       companies_added: "Companies added"
+      activated: "activated"
+      not_activated: "not activated"
+      status: "Status"
     show:
       user_profile: "User profile"
       responsible_for: "Responsible for"

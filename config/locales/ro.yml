@@ -158,6 +158,9 @@ ro:
       name: "Nume"
       email: "Email"
       companies_added: "Companii adăugate"
+      activated: "activat"
+      not_activated: "nu este activat"
+      status: "Statusul"
     show:
       user_profile: "Profilul utilizatorului"
       responsible_for: "Răspunzător de"

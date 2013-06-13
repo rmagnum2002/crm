@@ -155,6 +155,9 @@ ru:
       name: "Имя"
       email: "Email"
       companies_added: "Добавил компаний"
+      activated: "активированный"
+      not_activated: "неактивированный"
+      status: "Статус"
     show:
       user_profile: "Профиль пользователя"
       responsible_for: "Ответственный за"

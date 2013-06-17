@@ -24,6 +24,7 @@ ru:
       invalid_token: "Неверный ключ аутентификации."
       timeout: "Ваш сеанс закончился. Пожалуйста, войдите в систему снова."
       inactive: "Ваша учётная запись ещё не активирована."
+      not_approved: 'Your account has not been approved by your administrator yet.'
     sessions:
       signed_in: "Вход в систему выполнен."
       signed_out: "Выход из системы выполнен."
@@ -45,6 +46,8 @@ ru:
         inactive: 'неактивна'
         unconfirmed: 'не подтверждена'
         locked: 'заблокирована'
+      user:
+        signed_up_but_not_approved: 'You have signed up successfully but your account has not been approved by your administrator yet'
     unlocks:
       send_instructions: "В течение нескольких минут вы получите письмо с инструкциями по разблокировке вашей учётной записи."
       unlocked: "Ваша учётная запись разблокирована. Теперь вы вошли в систему."

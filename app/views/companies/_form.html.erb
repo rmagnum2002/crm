@@ -146,19 +146,19 @@
         </div>
         <div class="control-group">
           <%= f.label t(:"address.form.postal_code"), :class => 'control-label' if @show_label %>
-          <div class="controls">
+          <div class="controls postal_code_<%= index %>">
             <%= af.text_field :postal_code, class: "text_field required", placeholder: t(:"address.form.postal_code") %>
           </div>
         </div>
         <div class="control-group">
           <%= f.label t(:"address.form.street"), :class => 'control-label' if @show_label %>
-          <div class="controls">
+          <div class="controls street_<%= index %>">
             <%= af.text_field :street, class: "text_field required", placeholder: t(:"address.form.street") %>
           </div>
         </div>
         <div class="control-group">
           <%= f.label t(:"address.form.street_number"), :class => 'control-label' if @show_label %>
-          <div class="controls">
+          <div class="controls street_number_<%= index %>">
             <%= af.text_field :street_number, class: "text_field required", placeholder: t(:"address.form.street_number") %>
           </div>
         </div>

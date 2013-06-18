@@ -37,24 +37,24 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
-    div :class => "panel" do
-      panel "10 #{I18n.t("active_admin.home.recent_companies")}" do
-        table_for Company.order("created_at desc").limit(10) do
-          column :name do |comp|
-            link_to(comp.name, admin_company_path(comp))
-          end
-          column "Added by" do |comp|
-            link_to(comp.user.full_name, admin_user_path(comp.user))
-          end
-          column "Managed by" do |comp|
-            link_to responsible_name(comp.responsible_id)
-          end
-          # column :first_name
-          # column :created_at
-        end
-        strong { link_to I18n.t("active_admin.home.view_all_companies"), admin_companies_path }
-      end
-    end
+    # div :class => "panel" do
+    #   panel "10 #{I18n.t("active_admin.home.recent_companies")}" do
+    #     table_for Company.order("created_at desc").limit(10) do
+    #       column :name do |comp|
+    #         link_to(comp.name, admin_company_path(comp))
+    #       end
+    #       column "Added by" do |comp|
+    #         link_to(comp.user.full_name, admin_user_path(comp.user))
+    #       end
+    #       column "Managed by" do |comp|
+    #         link_to responsible_name(comp.responsible_id)
+    #       end
+    #       # column :first_name
+    #       # column :created_at
+    #     end
+    #     strong { link_to I18n.t("active_admin.home.view_all_companies"), admin_companies_path }
+    #   end
+    # end
 
     # div :class => "panel" do
     #   panel "10 recent sales" do

@@ -38,6 +38,7 @@ gem "cancan"
 
 gem 'morrisjs-rails'
 gem 'raphael-rails'
+gem 'hashie' # for aplication config parameters
 
 gem 'paper_trail'
 # To use ActiveModel has_secure_password

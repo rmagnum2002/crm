@@ -1,0 +1,29 @@
+<VirtualHost *:80>
+
+ServerName <%= @subdomain_name %>.crm.md
+
+ServerAdmin op@webng.md
+
+DocumentRoot /home/rails/sites/<%= @subdomain_name %>_crm/public
+
+<Directory /home/rails/sites/<%= @subdomain_name %>_crm/public>
+Options +FollowSymLinks -Indexes
+AllowOverride none
+</Directory>
+
+PassengerEnabled Off
+
+LogLevel warn
+ErrorLog /var/log/apache2/<%= @subdomain_name %>_crm_ror_error.log
+CustomLog /var/log/apache2/<%= @subdomain_name %>_crm_ror_access.log combined
+
+RewriteEngine On
+
+# Redirect all non-static requests to unicorn
+RewriteCond %{DOCUMENT_ROOT}/%{REQUEST_FILENAME} !-f
+RewriteRule ^/(.*)$ balancer://unicornservers%{REQUEST_URI} [P,QSA,L]
+
+<Proxy balancer://unicornservers>
+BalancerMember http://127.0.0.1:3000
+</Proxy>
+</VirtualHost>

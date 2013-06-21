@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :authenticate_user!
 
   before_filter :set_locale_filter
+
+  before_filter :authenticate_user!
+
 
   def set_locale_filter
     if cookies[:lang] && LOCALES.keys.include?(cookies[:lang])

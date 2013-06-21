@@ -19,61 +19,61 @@ ActiveAdmin.register User do
   filter :email
   filter :role
 
-  # show do |user|
-  #   attributes_table do
-  #     row I18n.t("active_admin.user.full_name") do
-  #       user.full_name
-  #     end
-  #     row :email
-  #     row I18n.t("active_admin.user.created_at") do
-  #       l user.created_at, format: :long
-  #     end
-  #     row I18n.t("active_admin.user.sign_in_at") do
-  #       l user.last_sign_in_at, format: :long if user.last_sign_in_at.present?
-  #     end
-  #     row I18n.t("active_admin.user.role") do
-  #       user.role
-  #     end
-  #     row I18n.t("active_admin.user.current_sign_in_ip") do
-  #       user.current_sign_in_ip
-  #     end
-  #     row I18n.t("active_admin.user.last_sign_in_ip") do
-  #       user.last_sign_in_ip
-  #     end
-  #   end
-  #   panel "Sales" do
-  #     table_for user.sales do
-  #       column "ID" do |sale|
-  #         sale.id
-  #       end
-  #       column "Ammount" do |sale|
-  #         sale.ammount
-  #       end
-  #       column "Added at" do |sale|
-  #         l sale.created_at, format: :long
-  #       end
-  #       column "Total Items Sold" do |sale|
-  #         sale.sale_items.count
-  #       end
-  #       column '' do |sale|
-  #         link_to "Details", admin_sale_path(sale)
-  #       end
-  #     end
-  #   end
-  #   panel "Companies added" do
-  #     table_for user.companies do
-  #       column "Name" do |company|
-  #         link_to company.name, admin_company_path(company)
-  #       end
-  #       column "Added at" do |company|
-  #         l company.created_at, format: :long
-  #       end
-  #       column "Responsible" do |company|
-  #         responsible_admin(company.responsible_id)
-  #       end
-  #     end
-  #   end
-  # end
+  show do |user|
+    attributes_table do
+      row I18n.t("active_admin.user.full_name") do
+        user.full_name
+      end
+      row :email
+      row I18n.t("active_admin.user.created_at") do
+        l user.created_at, format: :long
+      end
+      row I18n.t("active_admin.user.sign_in_at") do
+        l user.last_sign_in_at, format: :long if user.last_sign_in_at.present?
+      end
+      row I18n.t("active_admin.user.role") do
+        user.role
+      end
+      row I18n.t("active_admin.user.current_sign_in_ip") do
+        user.current_sign_in_ip
+      end
+      row I18n.t("active_admin.user.last_sign_in_ip") do
+        user.last_sign_in_ip
+      end
+    end
+    panel "Sales" do
+      table_for user.sales do
+        column "ID" do |sale|
+          sale.id
+        end
+        column "Ammount" do |sale|
+          sale.ammount
+        end
+        column "Added at" do |sale|
+          l sale.created_at, format: :long
+        end
+        column "Total Items Sold" do |sale|
+          sale.sale_items.count
+        end
+        column '' do |sale|
+          link_to "Details", admin_sale_path(sale)
+        end
+      end
+    end
+    panel "Companies added" do
+      table_for user.companies do
+        column "Name" do |company|
+          link_to company.name, admin_company_path(company)
+        end
+        column "Added at" do |company|
+          l company.created_at, format: :long
+        end
+        column "Responsible" do |company|
+          responsible_admin(company.responsible_id)
+        end
+      end
+    end
+  end
 
   form do |f|
     f.inputs "Admin Details" do

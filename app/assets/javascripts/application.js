@@ -15,6 +15,7 @@
 //= require jquery.ui.all
 //= require twitter/bootstrap/bootstrap-collapse
 //= require twitter/bootstrap/bootstrap-modal
+//= require twitter/bootstrap/bootstrap-alert
 //= require dataTables/extras/ZeroClipboard.js
 //= require dataTables/jquery.dataTables
 //= require dataTables/extras/TableTools

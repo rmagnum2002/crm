@@ -28,7 +28,7 @@ class CompaniesController < ApplicationController
   # GET /companies/1.json
   def show
     @commentable = @company
-    @comments = @commentable.comments.order('created_at desc')
+    @comments = @commentable.comments.order('created_at desc').includes([:user, :events])
     @comment = Comment.new
     respond_to do |format|
       format.html # show.html.erb

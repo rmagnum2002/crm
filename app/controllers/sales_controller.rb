@@ -7,7 +7,8 @@ class SalesController < ApplicationController
     @sales = Sale.order('created_at desc')
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @sales }
+      # format.json { render json: @sales }
+      format.js
     end
   end
 

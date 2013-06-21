@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @responsible = Company.where(responsible_id: @user.id)
-    @activities = @user.activities.order("created_at desc").paginate(:page => params[:page], :per_page => 10)
+    @activities = @user.activities.order("created_at desc").includes([:user, :trackable]).paginate(:page => params[:page], :per_page => 10)
     @total = @user.sales.sum(&:ammount)
 
     respond_to do |format|

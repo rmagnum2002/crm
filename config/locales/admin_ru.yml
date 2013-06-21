@@ -1,4 +1,22 @@
 ru:
+  active_admin:
+    devise:
+      login:
+        title: " - login"
+    home:
+      recent_signed_up_users: "Новые пользователи"
+      recent_companies: "Недавно добавленные компании"
+      view_all_users: "Показать всех пользователейi"
+      view_all_companies: "Показать все компании"
+
+    user:
+      full_name: "Полное имя"
+      created_at: "Создано в"
+      sign_in_at: "Последний вход в"
+      role: "Pоль"
+      current_sign_in_ip: "IP текущей сессии"
+      last_sign_in_ip: "IP последней сессии"
+
   states: "States"
   countries: "Countries"
   client_categories: "Client Categories"

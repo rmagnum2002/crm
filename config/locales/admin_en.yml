@@ -1,4 +1,22 @@
 en:
+  active_admin:
+    devise:
+      login:
+        title: " - login"
+    home:
+      recent_signed_up_users: "recent signedup users"
+      recent_companies: "recent added companies"
+      view_all_users: "Show all users"
+      view_all_companies: "Show all companies"
+
+    user:
+      full_name: "Full Name"
+      created_at: "Created at"
+      sign_in_at: "Last login at"
+      role: "Role"
+      current_sign_in_ip: "ip for current session"
+      last_sign_in_ip: "ip for last session"
+
   states: "States"
   countries: "Countries"
   client_categories: "Client Categories"

@@ -279,7 +279,7 @@ ru:
   sales:
     show:
       sales: "Продажы"
-      total_amount: "общая сумма:"
+      total_amount: "общая сумма"
     index:
       added_sale: "Добавил продажу на сумму"
       product: "Продукт"

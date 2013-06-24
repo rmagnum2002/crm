@@ -35,10 +35,9 @@ jQuery ->
     oTableTools:
       sSwfPath: "http://localhost:3000/swf/copy_csv_xls_pdf.swf"
 
-
-  Lang = $('#companies, #employees').data('language')
+  Lang = $('#companies, #employees, #users').data('language')
   if Lang == "ro"
-    options.oLanguage = options_empl.oLanguage =
+    options.oLanguage = options_empl.oLanguage = s_options.oLanguage =
       sProcessing:   "Procesare...",
       sLengthMenu:   "Afișează _MENU_ înregistrări pe pagină",
       sZeroRecords:  "Nu am gasit nimic - ne pare rău",
@@ -55,7 +54,7 @@ jQuery ->
         sLast:     "Ultima"
 
   if Lang == "ru"
-    options.oLanguage = options_empl.oLanguage =
+    options.oLanguage = options_empl.oLanguage = s_options.oLanguage =
       sProcessing:   "Подождите...",
       sLengthMenu:   "Показать _MENU_ записей",
       sZeroRecords:  "Записи отсутствуют.",
@@ -75,6 +74,7 @@ jQuery ->
           sSortDescending: ": активировать для сортировки столбцов по убыванию"
 
   $('#companies').dataTable(options)
+  $('#users').dataTable(s_options)
   $('#employees').dataTable(options_empl)
   $('#search_companies, #search_employees').dataTable(s_options)
 

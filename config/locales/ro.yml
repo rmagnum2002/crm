@@ -286,7 +286,7 @@ ro:
   sales:
     show:
       sales: "Vânzări"
-      total_amount: "suma totală:"
+      total_amount: "suma totală"
     index:
       added_sale: "A adăugat o vânzare în suma de"
       product: "Articol"

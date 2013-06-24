@@ -1,10 +1,12 @@
-<table class="table table-striped">
+<table id="users" class="display" data-language="<%= current_language %>">
   <thead>
     <tr>
       <th><%= t(:"user.index.name") %></th>
       <th><%= t(:"user.index.status") %></th>
       <th><%= t(:"user.index.email") %></th>
       <th><%= t(:"user.index.companies_added") %></th>
+      <th><%= t(:"sales.show.sales") %></th>
+      <th><%= t(:"sales.show.total_amount") %></th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +16,8 @@
       <td><%= user.activated? ? t(:"user.index.activated") : t(:"user.index.not_activated") %></td>
       <td><%= user.email %></td>
       <td><%= user.companies.count %></td>
+      <td><%= user.sales.count %></td>
+      <td><%= user.sales.sum(:ammount) %></td>
     </tr>
   <% end %>
   </tbody>

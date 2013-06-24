@@ -286,7 +286,7 @@ en:
   sales:
     show:
       sales: "Sales"
-      total_amount: "total amount:"
+      total_amount: "total amount"
     index:
       added_sale: "added a sale with ammount of"
       product: "Product"

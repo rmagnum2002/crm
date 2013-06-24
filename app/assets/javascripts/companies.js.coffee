@@ -35,7 +35,7 @@ jQuery ->
     oTableTools:
       sSwfPath: "http://localhost:3000/swf/copy_csv_xls_pdf.swf"
 
-  Lang = $('#companies, #employees, #users').data('language')
+  Lang = $('#companies, #employees, #users, #sales').data('language')
   if Lang == "ro"
     options.oLanguage = options_empl.oLanguage = s_options.oLanguage =
       sProcessing:   "Procesare...",
@@ -75,6 +75,7 @@ jQuery ->
 
   $('#companies').dataTable(options)
   $('#users').dataTable(s_options)
+  $('#sales').dataTable(s_options)
   $('#employees').dataTable(options_empl)
   $('#search_companies, #search_employees').dataTable(s_options)
 

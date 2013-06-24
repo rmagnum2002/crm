@@ -20,7 +20,7 @@
 <%= content_tag :div, "", id: "sales_chart", data: {sales: sales_chart_data} %>
 
 <hr>
-<table class="table table-striped">
+<table id="sales" class="display" data-language="<%= current_language %>">
   <thead>
     <tr>
       <th><%= t(:"sales.index.date") %></th>

@@ -63,7 +63,7 @@ ro:
       from: 'din'
       to: 'în'
     form:
-      new_company: "Creare companie noua"
+      new_company: "Creare companie"
       responsible: "Persoana de răspundere"
       name: "Numele companiei"
       branch: "Ramura de activitate"
@@ -174,13 +174,13 @@ ro:
       updated_company: "a actualizat compania"
       added_comment: "a adăugat comentariu la compania"
       added_note: "a adăugat notiță la utilizatorul"
-      added_sale: "a adăugat o vînzare nouă"
+      added_sale: "a adăugat o vînzare"
       amount: "în sumă de"
       sale_removed: "vînzarea adăugată a fost ştearsă"
       company: "pentru compania"
-      added_company: "a adăugat o companie nouă"
-      added_contact: "a adăugat un contact nou"
-      added_event: "a adăugat un eveniment nou"
+      added_company: "a adăugat o companie"
+      added_contact: "a adăugat un contact"
+      added_event: "a adăugat un eveniment"
       to_company: "la compania"
       talked_with: "A vorbit cu"
       comment: "Comentariu"
@@ -228,7 +228,7 @@ ro:
       take_decision: "Poate lua o decizie"
       full_profile: "Deschide profilul complet"
       no_contacts: "Nu sînt contacte"
-      add_employee_to_company: "Adaugă contact nou la compania"
+      add_employee_to_company: "Adaugă contact la compania"
     show:
       comments: "Comentarii"
     index:

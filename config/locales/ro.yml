@@ -424,9 +424,9 @@ ro:
     format: ! '%{attribute} %{message}'
     messages:
       accepted: trebuie dat acceptul
-      blank: nu poate fi gol
+      blank: acest câmp nu poate fi gol
       confirmation: nu este confirmat
-      empty: nu poate fi gol
+      empty: acest câmp nu poate fi gol
       equal_to: trebuie să fie egal cu %{count}
       even: trebuie să fie impar
       exclusion: este rezervat

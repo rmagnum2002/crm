@@ -32,8 +32,8 @@
   <div class="control-group">
     <%= f.label t(:"registrations.password"), class: "control-label" %>
     <div class="controls">
-      <%= f.password_field :password, :autocomplete => "off" %><br>
-      <i>(<%= t(:"registrations.leave_blank") %>)</i>
+      <%= f.password_field :password, :autocomplete => "off" %>
+      <span class="help-block"><%= t(:"registrations.leave_blank") %></span>
     </div>
   </div>
 
@@ -47,8 +47,8 @@
   <div class="control-group">
     <%= f.label t(:"registrations.current_password"), class: "control-label" %>
     <div class="controls">
-      <%= f.password_field :current_password %><br>
-      <i>(<%= t(:"registrations.we_need") %>)</i>
+      <%= f.password_field :current_password %>
+      <span class="help-block"><%= t(:"registrations.we_need") %></span>
     </div>
   </div>
 

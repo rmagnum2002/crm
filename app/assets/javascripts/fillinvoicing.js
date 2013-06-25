@@ -3,7 +3,7 @@ function get_states_0() {
     type: "POST",
     url: "country_select_legal",
     data: {
-      country_id : $('#company_addresses_attributes_0_country_id').val(),
+      country_id : $('.controls.country_0 #company_addresses').val(),
       state_id : $('#state_id_0').val()
     }
   });
@@ -14,7 +14,7 @@ function get_states_1() {
     type: "POST",
     url: "country_select_invoicing",
     data: {
-      country_id : $('#company_addresses_attributes_1_country_id').val(),
+      country_id : $('.controls.country_1 #company_addresses').val(),
       state_id : $('#state_id_1').val()
     }
   });
@@ -22,12 +22,12 @@ function get_states_1() {
 
 function fill_form() {
   var select = $("select#state_id_0").val();
-  if ($("#company_addresses_attributes_0_country_id").val() != false) {
+  if ($(".controls.country_0 #company_addresses").val() != false) {
     $(".controls.country_1").empty();
-    $("#company_addresses_attributes_0_country_id").clone().appendTo($(".controls.country_1"))
+    $(".controls.country_0 #company_addresses").clone().appendTo($(".controls.country_1"))
     .attr('id', 'company_addresses_attributes_1_country_id')
     .attr('name', 'company[addresses_attributes][1][country_id]').change(get_states_1);
-    $("#company_addresses_attributes_1_country_id").val($("#company_addresses_attributes_0_country_id").val());
+    $("#company_addresses_attributes_1_country_id").val($(".controls.country_0 #company_addresses").val());
   }
 
   if ($('#company_addresses_attributes_0_postal_code').val() != false) {

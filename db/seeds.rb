@@ -195,19 +195,19 @@ address = Address.create([
   ])
 
 country = Country.create([
-  { name: "Moldova" },
-  { name: "Romania" },
-  { name: "Russia" },
-  { name: "Ukraine" }
+  { name: "Moldova", name_ro: "Moldova", name_ru: "Молдова" },
+  { name: "Romania", name_ro: "România", name_ru: "Румыния" },
+  { name: "Russia", name_ro: "Rusia", name_ru: "Россия" },
+  { name: "Ukraine", name_ro: "Ucraina", name_ru: "Украина" }
 ])
 
 state = State.create([
-  { name: "Bălți", country_id: 1 },
-  { name: "Chișinău", country_id: 1 },
-  { name: "Cahul", country_id: 1 },
-  { name: "Bucuresti", country_id: 2},
-  { name: "Moscova", country_id: 3},
-  { name: "Kiev", country_id: 4}
+  { name: "Balti", name_ro: "Bâlţi", name_ru: "Бельцы", country_id: 1 },
+  { name: "Chisinau", name_ro: "Chişinău", name_ru: "Кишинев", country_id: 1 },
+  { name: "Cahul", name_ro: "Cahul", name_ru: "Кагул", country_id: 1 },
+  { name: "Bucharest", name_ro: "Bucureşti", name_ru: "Бухарест", country_id: 2},
+  { name: "Moscow", name_ro: "Moscova", name_ru: "Москва", country_id: 3},
+  { name: "Kiev", name_ro: "Kiev", name_ru: "Киев", country_id: 4}
 ])
 
 state = Comment.create([

@@ -131,16 +131,37 @@
         <div class="control-group">
           <%= f.label t(:"address.form.country_id"), :class => 'control-label' if @show_label %>
           <div class="controls country_<%= index %>">
-            <%= af.select :country_id, options_for_select(@countries, selected: address.country_id), { include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil }, class: "select required" %>
+            <%#= af.select :country_id, options_for_select(@countries, selected: address.country_id), { include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil }, class: "select required" %>
+            <% if current_language == 'ru' %>
+              <%= f.collection_select :addresses, Country.all, :id, :name_ru, { include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil }, class: "select required" %>
+            <% elsif current_language == 'ro' %>
+              <%= f.collection_select :addresses, Country.all, :id, :name_ro, { include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil }, class: "select required" %>
+            <% else %>
+              <%= f.collection_select :addresses, Country.all, :id, :name, { include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil }, class: "select required" %>
+            <% end %>
           </div>
         </div>
         <div class="control-group">
           <%= f.label t(:"address.form.state_id"), :class => 'control-label' if @show_label %>
           <div class="controls state_<%= index %>">
             <% if index == 0 %>
-              <%= af.select :state_id, options_for_select(@states_0, selected: address.state_id, country_id: params[:country_id]), {}, id: "state_id_0", class: "select required" unless address.state_id.nil? %>
+              <%#= af.select :state_id, options_for_select(@states_0, selected: address.state_id, country_id: params[:country_id]), {}, id: "state_id_0", class: "select required" unless address.state_id.nil? %>
+              <% if current_language == 'ru' %>
+                <%= f.collection_select :addresses, State.all, :state_id, :name_ru, { include_blank: t(:"address.form.state_id") }, class: "select required" unless address.state_id.nil? %>
+              <% elsif current_language == 'ro' %>
+                <%= f.collection_select :addresses, State.all, :state_id, :name_ro, { include_blank: t(:"address.form.state_id") }, class: "select required" unless address.state_id.nil? %>
               <% else %>
-              <%= af.select :state_id, options_for_select(@states_1, selected: address.state_id, country_id: params[:country_id]), {}, id: "state_id_1", class: "select required" unless address.state_id.nil? %>
+                <%= f.collection_select :addresses, State.all, :state_id, :name, { include_blank: t(:"address.form.state_id") }, class: "select required" unless address.state_id.nil? %>
+              <% end %>
+              <% else %>
+              <%#= af.select :state_id, options_for_select(@states_1, selected: address.state_id, country_id: params[:country_id]), {}, id: "state_id_1", class: "select required" unless address.state_id.nil? %>
+              <% if current_language == 'ru' %>
+                <%= f.collection_select :addresses, State.all, :state_id_1, :name_ru, { include_blank: t(:"address.form.state_id") }, class: "select required" unless address.state_id.nil? %>
+              <% elsif current_language == 'ro' %>
+                <%= f.collection_select :addresses, State.all, :state_id_1, :name_ru, { include_blank: t(:"address.form.state_id") }, class: "select required" unless address.state_id.nil? %>
+              <% else %>
+                <%= f.collection_select :addresses, State.all, :state_id_1, :name_ru, { include_blank: t(:"address.form.state_id") }, class: "select required" unless address.state_id.nil? %>
+                <% end %>
               <% end %>
           </div>
         </div>
@@ -180,7 +201,7 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $(".copy-form").click(fill_form);
-    $('#company_addresses_attributes_0_country_id').change(get_states_0);
-    $('#company_addresses_attributes_1_country_id').change(get_states_1);
+    $('.controls.country_0 #company_addresses').change(get_states_0);
+    $('.controls.country_1 #company_addresses').change(get_states_1);
   });
 </script>

@@ -19,6 +19,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
+        <% cache "#{t(:"menu.main")}" do %>
           <%= link_to "#{$cfg.active_admin.site_name}", root_path, class: 'brand' %>
           <div class="nav-collapse">
             <% if user_signed_in? %>
@@ -32,6 +33,7 @@
             </ul>
             <% end %>
           </div>
+        <% end %>
           <div class="login pull-right">
             <% if user_signed_in? %>
             <strong><%= current_user.email %></strong>.

@@ -92,6 +92,8 @@ class CompaniesController < ApplicationController
   def update
     respond_to do |format|
       if @company.update_attributes(params[:company])
+        expire_fragment "#{t(:"activity.index.activities")}"
+        expire_fragment "company_#{@company.id}_#{t(:"company.show.company")}_user"
         # todo
         # if @company.changed?
           track_activity @company

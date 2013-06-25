@@ -20,6 +20,7 @@ class SalesController < ApplicationController
     @sale = @saleable.sales.new(params[:sale])
     @sale.user_id = current_user.id
     if @sale.save
+      expire_fragment "#{t(:"activity.index.activities")}"
       track_activity @sale
       @sale.update_ammount
     end

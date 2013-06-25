@@ -1,10 +1,12 @@
-<div class="page-header">
-  <h1><%= t(:"activity.index.activities") %></h1>
-</div>
+<% cache "#{t(:"activity.index.activities")}" do %>
+  <div class="page-header">
+    <h1><%= t(:"activity.index.activities") %></h1>
+  </div>
 
-<table class="table table-striped">
-  <tbody class="activities_table">
-    <%= render @activities %>
-  </tbody>
-</table>
-<div class="activities"><%= will_paginate @activities %></div>
+  <table class="table table-striped">
+    <tbody class="activities_table">
+      <%= render @activities %>
+    </tbody>
+  </table>
+  <div class="activities"><%= will_paginate @activities %></div>
+<% end %>

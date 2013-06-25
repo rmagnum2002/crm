@@ -41,7 +41,9 @@
   <% if @employee.user == current_user %>
     <%= render 'profile_for_owner', opts: opts %>
   <% else %>
-    <%= render 'profile_for_user' %>
+    <% cache "employee_#{@employee.id}_#{t(:"employee.model_title")}_user" do %>
+      <%= render 'profile_for_user' %>
+    <% end %>
   <% end %>
   </div>
 
@@ -62,6 +64,8 @@
     </ul>
 
   <div class="right_side">
-    <%= render partial: 'comments' %>
+    <% cache "employee_#{@employee.id}_#{t(:"company.show.comments")}" do %>
+      <%= render partial: 'comments' %>
+    <% end %>
   </div>
 </div>

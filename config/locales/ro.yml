@@ -44,7 +44,7 @@ ro:
     sales: "Vînzări"
 
   registrations:
-    sign_up: "Înregistrare"
+    sign_up: "Creare cont"
     sign_in: "Autorizare"
     edit_user: "Editează Utilizatorul"
     email: "Email"

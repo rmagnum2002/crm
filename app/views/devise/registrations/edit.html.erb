@@ -1,31 +1,62 @@
-<h2><%= t(:"registrations.edit_user") %></h2>
+<div class="span8 well offset2">
+<legend><h3><%= t(:"registrations.edit_profile") %></h3></legend>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, class: 'form-horizontal' }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label t(:"registrations.email") %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <div class="control-group">
+    <%= f.label t(:"registrations.email"), class: "control-label" %>
+    <div class="controls">
+      <%= f.email_field :email, :autofocus => true %>
+    </div>
+  </div>
 
-  <div><%= f.label t(:"registrations.first_name") %><br />
-  <%= f.text_field :first_name %></div>
+  <div class="control-group">
+    <%= f.label t(:"registrations.first_name"), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :first_name %>
+    </div>
+  </div>
 
-  <div><%= f.label t(:"registrations.last_name") %><br />
-  <%= f.text_field :last_name %></div>
+  <div class="control-group">
+    <%= f.label t(:"registrations.last_name"), class: "control-label" %>
+    <div class="controls">
+      <%= f.text_field :last_name %>
+    </div>
+  </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div><%= f.label t(:"registrations.password") %> <i>(<%= t(:"registrations.leave_blank") %>)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
+  <div class="control-group">
+    <%= f.label t(:"registrations.password"), class: "control-label" %>
+    <div class="controls">
+      <%= f.password_field :password, :autocomplete => "off" %><br>
+      <i>(<%= t(:"registrations.leave_blank") %>)</i>
+    </div>
+  </div>
 
-  <div><%= f.label t(:"registrations.password_confirmation") %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <div class="control-group">
+    <%= f.label t(:"registrations.password_confirmation"), class: "control-label" %>
+    <div class="controls">
+      <%= f.password_field :password_confirmation %>
+    </div>
+  </div>
 
-  <div><%= f.label t(:"registrations.current_password") %> <i>(<%= t(:"registrations.we_need") %>)</i><br />
-  <%= f.password_field :current_password %></div>
+  <div class="control-group">
+    <%= f.label t(:"registrations.current_password"), class: "control-label" %>
+    <div class="controls">
+      <%= f.password_field :current_password %><br>
+      <i>(<%= t(:"registrations.we_need") %>)</i>
+    </div>
+  </div>
 
-  <div><%= f.submit t(:"registrations.update") %></div>
+  <div class="control-group">
+    <div class="controls">
+      <%= f.submit t(:"registrations.update"), class: 'btn' %>
+    </div>
+  </div>
 <% end %>
 
 <!-- <h3>Cancel my account</h3> -->
@@ -33,3 +64,4 @@
 <!-- <p>Unhappy? <%#= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p> -->
 
 <%= link_to t(:"registrations.back"), :back %>
+</div>

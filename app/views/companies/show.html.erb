@@ -25,7 +25,9 @@
       <% if @company.user == current_user %>
         <%= render 'profile_for_owner' %>
       <% else %>
-        <%= render 'profile_for_user' %>
+        <% cache "company_#{@company.id}_#{t(:"company.show.company")}_user" do %>
+          <%= render 'profile_for_user' %>
+        <% end %>
       <% end %>
     </dl>
   </div>
@@ -56,7 +58,9 @@
       <% end %>
     </ul>
     <div class="right_side">
-      <%= render 'comments' %>
+      <% cache "company_#{@company.id}_#{t(:"company.show.comments")}" do %>
+        <%= render 'comments' %>
+      <% end %>
     </div>
   </div>
 </div>

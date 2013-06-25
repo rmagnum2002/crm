@@ -62,6 +62,7 @@ class EmployeesController < ApplicationController
 
     respond_to do |format|
       if @employee.save
+        expire_fragment "#{t(:"activity.index.activities")}"
         track_activity @employee
         format.html { redirect_to @company, notice: "#{t(:"messages.created")}" }
         format.json { render json: @employee, status: :created, location: @employee }
@@ -79,6 +80,7 @@ class EmployeesController < ApplicationController
 
     respond_to do |format|
       if @employee.update_attributes(params[:employee])
+        expire_fragment "employee_#{@employee.id}_#{t(:"employee.model_title")}_user"
         format.html { redirect_to company_employee_path(@company, @employee), notice: "#{t(:"messages.updated")}" }
         format.json { head :no_content }
       else

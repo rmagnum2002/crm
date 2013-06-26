@@ -122,26 +122,44 @@
         <%= f.fields_for :addresses, address do |af| %>
         <div class="controls">
           <% if index == 0  %>
-          <div class="control-group"><%= t(:"address.form.legal_address") %></div>
-          <% else %>
-          <div class="control-group"><%= t(:"address.form.invoicing_address") %></div>
+            <div class="control-group"><%= t(:"address.form.legal_address") %></div>
+            <% else %>
+              <div class="control-group"><%= t(:"address.form.invoicing_address") %></div>
           <% end %>
           <%= af.hidden_field :address_type, value: index %>
         </div>
         <div class="control-group">
           <%= f.label t(:"address.form.country_id"), :class => 'control-label' if @show_label %>
           <div class="controls country_<%= index %>">
-            <%= af.select :country_id, options_for_select(@countries, selected: address.country_id), { include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil }, class: "select required" %>
+            <% if current_language == 'ru' %>
+              <%= af.collection_select :country_id, Country.all, :id, :name_ru, { include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil }, class: "select required" %>
+            <% elsif current_language == 'ro' %>
+              <%= af.collection_select :country_id, Country.all, :id, :name_ro, { include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil }, class: "select required" %>
+            <% else %>
+               <%= af.collection_select :country_id, Country.all, :id, :name, { include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil }, class: "select required" %>
+            <% end %>
           </div>
         </div>
         <div class="control-group">
           <%= f.label t(:"address.form.state_id"), :class => 'control-label' if @show_label %>
           <div class="controls state_<%= index %>">
             <% if index == 0 %>
-              <%= af.select :state_id, options_for_select(@states_0, selected: address.state_id, country_id: params[:country_id]), {}, id: "state_id_0", class: "select required" unless address.state_id.nil? %>
+              <% if current_language == 'ru' %>
+                <%= af.collection_select :state_id, Country.find(address.country_id).states, :id, :name_ru, { class: "select required" } unless address.state_id.nil? %>
+              <% elsif current_language == 'ro' %>
+                <%= af.collection_select :state_id, Country.find(address.country_id).states, :id, :name_ro, { class: "select required" } unless address.state_id.nil? %>
               <% else %>
-              <%= af.select :state_id, options_for_select(@states_1, selected: address.state_id, country_id: params[:country_id]), {}, id: "state_id_1", class: "select required" unless address.state_id.nil? %>
+                <%= af.collection_select :state_id, Country.find(address.country_id).states, :id, :name, { class: "select required" } unless address.state_id.nil? %>
               <% end %>
+              <% else %>
+              <% if current_language == 'ru' %>
+                <%= af.collection_select :state_id, Country.find(address.country_id).states, :id, :name_ru, { class: "select required" } unless address.state_id.nil? %>
+              <% elsif current_language == 'ro' %>
+                <%= af.collection_select :state_id, Country.find(address.country_id).states, :id, :name_ro, { class: "select required" } unless address.state_id.nil? %>
+              <% else %>
+                <%= af.collection_select :state_id, Country.find(address.country_id).states, :id, :name, { class: "select required" } unless address.state_id.nil? %>
+                <% end %>
+            <% end %>
           </div>
         </div>
         <div class="control-group">

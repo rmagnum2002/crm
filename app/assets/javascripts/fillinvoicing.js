@@ -48,12 +48,15 @@ function fill_form() {
     .attr('id', 'company_addresses_attributes_1_street_number')
     .attr('name', 'company[addresses_attributes][1][street_number]');
   }
-  if ($('#state_id_1').length == 1) {
-    $('select#state_id_1').html($('select#state_id_0').html()).attr('name', 'company[addresses_attributes][1][state_id]');
+
+  if ($('#company_addresses_attributes_1_state_id').val() > 0) {
+    $('select#company_addresses_attributes_1_state_id').html($('select#state_id_0').html()).attr('name', 'company[addresses_attributes][1][state_id]');
   }
   else {
-    $("#state_id_0").clone().appendTo($('.controls.state_1')).attr('id', 'state_id_1').attr('name', 'company[addresses_attributes][1][state_id]');
+    $(".controls.state_1").empty();
+    $("select#state_id_0").clone().appendTo($('.controls.state_1')).attr('id', 'state_id_1').attr('name', 'company[addresses_attributes][1][state_id]');
   }
+
   $('select#state_id_1').val(select);
   $("#company_addresses_attributes_1_postal_code").val($("#company_addresses_attributes_0_postal_code").val());
   $("#company_addresses_attributes_1_street").val($("#company_addresses_attributes_0_street").val());

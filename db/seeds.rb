@@ -202,7 +202,7 @@ country = Country.create([
 ])
 
 state = State.create([
-  { name: "Balti", name_ro: "Bâlţi", name_ru: "Бельцы", country_id: 1 },
+  { name: "Balti", name_ro: "Bălţi", name_ru: "Бельцы", country_id: 1 },
   { name: "Chisinau", name_ro: "Chişinău", name_ru: "Кишинев", country_id: 1 },
   { name: "Cahul", name_ro: "Cahul", name_ru: "Кагул", country_id: 1 },
   { name: "Bucharest", name_ro: "Bucureşti", name_ru: "Бухарест", country_id: 2},

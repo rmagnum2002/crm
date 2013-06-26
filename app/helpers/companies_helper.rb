@@ -187,4 +187,24 @@ module CompaniesHelper
     end
   end
 
+  def show_country(address)
+    if current_language == 'ro'
+      address.country.name_ro
+    elsif current_language == 'ru'
+      address.country.name_ru
+    else
+      address.country.name
+    end
+  end
+
+  def show_state(address)
+    if current_language == 'ro'
+      address.state.name_ro
+    elsif current_language == 'ru'
+      address.state.name_ru
+    else
+      address.state.name
+    end
+  end
+
 end

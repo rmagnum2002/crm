@@ -1,18 +1,18 @@
 <h4><%= t(:"address.show.address") %></h4>
-<% @addresses.each do |addresss| %>
+<% @addresses.each do |address| %>
 <dl class="dl-horizontal pull-right">
   <h4 class="offset1">
-    <%= addresss.address_type.present? ? t(:"address.show.invoicing_address") : t(:"address.show.legal_address") %>
+    <%= address.address_type.present? ? t(:"address.show.invoicing_address") : t(:"address.show.legal_address") %>
   </h4>
   <dt><strong><%= t(:"address.show.country") %>:</strong></dt>
-  <dd><%= addresss.country.name %></dd>
+  <dd><%= show_country(address) %></dd>
   <dt><strong><%= t(:"address.show.state") %>:</strong></dt>
-  <dd><%= addresss.state.name %></dd>
+  <dd><%= show_state(address) %></dd>
   <dt><strong><%= t(:"address.show.postal_code") %>:</strong></dt>
-  <dd><%= addresss.postal_code %></dd>
+  <dd><%= address.postal_code %></dd>
   <dt><strong><%= t(:"address.show.street") %>:</strong></dt>
-  <dd><%= addresss.street %></dd>
+  <dd><%= address.street %></dd>
   <dt><strong><%= t(:"address.show.number") %>:</strong></dt>
-  <dd><%= addresss.street_number %></dd>
+  <dd><%= address.street_number %></dd>
 </dl>
 <% end %>

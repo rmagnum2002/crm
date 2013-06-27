@@ -57,6 +57,7 @@ ro:
     current_password: "Parola curentă"
     update: "Actualizează"
     back: "Înapoi"
+    edit_profile: "Editează Profilul"
 
   company:
     history:

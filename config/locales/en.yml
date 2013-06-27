@@ -57,6 +57,7 @@ en:
     receive_confirmation: "Didn't receive confirmation instructions?"
     receive_unlock: "Didn't receive unlock instructions?"
     signin_with: "Sign in with"
+    edit_profile: "Edit Profile"
 
   company:
     history:

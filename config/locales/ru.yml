@@ -53,6 +53,7 @@ ru:
     current_password: "Текуший пароль"
     update: "Обновить"
     back: "Назад"
+    edit_profile: "Редактировать Профиль"
 
   company:
     history:

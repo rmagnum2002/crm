@@ -48,6 +48,15 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 group :development do
   gem "bullet"
 end
+
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
+
+group :test do
+  gem "factory_girl_rails", "~> 4.0"
+end
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

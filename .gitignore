@@ -16,3 +16,4 @@ rerun.txt
 pickle-email-*.html
 /config/database.yml
 .rvmrc
+/config/site_config.yml

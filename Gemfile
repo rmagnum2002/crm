@@ -51,6 +51,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
+  gem 'database_cleaner'
 end
 
 group :test do

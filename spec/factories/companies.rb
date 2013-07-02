@@ -1,12 +1,19 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
 
 FactoryGirl.define do
+
+  to_create do |instance|
+    unless instance.save
+      raise "Invalid record: " + instance.errors.full_messages.join(", ")
+    end
+  end
+
   sequence :company_name do |n|
     "company-name#{n}"
   end
 
   factory :company do
-    name { generate (:company_name) } 
+    name { generate (:company_name) }
     company_branch_id 1
     client_category_id 1
     client_type_id 1

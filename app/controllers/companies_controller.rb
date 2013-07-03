@@ -72,8 +72,6 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(params[:company])
     @company.user_id = current_user.id
-    @addresses = @company.addresses
-    @countries = Country.all.map{ |c| [c.name, c.id] }
 
     respond_to do |format|
       if @company.save
@@ -114,7 +112,7 @@ class CompaniesController < ApplicationController
     @company = Company.find(params[:id])
 
     respond_to do |format|
-      format.html { redirect_to @company }
+      # format.html { redirect_to @company }
       format.js
     end
   end

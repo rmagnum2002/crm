@@ -51,10 +51,13 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.0'
+  gem 'database_cleaner'
 end
 
 group :test do
   gem "factory_girl_rails", "~> 4.0"
+  gem 'shoulda'
+  gem 'shoulda-matchers'
 end
 
 # To use Jbuilder templates for JSON

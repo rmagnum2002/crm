@@ -60,4 +60,12 @@ describe EmployeesController do
       response.should be_redirect
     end
   end
+
+  describe "DELETE #destroy" do
+    it "should destroy employee" do
+      sign_in @user
+      delete :destroy, id: @employee.id
+      response.should redirect_to employees_url
+    end
+  end
 end

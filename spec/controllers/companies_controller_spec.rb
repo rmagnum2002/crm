@@ -9,7 +9,6 @@ describe CompaniesController do
   end
 
   describe "GET #index" do
-
     it "should show companies when is logged" do
       sign_in @user
       get :index
@@ -23,7 +22,6 @@ describe CompaniesController do
   end
 
   describe "GET #show" do
-
     it "should show company when is logged" do
       sign_in @user
       get :show, id: @company.id
@@ -34,10 +32,8 @@ describe CompaniesController do
       get :show, id: @company.id
       response.should redirect_to user_session_url
     end
-  end
 
   describe "POST #create" do
-
     it "should create company when is logged" do
       sign_in @user
       company = lambda {
@@ -79,7 +75,6 @@ describe CompaniesController do
   end
 
   describe "PUT #update" do
-
     it "should update company when field is updated" do
       sign_in @user
       put :update, {
@@ -92,26 +87,31 @@ describe CompaniesController do
     end
   end
 
-  describe "#show tabs" do
-
+  describe "#show_contacts" do
     it "should #show_contacts" do
       sign_in @user
       xhr :get, :show_contacts, id: @company.id
       response.should be_success
     end
+  end
 
+  describe "#show_address" do
     it "should #show_address" do
       sign_in @user
       xhr :get, :show_address, id: @company.id
       response.should be_succes
     end
+  end
 
+  describe "#show_comments" do
     it "should #show_comments" do
       sign_in @user
       xhr :get, :show_comments, id: @company.id
       response.should be_success
     end
+  end
 
+  describe "#show_sales" do
     it "should show #sales" do
       sign_in @user
       xhr :get, :sales, id: @company.id
@@ -120,7 +120,6 @@ describe CompaniesController do
   end
 
   describe "#destroy company" do
-
     it "should destroy company" do
       sign_in @user
       delete :destroy, id: @company.id

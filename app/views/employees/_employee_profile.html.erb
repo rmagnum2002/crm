@@ -1,4 +1,4 @@
   <div class="span8">
     <%= render 'profile_for_user' %>
   </div>
-<%= link_to t(:'employee.form.full_profile'), company_employee_path(@employee.company, @employee) %>
+<%= link_to t(:'employee.form.full_profile'), company_employee_path(@employee.company, @employee) if @employee.company.present %>

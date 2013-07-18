@@ -6,7 +6,7 @@
       <dt><strong><%= I18n.t(:"employee.form.language") %>:</strong></dt>
       <dd><%= dt_language(@employee) %></dd>
       <dt><strong><%= I18n.t(:"employee.form.company_id") %>:</strong></dt>
-      <dd><%= link_to @employee.company.name, company_path(@employee.company) if @employee.company.present? %></dd>
+      <dd><%= link_to @employee.company.name, company_path(@employee.company) %></dd>
       <dt><strong><%= I18n.t(:"employee.form.job_title_id") %>:</strong></dt>
       <dd><%= dt_job_title(@employee) %></dd>
       <dt><strong><%= I18n.t(:"employee.form.decision") %>:</strong></dt>

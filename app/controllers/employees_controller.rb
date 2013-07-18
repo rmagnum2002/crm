@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_filter :load_company, except: 'index'
+  before_filter :load_company, except: ['index', 'profile']
 
   load_and_authorize_resource
 

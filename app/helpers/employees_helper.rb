@@ -77,6 +77,8 @@ module EmployeesHelper
     elsif f == 'gender_id'
       result = Gender.find key
       result_name_e(result)
+    elsif f == 'company_id'
+      result = Company.find(key).name
     elsif f == 'language_id'
       if key.present?
         result = Language.find key

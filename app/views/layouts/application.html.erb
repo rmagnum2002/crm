@@ -34,7 +34,7 @@
           </div>
           <div class="login pull-right">
             <% if user_signed_in? %>
-            <strong><%= current_user.email %></strong>.
+            <!-- <strong><%#= current_user.email %></strong>. -->
             <%= link_to t(:"menu.edit_profile"), edit_user_registration_path %> |
             <%= link_to t(:"menu.logout"), destroy_user_session_path, method: :delete %>
             <% else %>

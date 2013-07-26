@@ -30,6 +30,17 @@ class Company < ActiveRecord::Base
     (column_names - UNRANSACKABLE_ATTRIBUTES) + _ransackers.keys
   end
 
+  def self.text_search(query)
+    if query.present?
+      where("name LIKE :q
+            or email LIKE :q
+            or skype LIKE :q
+            or bank_req LIKE :q
+            or phone LIKE :q
+            or website LIKE :q", q: "%#{query}%")
+    end
+  end
+
   def to_delete?
     if self.marked_to_remove == true
       return true

@@ -26,6 +26,8 @@ en:
   undo: "undo"
   search: "Search"
   select_date: "Select Date"
+  found_results: "Found results in:"
+  nothing_found: "Nothing found"
 
   menu:
     main: "Main"

@@ -1,0 +1,31 @@
+<div class="all_results">
+  <% if @companies.any? or @employees.any? %>
+    <span><b><%= t(:"found_results") %></b> </span><i class="icon-remove pull-right"></i>
+    <div class="clearfix"></div>
+    <hr>
+  <% else %>
+     <h5><%= t(:"nothing_found") %></h5>
+  <% end %>
+  <% if @companies.any? %>
+    <h5><%= t(:"menu.companies") %></h5>
+    <div>
+      <% @companies.each do |company| %>
+        <p><i class="icon-home"></i>  <%= link_to company.name, company %></p>
+      <% end %>
+    </div>
+  <% end %>
+  <% if @employees.any? %>
+    <br>
+    <h5><%= t(:"menu.contacts") %></h5>
+    <div>
+      <% @employees.each do |employee| %>
+        <p><i class="icon-user"></i>  <%= link_to employee.full_name, company_employee_path(employee.company, employee) %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+<script type="text/javascript" charset="utf-8">
+  $('.all_results .icon-remove').click(function () {
+    $('.all_results').fadeOut();
+  });
+</script>

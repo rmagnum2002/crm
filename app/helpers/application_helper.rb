@@ -3,6 +3,7 @@ module ApplicationHelper
     LOCALES.keys.sort.map { |k| link_to_if(@locale != k, k, set_locale_path(:lang => k,
       :back => request.fullpath))}.join " | "
   end
+
   def link_to_add_fields(name, f, type)
     new_object = f.object.send "build_#{type}"
     id = "new_#{type}"

@@ -18,6 +18,7 @@ CrmMd::Application.routes.draw do
   get "profiles", to: 'users#index', as: :profiles
   get "error", to: 'welcome#index', as: :error
   post "versions/:id/revert" => "versions#revert", :as => "revert_version"
+  get "search_all", to: "search_results#index"
 
   match "profile/:id", to: "users#show", as: 'profile'
   match "country_select_legal", to: "companies#country_select_legal", as: "country_select_legal"

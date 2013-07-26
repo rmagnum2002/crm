@@ -26,6 +26,8 @@ ru:
   undo: "отменить"
   search: "Пойск"
   select_date: "Выберите Дату"
+  found_results: "Записи найдены в:"
+  nothing_found: "Записей не найдено"
 
   menu:
     main: "Главная"

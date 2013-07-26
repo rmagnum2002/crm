@@ -55,11 +55,15 @@
       <% end %>
       <div class="row-fluid">
         <div class="span3 offset1 pull-right">
-          <%= raw(lang_links) %>
+          <div class="span3"><%= raw(lang_links) %></div>
+            <%= form_tag search_all_path, html:{class: 'form-search'}, method: :get, remote: true do |f| %>
+            <%= search_field_tag :query, params[:query], class: 'input-medium search-query', data:{provide:"typeahead"}, autocomplete: "off" %>
+            <%= submit_tag 'Search', name: nil, class: 'btn' %>
+            <% end %>
+            <div class="search_content"></div>
         </div>
         <%= yield %>
       </div>
     </div>
-
   </body>
   </html>

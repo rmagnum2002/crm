@@ -30,6 +30,8 @@ ro:
   undo: "anulează"
   search: "Caută"
   select_date: "Selectaţi Data"
+  found_results: "Înregistrări găsite în:"
+  nothing_found: "Nu am găsit nimic"
 
   menu:
     main: "Principala"

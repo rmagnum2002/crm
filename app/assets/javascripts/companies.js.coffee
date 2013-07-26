@@ -17,6 +17,7 @@ jQuery ->
     sPaginationType: "full_numbers"
     sDom: "RlfrtipT"
     bJQueryUI: true
+    aaSorting: [[ 0, "desc" ]]
     bDestroy: true
     bProcessing: true
     bServerSide: true
@@ -28,6 +29,7 @@ jQuery ->
     sPaginationType: "full_numbers"
     sDom: "RlfrtipT"
     bJQueryUI: true
+    aaSorting: [[ 0, "desc" ]]
     bDestroy: true
     bProcessing: true
     bServerSide: true

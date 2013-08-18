@@ -33,6 +33,7 @@ gem 'awesome_nested_fields'
 gem "ransack"
 gem 'client_side_validations'
 gem 'tinymce-rails'
+gem 'tinymce-rails-langs'
 
 gem 'thin'
 gem "cancan"

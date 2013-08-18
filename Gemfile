@@ -32,6 +32,7 @@ gem 'activeadmin'
 gem 'awesome_nested_fields'
 gem "ransack"
 gem 'client_side_validations'
+gem 'tinymce-rails'
 
 gem 'thin'
 gem "cancan"

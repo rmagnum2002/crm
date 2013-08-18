@@ -23,6 +23,7 @@
 //= require best_in_place
 //= require jquery.nested-fields
 //= require rails.validations
+//= require tinymce-jquery
 //= require raphael
 //= require morris
 //= require_tree .

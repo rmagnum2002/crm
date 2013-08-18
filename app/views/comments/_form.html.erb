@@ -11,7 +11,9 @@
   <% end %>
 
   <div class="control-group">
-    <%= f.text_area :content, rows: 4, class: "input-xxlarge", placeholder: t(:"comments.form.comment"), required: true %>
+    <%#= f.text_area :content, rows: 4, class: "input-xxlarge", placeholder: t(:"comments.form.comment"), required: true %>
+    <%= f.text_area :content, :class => "tinymce", :rows => 5, :cols => 120 %>
+    <%= tinymce %>
     <div class="errors"></div>
   </div>
   <h5><%= t(:"events.events") %> | <a href="#" class="add"><%= t(:"events.add_event") %></a></h5>

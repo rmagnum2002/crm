@@ -9,7 +9,7 @@
       <% if @event.comment.commentable_type == "Company" %>
       <p><%= t(:"activity.index.company") %> <%= link_to @event.comment.commentable.name, company_path(@event.comment.commentable) %></p>
       <% end %>
-      <p><%= @event.comment.content %></p>
+      <p><%= raw @event.comment.content %></p>
     </div>
     <div class="span12">
       <p><b><%= @event.event_date.strftime('%H:%M') %> - <%= t(Event::RESULT[@event.action_id]) %></b></p>

@@ -4,7 +4,7 @@
   <% elsif comment.commentable_type == 'Employee' %>
     <%= t(:"activity.index.added_note") %> <%= link_to comment.commentable.full_name, company_employee_path(comment.commentable.company, comment.commentable) %>
   <% end %>
-  - <i>"<%= sanitize truncate(comment.content, omision: "...", length: 150) %>"</i>
+  <br>
 <% else %>
   added a comment wich has since been removed
 <% end %>

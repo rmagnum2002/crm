@@ -180,7 +180,7 @@ ro:
       added_sale: "a adăugat o vînzare"
       amount: "în sumă de"
       sale_removed: "vînzarea adăugată a fost ştearsă"
-      company: "pentru compania"
+      company: "Compania"
       added_company: "a adăugat o companie"
       added_contact: "a adăugat un contact"
       added_event: "a adăugat un eveniment"
@@ -188,6 +188,7 @@ ro:
       talked_with: "A vorbit cu"
       comment: "Comentariu"
       employee: "Angajatul"
+      event_type: "Tipul Evenimentului"
   employee:
     model_title: "Angajatul"
     language:

@@ -1,9 +1,13 @@
 <% if event %>
-<p><%= t(:'activity.index.added_event') %> <%= link_to t(Event::RESULT[event.action_id]), events_path %></p>
+<%= render 'activities/comment/create', :comment => event.comment %>
 <table class='table table-bordered'>
   <tbody>
     <% if event.employee.present? %>
     <% if event.comment.commentable_type == "Company" %>
+      <tr>
+        <td><%= t(:'activity.index.event_type') %></td>
+        <td><%= link_to t(Event::RESULT[event.action_id]), events_path %></td>
+      </tr>
       <tr>
         <td><%= t(:'activity.index.company') %></td>
         <td><%= link_to event.comment.commentable.name, event.comment.commentable %></td>

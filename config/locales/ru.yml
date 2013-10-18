@@ -185,6 +185,7 @@ ru:
       talked_with: "Разговаривал с"
       comment: "Коментарий"
       employee: "Сотрудник"
+      event_type: "тип события"
   employee:
     model_title: "Сотрудник"
     language:

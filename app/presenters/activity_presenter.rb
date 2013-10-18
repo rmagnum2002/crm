@@ -8,7 +8,7 @@ class ActivityPresenter < SimpleDelegator
 
   def render_activity
     div_for activity do
-      content_tag(:td) do
+      content_tag(:td, style: "width: 175px") do
         link_to(activity.user.full_name, profile_path(activity.user)) + "<br>".html_safe +
         (l activity.created_at, format: :long)
       end +
@@ -21,8 +21,8 @@ class ActivityPresenter < SimpleDelegator
           elsif activity.action == "update"
             "<i class='icon-edit'></i>".html_safe
           end
-        elsif activity.trackable_type == "Event"
-          "<i class='icon-calendar'></i>".html_safe
+        # elsif activity.trackable_type == "Event"
+        #   "<i class='icon-calendar'></i>".html_safe
         elsif activity.trackable_type == "Comment"
           "<i class='icon-comment'></i>".html_safe
         elsif activity.trackable_type == "Sale"

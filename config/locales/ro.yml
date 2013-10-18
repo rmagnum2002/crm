@@ -187,7 +187,8 @@ ro:
       to_company: "la compania"
       talked_with: "A vorbit cu"
       comment: "Comentariu"
-      employee: "Angajatul"
+      employee: "pentru angajatul"
+      event_type: "tipul evenimentului"
   employee:
     model_title: "Angajatul"
     language:

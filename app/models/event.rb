@@ -9,7 +9,7 @@ class Event < ActiveRecord::Base
 
   before_create :update_date_event
   validates_presence_of :action_id
-  after_create :create_activity
+  # after_create :create_activity
 
   RESULT = {
     0 => :"events.result.problem_solved",
@@ -26,8 +26,8 @@ class Event < ActiveRecord::Base
     end
   end
 
-  def create_activity
-    Activity.new(user_id: self.user_id, action: 'create', trackable_id: self.id, trackable_type: "Event").save
-  end
+  # def create_activity
+  #   Activity.new(user_id: self.user_id, action: 'create', trackable_id: self.id, trackable_type: "Event").save
+  # end
 
 end

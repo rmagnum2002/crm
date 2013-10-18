@@ -4,7 +4,45 @@
   <% elsif comment.commentable_type == 'Employee' %>
     <%= t(:"activity.index.added_note") %> <%= link_to comment.commentable.full_name, company_employee_path(comment.commentable.company, comment.commentable) %>
   <% end %>
-  <br>
+  <div><%= sanitize truncate(comment.content, omision: "...", length: 100) %></div>
+  <% comment.events.each do |event| %>
+    <% if event %>
+      <table class='table table-bordered' style="max-width: 400px;">
+        <tbody>
+          <% if event.comment.commentable_type == "Company" %>
+            <tr>
+              <td><%= t(:'activity.index.event_type') %></td>
+              <td><%= link_to t(Event::RESULT[event.action_id]), events_path %></td>
+            </tr>
+            <tr>
+              <td><%= t(:'activity.index.company') %></td>
+              <td><%= link_to event.comment.commentable.name, event.comment.commentable %></td>
+            </tr>
+            <% if event.employee.present? %>
+            <tr>
+              <td><%= t(:'activity.index.talked_with') %></td>
+              <td><%= link_to event.employee.full_name, company_employee_path(event.employee.company, event.employee) %></td>
+            </tr>
+            <% end %>
+          <% elsif event.comment.commentable_type == "Employee" %>
+            <tr>
+              <td><%= t(:'activity.index.event_type') %></td>
+              <td><%= link_to t(Event::RESULT[event.action_id]), events_path %></td>
+            </tr>
+            <tr>
+              <td><%= t(:'activity.index.employee') %></td>
+              <td><%= link_to event.employee.full_name, company_employee_path(event.employee.company, event.employee) %></td>
+            </tr>
+          <% else %>
+            <td></td>
+            <td></td>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+    added event wich has since been removed
+    <% end %>
+  <% end %>
 <% else %>
   added a comment wich has since been removed
 <% end %>

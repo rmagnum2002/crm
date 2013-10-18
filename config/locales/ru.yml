@@ -177,7 +177,7 @@ ru:
       added_sale: "добавил новую продажу"
       amount: "на сумму"
       sale_removed: "добавленная продажа была удалена"
-      company: "Компания"
+      company: "для компаний"
       added_company: "добавил компанию"
       added_contact: "добавил контакт"
       added_event: "добавил событие"
@@ -185,7 +185,7 @@ ru:
       talked_with: "Разговаривал с"
       comment: "Коментарий"
       employee: "Сотрудник"
-      event_type: "Тип события"
+      event_type: "тип события"
   employee:
     model_title: "Сотрудник"
     language:

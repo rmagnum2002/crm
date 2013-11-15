@@ -127,7 +127,7 @@ ru:
       address: "Адреса"
       contacts: "Контакты"
       comments: "Коментарии"
-      sales: "Продажы"
+      sales: "Продажи"
       back: "Назад"
       edit: "Редактировать"
       destroy: "Удалить"
@@ -165,7 +165,7 @@ ru:
       user_profile: "Профиль пользователя"
       responsible_for: "Ответственный за"
       companies: "Компаний"
-      sales: "Продажы"
+      sales: "Продажи"
       lei: "лей"
       in_total: "на сумму"
   activity:
@@ -282,7 +282,7 @@ ru:
       comments: "Коментарии"
   sales:
     show:
-      sales: "Продажы"
+      sales: "Продажи"
       total_amount: "общая сумма"
     index:
       added_sale: "Добавил продажу на сумму"

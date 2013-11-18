@@ -1,4 +1,5 @@
 class CompaniesController < ApplicationController
+  before_filter :authenticate_user!
   before_filter :load_company, except: %w{index new create search country_select_legal country_select_invoicing}
 
   load_and_authorize_resource

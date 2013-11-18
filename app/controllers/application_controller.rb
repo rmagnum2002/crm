@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale_filter
 
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: ['set_locale_filter']
 
 
   def set_locale_filter

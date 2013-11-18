@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
+  before_filter :authenticate_user!, except: ['set_locale']
+  
   def index
   end
 

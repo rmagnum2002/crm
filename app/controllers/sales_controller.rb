@@ -1,4 +1,5 @@
 class SalesController < ApplicationController
+  before_filter :authenticate_user!
   before_filter :load_saleable, except: %w[index]
 
   load_and_authorize_resource

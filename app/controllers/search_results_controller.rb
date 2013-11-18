@@ -1,4 +1,5 @@
 class SearchResultsController < ApplicationController
+  before_filter :authenticate_user!
   # GET /companies
   # GET /companies.json
   def index

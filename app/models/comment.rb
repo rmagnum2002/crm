@@ -8,4 +8,10 @@ class Comment < ActiveRecord::Base
 
   has_many :events, :dependent => :destroy
   accepts_nested_attributes_for :events, allow_destroy: true
+
+  before_create :set_site_from_user
+
+  def set_site_from_user
+    self.site = user.site
+  end
 end

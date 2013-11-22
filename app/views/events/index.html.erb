@@ -3,7 +3,7 @@
 </div>
 <%= form_tag events_path, :method => 'get', remote: true, class: "form-search pull" do %>
   <%= text_field_tag :date, params[:date], placeholder: t(:"select_date"), class: "search-query" %>
-  <%= submit_tag t(:"search"), class: "btn" %>
+  <%= submit_tag t(:search), class: "btn" %>
 <% end %>
 <div class="span8 calendar">
   <%= render 'calendar' %>

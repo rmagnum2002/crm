@@ -19,4 +19,10 @@ class Sale < ActiveRecord::Base
     self.ammount = self.sale_items.sum(:total_price)
     self.save!
   end
+
+  before_create :set_site_from_user
+
+  def set_site_from_user
+    self.site = user.site
+  end
 end

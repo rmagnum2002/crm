@@ -1,40 +1,39 @@
 class Ability
   include CanCan::Ability
 
-  # TODO lz can we pass site parameter here?
-  def initialize(user)
-    # Define abilities for the passed in user here. For example:
-    #
-    user ||= User.new # guest user (not logged in)
+  def initialize(user, site)
+    raise ArgumentError if site.nil?
+
+    # reset to anonymous if user does not belong to current sute
+    if user && user.site != site
+      user = nil
+    end
+
+    user ||= User.new.tap do |obj|
+      obj.site = site
+    end
 
     # alias_action :create, :read, :update, :destroy, :to => :crud
     alias_action :show_contacts, :show_address, :sales, :show_comments, :country_select_legal, :country_select_invoicing, :to => :company_actions
     alias_action :events_for_day, :open_details, :to => :events_actions
 
     if user.role? :admin
-      # TODO lz admin will moderate only all items for a certain site
-      can :manage, :all
+      can :manage, :all, site_id: site.id
     elsif user.role? :moderator
-      # TODO lz filter items by site_id
-      can :create, Company
-      can :create, Employee
-      can :create, Comment
-      can :create, Event
-      can :create, Sale
-      can :read, Company
-      can :read, Employee
-      can :read, Comment
-      can :read, Event
-      can :read, User
-      can :read, Sale
-      can :read, Activity
-      can :update, Company, :user_id => user.id
-      can :update, Employee, :user_id => user.id
-      can :destroy, Company, :user_id => user.id
-      can :destroy, Employee, :user_id => user.id
-      can :destroy, Comment, :user_id => user.id
-      can :company_actions, Company
-      can :events_actions, Event
+      can :create, [Company, Employee, Comment, Event, Sale]
+      can :read, [Company, Comment, Event, User, Sale, Activity], site_id: site.id
+
+      can :read, Employee do |emp|
+        emp.company.site == site
+      end
+
+      can :update, [Company, Employee], :user_id => user.id
+
+      # can destroy own objects
+      can :destroy, [Company, Employee, Comment], :user_id => user.id
+
+      can :company_actions, Company, site_id: site.id
+      can :events_actions, Event, site_id: site.id
     elsif user.role? :user
       can :read, User, :id => user.id
     end

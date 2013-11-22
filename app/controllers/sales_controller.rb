@@ -2,10 +2,13 @@ class SalesController < ApplicationController
   before_filter :authenticate_user!
   before_filter :load_saleable, except: %w[index]
 
+  before_filter only: :index do
+    @sales = Sale.order('created_at desc')
+  end
+
   load_and_authorize_resource
 
   def index
-    @sales = Sale.order('created_at desc')
     respond_to do |format|
       format.html # index.html.erb
       # format.json { render json: @sales }
@@ -19,7 +22,8 @@ class SalesController < ApplicationController
 
   def create
     @sale = @saleable.sales.new(params[:sale])
-    @sale.user_id = current_user.id
+    @sale.user = current_user
+
     if @sale.save
       expire_fragment "#{t(:"activity.index.activities")}"
       track_activity @sale
@@ -32,7 +36,6 @@ class SalesController < ApplicationController
   end
 
   def destroy
-    @sale = Comment.find(params[:id])
     @sale.destroy
 
     respond_to do |format|

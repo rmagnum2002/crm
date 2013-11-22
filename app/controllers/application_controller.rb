@@ -2,16 +2,17 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   before_filter :set_locale_filter
-
+  before_filter :load_site
   #before_filter :authenticate_user!
-
 
   def set_locale_filter
     if cookies[:lang] && LOCALES.keys.include?(cookies[:lang])
       @locale = cookies[:lang]
     end
 
-    @locale ||= "ro"
+    # TODO get locale from browser request headers
+    # Accept-Language: ro,en-US;q=0.8,en;q=0.6
+    @locale ||= 'ro'
 
     if cookies[:lang] != @locale
       cookies[:lang] = {:value => @locale, :expires => 1.year.from_now}
@@ -22,22 +23,24 @@ class ApplicationController < ActionController::Base
   end
 
   # filter
-  def load_company
-    if params[:company_id].presence
-      @company = Company.find(params[:company_id])
-    else
-      @company = Company.find(params[:id])
-    end
+  def load_site
+    @site = Site.where(host: request.host).first
 
-    if @company.nil?
-      raise ActiveRecord::RecordNotFound
+    if @site.nil?
+      render text: 'Site not found'
+      return false
     end
 
     true
   end
 
+  # filter
+  def load_company
+    @company = @site.companies.find(params[:company_id].presence || params[:id])
+  end
+
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:error] = "Access denied!"
+    flash[:error] = 'Access denied!'
     redirect_to error_path
   end
 
@@ -51,5 +54,9 @@ class ApplicationController < ActionController::Base
     language = cookies[:lang]
     language = params[:locale] if params[:locale]
     language
+  end
+
+  def current_ability
+    @current_ability ||= ::Ability.new(current_user, @site)
   end
 end

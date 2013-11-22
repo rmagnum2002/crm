@@ -35,14 +35,17 @@ CrmMd::Application.routes.draw do
       get 'show_comments'
       get 'sales'
       get 'revisions'
-      get 'delete_company'
+      get 'delete_company' # TODO FIX method, it should be delete
     end
+
     resources :employees do
       member do
-        get 'delete_employee'
+        get 'delete_employee' # TODO FIX method, it should be delete
       end
+
       resources :comments
     end
+
     resources :addresses
     resources :comments
     resources :sales
@@ -66,8 +69,6 @@ CrmMd::Application.routes.draw do
   get "welcome/index"
   match 'set_locale' => 'welcome#set_locale'
 
-  devise_for :users
-  ActiveAdmin.routes(self)
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -122,5 +123,5 @@ CrmMd::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  match ':controller(/:action(/:id))(.:format)'
+  #match ':controller(/:action(/:id))(.:format)'
 end

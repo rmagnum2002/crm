@@ -1,11 +1,9 @@
 class SearchResultsController < ApplicationController
   before_filter :authenticate_user!
-  # GET /companies
-  # GET /companies.json
+
   def index
-     @companies = Company.text_search(params[:query])
-     @employees = Employee.text_search(params[:query])
-     # @users = User.text_search(params[:query])
+     @companies = @site.companies.text_search(params[:query])
+     @employees = Employee.join(:company).where(conpany: {site_id: @site.id}).text_search(params[:query])
 
     respond_to do |format|
       format.js

@@ -7,11 +7,7 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    # @companies = Company.all
-
-    @search = Company.search(params[:q])
-    @companies = @search.result
-    @search.build_condition
+    search
 
     respond_to do |format|
       format.html # index.html.erb
@@ -20,7 +16,7 @@ class CompaniesController < ApplicationController
   end
 
   def search
-    @search = Company.search(params[:q])
+    @search = @site.companies.search(params[:q])
     @companies = @search.result
     @search.build_condition
   end
@@ -31,6 +27,7 @@ class CompaniesController < ApplicationController
     @commentable = @company
     @comments = @commentable.comments.order('created_at desc').includes([:user, :events])
     @comment = Comment.new
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @company }
@@ -42,8 +39,9 @@ class CompaniesController < ApplicationController
   def new
     @company = Company.new
     @addresses = @company.addresses
-    @countries = Country.all.map{ |c| [c.name, c.id] }
-    @states = State.all.map{ |s| [s.name, s.id] }
+    @countries = @site.countries.all.map{ |c| [c.name, c.id] }
+    # TODO lz states should have a country_id for auto-select
+    @states = State.join(:country).where(country: {site_id: @site.id}).all.map{ |s| [s.name, s.id] }
     2.times { @company.addresses.build }
 
     respond_to do |format|
@@ -64,14 +62,14 @@ class CompaniesController < ApplicationController
         @states_0 = State.where(country_id: add.country_id).map{ |c| [c.name, c.id] }
       end
     end
-    # @states = State.all.map{ |s| [s.name, s.id] }
+
      @countries = Country.all.map{ |c| [c.name, c.id] }
   end
 
   # POST /companies
   # POST /companies.json
   def create
-    @company = Company.new(params[:company])
+    @company = @site.companies.build(params[:company])
     @company.user_id = current_user.id
 
     respond_to do |format|
@@ -110,8 +108,6 @@ class CompaniesController < ApplicationController
   end
 
   def show_contacts
-    @company = Company.find(params[:id])
-
     respond_to do |format|
       # format.html { redirect_to @company }
       format.js
@@ -160,7 +156,7 @@ class CompaniesController < ApplicationController
 
   def country_select_legal
     if params[:country_id].present?
-      @states_0 = Country.find(params[:country_id]).states
+      @states_0 = @site.countries.find(params[:country_id]).states
     else
       @states_0 = []
     end
@@ -171,7 +167,7 @@ class CompaniesController < ApplicationController
 
   def country_select_invoicing
     if params[:country_id].present?
-      @states_1 = Country.find(params[:country_id]).states
+      @states_1 = @site.countries.find(params[:country_id]).states
     else
       @states_1 = []
     end

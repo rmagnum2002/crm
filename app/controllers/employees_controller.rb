@@ -1,14 +1,13 @@
 class EmployeesController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :load_company, except: ['index', 'profile', 'revisions']
 
-  load_and_authorize_resource
+  # it will be loaded by cancan
+  #before_filter :load_company, except: %w(index profile revisions)
+  load_and_authorize_resource :through => :company
 
   # GET /employees
   # GET /employees.json
   def index
-    @employees = Employee.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: EmployeesDatatable.new(view_context) }
@@ -19,7 +18,6 @@ class EmployeesController < ApplicationController
   # GET /employees/1.json
   def show
     @hide_employees = true
-    @employee = Employee.find(params[:id])
     @commentable = @employee
     @comments = @commentable.comments.order('created_at desc')
     @comment = Comment.new
@@ -51,7 +49,6 @@ class EmployeesController < ApplicationController
   # GET /employees/1/edit
   def edit
     @show_label = true
-    @employee = Employee.find(params[:id])
   end
 
   # POST /employees
@@ -77,8 +74,6 @@ class EmployeesController < ApplicationController
   # PUT /employees/1
   # PUT /employees/1.json
   def update
-    @employee = Employee.find(params[:id])
-
     respond_to do |format|
       if @employee.update_attributes(params[:employee])
         expire_fragment "employee_#{@employee.id}_#{t(:"employee.model_title")}_user"
@@ -94,7 +89,6 @@ class EmployeesController < ApplicationController
   # DELETE /employees/1
   # DELETE /employees/1.json
   def destroy
-    @employee = Employee.find(params[:id])
     @employee.destroy
 
     respond_to do |format|
@@ -104,12 +98,8 @@ class EmployeesController < ApplicationController
   end
 
   def delete_employee
-    @employee = Employee.find(params[:id])
-    if @employee.marked_to_remove == false
-      @employee.update_attributes(marked_to_remove: true)
-    else
-      @employee.update_attributes(marked_to_remove: false)
-    end
+    @employee.update_attributes(marked_to_remove: !@employee.marked_to_remove)
+
     redirect_to company_employee_path(@company, @employee)
   end
 
@@ -121,7 +111,6 @@ class EmployeesController < ApplicationController
   end
 
   def revisions
-    @employee = Employee.find(params[:id])
     @versions = @employee.versions.order("created_at desc")
   end
 end

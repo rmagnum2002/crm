@@ -23,4 +23,13 @@ ActiveAdmin.register Sale do
       end
     end
   end
+
+  form do |f|
+    f.input :saleable_id
+    f.input :saleable_type
+    f.input :user_id
+    f.input :ammount
+    f.input :created_at
+    f.actions
+  end
 end

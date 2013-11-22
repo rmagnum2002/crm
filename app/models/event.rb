@@ -2,6 +2,7 @@
 # encoding: utf-8
 
 class Event < ActiveRecord::Base
+  belongs_to :site
   belongs_to :employee
   belongs_to :comment
 

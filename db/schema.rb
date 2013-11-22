@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130625131608) do
+ActiveRecord::Schema.define(:version => 20131122074226) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.string   "trackable_type"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.integer  "site_id"
   end
 
   add_index "activities", ["trackable_id"], :name => "index_activities_on_trackable_id"
@@ -65,6 +66,7 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.integer  "site_id"
   end
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
@@ -76,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.string   "name_ru"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "site_id"
   end
 
   create_table "client_statuses", :force => true do |t|
@@ -84,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.string   "name_ru"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "site_id"
   end
 
   create_table "client_types", :force => true do |t|
@@ -92,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.string   "name_ru"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "site_id"
   end
 
   create_table "comments", :force => true do |t|
@@ -128,6 +133,7 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.integer  "number_employees"
     t.integer  "organizational_form_id"
     t.boolean  "marked_to_remove",       :default => false
+    t.integer  "site_id"
   end
 
   create_table "company_branches", :force => true do |t|
@@ -136,6 +142,7 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.string   "name_ru"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "site_id"
   end
 
   create_table "company_sources", :force => true do |t|
@@ -144,6 +151,7 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.string   "name_ru"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "site_id"
   end
 
   create_table "countries", :force => true do |t|
@@ -152,6 +160,7 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.datetime "updated_at", :null => false
     t.string   "name_ru"
     t.string   "name_ro"
+    t.integer  "site_id"
   end
 
   create_table "employees", :force => true do |t|
@@ -188,6 +197,7 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.datetime "updated_at",  :null => false
     t.integer  "user_id"
     t.integer  "employee_id"
+    t.integer  "site_id"
   end
 
   create_table "genders", :force => true do |t|
@@ -204,6 +214,7 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.string   "name_ru"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "site_id"
   end
 
   create_table "job_titles", :force => true do |t|
@@ -212,6 +223,7 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.string   "name_ru"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "site_id"
   end
 
   create_table "languages", :force => true do |t|
@@ -228,6 +240,7 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.string   "name_ru"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "site_id"
   end
 
   create_table "sale_items", :force => true do |t|
@@ -248,6 +261,15 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.string   "order_number"
+    t.integer  "site_id"
+  end
+
+  create_table "sites", :force => true do |t|
+    t.string   "host",        :null => false
+    t.string   "name",        :null => false
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "states", :force => true do |t|
@@ -276,6 +298,7 @@ ActiveRecord::Schema.define(:version => 20130625131608) do
     t.string   "last_name"
     t.string   "role",                   :default => "user"
     t.boolean  "approved",               :default => false,  :null => false
+    t.integer  "site_id"
   end
 
   add_index "users", ["approved"], :name => "index_users_on_approved"

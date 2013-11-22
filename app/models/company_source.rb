@@ -1,6 +1,7 @@
 class CompanySource < ActiveRecord::Base
   attr_accessible :name, :name_ro, :name_ru
 
+  belongs_to :site
   has_many :companies
 
   UNRANSACKABLE_ATTRIBUTES = ["id", "created_at", "updated_at"]

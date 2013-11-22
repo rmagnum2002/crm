@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   # :recoverable email recovering not used
+  # TODO lz scope validations to site_id, the same email can be used on many sites
   devise :database_authenticatable, :registerable,
          :rememberable, :trackable, :validatable
 
@@ -15,6 +16,7 @@ class User < ActiveRecord::Base
   has_many :activities
   has_many :comments
   has_many :sales
+  belongs_to :site
 
   # Role user is the default role when creating new user
   ROLES = %w[user moderator admin]

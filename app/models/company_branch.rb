@@ -2,6 +2,7 @@ class CompanyBranch < ActiveRecord::Base
   attr_accessible :name, :name_ro, :name_ru
 
   has_many :companies
+  belongs_to :site
 
   UNRANSACKABLE_ATTRIBUTES = ["id", "created_at", "updated_at"]
 

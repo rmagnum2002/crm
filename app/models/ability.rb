@@ -1,6 +1,7 @@
 class Ability
   include CanCan::Ability
 
+  # TODO lz can we pass site parameter here?
   def initialize(user)
     # Define abilities for the passed in user here. For example:
     #
@@ -11,8 +12,10 @@ class Ability
     alias_action :events_for_day, :open_details, :to => :events_actions
 
     if user.role? :admin
+      # TODO lz admin will moderate only all items for a certain site
       can :manage, :all
     elsif user.role? :moderator
+      # TODO lz filter items by site_id
       can :create, Company
       can :create, Employee
       can :create, Comment

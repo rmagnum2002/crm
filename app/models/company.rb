@@ -8,6 +8,7 @@ class Company < ActiveRecord::Base
   validates :name, :company_branch_id, :client_category_id, :client_type_id, :client_status_id,
             :company_source_id, :phone, presence: true
 
+  belongs_to :site
   belongs_to :user
   belongs_to :company_branch
   belongs_to :company_source

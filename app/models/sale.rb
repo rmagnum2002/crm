@@ -1,5 +1,7 @@
 class Sale < ActiveRecord::Base
   attr_accessible :saleable_id, :saleable_type, :user_id, :ammount, :sale_items_attributes, :order_number
+
+  belongs_to :site
   belongs_to :saleable, polymorphic: true
   belongs_to :user
   has_many :sale_items, dependent: :destroy

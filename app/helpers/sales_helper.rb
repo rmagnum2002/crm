@@ -12,7 +12,7 @@ module SalesHelper
     sales_by_day = Sale.total_grouped_by_day(start)
     (2.weeks.ago.to_date..Date.today).map do |date|
       {
-        created_at: date,
+        sale_date: date,
         ammount: sales_by_day[date] || 0
       }
     end
@@ -22,7 +22,7 @@ module SalesHelper
     sales_by_day = Sale.where(saleable_id: params[:id]).total_grouped_by_day(start)
     (2.weeks.ago.to_date..Date.today).map do |date|
       {
-        created_at: date,
+        sale_date: date,
         ammount: sales_by_day[date] || 0
       }
     end

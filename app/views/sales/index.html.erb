@@ -4,7 +4,7 @@
     return Morris.Line({
       element: 'sales_chart',
       data: $('#sales_chart').data('sales'),
-      xkey: 'created_at',
+      xkey: 'sale_date',
       ykeys: ['ammount'],
       labels: ['<%= t(:"sales.index.amount") %>']
     });
@@ -32,7 +32,7 @@
   <tbody>
     <% @sales.each do |sale| %>
       <tr>
-        <td><%= l sale.created_at, format: :short %></td>
+        <td><%= l sale.sale_date, format: :short %></td>
         <td><%= sale.ammount %></td>
         <td><%= link_to sale.user.full_name, profile_path(sale.user) %></td>
         <td><%= link_to sale.saleable.name, sale.saleable %></td>

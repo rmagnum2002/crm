@@ -3,6 +3,7 @@ ro:
     devise:
       login:
         title: " - login"
+        submit: 'Intră'
     home:
       recent_signed_up_users: "utilizatori înregistrați recent"
       recent_companies: "companii adăugate recent"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131122074226) do
+ActiveRecord::Schema.define(:version => 20131122101218) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(:version => 20131122074226) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
     t.integer  "user_id"
+    t.integer  "site_id"
   end
 
   add_index "comments", ["commentable_id", "commentable_type"], :name => "index_comments_on_commentable_id_and_commentable_type"
@@ -313,6 +314,7 @@ ActiveRecord::Schema.define(:version => 20131122074226) do
     t.text     "object"
     t.datetime "created_at"
     t.text     "object_changes"
+    t.integer  "site_id"
   end
 
   add_index "versions", ["item_type", "item_id"], :name => "index_versions_on_item_type_and_item_id"

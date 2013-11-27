@@ -3,7 +3,7 @@ class EmployeesController < ApplicationController
 
   # it will be loaded by cancan
   #before_filter :load_company, except: %w(index profile revisions)
-  load_and_authorize_resource :through => :company
+  load_and_authorize_resource
 
   # GET /employees
   # GET /employees.json
@@ -14,6 +14,8 @@ class EmployeesController < ApplicationController
     end
   end
 
+  # Complete profile
+  #
   # GET /employees/1
   # GET /employees/1.json
   def show
@@ -28,8 +30,8 @@ class EmployeesController < ApplicationController
     end
   end
 
+  # Popup profile with limited info
   def profile
-    @employee = Employee.find(params[:id])
     respond_to do |format|
       format.js
     end
@@ -55,7 +57,8 @@ class EmployeesController < ApplicationController
   # POST /employees.json
   def create
     @employee = Employee.new(params[:employee])
-    @employee.company_id = @company.id
+    # TODO lz load company
+    @employee.company = @company
     @employee.user = current_user
 
     respond_to do |format|

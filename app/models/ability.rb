@@ -4,8 +4,8 @@ class Ability
   def initialize(user, site)
     raise ArgumentError if site.nil?
 
-    # reset to anonymous if user does not belong to current sute
-    if user && user.site != site
+    # reset to anonymous if user does not belong to current site
+    if user && user.site_id != site.id
       user = nil
     end
 
@@ -13,29 +13,43 @@ class Ability
       obj.site = site
     end
 
+    if user.new_record?
+      site.logger.info('cancan: Anonymous user')
+    else
+      site.logger.info("cancan: #{user.email}, #{site.host}")
+    end
+
     # alias_action :create, :read, :update, :destroy, :to => :crud
     alias_action :show_contacts, :show_address, :sales, :show_comments, :country_select_legal, :country_select_invoicing, :to => :company_actions
     alias_action :events_for_day, :open_details, :to => :events_actions
+    alias_action :profile, to: :read
 
     if user.role? :admin
+      # TODO check if admin can see contacts
       can :manage, :all, site_id: site.id
-    elsif user.role? :moderator
-      can :create, [Company, Employee, Comment, Event, Sale]
-      can :read, [Company, Comment, Event, User, Sale, Activity], site_id: site.id
-
-      can :read, Employee do |emp|
-        emp.company.site == site
+    else
+      if user.role? :moderator
+        # TODO specify rules for moderators
       end
 
-      can :update, [Company, Employee], :user_id => user.id
+      if user.role? :user
+        can :company_actions, Company, site_id: site.id
+        can :events_actions, Event, site_id: site.id
 
-      # can destroy own objects
-      can :destroy, [Company, Employee, Comment], :user_id => user.id
+        can :create, [Company, Employee, Comment, Event, Sale]
 
-      can :company_actions, Company, site_id: site.id
-      can :events_actions, Event, site_id: site.id
-    elsif user.role? :user
-      can :read, User, :id => user.id
+        can :read, [Company, Comment, Event, User, Sale, Activity], site_id: site.id
+        # can modify his own records
+        can :update, [Company, Employee], :user_id => user.id
+        # can destroy own objects
+        can :destroy, [Company, Employee, Comment], :user_id => user.id
+
+        can :read, :all, :site_id => site.id
+
+        can [:index, :read], Employee.joins(:company).where(companies: {site_id: site.id}) do |emp|
+          emp.company.site_id == site.id
+        end
+      end
     end
     #
     # The first argument to `can` is the action you are giving the user

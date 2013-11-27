@@ -1,0 +1,11 @@
+== Multisite migration
+
+* relax admin_users email, index to be unique by site_id
+
+Întrebări:
+
+Q: Deschide profilul complet unde trebuie să se ducă? Aruncă eroare acum.
+A: Se duce la employee#show
+
+Q: Unde este descris permisiunile moderatorilor
+A: ???

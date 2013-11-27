@@ -3,9 +3,8 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   # :recoverable email recovering not used
-  # TODO lz scope validations to site_id, the same email can be used on many sites
   devise :database_authenticatable, :registerable,
-         :rememberable, :trackable, :validatable
+         :rememberable, :trackable, :validatable, request_keys: [:host]
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :approved, as: [:default, :admin]
@@ -47,5 +46,12 @@ class User < ActiveRecord::Base
     else
       super # Use whatever other message
     end
+  end
+
+  # Devise authenticate user by site
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    host = conditions.delete(:host)
+    joins(:site).where(conditions).where(sites: {host: host}).select('users.*').first
   end
 end

@@ -40,6 +40,7 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
+    logger.error("Cancan access denied: #{exception.message}, #{exception.subject}, #{exception.action}")
     flash[:error] = 'Access denied!'
     redirect_to error_path
   end
@@ -59,4 +60,13 @@ class ApplicationController < ActionController::Base
   def current_ability
     @current_ability ||= ::Ability.new(current_user, @site)
   end
+
+  unless Rails.env.production?
+    def redirect_to(*args)
+      trace = params[:full_debug] ? caller[0..10].join("\n") : caller.first
+      logger.debug "Redirect from: " + trace
+      super(*args)
+    end
+  end
+
 end

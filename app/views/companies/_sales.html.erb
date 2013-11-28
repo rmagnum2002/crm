@@ -4,7 +4,7 @@
     return Morris.Line({
       element: 'sales_chart',
       data: $('#sales_chart').data('sales'),
-      xkey: 'created_at',
+      xkey: 'sale_date',
       ykeys: ['ammount'],
       labels: ['<%= t(:"sales.index.amount") %>']
     });

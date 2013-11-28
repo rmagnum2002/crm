@@ -303,6 +303,7 @@ ru:
       add_more_sales: "добавить больше продаж"
       add_sale: "добавить продажу"
       order_number: "Номер заказа/ Фактура"
+      sale_date: 'Дата продажи'
   advanced_search:
     add_conditions: "Добавить условие"
     search: "Искать"

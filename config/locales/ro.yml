@@ -310,6 +310,7 @@ ro:
       add_more_sales: "adaugă mai multe vânzari"
       add_sale: "adaugă vânzare"
       order_number: "Numărul comenzii/factură"
+      sale_date: 'Data vânzării'
   advanced_search:
     add_conditions: "Adaugă Condiţii"
     search: "Caută"

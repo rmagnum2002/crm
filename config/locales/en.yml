@@ -309,6 +309,7 @@ en:
       add_more_sales: "add more sales"
       add_sale: "add sale"
       order_number: "Order Number"
+      sale_date: 'Sale date'
 
   client_category:
     form:

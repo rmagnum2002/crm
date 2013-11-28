@@ -1,22 +1,14 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user, site)
-    raise ArgumentError if site.nil?
+  def initialize(user)
 
-    # reset to anonymous if user does not belong to current site
-    if user && user.site_id != site.id
-      user = nil
-    end
-
-    user ||= User.new.tap do |obj|
-      obj.site = site
-    end
+    user ||= User.new
 
     if user.new_record?
-      site.logger.info('cancan: Anonymous user')
+      user.logger.info('cancan: Anonymous user')
     else
-      site.logger.info("cancan: #{user.email}, #{site.host}")
+      user.logger.info("cancan: #{user.email}")
     end
 
     # alias_action :create, :read, :update, :destroy, :to => :crud
@@ -24,30 +16,37 @@ class Ability
     alias_action :events_for_day, :open_details, :to => :events_actions
     alias_action :profile, to: :read
 
+    models = ActiveRecord::Base.subclasses - [Site, Employee, State, ActiveAdmin::Comment]
+
+    can :read, Site, id: user.site_id
+
     if user.role? :admin
-      # TODO check if admin can see contacts
-      can :manage, :all, site_id: site.id
+      init_admin_perms
     else
       if user.role? :moderator
         # TODO specify rules for moderators
       end
 
       if user.role? :user
-        can :company_actions, Company, site_id: site.id
-        can :events_actions, Event, site_id: site.id
+        can :company_actions, Company, site_id: user.site_id
+        can :events_actions, Event, site_id: user.site_id
 
         can :create, [Company, Employee, Comment, Event, Sale]
 
-        can :read, [Company, Comment, Event, User, Sale, Activity], site_id: site.id
+        can :read, [Company, Comment, Event, User, Sale, Activity], site_id: user.site_id
         # can modify his own records
         can :update, [Company, Employee], :user_id => user.id
         # can destroy own objects
         can :destroy, [Company, Employee, Comment], :user_id => user.id
 
-        can :read, :all, :site_id => site.id
+        can :read, models, site_id: user.site_id
 
-        can [:index, :read], Employee.joins(:company).where(companies: {site_id: site.id}) do |emp|
-          emp.company.site_id == site.id
+        can :read, State, State.joins(:country).where(countries: {site_id: user.site_id}) do |state|
+          state.country.site_id == user.site_id
+        end
+
+        can [:index, :read], Employee, Employee.joins(:company).where(companies: {site_id: user.site_id}) do |emp|
+          emp.company.site_id == user.site_id
         end
       end
     end
@@ -70,4 +69,6 @@ class Ability
     # See the wiki for details:
     # https://github.com/ryanb/cancan/wiki/Defining-Abilities
   end
+
+  include AdminAbility::AdminPerms
 end

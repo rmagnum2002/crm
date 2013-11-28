@@ -32,7 +32,7 @@ gem 'tinymce-rails'
 gem 'tinymce-rails-langs'
 
 gem 'thin'
-gem "cancan"
+gem 'cancan'
 
 gem 'morrisjs-rails'
 gem 'raphael-rails'

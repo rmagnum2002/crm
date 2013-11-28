@@ -1,6 +1,8 @@
 == Multisite migration
 
 * relax admin_users email, index to be unique by site_id
+* fix items creation by setting the site_id variable and test in user and admin areas
+* filter ransack table display for site filtering
 
 Întrebări:
 

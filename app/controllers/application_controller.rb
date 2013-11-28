@@ -24,14 +24,23 @@ class ApplicationController < ActionController::Base
 
   # filter
   def load_site
+    logger.debug "Loading site: #{request.host}"
     @site = Site.where(host: request.host).first
 
     if @site.nil?
-      render text: 'Site not found'
+      render text: 'Site not found', status: :not_found
       return false
     end
 
+    authorize! :read, @site
+
     true
+  end
+
+  helper_method :current_site
+
+  def current_site
+    @site
   end
 
   # filter
@@ -58,15 +67,19 @@ class ApplicationController < ActionController::Base
   end
 
   def current_ability
-    @current_ability ||= ::Ability.new(current_user, @site)
+    @current_ability ||= ::Ability.new(current_user)
   end
 
   unless Rails.env.production?
     def redirect_to(*args)
       trace = params[:full_debug] ? caller[0..10].join("\n") : caller.first
-      logger.debug "Redirect from: " + trace
+      logger.debug 'Redirect from: ' + trace
       super(*args)
     end
   end
 
+  # For paper trail to not load user in admin area
+  def user_for_paper_trail
+    warden.session_serializer.stored?(:user) ? current_user : nil
+  end
 end

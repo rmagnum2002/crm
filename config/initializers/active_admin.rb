@@ -67,6 +67,8 @@ ActiveAdmin.setup do |config|
   # to return the currently logged in user.
   config.current_user_method = :current_admin_user
 
+  config.authorization_adapter = ActiveAdmin::CanCanAdapter
+  config.cancan_ability_class = 'AdminAbility'
 
   # == Logging Out
   #
@@ -211,4 +213,14 @@ end
 
 module ActiveAdmin::ViewHelpers
   include ApplicationHelper
+end
+
+ActiveAdmin::BaseController.class_eval do
+  def user_for_paper_trail
+    warden.session_serializer.stored?(:admin_user) ? current_admin_user : nil
+  end
+
+  def info_for_paper_trail
+    { ip: request.remote_ip, admin_user: true }
+  end
 end

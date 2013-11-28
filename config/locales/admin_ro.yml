@@ -1,9 +1,11 @@
 ro:
   active_admin:
+    access_denied:
+      message: Acces refuzat
     devise:
       login:
         title: " - login"
-        submit: 'Intră'
+        submit: Intră
     home:
       recent_signed_up_users: "utilizatori înregistrați recent"
       recent_companies: "companii adăugate recent"
@@ -31,4 +33,4 @@ ro:
   save: "Confirmă"
   cancel: "Anulare"
   nothng: "Nu sunt date"
-  items: "Items"
+  items: Items

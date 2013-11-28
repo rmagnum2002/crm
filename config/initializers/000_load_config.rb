@@ -10,3 +10,5 @@ unless Rails.env.test?
 end
 
 $cfg = Hashie::Mash.new(default_cfg.deep_merge(local_cfg))
+
+require 'engines/query_trace/lib/query_trace' if ENV['QUERY_TRACE']

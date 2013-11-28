@@ -4,14 +4,15 @@ class CompaniesDatatable
   delegate :params, :h, :t, :current_language, :link_to, :mail_to, to: :@view
   delegate :url_helpers, to: 'Rails.application.routes'
 
-  def initialize(view)
+  def initialize(view, collection)
     @view = view
+    @collection = collection
   end
 
   def as_json(options = {})
   {
     sEcho: params[:sEcho].to_i,
-    iTotalRecords: Company.count,
+    iTotalRecords: @collection.count,
     iTotalDisplayRecords: companies.total_entries,
     aaData: data
   }
@@ -43,7 +44,7 @@ end
   end
 
   def fetch_companies
-    companies = Company.order("#{sort_column} #{sort_direction}")
+    companies = @collection.order("#{sort_column} #{sort_direction}")
     companies = companies.page(page).per_page(per_page)
     if params[:sSearch].present?
       companies = companies.joins(:client_category, :client_type, :company_source, :company_branch).where("companies.id like :search

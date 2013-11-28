@@ -7,12 +7,6 @@ ActiveAdmin.register AdminUser do
     user.site = @site
   end
 
-  controller do
-    def scoped_collection
-      AdminUser.where(site_id: @site.id)
-    end
-  end
-
   index do
     column :email
     column :current_sign_in_at
@@ -23,8 +17,18 @@ ActiveAdmin.register AdminUser do
 
   filter :email
 
+  show do |res|
+    columns_to_exclude = [:site_id]
+
+    attributes_table do
+      (res.class.columns.collect{|column| column.name.to_sym } - columns_to_exclude).each do |c|
+        row c
+      end
+    end
+  end
+
   form do |f|
-    f.inputs "Admin Details" do
+    f.inputs 'Admin Details' do
       f.input :email
       f.input :password
       f.input :password_confirmation

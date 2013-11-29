@@ -1,6 +1,8 @@
 ActiveAdmin.register Sale do
   menu :priority => 3, :label => "Sales"
 
+  filter :order_number
+
   show do
     attributes_table do
       row :ammount

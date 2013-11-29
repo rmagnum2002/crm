@@ -23,7 +23,7 @@ ActiveAdmin.register_page 'Dashboard' do
       panel "20 #{I18n.t('active_admin.home.recent_signed_up_users')}" do
         # TODO find how to user active admin user resource
         #table_for User.where(site_id: current_site.id).order('created_at desc').limit(20) do
-        table_for User..order('created_at desc').limit(20) do
+        table_for User.order('created_at desc').limit(20) do
           column I18n.t('active_admin.user.full_name') do |user|
             link_to(user.full_name, admin_user_path(user))
           end
@@ -43,7 +43,7 @@ ActiveAdmin.register_page 'Dashboard' do
       panel "10 #{I18n.t("active_admin.home.recent_companies")}" do
         # TODO filter by site
         #table_for Company.where(site_id: current_site.id).order("created_at desc").limit(10) do
-        table_for Company.order("created_at desc").limit(10) do
+        table_for Company.order('created_at desc').limit(10) do
           column :name do |comp|
             link_to(comp.name, admin_company_path(comp))
           end
@@ -51,7 +51,7 @@ ActiveAdmin.register_page 'Dashboard' do
             link_to(comp.user.full_name, admin_user_path(comp.user))
           end
           column "Managed by" do |comp|
-            link_to responsible_name(comp.responsible_id)
+            link_to comp.resp_user.full_name, admin_user_path(comp.resp_user)
           end
           # column :first_name
           # column :created_at

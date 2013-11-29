@@ -1,5 +1,8 @@
 ActiveAdmin.register Company do
-  menu :priority => 2, :label => "Companies"
+  menu :priority => 2, :label => 'Companies'
+
+  filter :name
+
   controller do
     def show
         @company = Company.find(params[:id])

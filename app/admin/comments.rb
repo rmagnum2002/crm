@@ -1,4 +1,8 @@
 ActiveAdmin.register Comment do
+
+  filter :created_at
+  filter :updated_at
+
   index do
     column :id
     column :content do |comment|

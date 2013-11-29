@@ -1,5 +1,11 @@
 ActiveAdmin.register Item do
-  menu :parent => "Settings", :label => proc{ I18n.t("items") }
+  menu :parent => 'Settings', :label => proc { I18n.t(:items) }
+
+  filter :name
+  filter :name_ro
+  filter :name_ru
+  filter :created_at
+  filter :updated_at
 
   show do
     attributes_table do

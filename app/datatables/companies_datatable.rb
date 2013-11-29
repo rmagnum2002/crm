@@ -34,7 +34,7 @@ private
         h(company.skype),
         h(mail_to company.email),
         h(mail_to company.fisc_id),
-        link_to(responsible_name_in_datatables(company.responsible_id))
+        link_to(responsible_name_in_datatables(company.resp_user))
       ]
   end
 end
@@ -44,10 +44,11 @@ end
   end
 
   def fetch_companies
-    companies = @collection.order("#{sort_column} #{sort_direction}")
-    companies = companies.page(page).per_page(per_page)
+    companies = @collection.order("#{sort_column} #{sort_direction}").
+        includes(:client_category, :client_type, :company_source, :company_branch)
+
     if params[:sSearch].present?
-      companies = companies.joins(:client_category, :client_type, :company_source, :company_branch).where("companies.id like :search
+      companies = companies.where('companies.id like :search
                           or companies.name like :search
                           or client_categories.name like :search
                           or client_categories.name_ro like :search
@@ -65,9 +66,10 @@ end
                           or companies.fax like :search
                           or companies.skype like :search
                           or companies.fisc_id like :search
-                          or companies.email like :search", search: "%#{params[:sSearch]}%")
+                          or companies.email like :search', search: "%#{params[:sSearch]}%")
     end
-    companies
+
+    companies.page(page).per_page(per_page)
   end
 
   def page

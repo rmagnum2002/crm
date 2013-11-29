@@ -1,8 +1,10 @@
 class AdminAbility
   include CanCan::Ability
 
-  def initialize(user)
-    user ||= AdminUser.new
+  attr_accessor :user
+
+  def initialize(u)
+    self.user = u || AdminUser.new
 
     if user.new_record?
       user.logger.info('cancan admin: Anonymous admin user')
@@ -10,7 +12,7 @@ class AdminAbility
       user.logger.info("cancan admin: #{user.email}")
     end
 
-    can :read, Site, id: user.site_id
+    can :read, Site
     can :read, ActiveAdmin::Page, :name => 'Dashboard'
 
     init_admin_perms

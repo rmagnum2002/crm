@@ -3,7 +3,8 @@
   <div class="control-group">
     <%= f.label t(:"company.form.responsible"), :class => 'control-label' if @show_label %>
     <div class="controls">
-      <%= f.collection_select :responsible_id, User.find(:all), :id, :full_name, { :selected => @company.responsible_id }, :prompt => t(:"company.form.responsible"), class: 'select_field' %>
+      <%= f.collection_select :responsible_id, @site.users, :id, :full_name, { :selected => @company.responsible_id },
+                              :prompt => t(:'company.form.responsible'), class: 'select_field' %>
     </div>
   </div>
   <div class="control-group">
@@ -13,7 +14,7 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label t(:"company.form.branch"), :class => 'control-label' if @show_label %>
+    <%= f.label t(:'company.form.branch'), :class => 'control-label' if @show_label %>
     <div class="controls">
       <%= company_branch(f) %>
     </div>
@@ -45,7 +46,7 @@
   <div class="control-group">
     <%= f.label t(:"company.form.number_employees"), :class => 'control-label' if @show_label %>
     <div class="controls">
-      <%= f.text_field :number_employees, :class => 'text_field', placeholder: t(:"company.form.number_employees") %>
+      <%= f.text_field :number_employees, :class => 'text_field', placeholder: t(:'company.form.number_employees') %>
     </div>
   </div>
   <div class="control-group">
@@ -57,7 +58,7 @@
   <div class="control-group">
     <%= f.label t(:"company.form.client_at"), :class => 'control-label' if @show_label %>
     <div class="controls">
-      <%= f.text_field :client_at, :class => 'date_select', placeholder: t(:"company.form.client_at") %>
+      <%= f.text_field :client_at, :class => 'date_select', placeholder: t(:'company.form.client_at') %>
     </div>
   </div>
 </div>
@@ -65,25 +66,25 @@
   <div class="control-group">
     <%= f.label :phone, :class => 'control-label' if @show_label %>
     <div class="controls">
-      <%= f.text_field :phone, :class => 'text_field', placeholder: t(:"company.form.phone") %>
+      <%= f.text_field :phone, :class => 'text_field required', placeholder: t(:'company.form.phone') %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :fax, :class => 'control-label' if @show_label %>
     <div class="controls">
-      <%= f.text_field :fax, :class => 'text_field', placeholder: t(:"company.form.fax") %>
+      <%= f.text_field :fax, :class => 'text_field', placeholder: t(:'company.form.fax') %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :email, :class => 'control-label' if @show_label %>
     <div class="controls">
-      <%= f.email_field :email, :class => 'text_field', placeholder: t(:"company.form.email") %>
+      <%= f.email_field :email, :class => 'text_field', placeholder: t(:'company.form.email') %>
     </div>
   </div>
   <div class="control-group">
     <%= f.label :skype, :class => 'control-label' if @show_label %>
     <div class="controls">
-      <%= f.text_field :skype, :class => 'text_field', placeholder: t(:"company.form.skype") %>
+      <%= f.text_field :skype, :class => 'text_field', placeholder: t(:'company.form.skype') %>
     </div>
   </div>
   <div class="control-group">
@@ -117,7 +118,7 @@
       <div class="span">
         <div class="copy-form"><%= t(:"address.form.fill") %></div>
       </div>
-      <% @addresses.each.with_index do |address,index| %>
+      <% @addresses.each.with_index do |address, index| %>
       <div class="span4">
         <%= f.fields_for :addresses, address do |af| %>
         <div class="controls">
@@ -131,34 +132,18 @@
         <div class="control-group">
           <%= f.label t(:"address.form.country_id"), :class => 'control-label' if @show_label %>
           <div class="controls country_<%= index %>">
-            <% if current_language == 'ru' %>
-              <%= af.collection_select :country_id, Country.all, :id, :name_ru, { include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil }, class: "select required" %>
-            <% elsif current_language == 'ro' %>
-              <%= af.collection_select :country_id, Country.all, :id, :name_ro, { include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil }, class: "select required" %>
-            <% else %>
-               <%= af.collection_select :country_id, Country.all, :id, :name, { include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil }, class: "select required" %>
-            <% end %>
+              <%= af.collection_select :country_id, site_countries, :id, i18n_name_field, { include_blank: address.country_id.nil? ? t(:"address.form.country_id") : nil }, class: "select required" %>
           </div>
         </div>
         <div class="control-group">
           <%= f.label t(:"address.form.state_id"), :class => 'control-label' if @show_label %>
           <div class="controls state_<%= index %>">
-            <% if index == 0 %>
-              <% if current_language == 'ru' %>
-                <%= af.collection_select :state_id, Country.find(address.country_id).states, :id, :name_ru, { class: "select required" } unless address.state_id.nil? %>
-              <% elsif current_language == 'ro' %>
-                <%= af.collection_select :state_id, Country.find(address.country_id).states, :id, :name_ro, { class: "select required" } unless address.state_id.nil? %>
+            <%
+               #TODO wtf???
+               if index == 0 %>
+                <%= af.collection_select :state_id, site_countries.find(address.country_id).states, :id, i18n_name_field, { class: "select required" } unless address.state_id.nil? %>
               <% else %>
-                <%= af.collection_select :state_id, Country.find(address.country_id).states, :id, :name, { class: "select required" } unless address.state_id.nil? %>
-              <% end %>
-              <% else %>
-              <% if current_language == 'ru' %>
-                <%= af.collection_select :state_id, Country.find(address.country_id).states, :id, :name_ru, { class: "select required" } unless address.state_id.nil? %>
-              <% elsif current_language == 'ro' %>
-                <%= af.collection_select :state_id, Country.find(address.country_id).states, :id, :name_ro, { class: "select required" } unless address.state_id.nil? %>
-              <% else %>
-                <%= af.collection_select :state_id, Country.find(address.country_id).states, :id, :name, { class: "select required" } unless address.state_id.nil? %>
-                <% end %>
+                <%= af.collection_select :state_id, site_countries.find(address.country_id).states, :id, i18n_name_field, { class: "select required" } unless address.state_id.nil? %>
             <% end %>
           </div>
         </div>

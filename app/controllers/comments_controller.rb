@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :load_commentable, %w{destroy}
+  before_filter :load_commentable
 
   load_and_authorize_resource
 
@@ -29,8 +29,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
-    @commentable = @comment.commentable
+    @comments_count = @commentable.comments.count
     @comment.destroy
 
     respond_to do |format|
@@ -43,5 +42,6 @@ private
   def load_commentable
     resource, id = request.path.split('/')[1, 2]
     @commentable = resource.singularize.classify.constantize.find(id)
+    authorize! :read, @commentable
   end
 end

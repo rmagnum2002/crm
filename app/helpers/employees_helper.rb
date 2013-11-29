@@ -8,6 +8,7 @@ module EmployeesHelper
     else
       lang = :name
     end
+    # TODO filter by site
     f.collection_select :job_title_id, JobTitle.find(:all), :id, lang, { :include_blank => t(:"employee.form.select_job") }
   end
 
@@ -19,6 +20,7 @@ module EmployeesHelper
     else
       gender = :name
     end
+
     f.collection_select :gender_id, Gender.all, :id, gender, { :include_blank => t(:"employee.form.select_gender") }, class: "select required"
   end
 
@@ -30,6 +32,7 @@ module EmployeesHelper
     else
       language = :name
     end
+    # TODO filter by site
     f.collection_select :language_id, Language.all, :id, language, { :include_blank => t(:"employee.form.select_language") }
   end
 
@@ -72,7 +75,7 @@ module EmployeesHelper
       if key.present?
         result = I18n.t Employee::TITLE[key]
       else
-        result = "__"
+        result = '__'
       end
     elsif f == 'gender_id'
       result = Gender.find key
@@ -84,7 +87,7 @@ module EmployeesHelper
         result = Language.find key
         result_name_e(result)
       else
-        return "__"
+        return '__'
       end
     elsif f == 'job_title_id'
       result = JobTitle.find key
@@ -93,7 +96,7 @@ module EmployeesHelper
       decision(key)
     elsif f == 'marked_to_remove'
       marked_to_remove_e(key)
-    else f == "client_at"
+    else f == 'client_at'
       return key
     end
   end
@@ -109,18 +112,10 @@ module EmployeesHelper
   end
 
   def decision(key)
-    if key == false
-      return t(:'to_not_delete')
-    elsif key == true
-      return t(:'to_delete')
-    end
+    t(key ? :to_delete : :to_not_delete)
   end
 
   def marked_to_remove_e(key)
-    if key == false
-      return t(:'to_not_delete')
-    elsif key == true
-      return t(:'to_delete')
-    end
+    decision(key)
   end
 end

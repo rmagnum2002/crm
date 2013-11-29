@@ -37,11 +37,10 @@ class CompaniesController < ApplicationController
   # GET /companies/new
   # GET /companies/new.json
   def new
-    @company = Company.new
     @addresses = @company.addresses
     @countries = @site.countries.all.map{ |c| [c.name, c.id] }
     # TODO lz states should have a country_id for auto-select
-    @states = State.join(:country).where(country: {site_id: @site.id}).all.map{ |s| [s.name, s.id] }
+    @states = State.joins(:country).where(countries: {site_id: @site.id}).all.map{ |s| [s.name, s.id] }
     2.times { @company.addresses.build }
 
     respond_to do |format|
@@ -69,8 +68,8 @@ class CompaniesController < ApplicationController
   # POST /companies
   # POST /companies.json
   def create
-    @company = @site.companies.build(params[:company])
     @company.user_id = current_user.id
+    @company.site = @site
 
     respond_to do |format|
       if @company.save
@@ -78,7 +77,12 @@ class CompaniesController < ApplicationController
         format.html { redirect_to @company, notice: "#{t(:"messages.created")}" }
         format.json { render json: @company, status: :created, location: @company }
       else
-        format.html { render action: "new" }
+        logger.error(@company.errors.full_messages.join"\n")
+
+        format.html {
+          @addresses = @company.addresses
+          @states = State.joins(:country).where(countries: {site_id: @site.id}).all.map{ |s| [s.name, s.id] }
+          render action: 'new' }
         format.json { render json: @company.errors, status: :unprocessable_entity }
       end
     end

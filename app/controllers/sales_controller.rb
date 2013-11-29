@@ -3,7 +3,7 @@ class SalesController < ApplicationController
   before_filter :load_saleable, except: %w[index]
 
   before_filter only: :index do
-    @sales = Sale.order('created_at desc')
+    @sales = @site.sales.order('created_at desc')
   end
 
   load_and_authorize_resource
@@ -49,5 +49,6 @@ private
   def load_saleable
     resource, id = request.path.split('/')[1, 2]
     @saleable = resource.singularize.classify.constantize.find(id)
+    authorize! :read, @saleable
   end
 end

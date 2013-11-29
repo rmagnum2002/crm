@@ -18,7 +18,7 @@ class Ability
 
     models = ActiveRecord::Base.subclasses - [Site, Employee, State, ActiveAdmin::Comment]
 
-    can :read, Site, id: user.site_id
+    can :read, Site
 
     if user.role? :admin
       init_admin_perms

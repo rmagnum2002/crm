@@ -11,7 +11,7 @@ jQuery ->
     bJQueryUI: true
     iDisplayStart: 50
     oTableTools:
-      sSwfPath: "http://localhost:3000/swf/copy_csv_xls_pdf.swf"
+      sSwfPath: "http://localhost:3000/swf/copy_csv_xls_pdf.swf" # TODO wtf???
 
   options =
     sPaginationType: "full_numbers"
@@ -23,7 +23,7 @@ jQuery ->
     bServerSide: true
     sAjaxSource: $('#companies').data('source')
     oTableTools:
-      sSwfPath: "http://localhost:3000/swf/copy_csv_xls_pdf.swf"
+      sSwfPath: "http://localhost:3000/swf/copy_csv_xls_pdf.swf" # TODO wtf???
 
   options_empl =
     sPaginationType: "full_numbers"
@@ -35,7 +35,7 @@ jQuery ->
     bServerSide: true
     sAjaxSource: $('#employees').data('source')
     oTableTools:
-      sSwfPath: "http://localhost:3000/swf/copy_csv_xls_pdf.swf"
+      sSwfPath: "http://localhost:3000/swf/copy_csv_xls_pdf.swf" # TODO wtf???
 
   Lang = $('#companies, #employees, #users, #sales').data('language')
   if Lang == "ro"
@@ -83,8 +83,6 @@ jQuery ->
 
 jQuery ->
   $('.best_in_place').best_in_place()
-
-
 
 jQuery ->
   $('form').on 'click', '.remove_fields', (event) ->

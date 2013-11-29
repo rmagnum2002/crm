@@ -1,18 +1,11 @@
 module CompaniesHelper
 
-  def responsible_name(user_id)
-    user = User.find(user_id)
+  def responsible_name(user)
     link_to user.full_name, profile_path(user)
   end
 
-  def responsible_name_in_datatables(user_id)
-    user = User.find(user_id)
+  def responsible_name_in_datatables(user)
     link_to user.full_name, url_helpers.profile_path(user)
-  end
-
-  def responsible_admin(user_id)
-    user = User.find(user_id)
-    link_to user.full_name, admin_user_path(user)
   end
 
   def company_source(f)
@@ -23,7 +16,9 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :company_source_id, CompanySource.find(:all), :id, lang, { :prompt => t(:"company.form.source") }, class: "select required"
+
+    f.collection_select :company_source_id, @site.company_sources, :id, lang,
+                        { :prompt => t(:'company.form.source') }, class: 'select required'
   end
 
   def client_category(f)
@@ -34,7 +29,9 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :client_category_id, ClientCategory.find(:all), :id, lang, { :prompt => t(:"company.form.client_category") }, class: "select required"
+
+    f.collection_select :client_category_id, @site.client_categories, :id, lang,
+                        { :prompt => t(:'company.form.client_category') }, class: 'select required'
   end
 
   def organizational_form(f)
@@ -45,7 +42,8 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :organizational_form_id, OrganizationalForm.find(:all), :id, lang, { :prompt => t(:"company.form.organizational_form") }
+    f.collection_select :organizational_form_id, @site.organizational_forms, :id, lang,
+                        { :prompt => t(:"company.form.organizational_form") }
   end
 
   def client_status(f)
@@ -56,7 +54,8 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :client_status_id, ClientStatus.find(:all), :id, lang, { :prompt => t(:"company.form.client_status") }, class: "select required"
+    f.collection_select :client_status_id, @site.client_statuses, :id, lang,
+                        { :prompt => t(:'company.form.client_status') }, class: 'select required'
   end
 
   def client_type(f)
@@ -67,7 +66,8 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :client_type_id, ClientType.all, :id, lang, { :prompt => t(:"company.form.client_type") }, class: "select required"
+    f.collection_select :client_type_id, @site.client_types, :id, lang,
+                        { :prompt => t(:'company.form.client_type') }, class: 'select required'
   end
 
   def company_branch(f)
@@ -78,7 +78,8 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :company_branch_id, CompanyBranch.find(:all), :id, lang, { :prompt => t(:"company.form.branch") }, class: "select required"
+    f.collection_select :company_branch_id, @site.company_branches, :id, lang,
+                        { :prompt => t(:'company.form.branch') }, class: 'select required'
   end
 
   def dt_client_type(company)
@@ -136,6 +137,7 @@ module CompaniesHelper
   end
 
   def name_it(f, key)
+    # TODO filter by site
     if f == 'company_branch_id'
       result = CompanyBranch.find key
       result_name(result)
@@ -164,7 +166,7 @@ module CompaniesHelper
     elsif f == 'client_type_id'
       result = ClientType.find key
       result_name(result)
-    else f == "client_at"
+    else f == 'client_at'
       return key
     end
   end
@@ -180,11 +182,7 @@ module CompaniesHelper
   end
 
   def marked_to_remove(key)
-    if key == false
-      return t(:'to_not_delete')
-    elsif key == true
-      return t(:'to_delete')
-    end
+    t(key ? :to_delete : :to_not_delete)
   end
 
   def show_country(address)
@@ -206,5 +204,4 @@ module CompaniesHelper
       address.state.name
     end
   end
-
 end

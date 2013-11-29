@@ -1,7 +1,7 @@
 <dt><strong><%= t(:"company.show.added_by") %>:</strong></dt>
 <dd><%= link_to @company.user.full_name, profile_path(@company.user) if @company.user.present? %></dd>
 <dt><strong><%= t(:"company.show.responsible") %>:</strong></dt>
-<dd><%= responsible_name(@company.responsible_id) %></dd>
+<dd><%= responsible_name(@company.resp_user) %></dd>
 <dt><strong><%= t(:"company.show.number_employees") %>:</strong></dt>
 <dd><%= @company.number_employees %></dd>
 <dt><strong><%= t(:"company.show.organizational_form") %>:</strong></dt>

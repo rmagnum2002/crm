@@ -1,7 +1,8 @@
+// TODO use data-url attribute for url
 function get_states_0() {
   $.ajax({
     type: "POST",
-    url: "country_select_legal",
+    url: "/country_select_legal",
     data: {
       country_id : $('#company_addresses_attributes_0_country_id').val(),
       state_id : $('#state_id_0').val()
@@ -9,10 +10,11 @@ function get_states_0() {
   });
 }
 
+// TODO use data-url attribute for url
 function get_states_1() {
   $.ajax({
     type: "POST",
-    url: "country_select_invoicing",
+    url: "/country_select_invoicing",
     data: {
       country_id : $('#company_addresses_attributes_1_country_id').val(),
       state_id : $('#state_id_1').val()

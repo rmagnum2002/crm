@@ -1,13 +1,27 @@
-== Multisite migration
+= Multisite migration
 
-* relax admin_users email, index to be unique by site_id
+
 * fix items creation by setting the site_id variable and test in user and admin areas
 * filter ransack table display for site filtering
+* Test if we can add the sane email to different site for users and admin_users
 
-Întrebări:
+== Bugs
+
+Can not add state from admin: need to fix cancan perms
+
+== Întrebări:
 
 Q: Deschide profilul complet unde trebuie să se ducă? Aruncă eroare acum.
 A: Se duce la employee#show
 
 Q: Unde este descris permisiunile moderatorilor
 A: ???
+
+== Îmbunătățiri
+
+* Genul să fie în formulare ca radio butoane, e mai ușor de selectat.
+* Redirect după creare contact trebuie să fie la employee#show sau company show, cu tabul contacte activ.
+
+== Done
+
+* relax admin_users email, index to be unique by site_id

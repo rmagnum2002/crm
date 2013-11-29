@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
 
   # filter
   def load_company
-    @company = @site.companies.find(params[:company_id].presence || params[:id])
+    @company ||= @site.companies.find(params[:company_id].presence || params[:id])
   end
 
   rescue_from CanCan::AccessDenied do |exception|

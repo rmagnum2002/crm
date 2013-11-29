@@ -2,7 +2,7 @@ class EmployeesController < ApplicationController
   before_filter :authenticate_user!
 
   # it will be loaded by cancan
-  #before_filter :load_company, except: %w(index profile revisions)
+  before_filter :load_company, except: %w(index profile revisions)
   load_and_authorize_resource
 
   # GET /employees

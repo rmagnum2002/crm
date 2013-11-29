@@ -10,29 +10,30 @@ class EmployeesDatatable
 
   def as_json(options = {})
     {
-      sEcho: params[:sEcho].to_i,
-      iTotalRecords: Employee.count,
-      iTotalDisplayRecords: employees.total_entries,
-      aaData: data
+        sEcho: params[:sEcho].to_i,
+        iTotalRecords: Employee.count,
+        iTotalDisplayRecords: employees.total_entries,
+        aaData: data
     }
   end
 
-private
+  private
   def data
     employees.map do |employee|
       [
-        h(employee.id),
-        link_to((employee.full_name), url_helpers.profile_employee_path(employee), {:remote => true, 'data-toggle' => 'modal', 'data-target' => "#modal-window", 'data-backdrop' => true, 'data-keyboard' => true}),
-        h(dt_gender(employee)),
-        h(dt_language(employee)),
-        h(employee.company.name),
-        h(dt_job_title(employee)),
-        h(employee.phone),
-        h(employee.mobile),
-        h(employee.simtravel),
-        h(employee.email),
-        h(employee.skype),
-        h(employee.facebook)
+          h(employee.id),
+          link_to((employee.full_name), url_helpers.profile_employee_path(employee),
+                  {:remote => true, data: {toggle: 'modal', target: '#modal-window', backdrop: true, keyboard: true}}),
+          h(dt_gender(employee)),
+          h(dt_language(employee)),
+          h(employee.company.name),
+          h(dt_job_title(employee)),
+          h(employee.phone),
+          h(employee.mobile),
+          h(employee.simtravel),
+          h(employee.email),
+          h(employee.skype),
+          h(employee.facebook)
       ]
     end
   end
@@ -42,10 +43,12 @@ private
   end
 
   def fetch_employees
+    # TODO filter by site
     employees = Employee.order("#{sort_column} #{sort_direction}")
-    employees = employees.page(page).per_page(per_page)
+
     if params[:sSearch].present?
-      employees = employees.joins(:company, :language, :gender, :job_title).where("employees.id like :search
+      employees = employees.joins(:company, :language, :gender, :job_title).
+          where('employees.id like :search
                                     or employees.first_name like :search
                                     or employees.last_name like :search
                                     or employees.patronymic like :search
@@ -60,10 +63,11 @@ private
                                     or job_titles.name like :search
                                     or job_titles.name_ro like :search
                                     or job_titles.name_ru like :search
-                                    or companies.name like :search",
-                                  search: "%#{params[:sSearch]}%")
+                                    or companies.name like :search',
+                search: "%#{params[:sSearch]}%")
     end
-    employees
+
+    employees.page(page).per_page(per_page)
   end
 
   def page

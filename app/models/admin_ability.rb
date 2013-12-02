@@ -25,11 +25,11 @@ class AdminAbility
 
       can :manage, models, site_id: user.site_id
       can :manage, State, State.joins(:country).where(countries: {site_id: user.site_id}) do |state|
-        state.country.site_id == user.site_id
+        state.new_record? || state.country.site_id == user.site_id
       end
 
       can :manage, Employee, Employee.joins(:company).where(companies: {site_id: user.site_id}) do |emp|
-        emp.company.site_id == user.site_id
+        emp.new_record? || emp.company.site_id == user.site_id
       end
 
     end

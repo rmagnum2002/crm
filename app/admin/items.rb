@@ -7,12 +7,23 @@ ActiveAdmin.register Item do
   filter :created_at
   filter :updated_at
 
+  form do |f|
+    f.inputs do
+      f.input :name
+      f.input :name_ro
+      f.input :name_ru
+    end
+
+    f.actions
+  end
+
   show do
     attributes_table do
       row :name
       row :name_ro
       row :name_ru
     end
+
     panel "Sales list for #{item.name}" do
       table_for item.sale_items do
         column "Item name" do |sale_item|

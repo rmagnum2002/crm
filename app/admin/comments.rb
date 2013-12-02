@@ -9,4 +9,14 @@ ActiveAdmin.register Comment do
       truncate(comment.content, omision: "...", length: 100)
     end
   end
+
+  # no forms for now
+  form do |f|
+    f.inputs do
+
+    end
+
+    f.actions
+  end
+
 end

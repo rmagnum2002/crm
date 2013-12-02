@@ -1,7 +1,17 @@
 ActiveAdmin.register Sale do
-  menu :priority => 3, :label => "Sales"
+  menu :priority => 3, :label => 'Sales'
 
   filter :order_number
+
+  form do |f|
+    f.inputs do
+      f.input :ammount
+      f.input :order_number
+      f.input :sale_date
+    end
+
+    f.actions
+  end
 
   show do
     attributes_table do
@@ -14,7 +24,8 @@ ActiveAdmin.register Sale do
         sale.saleable
       end
     end
-    panel "Details" do
+
+    panel 'Details' do
       table_for sale.sale_items do
         column "Item name" do |sale_item|
           link_to sale_item.item.name, admin_item_path(sale_item.item)

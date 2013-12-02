@@ -1,8 +1,6 @@
 ActiveAdmin.register AdminUser do
   menu :label => proc { I18n.t :admin_users }
 
-  #scope_to :current_site
-
   after_build do |user|
     user.site = @site
   end

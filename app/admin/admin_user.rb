@@ -1,11 +1,8 @@
 ActiveAdmin.register AdminUser do
   menu :label => proc { I18n.t :admin_users }
 
-  after_build do |user|
-    user.site = @site
-  end
-
   index do
+    column :site if current_admin_user.id == 1
     column :email
     column :current_sign_in_at
     column :last_sign_in_at
@@ -16,7 +13,7 @@ ActiveAdmin.register AdminUser do
   filter :email
 
   show do |res|
-    columns_to_exclude = [:site_id]
+    columns_to_exclude = current_admin_user.id == 1 ? [] :  [:site_id]
 
     attributes_table do
       (res.class.columns.collect{|column| column.name.to_sym } - columns_to_exclude).each do |c|
@@ -26,11 +23,13 @@ ActiveAdmin.register AdminUser do
   end
 
   form do |f|
-    f.inputs 'Admin Details' do
+    f.inputs do
+      f.input :site if current_admin_user.id == 1
       f.input :email
       f.input :password
       f.input :password_confirmation
     end
+
     f.actions
   end
 end

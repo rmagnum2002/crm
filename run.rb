@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'thread'
 
 log='log/development.log'

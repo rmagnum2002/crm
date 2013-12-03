@@ -12,7 +12,14 @@ class AdminAbility
       user.logger.info("cancan admin: #{user.email}")
     end
 
-    can :read, Site
+    can :read, Site if user.new_record? # allow user to login
+    can :read, Site, id: user.site_id # authenticated users has access to their site only
+
+    if user.id == 1 # only first admin
+      can :manage, Site
+      can :manage, AdminUser
+    end
+
     can :read, ActiveAdmin::Page, :name => 'Dashboard'
 
     init_admin_perms

@@ -1,6 +1,12 @@
 ActiveAdmin.register Country do
   menu :parent => 'Address', :label => proc { I18n.t(:countries) }
 
+  filter :name
+  filter :name_ru
+  filter :name_ro
+  filter :created_at
+  filter :updated_at
+
   show do |res|
     attributes_table do
       row :id

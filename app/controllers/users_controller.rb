@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @responsible = @site.companies.where(responsible_id: @user.id)
+    @responsible = @current_site.companies.where(responsible_id: @user.id)
     @activities = @user.activities.order('created_at desc').includes([:user, :trackable]).paginate(:page => params[:page], :per_page => 10)
     @total = @user.sales.sum(&:ammount)
 

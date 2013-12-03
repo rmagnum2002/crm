@@ -2,7 +2,7 @@ class VersionsController < ApplicationController
   before_filter :authenticate_user!
 
   def revert
-    @version = @site.versions.find(params[:id])
+    @version = @current_site.versions.find(params[:id])
 
     if @version.reify
       @version.reify.save!

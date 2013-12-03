@@ -25,14 +25,14 @@ class ApplicationController < ActionController::Base
   # filter
   def load_site
     logger.debug "Loading site: #{request.host}"
-    @site = Site.where(host: request.host).first
+    @current_site = Site.where(host: request.host).first
 
-    if @site.nil?
+    if @current_site.nil?
       render text: 'Site not found', status: :not_found
       return false
     end
 
-    authorize! :read, @site
+    authorize! :read, @current_site
 
     true
   end
@@ -40,12 +40,12 @@ class ApplicationController < ActionController::Base
   helper_method :current_site
 
   def current_site
-    @site
+    @current_site
   end
 
   # filter
   def load_company
-    @company ||= @site.companies.find(params[:company_id].presence || params[:id])
+    @company ||= @current_site.companies.find(params[:company_id].presence || params[:id])
   end
 
   rescue_from CanCan::AccessDenied do |exception|

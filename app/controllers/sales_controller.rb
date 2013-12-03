@@ -3,7 +3,7 @@ class SalesController < ApplicationController
   before_filter :load_saleable, except: %w[index]
 
   before_filter only: :index do
-    @sales = @site.sales.order('created_at desc')
+    @sales = @current_site.sales.order('created_at desc')
   end
 
   load_and_authorize_resource

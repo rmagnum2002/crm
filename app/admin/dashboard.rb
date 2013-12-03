@@ -5,7 +5,7 @@ ActiveAdmin.register_page 'Dashboard' do
   content :title => proc{ I18n.t("active_admin.dashboard") } do
     div :class => 'panel' do
       panel "20 #{I18n.t('active_admin.home.recent_signed_up_users')}" do
-        table_for User.where(site_id: assigns[:site].id).order('created_at desc').limit(20) do
+        table_for User.where(site_id: assigns[:current_site].id).order('created_at desc').limit(20) do
           column I18n.t('active_admin.user.full_name') do |user|
             link_to(user.full_name, admin_user_path(user))
           end
@@ -23,7 +23,7 @@ ActiveAdmin.register_page 'Dashboard' do
 
     div :class => 'panel' do
       panel "10 #{I18n.t('active_admin.home.recent_companies')}" do
-        table_for Company.where(site_id: assigns[:site].id).includes(:user, :resp_user).order("created_at desc").limit(10) do
+        table_for Company.where(site_id: assigns[:current_site].id).includes(:user, :resp_user).order("created_at desc").limit(10) do
           column :name do |comp|
             link_to(comp.name, admin_company_path(comp))
           end
@@ -42,7 +42,7 @@ ActiveAdmin.register_page 'Dashboard' do
 
     div :class => 'panel' do
       panel '10 recent sales' do
-        table_for Sale.where(:site_id => assigns[:site].id).order('created_at desc').limit(10) do
+        table_for Sale.where(:site_id => assigns[:current_site].id).order('created_at desc').limit(10) do
           column "added by" do |sale|
             link_to(sale.user.full_name, admin_user_path(sale))
           end

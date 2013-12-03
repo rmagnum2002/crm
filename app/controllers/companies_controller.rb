@@ -16,7 +16,7 @@ class CompaniesController < ApplicationController
   end
 
   def search
-    @search = @site.companies.search(params[:q])
+    @search = @current_site.companies.search(params[:q])
     @companies = @search.result
     @search.build_condition
   end
@@ -38,9 +38,9 @@ class CompaniesController < ApplicationController
   # GET /companies/new.json
   def new
     @addresses = @company.addresses
-    @countries = @site.countries.all.map{ |c| [c.name, c.id] }
+    @countries = @current_site.countries.all.map{ |c| [c.name, c.id] }
     # TODO lz states should have a country_id for auto-select
-    @states = State.joins(:country).where(countries: {site_id: @site.id}).all.map{ |s| [s.name, s.id] }
+    @states = State.joins(:country).where(countries: {site_id: @current_site.id}).all.map{ |s| [s.name, s.id] }
     2.times { @company.addresses.build }
 
     respond_to do |format|
@@ -69,7 +69,7 @@ class CompaniesController < ApplicationController
   # POST /companies.json
   def create
     @company.user_id = current_user.id
-    @company.site = @site
+    @company.site = @current_site
 
     respond_to do |format|
       if @company.save
@@ -81,7 +81,7 @@ class CompaniesController < ApplicationController
 
         format.html {
           @addresses = @company.addresses
-          @states = State.joins(:country).where(countries: {site_id: @site.id}).all.map{ |s| [s.name, s.id] }
+          @states = State.joins(:country).where(countries: {site_id: @current_site.id}).all.map{ |s| [s.name, s.id] }
           render action: 'new' }
         format.json { render json: @company.errors, status: :unprocessable_entity }
       end
@@ -160,7 +160,7 @@ class CompaniesController < ApplicationController
 
   def country_select_legal
     if params[:country_id].present?
-      @states_0 = @site.countries.find(params[:country_id]).states
+      @states_0 = @current_site.countries.find(params[:country_id]).states
     else
       @states_0 = []
     end
@@ -171,7 +171,7 @@ class CompaniesController < ApplicationController
 
   def country_select_invoicing
     if params[:country_id].present?
-      @states_1 = @site.countries.find(params[:country_id]).states
+      @states_1 = @current_site.countries.find(params[:country_id]).states
     else
       @states_1 = []
     end

@@ -223,4 +223,6 @@ ActiveAdmin::BaseController.class_eval do
   def info_for_paper_trail
     { ip: request.remote_ip, admin_user: true }
   end
+
+  with_role :admin
 end

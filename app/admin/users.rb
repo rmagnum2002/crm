@@ -6,6 +6,8 @@ ActiveAdmin.register User do
     column I18n.t("active_admin.user.full_name") do |user|
       user.full_name
     end
+    column :first_name
+    column :last_name
     column :email
     column I18n.t("active_admin.user.sign_in_at") do |user|
       l user.last_sign_in_at, format: :long if user.last_sign_in_at.present?
@@ -26,10 +28,10 @@ ActiveAdmin.register User do
       end
       row :email
       row I18n.t('active_admin.user.created_at') do
-        l user.created_at, format: :long
+        user.created_at
       end
       row I18n.t('active_admin.user.sign_in_at') do
-        l user.last_sign_in_at, format: :long if user.last_sign_in_at.present?
+        user.last_sign_in_at
       end
       row I18n.t('active_admin.user.role') do
         user.role
@@ -78,21 +80,29 @@ ActiveAdmin.register User do
   end
 
   form do |f|
-    f.inputs "User Details" do
+    f.semantic_errors :user
+
+    f.inputs do
+      f.input :first_name
+      f.input :last_name
       f.input :email
+      f.input :password
       f.input :role, as: :select, collection: User::ROLES
       f.input :approved
     end
     f.actions
   end
 
-  controller do
-    # This code is evaluated within the controller class
-
-    def update
-      @user = User.find(params[:id])
-      @user.update_attributes((params[:user]), as: :admin)
-      redirect_to admin_user_path(@user)
-    end
-  end
+  #controller do
+  #  def create
+  #    @user = build_resource
+  #    if @user.save
+  #      redirect_to admin_user_path(@user)
+  #    else
+  #      logger.error 'User validation errors'
+  #      logger.error @user.errors.full_messages.join("\n")
+  #      render action: :new
+  #    end
+  #  end
+  #end
 end

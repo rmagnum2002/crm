@@ -1,5 +1,5 @@
 class Site < ActiveRecord::Base
-  attr_accessible :host, :name, :description
+  attr_accessible :host, :name, :description, as: :admin
 
   has_many :users
   has_many :admin_users
@@ -20,4 +20,5 @@ class Site < ActiveRecord::Base
   has_many :comments
 
   validates_presence_of :host, :name
+  validates_uniqueness_of :host
 end

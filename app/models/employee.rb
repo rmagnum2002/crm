@@ -2,7 +2,8 @@ class Employee < ActiveRecord::Base
   has_paper_trail :on => [:update]
 
   attr_accessible :birthday, :client_date, :company_id, :completion, :decision, :email, :facebook, :first_name, :gender_id, :job_title_id,
-                  :language_id, :last_name, :mobile, :patronymic, :phone, :simtravel, :skype, :user_id, :title, :marked_to_remove
+                  :language_id, :last_name, :mobile, :patronymic, :phone, :simtravel,
+                  :skype, :user_id, :title, :marked_to_remove, as: [:default, :admin]
 
   belongs_to :company
   belongs_to :user

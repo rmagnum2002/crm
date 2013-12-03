@@ -6,7 +6,7 @@ class Event < ActiveRecord::Base
   belongs_to :employee
   belongs_to :comment
 
-  attr_accessible :action_id, :email, :event_date, :employee_id, :user_id, :comment_id
+  attr_accessible :action_id, :email, :event_date, :employee_id, :user_id, :comment_id, as: [:default, :admin]
 
   before_create :update_date_event
   validates_presence_of :action_id

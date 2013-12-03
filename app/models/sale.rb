@@ -1,5 +1,6 @@
 class Sale < ActiveRecord::Base
-  attr_accessible :saleable_id, :saleable_type, :user_id, :ammount, :sale_items_attributes, :order_number, :sale_date
+  attr_accessible :saleable_id, :saleable_type, :user_id, :ammount, :sale_items_attributes,
+                  :order_number, :sale_date, as: [:default, :admin]
 
   belongs_to :site
   belongs_to :saleable, polymorphic: true

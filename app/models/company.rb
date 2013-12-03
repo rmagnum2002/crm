@@ -3,8 +3,7 @@ class Company < ActiveRecord::Base
 
   attr_accessible :bank_req, :company_branch_id, :client_at, :client_category_id, :client_type_id, :client_status_id, :marked_to_remove,
                   :email, :facebook, :fax, :fisc_id, :name, :phone, :responsible_id, :skype, :company_source_id,
-                  :user_id, :website, :number_employees, :organizational_form_id, :addresses_attributes
-
+                  :user_id, :website, :number_employees, :organizational_form_id, :addresses_attributes, as: [:default, :admin]
   validates :name, :company_branch_id, :client_category_id, :client_type_id, :client_status_id,
             :company_source_id, :phone, presence: true
 

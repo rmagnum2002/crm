@@ -1,5 +1,5 @@
 class SaleItem < ActiveRecord::Base
-  attr_accessible :item_id, :price, :quantity, :sale_id, :total_price
+  attr_accessible :item_id, :price, :quantity, :sale_id, :total_price, as: [:default, :admin]
   belongs_to :sale
   belongs_to :item
 

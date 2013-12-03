@@ -14,7 +14,7 @@ class AdminUser < ActiveRecord::Base
   validates_confirmation_of :password, :if => :password_required?
   validates_length_of       :password, :within => 6..32, :allow_blank => true
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :password_confirmation, :remember_me, as: [:default, :admin]
   belongs_to :site
 
   def password_required?

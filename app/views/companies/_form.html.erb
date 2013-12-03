@@ -3,7 +3,7 @@
   <div class="control-group">
     <%= f.label t(:"company.form.responsible"), :class => 'control-label' if @show_label %>
     <div class="controls">
-      <%= f.collection_select :responsible_id, @site.users, :id, :full_name, { :selected => @company.responsible_id },
+      <%= f.collection_select :responsible_id, current_site.users, :id, :full_name, { :selected => @company.responsible_id },
                               :prompt => t(:'company.form.responsible'), class: 'select_field' %>
     </div>
   </div>

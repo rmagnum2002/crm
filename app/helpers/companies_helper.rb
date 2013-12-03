@@ -17,7 +17,7 @@ module CompaniesHelper
       lang = :name
     end
 
-    f.collection_select :company_source_id, @site.company_sources, :id, lang,
+    f.collection_select :company_source_id, current_site.company_sources, :id, lang,
                         { :prompt => t(:'company.form.source') }, class: 'select required'
   end
 
@@ -30,7 +30,7 @@ module CompaniesHelper
       lang = :name
     end
 
-    f.collection_select :client_category_id, @site.client_categories, :id, lang,
+    f.collection_select :client_category_id, current_site.client_categories, :id, lang,
                         { :prompt => t(:'company.form.client_category') }, class: 'select required'
   end
 
@@ -42,7 +42,7 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :organizational_form_id, @site.organizational_forms, :id, lang,
+    f.collection_select :organizational_form_id, current_site.organizational_forms, :id, lang,
                         { :prompt => t(:"company.form.organizational_form") }
   end
 
@@ -54,7 +54,7 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :client_status_id, @site.client_statuses, :id, lang,
+    f.collection_select :client_status_id, current_site.client_statuses, :id, lang,
                         { :prompt => t(:'company.form.client_status') }, class: 'select required'
   end
 
@@ -66,7 +66,7 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :client_type_id, @site.client_types, :id, lang,
+    f.collection_select :client_type_id, current_site.client_types, :id, lang,
                         { :prompt => t(:'company.form.client_type') }, class: 'select required'
   end
 
@@ -78,7 +78,7 @@ module CompaniesHelper
     else
       lang = :name
     end
-    f.collection_select :company_branch_id, @site.company_branches, :id, lang,
+    f.collection_select :company_branch_id, current_site.company_branches, :id, lang,
                         { :prompt => t(:'company.form.branch') }, class: 'select required'
   end
 

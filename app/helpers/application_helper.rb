@@ -14,7 +14,7 @@ module ApplicationHelper
   end
 
   def site_countries
-    @site_countries ||= @site.countries
+    current_site_countries ||= current_site.countries
   end
 
   def i18n_name_field

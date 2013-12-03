@@ -4,7 +4,16 @@ class User < ActiveRecord::Base
   # :lockable, :timeoutable and :omniauthable
   # :recoverable email recovering not used
   devise :database_authenticatable, :registerable,
-         :rememberable, :trackable, :validatable, request_keys: [:host]
+         :rememberable, :trackable, request_keys: [:host]
+
+  # Custom validation with email uniq bind to site
+  validates_presence_of   :email
+  validates_uniqueness_of :email, :allow_blank => true, :if => :email_changed?, scope: :site_id
+  validates_format_of     :email, :with  => /\A[^@]+@[^@]+\z/, :allow_blank => true, :if => :email_changed?
+
+  validates_presence_of     :password, :if => :password_required?
+  validates_confirmation_of :password, :if => :password_required?
+  validates_length_of       :password, :within => 6..32, :allow_blank => true
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :approved, as: [:default, :admin]
@@ -34,6 +43,10 @@ class User < ActiveRecord::Base
 
   def role?(base_role)
     ROLES.index(base_role.to_s) <= ROLES.index(role)
+  end
+
+  def password_required?
+    !persisted? || !password.nil? || !password_confirmation.nil?
   end
 
   def active_for_authentication?

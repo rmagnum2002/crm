@@ -1,9 +1,11 @@
 = Multisite migration
 
+== Tasks
 
 * fix items creation by setting the site_id variable and test in user and admin areas
 * filter ransack table display for site filtering
 * Test if we can add the sane email to different site for users and admin_users
+* Write specs for user area
 
 == Bugs
 

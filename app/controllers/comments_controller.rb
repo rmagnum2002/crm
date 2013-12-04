@@ -17,9 +17,11 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
 
     if @comment.save
-      expire_fragment "#{t(:"activity.index.activities")}"
-      expire_fragment "#{@comment.commentable_type.downcase}_#{@comment.commentable_id}_#{t(:"company.show.comments")}"
       track_activity @comment
+
+      expire_fragment t(:'activity.index.activities')
+      expire_fragment "#{@comment.commentable_type.downcase}_#{@comment.commentable_id}_#{t(:'company.show.comments')}"
+
       respond_to do |format|
         format.js
       end
@@ -29,8 +31,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comments_count = @commentable.comments.count
     @comment.destroy
+    @comments_count = @commentable.comments.count
 
     respond_to do |format|
       format.js

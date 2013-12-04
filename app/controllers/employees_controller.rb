@@ -2,7 +2,7 @@ class EmployeesController < ApplicationController
   before_filter :authenticate_user!
 
   # it will be loaded by cancan
-  before_filter :load_company, except: %w(index profile revisions)
+  before_filter :load_company, only: %w(create)
   load_and_authorize_resource
 
   # GET /employees
@@ -23,6 +23,7 @@ class EmployeesController < ApplicationController
     @commentable = @employee
     @comments = @commentable.comments.order('created_at desc')
     @comment = Comment.new
+    @company = @employee.company
 
     respond_to do |format|
       format.html # show.html.erb
@@ -80,7 +81,7 @@ class EmployeesController < ApplicationController
     respond_to do |format|
       if @employee.update_attributes(params[:employee])
         expire_fragment "employee_#{@employee.id}_#{t(:"employee.model_title")}_user"
-        format.html { redirect_to company_employee_path(@company, @employee), notice: "#{t(:"messages.updated")}" }
+        format.html { redirect_to company_employee_path(@employee.company, @employee), notice: "#{t(:"messages.updated")}" }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -103,7 +104,7 @@ class EmployeesController < ApplicationController
   def delete_employee
     @employee.update_attributes(marked_to_remove: !@employee.marked_to_remove)
 
-    redirect_to company_employee_path(@company, @employee)
+    redirect_to company_employee_path(@employee.company, @employee)
   end
 
   def comments

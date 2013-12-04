@@ -1,15 +1,17 @@
 require 'spec_helper'
 
 describe SalesController do
-  include Devise::TestHelpers
+  render_views
 
-  before(:each) do
-    @user = create :user
-    @sale = create :sale
+  before do
+    @site = create :site
+    @user = create :user, site: @site
+    @sale = create :sale, site: @site
+    request.host = @site.host
   end
 
-  describe "GET #index" do
-    it "should show sales" do
+  describe 'GET #index' do
+    it 'should show sales' do
       sign_in @user
       get :index
       response.should be_succes

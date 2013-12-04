@@ -1,9 +1,11 @@
 class Ability
   include CanCan::Ability
 
-  def initialize(user)
+  attr_accessor :user
 
-    user ||= User.new
+  def initialize(u)
+
+    self.user = u || User.new
 
     if user.new_record?
       user.logger.info('cancan: Anonymous user')

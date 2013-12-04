@@ -11,5 +11,6 @@ FactoryGirl.define do
     password_confirmation 'pleasestandup'
     role 'admin'
     approved true
+    association :site
   end
 end

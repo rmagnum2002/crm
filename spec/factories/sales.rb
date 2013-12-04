@@ -9,11 +9,21 @@ FactoryGirl.define do
   end
 
   sequence :order_number do |n|
-    "#{n}"
+    "N-#{n}"
+  end
+
+  sequence :number do |n|
+    n
   end
 
   factory :sale do
     order_number { generate (:order_number) }
+    association :site
+    association :user
   end
 
+  factory :site do
+    name 'test site'
+    host { "test#{generate :number}.crm.tld" }
+  end
 end
